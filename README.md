@@ -1,0 +1,1 @@
+# EHUNAM-WiFi-CSI-FAIR-data
