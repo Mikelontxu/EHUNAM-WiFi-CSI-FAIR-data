@@ -1,9 +1,60 @@
 import scipy.io
 import hashlib
 import json
-import os
+import pandas as pd
 from pathlib import Path
 
+def load_summary(summary_path: str = "data/Summary.xlsx") -> dict:
+    """
+    Carga el Excel summary y construye un índice {filename: {Date, Time}}
+    para cruzar con cada .mat durante la extracción.
+    """
+    df = pd.read_excel(summary_path, sheet_name="Sheet1")
+ 
+    index = {}
+    for _, row in df.iterrows():
+        filename = str(row["File"]).strip()
+ 
+        # Date: puede venir como datetime o string
+        date_val = row.get("Date")
+        if pd.notna(date_val):
+            if hasattr(date_val, "strftime"):
+                date_str = date_val.strftime("%Y-%m-%d")
+            else:
+                date_str = str(date_val).strip().split(" ")[0]  # quitar hora si viene junto
+        else:
+            date_str = None
+ 
+        # Time: viene como string "HH:MM:SS"
+        time_val = row.get("Time")
+        if pd.notna(time_val):
+            time_str = str(time_val).strip()
+            # pandas puede leerlo como datetime.time → convertir a string
+            if hasattr(time_val, "strftime"):
+                time_str = time_val.strftime("%H:%M:%S")
+        else:
+            time_str = None
+ 
+        index[filename] = { #buildea el índice con filename como clave
+            "date_str": date_str,  
+            "time_str": time_str,   
+        }
+ 
+    return index
+ 
+ 
+def build_datetime(date_str: str, time_str: str) -> str | None:
+    """
+    Combina date_str ('2024-10-21') y time_str ('14:48:49')
+    en un ISO 8601 datetime string: '2024-10-21T14:48:49'
+    """
+    if not date_str:
+        return None
+    if time_str:
+        return f"{date_str}T{time_str}"
+    return f"{date_str}T00:00:00"
+
+# ── Parser del nombre del archivo ─────────────────────────────────────────────
 
 def parse_filename(filename):
     """
@@ -55,7 +106,7 @@ def parse_filename(filename):
     }
 
 
-def extract_metadata(filepath):
+def extract_metadata(filepath, summary_index: dict = None):
     """
     Extrae los metadatos de un archivo .mat, excluyendo las matrices grandes.
     Combina los metadatos del contenido con los del nombre del archivo.
@@ -65,8 +116,18 @@ def extract_metadata(filepath):
     mat = scipy.io.loadmat(str(filepath))
 
     # Campos a excluir: matrices grandes + claves internas de scipy
-    skip = {"CSI", "RSSI", "TimeStamp", "__header__", "__version__", "__globals__"}
-
+    skip = {
+    # Matrices grandes que se incluiran como archivos separados, no como metadatos en JSON
+    "CSI", "RSSI", "TimeStamp",
+    # Fecha/hora del .mat (objeto MCOS no parseable — se usa el summary)
+    "Date", "Time",
+    # Artefactos internos de scipy/MATLAB
+    "__header__", "__version__", "__globals__",
+    "__function_workspace__",
+    # Objeto MCOS mal deserializado (aparece como clave "None")
+    "None", None,
+    }
+    
     def serialize(v):
         """Convierte valores numpy a tipos Python nativos."""
         if hasattr(v, "tolist"):
@@ -81,53 +142,62 @@ def extract_metadata(filepath):
 
     metadata = {k: serialize(v) for k, v in mat.items() if k not in skip}
 
-    # Checksum SHA-256 del archivo completo
-    sha256 = hashlib.sha256(filepath.read_bytes()).hexdigest()
-
-    # Metadatos del nombre del archivo
-    filename_meta = parse_filename(filepath.name)
+    # Fecha y hora desde el summary para evitar fallos de timestamp con uint32
+    datetime_iso = None
+    if summary_index:
+        entry = summary_index.get(filepath.name)
+        if entry:
+            datetime_iso = build_datetime(entry["date_str"], entry["time_str"])
+        else:
+            print(f"  [!] '{filepath.name}' no encontrado en el summary")
+ 
+    sha256 = hashlib.sha256(filepath.read_bytes()).hexdigest()     # Checksum SHA-256 del archivo completo
+    filename_meta = parse_filename(filepath.name)               # Metadatos extraídos del nombre del archivo  
 
     return {
-        "filepath": str(filepath),
-        "filename": filepath.name,
-        "sha256":   sha256,
+        "filepath":     str(filepath),
+        "filename":     filepath.name,
+        "sha256":       sha256,
+        "datetime_iso": datetime_iso,   # "2024-10-21T14:48:49" — campo unificado para RDF
         **filename_meta,
         **metadata,
     }
 
-
-def test_samples(samples_dir="data/samples", output_dir="output/json"):
-    """
-    Prueba el pipeline con todos los .mat en data/samples.
-    Guarda el JSON resultante de cada archivo en output/json.
-    """
+def process_samples(
+    samples_dir:  str = "data/samples",
+    output_dir:   str = "output/json",
+    summary_path: str = "data/Summary.xlsx",
+):
     samples_path = Path(samples_dir)
-    output_path = Path(output_dir)
+    output_path  = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
-    mat_files = list(samples_path.glob("*.mat"))
-
+ 
+    mat_files = sorted(samples_path.glob("*.mat"))
     if not mat_files:
         print(f"[!] No se encontraron archivos .mat en '{samples_dir}'")
         return
-
+ 
+    # Cargar summary una sola vez
+    summary_index = load_summary(summary_path)
+    print(f"[✓] Summary cargado: {len(summary_index)} entradas")
     print(f"[✓] Encontrados {len(mat_files)} archivos .mat en '{samples_dir}'\n")
-
-    for mat_file in sorted(mat_files):
+ 
+    for mat_file in mat_files:
         print(f"{'='*60}")
         print(f"Procesando: {mat_file.name}")
-        print(f"{'='*60}")
         try:
-            result = extract_metadata(mat_file)
+            result = extract_metadata(mat_file, summary_index)
             output_file = output_path / f"{mat_file.stem}.json"
             output_file.write_text(
                 json.dumps(result, indent=2, ensure_ascii=False, default=str),
                 encoding="utf-8",
             )
-            print(f"Guardado: {output_file}")
+            print(f"  datetime_iso: {result.get('datetime_iso')}")
+            print(f"  Guardado: {output_file}")
         except Exception as e:
-            print(f"[ERROR] {mat_file.name}: {e}")
+            print(f"  [ERROR] {e}")
         print()
-
-
+ 
+ 
 if __name__ == "__main__":
-    test_samples("data/samples")
+    process_samples()
