@@ -29,7 +29,7 @@ def load_summary(summary_path: str = "data/Summary.xlsx") -> dict:
         time_val = row.get("Time")
         if pd.notna(time_val):
             time_str = str(time_val).strip()
-            # pandas puede leerlo como datetime.time → convertir a string
+            # leerlo con pandas para covertirlo a datetime.time
             if hasattr(time_val, "strftime"):
                 time_str = time_val.strftime("%H:%M:%S")
         else:
@@ -108,7 +108,7 @@ def parse_filename(filename):
 
 def extract_metadata(filepath, summary_index: dict = None):
     """
-    Extrae los metadatos de un archivo .mat, excluyendo las matrices grandes.
+    Extrae los metadatos de un archivo .mat, excluyendo las matrices grandes (CSI, RSSI, TimeStamp).
     Combina los metadatos del contenido con los del nombre del archivo.
     Devuelve un diccionario con todos los campos relevantes + checksum SHA-256.
     """
@@ -117,17 +117,17 @@ def extract_metadata(filepath, summary_index: dict = None):
 
     # Campos a excluir: matrices grandes + claves internas de scipy
     skip = {
-    # Matrices grandes que se incluiran como archivos separados, no como metadatos en JSON
+    # Matrices grandes que se pondran en el servidor, no como metadatos en JSON
     "CSI", "RSSI", "TimeStamp",
-    # Fecha/hora del .mat (objeto MCOS no parseable — se usa el summary)
+    # Fecha/hora del .mat (Se usa el summary para evitar problemas de timestamp (uint32 en MATLAB))
     "Date", "Time",
-    # Artefactos internos de scipy/MATLAB
+    # Artefactos internos de scipy/MATLAB que no aportan valor para el análisis
     "__header__", "__version__", "__globals__",
     "__function_workspace__",
     # Objeto MCOS mal deserializado (aparece como clave "None")
     "None", None,
     }
-    
+
     def serialize(v):
         """Convierte valores numpy a tipos Python nativos."""
         if hasattr(v, "tolist"):

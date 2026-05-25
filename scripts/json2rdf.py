@@ -2,7 +2,6 @@
 json2rdf_base.py
 Ontologías utilizadas:
     sosa    → http://www.w3.org/ns/sosa/
-    ssn     → http://www.w3.org/ns/ssn/
     qudt    → http://qudt.org/schema/qudt/
     unit    → http://qudt.org/vocab/unit/
     time    → http://www.w3.org/2006/time#
@@ -19,12 +18,11 @@ Ontologías utilizadas:
 import json
 from pathlib import Path
 from rdflib import Graph, Namespace, URIRef, Literal, BNode
-from rdflib.namespace import RDF, RDFS, XSD, OWL
+from rdflib.namespace import RDF, XSD
 
 # ── Namespaces ────────────────────────────────────────────────────────────────
 
 SOSA = Namespace("http://www.w3.org/ns/sosa/")
-SSN  = Namespace("http://www.w3.org/ns/ssn/")
 QUDT = Namespace("http://qudt.org/schema/qudt/")
 UNIT = Namespace("http://qudt.org/vocab/unit/")
 TIME = Namespace("http://www.w3.org/2006/time#")
@@ -58,25 +56,22 @@ ACTIVITY_MAP = {
 APPLICATION_MAP = {
     "HAR":   WIFI.HAR,
     "PC":    WIFI.PC,
-    "MR":    WIFI.MR,
-    "MAR":   WIFI.MAR,
-    "PCMAR": WIFI.PCMAR,
-    "E":     WIFI.EmptyApplication,
+    "MR":    WIFI.MR,               # Esto en caso de que se aplique a otras campañas, no solo a MC1
+    "MAR":   WIFI.MAR,              # Esto en caso de que se aplique a otras campañas, no solo a MC1
+    "PCMAR": WIFI.PCMAR,            # Esto en caso de que se aplique a otras campañas, no solo a MC1
+    "E":     WIFI.EmptyApplication, # Esto en caso de que se aplique a otras campañas, no solo a MC1
 }
 
 ENVIRONMENT_MAP = {
     "basement":            WIFI.BasementRoom,
     "laboratory":          WIFI.Laboratory,
     "storage":             WIFI.StorageRoom,
-    "office1":             WIFI.Office1,
     "office 1":            WIFI.Office1,
     "classroom":           WIFI.Classroom,
-    "office2":             WIFI.Office2,
-    "office 2":            WIFI.Office2,
-    "meeting":             WIFI.MeetingRoom,
-    "meeting room":        WIFI.MeetingRoom,
-    "industrial":          WIFI.IndustrialLaboratory,
-    "industrial laboratory": WIFI.IndustrialLaboratory,
+    "office 2":            WIFI.Office2,                # Esto en caso de que se aplique a otras campañas, no solo a MC1
+    "meeting room":        WIFI.MeetingRoom,            # Esto en caso de que se aplique a otras campañas, no solo a MC1
+    "industrial":          WIFI.IndustrialLaboratory,   # Esto en caso de que se aplique a otras campañas, no solo a MC1
+    "industrial laboratory": WIFI.IndustrialLaboratory, # Esto en caso de que se aplique a otras campañas, no solo a MC1
 }
 
 CSI_EXTRACTOR_MAP = {
@@ -97,8 +92,6 @@ STATUS_MAP = {
 BAND_UNIT_MAP = {
     2.4: UNIT.GigaHertz,
     5.0: UNIT.GigaHertz,
-    2:   UNIT.GigaHertz,
-    5:   UNIT.GigaHertz,
 }
 
 
@@ -109,19 +102,20 @@ def build_measurement_id(meta: dict) -> str:
     Construye un ID único y predecible para cada medición basado en
     los campos del nombre del archivo.
     Formato: meas:{campaign}_{set}_{receiver}_{application}_{people}_{activity}_{number}
+    Ejemplo: mc1-06-rx3-pc-abcefgh-x-01
     """
     people_str = "".join(meta.get("people") or [])
     number     = meta.get("number") or "00"
     activity   = meta.get("activity") or "X"
     return (
-        f"{meta['campaign']}_"
-        f"{meta['set'].split('_')[1]}_"   # solo la parte numérica del set
-        f"{meta['receiver']}_"
-        f"{meta['application']}_"
-        f"{people_str}_"
-        f"{activity}_"
+        f"{meta['campaign']}-"
+        f"{meta['set'].split('_')[1]}-"   # solo la parte numérica del set
+        f"{meta['receiver']}-"
+        f"{meta['application']}-"
+        f"{people_str}-"
+        f"{activity}-"
         f"{number}"
-    )
+    ).lower()
 
 
 def build_measurement_iri(meta: dict) -> URIRef:
@@ -237,6 +231,8 @@ def json_to_rdf(meta: dict, g: Graph = None) -> Graph:
         ("N_Machine", WIFI.nMachines),
     ]:
         val = meta.get(field)
+        if isinstance(val, list):
+            val = val[0] if val else None
         if val is not None:
             g.add((meas_uri, predicate, Literal(int(val), datatype=XSD.integer)))
 
@@ -280,28 +276,28 @@ def json_to_rdf(meta: dict, g: Graph = None) -> Graph:
         g.add((time_node, TIME.inXSDDateTimeStamp,
                Literal(datetime_iso, datatype=XSD.dateTimeStamp)))
 
-        # ── Referencia al archivo .mat (CSI + RSSI + Timestamp) ──────────────────
-        filename = meta.get("filename") or ""
-        if filename:
-         result_node = _node_uri(meas_uri, "result")
-         mat_url = CSI_BASE[filename]
-         g.add((meas_uri, SOSA.hasResult, result_node))
-         g.add((result_node, RDF.type, WIFI.CSIResult))
-         g.add((result_node, DCAT.downloadURL, mat_url))
-         g.add((result_node, DCT["format"],
-             Literal("application/x-matlab-data")))
+    # ── Referencia al archivo .mat (CSI + RSSI + Timestamp) ──────────────────
+    filename = meta.get("filename") or ""
+    if filename:
+        result_node = _node_uri(meas_uri, "result")
+        mat_url = CSI_BASE[filename]
+        g.add((meas_uri, SOSA.hasResult, result_node))
+        g.add((result_node, RDF.type, WIFI.CSIResult))
+        g.add((result_node, DCAT.downloadURL, mat_url))
+        g.add((result_node, DCT["format"],
+               Literal("application/x-matlab-data")))
 
-         sha256 = meta.get("sha256")
-         if sha256:
-             checksum_node = _node_uri(meas_uri, "checksum")
-             g.add((result_node, SPDX.checksum, checksum_node))
-             g.add((checksum_node, SPDX.algorithm,
-                 SPDX.checksumAlgorithm_sha256))
-             g.add((checksum_node, SPDX.checksumValue,
-                 Literal(sha256, datatype=XSD.hexBinary)))
+        sha256 = meta.get("sha256")
+        if sha256:
+            checksum_node = _node_uri(meas_uri, "checksum")
+            g.add((result_node, SPDX.checksum, checksum_node))
+            g.add((checksum_node, SPDX.algorithm,
+                   SPDX.checksumAlgorithm_sha256))
+            g.add((checksum_node, SPDX.checksumValue,
+                   Literal(sha256, datatype=XSD.hexBinary)))
 
-        # ── Procedencia ───────────────────────────────────────────────────────────
-        g.add((meas_uri, PROV.wasGeneratedBy, PROJECT_REPO))
+    # ── Procedencia ───────────────────────────────────────────────────────────
+    g.add((meas_uri, PROV.wasGeneratedBy, PROJECT_REPO))
 
     return g
 
@@ -310,7 +306,6 @@ def json_to_rdf(meta: dict, g: Graph = None) -> Graph:
 
 def _bind_namespaces(g: Graph):
     g.bind("sosa", SOSA)
-    g.bind("ssn",  SSN)
     g.bind("qudt", QUDT)
     g.bind("unit", UNIT)
     g.bind("time", TIME)
@@ -321,20 +316,27 @@ def _bind_namespaces(g: Graph):
     g.bind("wifi", WIFI)
     g.bind("meas", MEAS)
     g.bind("dataset", DATASET)
-    g.bind("owl",  OWL)
 
 
 def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, RDF.type, DCAT.Dataset))
     g.add((DATASET_URI, DCT.identifier, Literal(DATASET_ID)))
     g.add((DATASET_URI, DCT.title, Literal("EHUNAM WiFi CSI Dataset")))
+    g.add((DATASET_URI, DCT.description, Literal("Conjunto de datos de actividad humana basado en señales WiFi CSI, recopilado por el grupo de investigación EHUNAM de la Universidad del País Vasco y la Universidad Nacional Autónoma de México. Contiene mediciones de CSI, RSSI y timestamps, junto con metadatos detallados sobre las condiciones de cada medición.")))
+    g.add((DATASET_URI, DCT.issued, Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
+    g.add((DATASET_URI, DCT.modified, Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
+    g.add((DATASET_URI, DCT.version, Literal("version 1.0")))
+    g.add((DATASET_URI, DCAT.keyword, Literal("WiFi CSI")))
     g.add((DATASET_URI, DCT.license, LICENSE_URI))
     g.add((DATASET_URI, DCT.publisher, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
     g.add((DATASET_URI, DCT.creator, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
 
     g.add((DATASET_DIST_URI, RDF.type, DCAT.Distribution))
     g.add((DATASET_URI, DCAT.distribution, DATASET_DIST_URI))
-    g.add((DATASET_DIST_URI, DCT.format, Literal("text/turtle")))
+    g.add((DATASET_DIST_URI, DCT["format"], Literal("text/turtle")))
+    # PROVISIONAL: enlace directo a la descarga no transformada, hasta que se suba el dataset a un repositorio/servidor con DOI y enlace de descarga estable
+    g.add((DATASET_DIST_URI, DCAT.downloadURL, URIRef("https://springernature.figshare.com/ndownloader/articles/28541225/versions/1"))) 
+    g.add((DATASET_DIST_URI, DCAT.accessURL, URIRef("https://springernature.figshare.com/articles/dataset/EHUNAM_a_WiFi_CSI-based_dataset_for_human_and_machine_sensing/28541225")))
 
 
 def process_folder(json_dir: str, output_dir: str):
