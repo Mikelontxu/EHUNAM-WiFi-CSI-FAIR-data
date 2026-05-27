@@ -11,8 +11,9 @@ Ontologías utilizadas:
     spdx    → http://spdx.org/rdf/terms#
     xsd     → http://www.w3.org/2001/XMLSchema#
     // POR DEFINIR: dominio de la universidad para la ontología específica del proyecto
-    wifi    → https://ehu/wifi-activity/ontology# 
-    meas    → https://ehu/wifi-activity/measurement/
+    // Por el momento se usara de manera local con el archivo TTL de ontology, pero la idea es publicarla en un repositorio con un IRI estable
+    wifi    → https://ehu/wifi-csi/ontology# 
+    meas    → https://ehu/wifi-csi/measurement/
 """
 
 import json
@@ -40,6 +41,9 @@ DATASET_URI = DATASET[DATASET_ID]
 DATASET_DIST_URI = DATASET[f"{DATASET_ID}-distribution"]
 PROJECT_REPO = URIRef("https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data")
 LICENSE_URI = URIRef("https://creativecommons.org/licenses/by/4.0/")
+
+# Ruta local de la ontología específica del proyecto (ttl)
+ONTOLOGY_FILE = Path("ontology/wifi_activity.ttl")
 
 # ── Mapeos deterministas ──────────────────────────────────────────────────────
 
@@ -359,6 +363,12 @@ def process_folder(json_dir: str, output_dir: str):
 
     global_graph = Graph()
     _bind_namespaces(global_graph)
+    # Si existe la ontología local la cargar en el grafo global para que esté disponible al generar cada grafo individual y el unificado
+    try:
+        if ONTOLOGY_FILE.exists():
+            global_graph.parse(str(ONTOLOGY_FILE), format="turtle")
+    except Exception as e:
+        print(f"[!] No se pudo parsear la ontología {ONTOLOGY_FILE}: {e}")
     add_dataset_metadata(global_graph)
 
     for jf in json_files:
@@ -367,6 +377,12 @@ def process_folder(json_dir: str, output_dir: str):
         # Grafo individual
         g = Graph()
         _bind_namespaces(g)
+        # Cargar la ontología también en el grafo individual (si existe)
+        try:
+            if ONTOLOGY_FILE.exists():
+                g.parse(str(ONTOLOGY_FILE), format="turtle")
+        except Exception as e:
+            print(f"[!] No se pudo parsear la ontología en el grafo individual: {e}")
         json_to_rdf(meta, g)
 
         ttl_file = rdf_path / jf.with_suffix(".ttl").name
@@ -392,6 +408,12 @@ def test_single_json(json_path: str):
     meta = json.loads(Path(json_path).read_text(encoding="utf-8"))
     g = Graph()
     _bind_namespaces(g)
+    # Cargar ontología si está disponible
+    try:
+        if ONTOLOGY_FILE.exists():
+            g.parse(str(ONTOLOGY_FILE), format="turtle")
+    except Exception as e:
+        print(f"[!] No se pudo parsear la ontología en el test: {e}")
     json_to_rdf(meta, g)
     print(g.serialize(format="turtle"))
 
