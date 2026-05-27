@@ -31,8 +31,8 @@ DCAT = Namespace("http://www.w3.org/ns/dcat#")
 DCT  = Namespace("http://purl.org/dc/terms/")
 PROV = Namespace("http://www.w3.org/ns/prov#")
 SPDX = Namespace("http://spdx.org/rdf/terms#")
-WIFI = Namespace("https://ehu/wifi-activity/ontology#")
-MEAS = Namespace("https://ehu/wifi-activity/measurement/")
+WIFI = Namespace("https://ehu/wifi-csi/ontology#")
+MEAS = Namespace("https://ehu/wifi-csi/measurement/")
 CSI_BASE = Namespace("https://ehu/wifi-csi/")
 DATASET = Namespace("https://ehu/wifi-csi/dataset/")
 
@@ -335,6 +335,7 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, DCAT.keyword, Literal("WiFi CSI")))
     g.add((DATASET_URI, DCT.license, LICENSE_URI))
     g.add((DATASET_URI, PROV.wasDerivedFrom, ORIGINAL_DATASET_URI))
+    g.add((DATASET_URI, DCT.source, ORIGINAL_DATASET_URI))
     g.add((DATASET_URI, DCT.publisher, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
     g.add((DATASET_URI, DCT.creator, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
 
@@ -343,7 +344,7 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_DIST_URI, DCT["format"], Literal("text/turtle")))
     # PROVISIONAL: enlace directo a la descarga no transformada, hasta que se suba el dataset a un repositorio/servidor con DOI y enlace de descarga estable
     g.add((DATASET_DIST_URI, DCAT.downloadURL, URIRef("https://springernature.figshare.com/ndownloader/articles/28541225/versions/1"))) 
-    g.add((DATASET_DIST_URI, DCAT.accessURL, URIRef("https://springernature.figshare.com/articles/dataset/EHUNAM_a_WiFi_CSI-based_dataset_for_human_and_machine_sensing/28541225")))
+    g.add((DATASET_DIST_URI, DCAT.accessURL, URIRef("https://doi.org/10.6084/m9.figshare.28541225")))
 
 
 def process_folder(json_dir: str, output_dir: str):
