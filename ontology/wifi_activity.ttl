@@ -16,6 +16,7 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 # Declaración de la ontología
 
@@ -30,8 +31,21 @@
     dct:creator "EHUNAM Research Group - University of the Basque Country (EHU) and National Autonomous University of Mexico (UNAM)" ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     dct:created "2026-06-01"^^xsd:date ;
-    dct:language "en" ;
-    rdfs:seeAlso <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> .
+    dct:modified "2026-06-01"^^xsd:date ;
+    dct:language "en" , "es" ;
+    # DOI del dataset original en Figshare, que es la fuente de datos para esta ontología
+    dct:source <https://doi.org/10.6084/m9.figshare.28541225> ;
+    prov:wasDerivedFrom <https://doi.org/10.6084/m9.figshare.28541225> ;
+    # DOI del articulo original
+    dct:isReferencedBy <https://doi.org/10.1038/s41597-025-06238-4> ;
+    rdfs:seeAlso <https://doi.org/10.1038/s41597-025-06238-4> ;
+    # Repositorio del poryecto de Github
+    rdfs:seeAlso <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
+    vann:preferredNamespaceUri "https://ehu/wifi-csi/ontology#" ;
+    vann:preferredNamespacePrefix "wifi-csi" ;
+    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology"@en ;
+    dct:bibliographicCitation "Ontología de actividad WiFi CSI de EHUNAM, versión 1.0.0, disponible en https://ehu/wifi-csi/ontology"@es .
+    #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # Todavia no hay ninguna version previa
 
 # Clases principales
 
@@ -39,8 +53,8 @@
     rdfs:subClassOf sosa:Observation ;
     rdfs:label "Wifi measurement"@en ;
     rdfs:label "Medición WiFi"@es ;
-    rdfs:comment "WiFi measurement "@en ;
-    rdfs:comment "Observación o medición basada en señales WiFi (CSI/RSSI)"@es .
+    rdfs:comment "WiFi measurement based on CSI data in a specific environment"@en ;
+    rdfs:comment "Observación o medición basada en señales WiFi (CSI) en un entorno específico"@es .
 
 :Person a owl:Class ;
     rdfs:label "Person"@en ;
@@ -313,6 +327,7 @@
     rdfs:comment "Relaciona una medición WiFi con la persona (la letra) involucrada en la medición"@es .
 
 :hasResult a owl:ObjectProperty ;
+    rdfs:subPropertyOf sosa:hasResult ;
     rdfs:domain :WifiMeasurement ;
     rdfs:range :CSIResult ;
     rdfs:label "has result"@en ;
@@ -463,6 +478,7 @@
     rdfs:domain :WifiMeasurement ;
     rdfs:range  xsd:integer ;
     rdfs:label  "occupied subcarriers"@en ;
+    rdfs:label  "subportadoras ocupadas"@es ;
     rdfs:comment "Number of useful subcarriers (data + pilots) after excluding null subcarriers per IEEE 802.11n/ac."@en ;
     rdfs:comment "Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac."@es .
 
@@ -497,3 +513,11 @@
     rdfs:label  "NIC"@es ;
     rdfs:comment "Model of the network interface card of the CSI receiver."@en ;
     rdfs:comment "Modelo de la tarjeta de interfaz de red del receptor de CSI."@es .
+
+:traffic a owl:DatatypeProperty ;
+    rdfs:domain :WifiMeasurement ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "traffic"@en ;
+    rdfs:label  "tráfico"@es ;
+    rdfs:comment "Network traffic type present during the measurement (e.g. FTP)."@en ;
+    rdfs:comment "Tipo de tráfico de red presente durante la medición (e.g. FTP)."@es .

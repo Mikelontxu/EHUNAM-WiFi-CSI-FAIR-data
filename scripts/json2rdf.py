@@ -34,12 +34,13 @@ SPDX = Namespace("http://spdx.org/rdf/terms#")
 WIFI = Namespace("https://ehu/wifi-activity/ontology#")
 MEAS = Namespace("https://ehu/wifi-activity/measurement/")
 CSI_BASE = Namespace("https://ehu/wifi-csi/")
-DATASET = Namespace("https://ehu/wifi-activity/dataset/")
+DATASET = Namespace("https://ehu/wifi-csi/dataset/")
 
 DATASET_ID = "EHUNAM-WiFi-CSI-FAIR-data"
 DATASET_URI = DATASET[DATASET_ID]
 DATASET_DIST_URI = DATASET[f"{DATASET_ID}-distribution"]
 PROJECT_REPO = URIRef("https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data")
+ORIGINAL_DATASET_URI = URIRef("https://doi.org/10.6084/m9.figshare.28541225")
 LICENSE_URI = URIRef("https://creativecommons.org/licenses/by/4.0/")
 
 # Ruta local de la ontología específica del proyecto (ttl)
@@ -326,12 +327,14 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, RDF.type, DCAT.Dataset))
     g.add((DATASET_URI, DCT.identifier, Literal(DATASET_ID)))
     g.add((DATASET_URI, DCT.title, Literal("EHUNAM WiFi CSI Dataset")))
-    g.add((DATASET_URI, DCT.description, Literal("Conjunto de datos de actividad humana basado en señales WiFi CSI, recopilado por el grupo de investigación EHUNAM de la Universidad del País Vasco y la Universidad Nacional Autónoma de México. Contiene mediciones de CSI, RSSI y timestamps, junto con metadatos detallados sobre las condiciones de cada medición.")))
+    g.add((DATASET_URI, DCT.description, Literal("FAIRified version of the EHUNAM WiFi CSI dataset originally published on Figshare. The original dataset contains raw .mat files; this version provides RDF/OWL metadata following FAIR principles, with references to the original data files.", lang="en")))
+    g.add((DATASET_URI, DCT.description, Literal("Versión FAIR del conjunto de datos EHUNAM WiFi CSI publicado originalmente en Figshare. El conjunto original contiene archivos .mat en bruto; esta versión proporciona metadatos RDF/OWL siguiendo los principios FAIR, con referencias a los archivos de datos originales.", lang="es")))
     g.add((DATASET_URI, DCT.issued, Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
     g.add((DATASET_URI, DCT.modified, Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
     g.add((DATASET_URI, DCT.version, Literal("version 1.0")))
     g.add((DATASET_URI, DCAT.keyword, Literal("WiFi CSI")))
     g.add((DATASET_URI, DCT.license, LICENSE_URI))
+    g.add((DATASET_URI, PROV.wasDerivedFrom, ORIGINAL_DATASET_URI))
     g.add((DATASET_URI, DCT.publisher, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
     g.add((DATASET_URI, DCT.creator, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
 
