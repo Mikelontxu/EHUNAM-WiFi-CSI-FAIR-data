@@ -20,6 +20,10 @@ WIFI    = Namespace("https://ehu/wifi-csi/ontology#")
 MEAS    = Namespace("https://ehu/wifi-csi/measurement/")
 DATASET = Namespace("https://ehu/wifi-csi/dataset/")
 DBPEDIA = Namespace("http://dbpedia.org/resource/")
+QUDT    = Namespace("http://qudt.org/schema/qudt/")
+UNIT    = Namespace("http://qudt.org/vocab/unit/")
+TIME    = Namespace("http://www.w3.org/2006/time#")
+SPDX    = Namespace("http://spdx.org/rdf/terms#")
 
 # ── Mapeos legibles para el prompt ───────────────────────────────────────────
 
@@ -69,6 +73,10 @@ Rules:
 - keywords must be lowercase, relevant to WiFi sensing, CSI, and the specific activity/application
 - descriptions must be informative for a researcher who wants to reuse this data
 - do not include IRIs, technical field names, or JSON keys in the output values
+- use only facts explicitly present in the summary; do not invent people, environments, hardware, or standards
+- do not mention frequency band or bandwidth unless they appear in the summary
+- keywords must be exactly 5 items
+- avoid filenames, file extensions, or special symbols like '#'
 - always return valid JSON, nothing else"""
 
 
@@ -110,16 +118,30 @@ def build_measurement_id(meta: dict) -> str:
     Reconstruye el mismo identificador determinista que json2rdf.py,
     para enriquecer exactamente el mismo recurso RDF.
     """
-    people_str = "".join(meta.get("people") or [])
-    number = meta.get("number") or "00"
-    activity = meta.get("activity") or "X"
+    def _safe_token(value: str, fallback: str = "x") -> str:
+        token = (value or "").strip().lower()
+        token = re.sub(r"[^a-z0-9]+", "x", token)
+        token = token.strip("x")
+        return token or fallback
+
+    people_str = _safe_token("".join(meta.get("people") or []), fallback="x")
+    number = _safe_token(str(meta.get("number") or "00"), fallback="00")
+    activity = _safe_token(str(meta.get("activity") or "X"), fallback="x")
+    machine = _safe_token(str(meta.get("machine") or "#"), fallback="x")
+    status = _safe_token(str(meta.get("status") or "#"), fallback="x")
+    campaign = _safe_token(str(meta.get("campaign") or "mc"), fallback="mc")
+    set_num = _safe_token(str(meta.get("set", "") or "").split("_")[1] if "_" in str(meta.get("set", "")) else str(meta.get("set", "")), fallback="00")
+    receiver = _safe_token(str(meta.get("receiver") or "x"), fallback="x")
+    application = _safe_token(str(meta.get("application") or "x"), fallback="x")
     return (
-        f"{meta['campaign']}-"
-        f"{meta['set'].split('_')[1]}-"
-        f"{meta['receiver']}-"
-        f"{meta['application']}-"
+        f"{campaign}-"
+        f"{set_num}-"
+        f"{receiver}-"
+        f"{application}-"
         f"{people_str}-"
         f"{activity}-"
+        f"{machine}-"
+        f"{status}-"
         f"{number}"
     ).lower()
 
@@ -129,7 +151,7 @@ def call_ollama(prompt: str, model: str = "qwen2.5", retries: int = 3) -> dict |
     Reintenta hasta `retries` veces si la respuesta no es JSON válido.
     """
     if ollama is None:
-        print("    [!] El paquete 'ollama' no está instalado en este entorno")
+        print("   El paquete 'ollama' no está instalado en este entorno")
         return None
 
     for attempt in range(1, retries + 1):
@@ -151,14 +173,74 @@ def call_ollama(prompt: str, model: str = "qwen2.5", retries: int = 3) -> dict |
             return json.loads(raw)
 
         except json.JSONDecodeError:
-            print(f"    [!] Intento {attempt}/{retries}: respuesta no es JSON válido, reintentando...")
+            print(f"    Intento {attempt}/{retries}: respuesta no es JSON válido, reintentando...")
             time.sleep(1)
         except Exception as e:
-            print(f"    [!] Error Ollama (intento {attempt}/{retries}): {e}")
+            print(f"    Error Ollama (intento {attempt}/{retries}): {e}")
             time.sleep(2)
 
-    print("    [✗] No se pudo obtener respuesta válida del LLM tras todos los intentos")
+    print("    No se pudo obtener respuesta válida del LLM tras todos los intentos")
     return None
+
+
+def _detect_band_token(text: str) -> str | None:
+    text = text.lower()
+    if "2.4ghz" in text or "2.4 ghz" in text:
+        return "2.4"
+    if "5ghz" in text or "5 ghz" in text:
+        return "5"
+    return None
+
+
+def _detect_bw_token(text: str) -> str | None:
+    text = text.lower()
+    if "20mhz" in text or "20 mhz" in text:
+        return "20"
+    if "80mhz" in text or "80 mhz" in text:
+        return "80"
+    return None
+
+
+def _validate_enrichment(meta: dict, enriched: dict) -> tuple[dict, list[str]]:
+    """
+    Validacion simple para evitar contradicciones.
+    Si hay conflicto, limpia descripciones y keywords.
+    """
+    warnings: list[str] = []
+    band_val = meta.get("Band")
+    bw_val = meta.get("BW") or meta.get("bandwidth")
+
+    text_fields = [
+        enriched.get("label_en", ""),
+        enriched.get("label_es", ""),
+        enriched.get("description_en", ""),
+        enriched.get("description_es", ""),
+        " ".join(enriched.get("keywords", []) or []),
+    ]
+    joined = " ".join(text_fields)
+
+    band_token = _detect_band_token(joined)
+    if band_token and band_val is not None:
+        band_str = str(float(band_val)).rstrip("0").rstrip(".")
+        if band_token != band_str:
+            warnings.append("band_mismatch")
+
+    bw_token = _detect_bw_token(joined)
+    if bw_token and bw_val is not None:
+        bw_str = str(float(bw_val)).rstrip("0").rstrip(".")
+        if bw_token != bw_str:
+            warnings.append("bandwidth_mismatch")
+
+    if warnings:
+        enriched = {
+            "label_en": enriched.get("label_en", ""),
+            "label_es": enriched.get("label_es", ""),
+            "description_en": "",
+            "description_es": "",
+            "keywords": [],
+        }
+
+    return enriched, warnings
 
 
 def enrich_graph(base_ttl: Path, meta: dict, model: str = "qwen2.5") -> Graph:
@@ -176,6 +258,10 @@ def enrich_graph(base_ttl: Path, meta: dict, model: str = "qwen2.5") -> Graph:
     # Llamar al LLM
     prompt   = build_prompt(meta)
     enriched = call_ollama(prompt, model=model)
+    if enriched:
+        enriched, warnings = _validate_enrichment(meta, enriched)
+        if warnings:
+            print(f"    [!] Enrichment ajustado por: {', '.join(warnings)}")
 
     if enriched:
         # Labels en inglés y español
@@ -220,6 +306,10 @@ def _bind_namespaces(g: Graph):
     g.bind("meas",    MEAS)
     g.bind("dataset", DATASET)
     g.bind("dbpedia", DBPEDIA)
+    g.bind("qudt",    QUDT)
+    g.bind("unit",    UNIT)
+    g.bind("time",    TIME)
+    g.bind("spdx",    SPDX)
     g.bind("rdfs",    RDFS)
     g.bind("owl",     OWL)
 

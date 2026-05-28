@@ -17,6 +17,8 @@ Ontologías utilizadas:
 """
 
 import json
+import re
+from urllib.parse import quote
 from pathlib import Path
 from rdflib import Graph, Namespace, URIRef, Literal, BNode
 from rdflib.namespace import RDF, XSD
@@ -35,6 +37,8 @@ WIFI = Namespace("https://ehu/wifi-csi/ontology#")
 MEAS = Namespace("https://ehu/wifi-csi/measurement/")
 CSI_BASE = Namespace("https://ehu/wifi-csi/")
 DATASET = Namespace("https://ehu/wifi-csi/dataset/")
+QUDT = Namespace("http://qudt.org/schema/qudt/")
+SPDX = Namespace("http://spdx.org/rdf/terms#")
 
 DATASET_ID = "EHUNAM-WiFi-CSI-FAIR-data"
 DATASET_URI = DATASET[DATASET_ID]
@@ -106,19 +110,33 @@ def build_measurement_id(meta: dict) -> str:
     """
     Construye un ID único y predecible para cada medición basado en
     los campos del nombre del archivo.
-    Formato: meas:{campaign}_{set}_{receiver}_{application}_{people}_{activity}_{number}
+    Formato: meas:{campaign}_{set}_{receiver}_{application}_{people}_{activity}_{machine}_{status}_{number}
     Ejemplo: mc1-06-rx3-pc-abcefgh-x-01
     """
-    people_str = "".join(meta.get("people") or [])
-    number     = meta.get("number") or "00"
-    activity   = meta.get("activity") or "X"
+    def _safe_token(value: str, fallback: str = "x") -> str:
+        token = (value or "").strip().lower()
+        token = re.sub(r"[^a-z0-9]+", "x", token)
+        token = token.strip("x")
+        return token or fallback
+
+    people_str = _safe_token("".join(meta.get("people") or []), fallback="x")
+    number     = _safe_token(str(meta.get("number") or "00"), fallback="00")
+    activity   = _safe_token(str(meta.get("activity") or "X"), fallback="x")
+    machine    = _safe_token(str(meta.get("machine") or "#"), fallback="x")
+    status     = _safe_token(str(meta.get("status") or "#"), fallback="x")
+    campaign   = _safe_token(str(meta.get("campaign") or "mc"), fallback="mc")
+    set_num    = _safe_token(str(meta.get("set", "") or "").split("_")[1] if "_" in str(meta.get("set", "")) else str(meta.get("set", "")), fallback="00")
+    receiver   = _safe_token(str(meta.get("receiver") or "x"), fallback="x")
+    application = _safe_token(str(meta.get("application") or "x"), fallback="x")
     return (
-        f"{meta['campaign']}-"
-        f"{meta['set'].split('_')[1]}-"   # solo la parte numérica del set
-        f"{meta['receiver']}-"
-        f"{meta['application']}-"
+        f"{campaign}-"
+        f"{set_num}-"   # solo la parte numérica del set
+        f"{receiver}-"
+        f"{application}-"
         f"{people_str}-"
         f"{activity}-"
+        f"{machine}-"
+        f"{status}-"
         f"{number}"
     ).lower()
 
@@ -285,7 +303,9 @@ def json_to_rdf(meta: dict, g: Graph = None) -> Graph:
     filename = meta.get("filename") or ""
     if filename:
         result_node = _node_uri(meas_uri, "result")
-        mat_url = CSI_BASE[filename]
+        # Encode unsafe URL chars like '#' in filenames
+        safe_filename = quote(filename, safe="-_.~")
+        mat_url = CSI_BASE[safe_filename]
         g.add((meas_uri, SOSA.hasResult, result_node))
         g.add((result_node, RDF.type, WIFI.CSIResult))
         g.add((result_node, DCAT.downloadURL, mat_url))
@@ -320,6 +340,8 @@ def _bind_namespaces(g: Graph):
     g.bind("spdx", SPDX)
     g.bind("wifi", WIFI)
     g.bind("meas", MEAS)
+    g.bind("qudt", QUDT)
+    g.bind("spdx", SPDX)
     g.bind("dataset", DATASET)
 
 
