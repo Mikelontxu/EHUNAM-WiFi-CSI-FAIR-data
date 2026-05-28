@@ -111,7 +111,7 @@ def build_measurement_id(meta: dict) -> str:
     Construye un ID único y predecible para cada medición basado en
     los campos del nombre del archivo.
     Formato: meas:{campaign}_{set}_{receiver}_{application}_{people}_{activity}_{machine}_{status}_{number}
-    Ejemplo: mc1-06-rx3-pc-abcefgh-x-01
+    Ejemplo: mc1-06-rx3-pc-abcefgh-x-x-x-01
     """
     def _safe_token(value: str, fallback: str = "x") -> str:
         token = (value or "").strip().lower()
