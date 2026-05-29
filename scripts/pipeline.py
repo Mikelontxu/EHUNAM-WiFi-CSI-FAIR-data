@@ -4,6 +4,7 @@ Orden:
 1. mat2json.py
 2. json2rdf.py
 3. enrichmentLLM.py
+4. validate_shacl.py
 
 El pipeline ejecuta cada script con el mismo intérprete de Python y
 se detiene si alguno falla.
@@ -37,6 +38,7 @@ def run_step(script_name: str, args: list[str] | None = None) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Pipeline completo de transformación y enriquecimiento")
     parser.add_argument("--skip-enrichment", action="store_true", help="No ejecutar el enriquecimiento con Ollama")
+    parser.add_argument("--skip-validation", action="store_true", help="No ejecutar la validacion SHACL")
     parser.add_argument("--model", default="qwen2.5", help="Modelo de Ollama para enrichmentLLM.py")
     args = parser.parse_args()
 
@@ -53,6 +55,9 @@ def main() -> None:
                 "--model", args.model,
             ],
         )
+
+    if not args.skip_enrichment and not args.skip_validation:
+        run_step("validate_shacl.py")
 
     print("\n Pipeline completado correctamente")
 

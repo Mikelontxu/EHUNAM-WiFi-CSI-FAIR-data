@@ -1,0 +1,1 @@
+This folder called fdp (FAIR Data Point), will be used to import the docker that contains the local build of FDP.
