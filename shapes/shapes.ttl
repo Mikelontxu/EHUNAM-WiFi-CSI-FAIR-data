@@ -1,0 +1,89 @@
+
+##########################################################################################################
+#  Pendiente revisar y usar esta comprobación de validación de SHACL de datos del trabajo en el pipeline
+#############################################################################################################
+##
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix wifi: <https://ehu/wifi-csi/ontology#> .
+
+# Dataset-level checks
+
+:DatasetShape a sh:NodeShape ;
+  sh:targetClass dcat:Dataset ;
+  sh:property [
+    sh:path dct:title ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path dct:description ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path dct:license ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path prov:wasDerivedFrom ;
+    sh:minCount 1 ;
+  ] ;
+  sh:property [
+    sh:path dct:source ;
+    sh:minCount 1 ;
+  ] .
+
+# Measurement checks
+
+:MeasurementShape a sh:NodeShape ;
+  sh:targetClass wifi:WifiMeasurement ;
+  sh:property [
+    sh:path dct:identifier ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [ sh:path wifi:campaign ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:set ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:receiver ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:application ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:activity ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:environment ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:frequencyBand ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:bandwidth ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:measurementDuration ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:measurementNumber ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:nPeople ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:nReceivers ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:wifiStandard ; sh:minCount 1 ] ;
+  sh:property [ sh:path sosa:resultTime ; sh:minCount 1 ] ;
+  sh:property [ sh:path sosa:hasResult ; sh:minCount 1 ] ;
+  sh:property [
+    sh:path dcat:keyword ;
+    sh:minCount 1 ;
+  ] .
+
+# Result checks
+
+:ResultShape a sh:NodeShape ;
+  sh:targetClass wifi:CSIResult ;
+  sh:property [
+    sh:path dcat:downloadURL ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path dct:format ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path dcat:downloadURL ;
+    sh:not [ sh:pattern ".*#.*" ] ;
+    sh:message "downloadURL must not contain '#'" ;
+  ] .
