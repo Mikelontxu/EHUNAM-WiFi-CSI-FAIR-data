@@ -1,31 +1,69 @@
+# compose.yml
+
 services:
-  fdp:
-    image: fairdata/fairdatapoint:1.16
-    restart: unless-stopped
-    depends_on:
-      - mongo
-    environment:
-      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/fdp
-    volumes:
-      - blazegraph-data:/tmp/blazegraph
 
+    fdp:
+        image: fairdata/fairdatapoint:1.16
+        volumes:
+            - ./application.yml:/fdp/application.yml:ro
+        depends_on:
+            graphdb:
+                condition: service_healthy
+        healthcheck:
+            test: wget -qO- http://localhost:80/actuator/health || exit 1
+            interval: 10s
+            timeout: 5s
+            retries: 10
+            start_period: 30s
 
-  fdp-client:
-    image: fairdata/fairdatapoint-client:1.16
-    restart: unless-stopped
-    ports:
-      - "80:80"
-    environment:
-      - FDP_HOST=fdp
-    depends_on:
-      - fdp
-  
-  mongo:
-    image: mongo:4.0.12
-    restart: unless-stopped
-    volumes:
-      - mongo-data:/data/db
+    fdp-client:
+        image: fairdata/fairdatapoint-client:1.16
+        ports:
+            - 80:80
+        environment:
+            - FDP_HOST=fdp
+        depends_on:
+            fdp:
+                condition: service_healthy   # ← espera a que fdp esté sano
 
-volumes:
-  blazegraph-data:
-  mongo-data:
+    mongo:
+        image: mongo:4.0.12
+        ports:
+            - 27017:27017
+        volumes:
+            - ./mongo/data:/data/db
+
+    graphdb:
+            image: ontotext/graphdb:10.7.6
+            ports:
+                - 7200:7200
+            environment:
+                - GDB_JAVA_OPTS=-Dgraphdb.home=/opt/graphdb/home
+            volumes:
+                - ./graphdb:/opt/graphdb/home
+                - ./repo.json:/tmp/repo.json:ro
+            entrypoint:
+                - bash
+                - -c
+                - |
+                  set -m
+                  /opt/graphdb/dist/bin/graphdb &
+                  
+                  until curl -sf http://localhost:7200/rest/repositories; do
+                    echo "Waiting for GraphDB..."
+                    sleep 3
+                  done
+                  
+                  if ! curl -sf http://localhost:7200/rest/repositories/fdp > /dev/null; then
+                    echo "Creating fdp repository..."
+                    curl -X POST http://localhost:7200/rest/repositories \
+                        -H "Content-Type: application/json" \
+                        -d "@/tmp/repo.json"
+                  else
+                    echo "Repository fdp already exists, skipping creation."
+                  fi
+                  
+                  fg
+            healthcheck:
+                test: curl --fail-with-body http://localhost:7200/repositories/fdp/health || exit 1
+                interval: 5s

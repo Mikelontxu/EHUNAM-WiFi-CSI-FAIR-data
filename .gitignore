@@ -2,3 +2,5 @@ venv/
 __pycache__/
 *.pyc
 output/
+fdp/mongo/
+fdp/graphdb/

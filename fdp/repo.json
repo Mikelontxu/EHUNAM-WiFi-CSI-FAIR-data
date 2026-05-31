@@ -1,0 +1,21 @@
+{
+    "id": "fdp",
+    "type": "graphdb",
+    "params": {
+        "title": {
+            "label": "Repository description",
+            "name": "",
+            "value": ""
+        },
+        "defaultNS": {
+            "label": "Default namespaces for imports(';' delimited)",
+            "name": "defaultNS",
+            "value": ""
+        },
+        "imports": {
+            "label": "Imported RDF files(';' delimited)",
+            "name": "imports",
+            "value": ""
+        }
+    }
+}
