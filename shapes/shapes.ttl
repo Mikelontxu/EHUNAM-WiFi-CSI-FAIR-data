@@ -1,8 +1,3 @@
-
-##########################################################################################################
-#  Pendiente revisar y usar esta comprobación de validación de SHACL de datos del trabajo en el pipeline
-#############################################################################################################
-##
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -12,6 +7,9 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix wifi: <https://ehu/wifi-csi/ontology#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix : <https://ehu/wifi-csi/shapes#> .
 
 # Dataset-level checks
 
@@ -20,23 +18,27 @@
   sh:property [
     sh:path dct:title ;
     sh:minCount 1 ;
-    sh:datatype xsd:string ;
+    sh:nodeKind sh:Literal ;
   ] ;
   sh:property [
     sh:path dct:description ;
     sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
   ] ;
   sh:property [
     sh:path dct:license ;
     sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
     sh:path prov:wasDerivedFrom ;
     sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
     sh:path dct:source ;
     sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
   ] .
 
 # Measurement checks
@@ -50,12 +52,25 @@
   ] ;
   sh:property [ sh:path wifi:campaign ; sh:minCount 1 ] ;
   sh:property [ sh:path wifi:set ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:receiver ; sh:minCount 1 ] ;
+  sh:property [
+    sh:path wifi:receiver ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string ;
+    sh:pattern "^[1-4]$" ;
+  ] ;
   sh:property [ sh:path wifi:application ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:activity ; sh:minCount 1 ] ;
+  sh:property [ sh:path wifi:activity ; sh:minCount 0 ] ;
   sh:property [ sh:path wifi:environment ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:frequencyBand ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:bandwidth ; sh:minCount 1 ] ;
+  sh:property [
+    sh:path wifi:frequencyBand ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path wifi:bandwidth ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
   sh:property [ sh:path wifi:measurementDuration ; sh:minCount 1 ] ;
   sh:property [ sh:path wifi:measurementNumber ; sh:minCount 1 ] ;
   sh:property [ sh:path wifi:nPeople ; sh:minCount 1 ] ;
@@ -64,8 +79,23 @@
   sh:property [ sh:path sosa:resultTime ; sh:minCount 1 ] ;
   sh:property [ sh:path sosa:hasResult ; sh:minCount 1 ] ;
   sh:property [
+    sh:path wifi:channel ;
+    sh:minCount 1 ;
+    sh:datatype xsd:integer ;
+    sh:in (11 13 40) ;
+    sh:message "channel must be 11, 13, or 40" ;
+  ] ;
+  sh:property [
+    sh:path (wifi:bandwidth qudt:numericValue) ;
+    sh:minCount 1 ;
+    sh:datatype xsd:double ;
+    sh:in ("20.0"^^xsd:double "80.0"^^xsd:double) ;
+    sh:message "bandwidth must be 20 or 80 MHz" ;
+  ] ;
+  sh:property [
     sh:path dcat:keyword ;
     sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
   ] .
 
 # Result checks
@@ -86,4 +116,18 @@
     sh:path dcat:downloadURL ;
     sh:not [ sh:pattern ".*#.*" ] ;
     sh:message "downloadURL must not contain '#'" ;
+  ] .
+
+:ChecksumShape a sh:NodeShape ;
+  sh:targetClass spdx:Checksum ;
+  sh:property [
+    sh:path spdx:algorithm ;
+    sh:minCount 1 ;
+    sh:hasValue spdx:checksumAlgorithm_sha256 ;
+  ] ;
+  sh:property [
+    sh:path spdx:checksumValue ;
+    sh:minCount 1 ;
+    sh:pattern "^[0-9a-f]{64}$" ;
+    sh:message "checksumValue must be a 64-character lowercase hexadecimal string" ;
   ] .

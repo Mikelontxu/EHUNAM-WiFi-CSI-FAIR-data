@@ -1,13 +1,31 @@
 services:
   fdp:
     image: fairdata/fairdatapoint:1.16
+    restart: unless-stopped
+    depends_on:
+      - mongo
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/fdp
+    volumes:
+      - blazegraph-data:/tmp/blazegraph
+
 
   fdp-client:
     image: fairdata/fairdatapoint-client:1.16
+    restart: unless-stopped
     ports:
       - "80:80"
     environment:
       - FDP_HOST=fdp
-
+    depends_on:
+      - fdp
+  
   mongo:
     image: mongo:4.0.12
+    restart: unless-stopped
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  blazegraph-data:
+  mongo-data:

@@ -45,14 +45,14 @@ def load_summary(summary_path: str = "data/Summary.xlsx") -> dict:
  
 def build_datetime(date_str: str, time_str: str) -> str | None:
     """
-    Combina date_str ('2024-10-21') y time_str ('14:48:49')
-    en un ISO 8601 datetime string: '2024-10-21T14:48:49'
+    Combina date_str ('2024-10-21') y time_str ('14:48:49') y zona horaria UTC
+    en un ISO 8601 datetime string: '2024-10-21T14:48:49Z'
     """
     if not date_str:
         return None
     if time_str:
-        return f"{date_str}T{time_str}"
-    return f"{date_str}T00:00:00"
+        return f"{date_str}T{time_str}Z"
+    return f"{date_str}T00:00:00Z"
 
 # ── Parser del nombre del archivo ─────────────────────────────────────────────
 
