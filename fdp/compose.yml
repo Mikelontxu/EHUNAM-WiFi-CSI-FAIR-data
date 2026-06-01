@@ -67,3 +67,9 @@ services:
             healthcheck:
                 test: curl --fail-with-body http://localhost:7200/repositories/fdp/health || exit 1
                 interval: 5s
+    ontology:
+            image: nginx:alpine
+            ports:
+                - 8090:80
+            volumes:
+                - ../ontology:/usr/share/nginx/html:ro
