@@ -1,0 +1,6 @@
+{
+  "object_identifier": "http://fdp/dataset/NAMEOFTHEDATASET",
+  "test_debug": true,
+  "metadata_service_type": "fdp",
+  "use_datacite": false
+}

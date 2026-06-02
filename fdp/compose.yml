@@ -73,3 +73,8 @@ services:
                 - 8090:80
             volumes:
                 - ../ontology:/usr/share/nginx/html:ro
+    fuji:
+        image: ghcr.io/pangaea-data-publisher/fuji:latest
+        container_name: fuji
+        ports:
+            - 1071:1071
