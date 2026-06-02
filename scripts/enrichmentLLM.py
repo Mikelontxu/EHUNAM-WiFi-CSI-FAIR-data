@@ -8,7 +8,7 @@ try:
 except ImportError:  # depende del entorno local
     ollama = None
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, RDFS, XSD, OWL
+from rdflib.namespace import RDFS, OWL
 
 # ── Namespaces (mismos que json2rdf_base) ────────────────────────────────────
 
@@ -329,9 +329,9 @@ def process_folder(
       3. Guarda el .ttl enriquecido en output_dir
     Al final genera un dataset_enriched.ttl unificado.
     """
-    json_path    = Path(json_dir)
+    json_path     = Path(json_dir)
     base_rdf_path = Path(base_rdf_dir)
-    output_path  = Path(output_dir)
+    output_path   = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
     json_files = sorted(json_path.glob("*.json"))
@@ -343,6 +343,14 @@ def process_folder(
 
     global_graph = Graph()
     _bind_namespaces(global_graph)
+
+    # secured that dcat:Dataset is always present in the global graph
+    dataset_base = Path("output/dataset.ttl")
+    if dataset_base.exists():
+        global_graph.parse(str(dataset_base), format="turtle")
+        print(f"Metadatos del Dataset cargados desde {dataset_base}\n")
+    else:
+        print(f"No se encontró {dataset_base} — el nodo dcat:Dataset no estará en el output\n")
 
     for jf in json_files:
         base_ttl = base_rdf_path / jf.with_suffix(".ttl").name
@@ -368,8 +376,6 @@ def process_folder(
     _bind_namespaces(global_graph)
     global_graph.serialize(destination=str(enriched_dataset), format="turtle")
     print(f"\n[✓] Grafo enriquecido completo → {enriched_dataset}  ({len(global_graph)} triples totales)")
-
-
 # ── Test con un único archivo ─────────────────────────────────────────────────
 
 def test_single(json_path: str, base_rdf_dir: str = "output/rdf", model: str = "qwen2.5"):

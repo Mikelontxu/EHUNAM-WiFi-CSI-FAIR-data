@@ -20,7 +20,7 @@ import json
 import re
 from urllib.parse import quote
 from pathlib import Path
-from rdflib import Graph, Namespace, URIRef, Literal, BNode
+from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, XSD
 
 # ── Namespaces ────────────────────────────────────────────────────────────────
@@ -37,8 +37,6 @@ WIFI = Namespace("https://ehu/wifi-csi/ontology#")
 MEAS = Namespace("https://ehu/wifi-csi/measurement/")
 CSI_BASE = Namespace("https://ehu/wifi-csi/")
 DATASET = Namespace("https://ehu/wifi-csi/dataset/")
-QUDT = Namespace("http://qudt.org/schema/qudt/")
-SPDX = Namespace("http://spdx.org/rdf/terms#")
 
 DATASET_ID = "EHUNAM-WiFi-CSI-FAIR-data"
 DATASET_URI = DATASET[DATASET_ID]
@@ -340,8 +338,6 @@ def _bind_namespaces(g: Graph):
     g.bind("spdx", SPDX)
     g.bind("wifi", WIFI)
     g.bind("meas", MEAS)
-    g.bind("qudt", QUDT)
-    g.bind("spdx", SPDX)
     g.bind("dataset", DATASET)
 
 
