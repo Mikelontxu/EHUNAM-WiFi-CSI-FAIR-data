@@ -21,7 +21,7 @@ import re
 from urllib.parse import quote
 from pathlib import Path
 from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, XSD
+from rdflib.namespace import RDF, XSD, FOAF
 
 # ── Namespaces ────────────────────────────────────────────────────────────────
 
@@ -83,7 +83,7 @@ ENVIRONMENT_MAP = {
 
 CSI_EXTRACTOR_MAP = {
     "NCE": WIFI.NexmonCSIExtractor,
-    "ACT": WIFI.AtherosCsiTools,
+    "ACT": WIFI.AtherosCSITools,
 }
 
 STANDARD_MAP = {
@@ -353,17 +353,42 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, DCAT.keyword, Literal("WiFi CSI")))
     g.add((DATASET_URI, DCT.license, LICENSE_URI))
     g.add((DATASET_URI, PROV.wasDerivedFrom, ORIGINAL_DATASET_URI))
-    g.add((DATASET_URI, DCT.source, ORIGINAL_DATASET_URI))
-    g.add((DATASET_URI, DCT.publisher, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
-    g.add((DATASET_URI, DCT.creator, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
+    # needs to be a dct:Dataset
+    g.add((ORIGINAL_DATASET_URI, RDF.type,              DCAT.Dataset))
+    g.add((ORIGINAL_DATASET_URI, DCT.title,             Literal("EHUNAM WiFi CSI Dataset (Figshare)", lang="en")))
+    g.add((ORIGINAL_DATASET_URI, DCT.description,       Literal("Original EHUNAM WiFi CSI dataset published on Figshare, containing raw .mat files.", lang="en")))
+    g.add((ORIGINAL_DATASET_URI, DCT.license,           LICENSE_URI))
+    g.add((ORIGINAL_DATASET_URI, DCT.source,            ORIGINAL_DATASET_URI))
+    g.add((ORIGINAL_DATASET_URI, PROV.wasDerivedFrom,   ORIGINAL_DATASET_URI))
+    g.add((DATASET_URI,          DCT.source,            ORIGINAL_DATASET_URI))  
+    #needs to be a foaf:Agent
+    PUBLISHER_URI = URIRef("https://research.science.eus/documentos/695028cd9244cb45822e855e?lang=gl")
+    g.add((PUBLISHER_URI, RDF.type,   FOAF.Agent))
+    g.add((PUBLISHER_URI, FOAF.name,  Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
+    g.add((DATASET_URI,  DCT.publisher, PUBLISHER_URI))
+    g.add((DATASET_URI,  DCT.creator,   PUBLISHER_URI))
 
     g.add((DATASET_DIST_URI, RDF.type, DCAT.Distribution))
     g.add((DATASET_URI, DCAT.distribution, DATASET_DIST_URI))
-    g.add((DATASET_DIST_URI, DCT["format"], Literal("text/turtle")))
-    # PROVISIONAL: enlace directo a la descarga no transformada, hasta que se suba el dataset a un repositorio/servidor con DOI y enlace de descarga estable
+
+    TURTLE_MEDIATYPE_URI = URIRef("https://www.iana.org/assignments/media-types/text/turtle")
+    g.add((TURTLE_MEDIATYPE_URI, RDF.type, DCT.MediaTypeOrExtent))
+    g.add((DATASET_DIST_URI, DCT["format"], TURTLE_MEDIATYPE_URI))    
     g.add((DATASET_DIST_URI, DCAT.downloadURL, URIRef("https://springernature.figshare.com/ndownloader/articles/28541225/versions/1"))) 
     g.add((DATASET_DIST_URI, DCAT.accessURL, URIRef("https://doi.org/10.6084/m9.figshare.28541225")))
-
+    # SPARQL endpoint to follow FAIR best practices for accessibility
+    SPARQL_ENDPOINT = URIRef("http://localhost:7200/repositories/fdp")
+    g.add((SPARQL_ENDPOINT, RDF.type, DCAT.DataService))
+    g.add((SPARQL_ENDPOINT, DCT.title, Literal("SPARQL endpoint – EHUNAM WiFi CSI", lang="en")))
+    g.add((SPARQL_ENDPOINT, DCAT.endpointURL, SPARQL_ENDPOINT))
+    g.add((SPARQL_ENDPOINT, DCAT.servesDataset, DATASET_URI))
+    
+    # In DCAT-AP, a DataService isn't directly a Distribution. We wrap it in a proper Distribution:
+    SPARQL_DIST_URI = DATASET[f"{DATASET_ID}-sparql-distribution"]
+    g.add((SPARQL_DIST_URI, RDF.type, DCAT.Distribution))
+    g.add((DATASET_URI, DCAT.distribution, SPARQL_DIST_URI))
+    g.add((SPARQL_DIST_URI, DCAT.accessService, SPARQL_ENDPOINT))
+    g.add((SPARQL_DIST_URI, DCAT.accessURL, SPARQL_ENDPOINT))
 
 def process_folder(json_dir: str, output_dir: str):
     """
