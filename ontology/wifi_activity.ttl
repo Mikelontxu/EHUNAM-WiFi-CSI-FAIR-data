@@ -436,7 +436,7 @@
 
 :receiver a owl:DatatypeProperty ;
     rdfs:domain :WifiMeasurement ;
-    rdfs:range  xsd:string ;
+    rdfs:range  xsd:integer ;
     rdfs:label  "receiver"@en ;
     rdfs:label  "receptor"@es ;
     rdfs:comment "Identifier of the receiver device that captured the measurement (1–4)."@en ;
@@ -463,8 +463,8 @@
     rdfs:range  xsd:integer ;
     rdfs:label  "channel"@en ;
     rdfs:label  "canal"@es ;
-    rdfs:comment "WiFi channel used during the measurement (e.g. 11, 13, 40)."@en ;
-    rdfs:comment "Canal WiFi utilizado durante la medición (e.g. 11, 13, 40)."@es .
+    rdfs:comment "WiFi channel used during the measurement (11, 13 or 40)."@en ;
+    rdfs:comment "Canal WiFi utilizado durante la medición (11, 13 or 40)."@es .
 
 :subcarriers a owl:DatatypeProperty ;
     rdfs:domain :WifiMeasurement ;
