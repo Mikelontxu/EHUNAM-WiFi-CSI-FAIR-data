@@ -46,7 +46,7 @@ def main() -> None:
         run_step(
             "enrichmentLLM.py",
             [
-                "--rdf-dir",    "output/rdf",
+                "--base-rdf-dir",    "output/rdf",
                 "--output-dir", "output/rdf_enriched",
                 "--model",      args.model,
             ],

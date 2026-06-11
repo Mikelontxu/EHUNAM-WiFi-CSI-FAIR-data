@@ -9,12 +9,15 @@
 @prefix wifi: <https://ehu/wifi-csi/ontology#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix : <https://ehu/wifi-csi/shapes#> .
+@prefix dataset: <https://ehu/wifi-csi/dataset/> .
+
 
 # Dataset-level checks
 
 :DatasetShape a sh:NodeShape ;
-  sh:targetClass dcat:Dataset ;
+  sh:targetNode dataset:EHUNAM-WiFi-CSI-FAIR-data ;
   sh:property [
     sh:path dct:title ;
     sh:minCount 1 ;
@@ -39,8 +42,12 @@
     sh:path dct:source ;
     sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path dcat:keyword ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
   ] .
-
 # Measurement checks
 
 :MeasurementShape a sh:NodeShape ;
@@ -50,17 +57,47 @@
     sh:minCount 1 ;
     sh:datatype xsd:string ;
   ] ;
-  sh:property [ sh:path wifi:campaign ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:set ; sh:minCount 1 ] ;
+  sh:property [ 
+    sh:path wifi:campaign ; 
+    sh:minCount 1 ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:set ; 
+    sh:minCount 1 ;
+  ] ;
   sh:property [
     sh:path wifi:receiver ;
     sh:minCount 1 ;
-    sh:datatype xsd:string ;
-    sh:pattern "^[1-4]$" ;
+    sh:datatype xsd:integer ;
+    sh:minInclusive 1 ;
+    sh:maxInclusive 4 ;
+    sh:message "receiver must be an integer between 1 and 4" ;
   ] ;
-  sh:property [ sh:path wifi:application ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:activity ; sh:minCount 0 ] ;
-  sh:property [ sh:path wifi:environment ; sh:minCount 1 ] ;
+  sh:property [ 
+    sh:path wifi:application ; 
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:activity ; 
+    sh:minCount 0 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:environment ; 
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:wifiStandard ; 
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:csiExtractor ; 
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
   sh:property [
     sh:path wifi:frequencyBand ;
     sh:minCount 1 ;
@@ -71,13 +108,71 @@
     sh:minCount 1 ;
     sh:nodeKind sh:IRI ;
   ] ;
-  sh:property [ sh:path wifi:measurementDuration ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:measurementNumber ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:nPeople ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:nReceivers ; sh:minCount 1 ] ;
-  sh:property [ sh:path wifi:wifiStandard ; sh:minCount 1 ] ;
-  sh:property [ sh:path sosa:resultTime ; sh:minCount 1 ] ;
-  sh:property [ sh:path sosa:hasResult ; sh:minCount 1 ] ;
+  sh:property [ 
+    sh:path wifi:measurementDuration ; 
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:measurementNumber ; 
+    sh:minCount 1 ;
+    sh:datatype xsd:integer ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:nPeople ; 
+    sh:minCount 1 ;
+    sh:datatype xsd:integer ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:nReceivers ; 
+    sh:minCount 1 ; 
+    sh:datatype xsd:integer ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:nFiles ; 
+    sh:minCount 1 ; 
+    sh:datatype xsd:integer ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:subcarriers ; 
+    sh:minCount 1 ; 
+    sh:datatype xsd:integer ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:occupiedSubcarriers ; 
+    sh:minCount 1 ; 
+    sh:datatype xsd:integer ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:involvesPerson ; 
+    sh:minCount 0 ; 
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:nic ; 
+    sh:minCount 1 ; 
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [ 
+    sh:path wifi:traffic ; 
+    sh:minCount 1 ; 
+    sh:datatype xsd:string ;
+  ] ;
+  sh:property [ 
+    sh:path sosa:resultTime ; 
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI;
+  ] ;
+  sh:property [ 
+    sh:path sosa:hasResult ; 
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [ 
+    sh:path prov:wasGeneratedBy ; 
+    sh:minCount 1 ; 
+    sh:nodeKind sh:IRI ;
+  ] ;
   sh:property [
     sh:path wifi:channel ;
     sh:minCount 1 ;
@@ -91,11 +186,42 @@
     sh:datatype xsd:double ;
     sh:in ("20.0"^^xsd:double "80.0"^^xsd:double) ;
     sh:message "bandwidth must be 20 or 80 MHz" ;
+  ] .
+
+# Person checks
+
+:InvolvedPersonShape a sh:NodeShape ;
+  sh:targetObjectsOf wifi:involvesPerson ;
+  sh:property [
+    sh:path rdf:type ;
+    sh:hasValue wifi:Person ;
+    sh:message "every wifi:involvesPerson target must have rdf:type wifi:Person" ;
+  ] .
+
+# QUDT cchecks (Bandwidth, FrequencyBand, Duration)
+
+:QuantityValueShape a sh:NodeShape ;
+  sh:targetClass wifi:Bandwidth, wifi:FrequencyBand, wifi:Duration ;
+  sh:property [
+    sh:path qudt:numericValue ;
+    sh:minCount 1 ;
+    sh:datatype xsd:double ;
   ] ;
   sh:property [
-    sh:path dcat:keyword ;
+    sh:path qudt:unit ;
     sh:minCount 1 ;
-    sh:nodeKind sh:Literal ;
+    sh:nodeKind sh:IRI ;
+  ] .
+
+
+# Time checks
+
+:TimeInstantShape a sh:NodeShape ;
+  sh:targetClass time:Instant ;
+  sh:property [
+    sh:path time:inXSDDateTimeStamp ;
+    sh:minCount 1 ;
+    sh:datatype xsd:dateTimeStamp ;
   ] .
 
 # Result checks
@@ -111,6 +237,11 @@
     sh:path dct:format ;
     sh:minCount 1 ;
     sh:datatype xsd:string ;
+  ] ;
+  sh:property [
+    sh:path spdx:checksum ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
   ] ;
   sh:property [
     sh:path dcat:downloadURL ;
