@@ -43,6 +43,8 @@ PROJECT_REPO         = URIRef("https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAI
 ORIGINAL_DATASET_URI = URIRef("https://doi.org/10.6084/m9.figshare.28541225")
 LICENSE_URI          = URIRef("https://creativecommons.org/licenses/by/4.0/")
 ONTOLOGY_FILE        = Path("ontology/wifi_activity.ttl")   # ontologia del github local
+GRAPHDB_REPO         = "http://localhost:7200/repositories/fdp"  # temporal, base del repo en GraphDB
+TURTLE_MEDIATYPE_URI = URIRef("https://www.iana.org/assignments/media-types/text/turtle")
 
 # Campos que no se trasladan a RDF: matrices de datos grandes (y relacionados), artefactos internos
 SKIP_FIELDS = {
@@ -309,7 +311,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
         g.add((t_node, QUDT.unit, UNIT.Second))
 
     # N_Files, N_Rx, N_Machine
-    for field, predicate in [("N_Files",   WIFI.nFiles), ("N_Rx",      WIFI.nReceivers), ("N_Machine", WIFI.nMachines)]:
+    for field, predicate in [("N_Files",   WIFI.nFiles), ("N_Rx",      WIFI.nReceivers), ("N_Machine", WIFI.nMachine)]:
         val = meta.get(field)
         if isinstance(val, list):
             val = val[0] if val else None
@@ -377,6 +379,22 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
 
 # ── Metadatos del dataset DCAT ────────────────────────────────────────────────
 
+def add_measurement_distributions(g: Graph, measurement_ids: list[str]):
+    #Por cada medición se crea su dcat:Distribution apuntando a cada named graph en GraphDB
+    
+    for meas_id in measurement_ids:
+        meas_uri  = MEAS[meas_id]
+        dist_uri  = MEAS[f"{meas_id}-distribution"]
+        graph_url = URIRef(f"{GRAPHDB_REPO}/rdf-graphs/service?graph={CSI_BASE}{meas_id}")
+
+        g.add((dist_uri, RDF.type, DCAT.Distribution))
+        g.add((dist_uri, DCT["format"], TURTLE_MEDIATYPE_URI))
+        g.add((dist_uri, DCAT.downloadURL, graph_url))
+        g.add((dist_uri, DCAT.accessURL, graph_url))
+
+        g.add((DATASET_URI, DCAT.distribution, dist_uri))
+        g.add((DATASET_URI, DCT.hasPart, meas_uri))
+
 def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, RDF.type,        DCAT.Dataset))
     g.add((DATASET_URI, DCT.identifier,  Literal(DATASET_ID)))
@@ -406,7 +424,6 @@ def add_dataset_metadata(g: Graph):
 
     g.add((DATASET_DIST_URI, RDF.type, DCAT.Distribution))
     g.add((DATASET_URI, DCAT.distribution, DATASET_DIST_URI))
-    TURTLE_MEDIATYPE_URI = URIRef("https://www.iana.org/assignments/media-types/text/turtle")
     g.add((TURTLE_MEDIATYPE_URI, RDF.type, DCT.MediaTypeOrExtent))
     g.add((DATASET_DIST_URI, DCT["format"],    TURTLE_MEDIATYPE_URI))
     g.add((DATASET_DIST_URI, DCAT.downloadURL, URIRef("https://springernature.figshare.com/ndownloader/articles/28541225/versions/1")))
@@ -471,6 +488,8 @@ def process_folder(mat_dir: str = "data/samples", output_dir: str = "output"):
 
     print(f"Procesando {len(mat_files)} archivos .mat\n")
 
+    measurement_id = []
+
     for mat_file in mat_files:
         print(f"{'='*60}\nProcesando: {mat_file.name}")
         try:
@@ -486,6 +505,7 @@ def process_folder(mat_dir: str = "data/samples", output_dir: str = "output"):
             ttl_file = rdf_path / f"{mat_file.stem}.ttl"
             g.serialize(destination=str(ttl_file), format="turtle")
             print(f"{ttl_file.name}  ({len(g)} triples)")
+            measurement_id.append(build_measurement_id(meta))
         except Exception as e:
             print(f"  [ERROR] {e}")
         print()
@@ -494,6 +514,7 @@ def process_folder(mat_dir: str = "data/samples", output_dir: str = "output"):
     meta_graph = Graph()
     _bind_namespaces(meta_graph)
     add_dataset_metadata(meta_graph)
+    add_measurement_distributions(meta_graph, measurement_id)
     meta_ttl = output_path / "dataset_metadata.ttl"
     meta_graph.serialize(destination=str(meta_ttl), format="turtle")
     print(f"dataset_metadata.ttl → {meta_ttl}  ({len(meta_graph)} triples)")

@@ -42,7 +42,7 @@
     # Repositorio del poryecto de Github
     rdfs:seeAlso <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
     vann:preferredNamespaceUri "https://ehu/wifi-csi/ontology#" ;
-    vann:preferredNamespacePrefix "wifi-csi" ;
+    vann:preferredNamespacePrefix "wifi" ;
     dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology"@en ;
     dct:bibliographicCitation "Ontología de actividad WiFi CSI de EHUNAM, versión 1.0.0, disponible en https://ehu/wifi-csi/ontology"@es .
     #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # Todavia no hay ninguna version previa
@@ -426,11 +426,11 @@
     rdfs:comment "Set identifier within the campaign (e.g. MC1_01A). Each set corresponds to a specific location."@en ;
     rdfs:comment "Identificador del conjunto dentro de la campaña (e.g. MC1_01A). Cada conjunto corresponde a una ubicación específica."@es .
 
-:measurementNumber a owl:DatatypeProperty ;
+:sequentialNumber a owl:DatatypeProperty ;
     rdfs:domain :WifiMeasurement ;
-    rdfs:range  xsd:string ;
-    rdfs:label  "measurement number"@en ;
-    rdfs:label  "número de medición"@es ;
+    rdfs:range  xsd:integer ;
+    rdfs:label  "sequential number"@en ;
+    rdfs:label  "número secuencial"@es ;
     rdfs:comment "Sequential number to distinguish measurements with otherwise identical metadata."@en ;
     rdfs:comment "Número secuencial para distinguir mediciones con metadatos idénticos."@es .
 
@@ -452,7 +452,7 @@
 
 :machine a owl:DatatypeProperty ;
     rdfs:domain :WifiMeasurement ;
-    rdfs:range  xsd:string ;
+    rdfs:range  xsd:integer ;
     rdfs:label  "machine"@en ;
     rdfs:label  "máquina"@es ;
     rdfs:comment "Identifier of the machine present during the measurement (1–9)."@en ;
@@ -498,7 +498,7 @@
     rdfs:comment "Number of receiver devices used in the measurement (1–4)."@en ;
     rdfs:comment "Número de dispositivos receptores utilizados en la medición (1–4)."@es .
 
-:nMachines a owl:DatatypeProperty ;
+:nMachine a owl:DatatypeProperty ;
     rdfs:domain :WifiMeasurement ;
     rdfs:range  xsd:integer ;
     rdfs:label  "number of machines"@en ;

@@ -4,7 +4,7 @@ Orden:
 1. mat2rdf.py
 2. enrichmentLLM.py
 3. validate_shacl.py
-4. upload_to_graphdb.py
+4. rdf2graphdb.py
 """
 
 from __future__ import annotations
@@ -56,7 +56,7 @@ def main() -> None:
         run_step("validate_shacl.py")
 
     if not args.skip_upload:
-        run_step("upload_to_graphdb.py")
+        run_step("rdf2graphdb.py")
 
     print("\n Pipeline completado correctamente")
 
