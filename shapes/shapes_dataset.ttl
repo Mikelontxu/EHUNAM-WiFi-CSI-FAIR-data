@@ -1,0 +1,41 @@
+@prefix : <https://ehu/wifi-csi/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dataset: <https://ehu/wifi-csi/dataset/> .
+
+# Dataset-level checks
+
+:DatasetShape a sh:NodeShape ;
+  sh:targetNode dataset:EHUNAM-WiFi-CSI-FAIR-data ;
+  sh:property [
+    sh:path dct:title ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+  ] ;
+  sh:property [
+    sh:path dct:description ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+  ] ;
+  sh:property [
+    sh:path dct:license ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path prov:wasDerivedFrom ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path dct:source ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:IRI ;
+  ] ;
+  sh:property [
+    sh:path dcat:keyword ;
+    sh:minCount 1 ;
+    sh:nodeKind sh:Literal ;
+  ] .

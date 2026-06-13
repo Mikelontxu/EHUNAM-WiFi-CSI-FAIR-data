@@ -42,15 +42,15 @@ def main() -> None:
 
     run_step("mat2rdf.py")
 
-    if not args.skip_enrichment:
-        run_step(
-            "enrichmentLLM.py",
-            [
-                "--base-rdf-dir",    "output/rdf",
-                "--output-dir", "output/rdf_enriched",
-                "--model",      args.model,
-            ],
-        )
+    #if not args.skip_enrichment:
+    #    run_step(
+    #        "enrichmentLLM.py",
+    #        [
+    #            "--base-rdf-dir",    "output/rdf",
+    #            "--output-dir", "output/rdf_enriched",
+    #            "--model",      args.model,
+    #        ],
+    #    )
 
     if not args.skip_enrichment and not args.skip_validation:
         run_step("validate_shacl.py")

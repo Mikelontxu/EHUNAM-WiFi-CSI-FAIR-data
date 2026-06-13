@@ -2,33 +2,58 @@ from pyshacl import validate
 from pathlib import Path
 
 
-def validate_dataset(data_path: str, shapes_path: str) -> bool:
+def validate_dataset(data_path: str, shapes_path: str, label: str = "") -> bool:
     conforms, report_graph, report_text = validate(
         data_graph=data_path,
         shacl_graph=shapes_path,
         inference="rdfs",
         report_all=True,
     )
-    print(f"Conforms: {conforms} ({shapes_path})")
+    tag = f"[{label}] " if label else ""
+    print(f"{tag}Conforms: {conforms} ({shapes_path})")
     print(report_text)
     return conforms
 
 
 def main() -> int:
-    data_path = "output/dataset_enriched.ttl"
-    shapes_files = [
+    rdf_dir = Path("output/rdf")
+    metadata_path = Path("output/dataset_metadata.ttl")
+
+    shapes_metadata = [
         "shapes/dcat-ap.shacl.ttl",
+        "shapes/shapes_dataset.ttl",
+    ]
+    shapes_rdf = [
         "shapes/shapes.ttl",
     ]
 
     all_ok = True
-    for shapes_path in shapes_files:
+
+    # dcat-ap.shacl.ttl + shapes_dataset.ttl contra la metadataa comun
+    print("\n=== DCAT-AP validation (dataset_metadata.ttl) ===")
+    for shapes_path in shapes_metadata:
         if not Path(shapes_path).exists():
-            print(f"[!] SHACL file not found: {shapes_path}")
+            print(f"Not found: {shapes_path}")
             all_ok = False
             continue
-        if not validate_dataset(data_path, shapes_path):
+        if not validate_dataset(str(metadata_path), shapes_path):
             all_ok = False
+
+    # shapes.ttl → contra cada RDF individual
+    print("\n=== Domain validation (output/rdf/*.ttl) ===")
+    rdf_files = sorted(rdf_dir.glob("*.ttl"))
+    if not rdf_files:
+        print(f"Not found: {rdf_dir}")
+        all_ok = False
+    for shapes_path in shapes_rdf:
+        if not Path(shapes_path).exists():
+            print(f"Not found: {shapes_path}")
+            all_ok = False
+            continue
+        for rdf_file in rdf_files:
+            print(f"\n{rdf_file.name}")
+            if not validate_dataset(str(rdf_file), shapes_path):
+                all_ok = False
 
     return 0 if all_ok else 1
 
