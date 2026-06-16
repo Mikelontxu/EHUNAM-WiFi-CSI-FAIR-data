@@ -2,7 +2,7 @@
 
 services:
 
-    fdp:
+    fdp:            # imagen de FAIR Data Point para servir los datos y metadatos FAIR
         image: fairdata/fairdatapoint:1.16
         volumes:
             - ./application.yml:/fdp/application.yml:ro
@@ -16,7 +16,7 @@ services:
             retries: 10
             start_period: 30s
 
-    fdp-client:
+    fdp-client:     # imagen de FAIR Data Point Client para interactuar con el FAIR Data Point
         image: fairdata/fairdatapoint-client:1.16
         ports:
             - 80:80
@@ -24,16 +24,16 @@ services:
             - FDP_HOST=fdp
         depends_on:
             fdp:
-                condition: service_healthy   # ← espera a que fdp esté sano
+                condition: service_healthy
 
-    mongo:
+    mongo:          # imagen de MongoDB para almacenar los datos de FAIR Data Point (entre ellos los usuarios)
         image: mongo:4.0.12
         ports:
             - 27017:27017
         volumes:
             - ./mongo/data:/data/db
 
-    graphdb:
+    graphdb:        # imagen de GraphDB para almacenar los metadatos de FAIR Data Point y los datos RDF generados a partir de los archivos .mat
             image: ontotext/graphdb:10.7.6
             ports:
                 - 7200:7200
@@ -67,14 +67,32 @@ services:
             healthcheck:
                 test: curl --fail-with-body http://localhost:7200/repositories/fdp/health || exit 1
                 interval: 5s
-    ontology:
+
+    ontology:       # imagen de NGINX para servir la ontología y la documentación generada por widoco
             image: nginx:alpine
             ports:
                 - 8090:80
             volumes:
                 - ../ontology:/usr/share/nginx/html:ro
-    fuji:
+
+    fuji:          # imagen de FUJI para validación de FAIRness
         image: ghcr.io/pangaea-data-publisher/fuji:latest
         container_name: fuji
         ports:
             - 1071:1071
+
+    widoco:         # imagen de Widoco para generar documentación de la ontología
+        image: ghcr.io/dgarijo/widoco:latest
+        profiles:
+            - widoco
+        volumes:
+            - ../ontology:/ontology
+        command: >
+            -ontFile /ontology/wifi_activity.ttl
+            -outFolder /ontology/docs
+            -lang en-es
+            -getOntologyMetadata
+            -includeAnnotationProperties
+            -webVowl
+            -rewriteAll
+            -uniteSections

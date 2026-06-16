@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="resources/primer.css" media="screen"/>
+<link rel="stylesheet" href="resources/rec.css" media="screen"/>
+<link rel="stylesheet" href="resources/extra.css" media="screen"/>
+<link rel="stylesheet" href="resources/owl.css" media="screen"/>
+<link rel="stylesheet" href="resources/dark.css" media="(prefers-color-scheme: dark)"/>
+<link rel="stylesheet" href="resources/light.css" media="(prefers-color-scheme: light)"/>
+<link rel="stylesheet" href="resources/slider.css" media="screen"/>
+<meta name="color-scheme" content="dark light">
+<script type="module" src="resources/dark-mode-toggle.mjs"></script><div class="darkmode">
+	<dark-mode-toggle class="slider"></dark-mode-toggle>
+</div>
+ <title>Ontología de actividad WiFi CSI de EHUNAM</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://ehu/wifi-csi/ontology#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://ehu/wifi-csi/ontology#","name":"Ontología de actividad WiFi CSI de EHUNAM", "headline":"This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters.", "dateReleased":"2026-06-01", "dateModified":"2026-06-01", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"https://github.com/Mikelontxu","url":"https://github.com/Mikelontxu"}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked.parse(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Tabla de contenidos</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+$(function(){
+    loadHash();
+}); $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ }; 
+   </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> <a href="index-es.html"><b>es</b></a> </div>
+<h1>Ontología de actividad WiFi CSI de EHUNAM</h1>
+<h2>Fecha de creaci&oacute;n: 2026-06-01</h2>
+
+
+<dl>
+<dt>Fecha de modificaci&oacute;n: 2026-06-01</dt>
+<dt>Versi&oacute;n:</dt>
+<dd><a href="https://ehu/wifi-csi/ontology/1.0.0">https://ehu/wifi-csi/ontology/1.0.0</a></dd>
+<dt>Revisi&oacute;n n&uacute;mero:</dt>
+<dd>1.0.0</dd>
+<dt>Autores:</dt>
+<dd><a href="https://github.com/Mikelontxu">https://github.com/Mikelontxu</a></dd>
+
+<dt>Fuente:</dt>
+<dd><a href="https://doi.org/10.6084/m9.figshare.28541225">https://doi.org/10.6084/m9.figshare.28541225</a></dd>
+
+<dt>Recursos similares:</dt>
+<dd><a href="https://doi.org/10.1038/s41597-025-06238-4">https://doi.org/10.1038/s41597-025-06238-4</a></dd><dd><a href="https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data">https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data</a></dd>
+
+<dt>Descargar serializaci&oacute;n:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>Licencia:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
+</dd><dt>Visualizaci&oacute;n:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Citar como:</dt>
+<dd>EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology</dd>
+</dl>
+
+<a href="provenance/provenance-es.html" target="_blank">Provenance de esta p&aacute;gina</a><hr/>
+</div>
+<div class="status">
+<div>
+<span>Ontology Specification Draft</span>
+</div>
+</div>     <div id="abstract"><h2>S&iacute;ntesis</h2><span class="markdown">
+This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters.</span>
+</div>
+<div id="toc"></div> 
+
+<!--INTRODUCTION SECTION-->
+    <div id="introduction"><h2 id="intro" class="list">Introducci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+<span class="markdown">Este p&aacute;rrafo deber&iacute;a hablar sobre la ontolog&iacute;a, motivaci&oacute;n estado del arte y objetivos</span>
+</div>
+  
+
+<!--OVERVIEW SECTION-->
+    <div id="overview"><h2 id="overv" class="list">Ontología de actividad WiFi CSI de EHUNAM: Resumen <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+<span class="markdown">La ontolog&iacute;a se compone de las siguientes clases y propiedades:</span>
+<h4>Clases</h4>
+<ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a>
+   </li>
+   <li>
+      <a href="#Bandwidth" title="https://ehu/wifi-csi/ontology#Bandwidth">Ancho de banda</a>
+   </li>
+   <li>
+      <a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a>
+   </li>
+   <li>
+      <a href="#FrequencyBand" title="https://ehu/wifi-csi/ontology#FrequencyBand">Banda de frecuencia</a>
+   </li>
+   <li>
+      <a href="#Duration" title="https://ehu/wifi-csi/ontology#Duration">Duración (segundos)</a>
+   </li>
+   <li>
+      <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a>
+   </li>
+   <li>
+      <a href="#MachineStatus" title="https://ehu/wifi-csi/ontology#MachineStatus">Estado de la máquina</a>
+   </li>
+   <li>
+      <a href="#WifiStandard" title="https://ehu/wifi-csi/ontology#WifiStandard">Estándar WiFi</a>
+   </li>
+   <li>
+      <a href="#CSIExtractor" title="https://ehu/wifi-csi/ontology#CSIExtractor">Extractor de CSI</a>
+   </li>
+   <li>
+      <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a>
+   </li>
+   <li>
+      <a href="#Person" title="https://ehu/wifi-csi/ontology#Person">Persona</a>
+   </li>
+   <li>
+      <a href="#CSIResult" title="https://ehu/wifi-csi/ontology#CSIResult">Resultado CSI</a>
+   </li>
+</ul><h4>Propiedades de objeto</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#activity" title="https://ehu/wifi-csi/ontology#activity">Actividad</a>
+   </li>
+   <li>
+      <a href="#bandwidth" title="https://ehu/wifi-csi/ontology#bandwidth">Ancho de banda</a>
+   </li>
+   <li>
+      <a href="#application" title="https://ehu/wifi-csi/ontology#application">Aplicación</a>
+   </li>
+   <li>
+      <a href="#frequencyBand" title="https://ehu/wifi-csi/ontology#frequencyBand">Banda de frecuencia</a>
+   </li>
+   <li>
+      <a href="#measurementDuration"
+         title="https://ehu/wifi-csi/ontology#measurementDuration">Duración de la medición</a>
+   </li>
+   <li>
+      <a href="#environment" title="https://ehu/wifi-csi/ontology#environment">Entorno</a>
+   </li>
+   <li>
+      <a href="#machineStatus" title="https://ehu/wifi-csi/ontology#machineStatus">Estado de la máquina</a>
+   </li>
+   <li>
+      <a href="#wifiStandard" title="https://ehu/wifi-csi/ontology#wifiStandard">Estándar WiFi</a>
+   </li>
+   <li>
+      <a href="#csiExtractor" title="https://ehu/wifi-csi/ontology#csiExtractor">Extractor de CSI</a>
+   </li>
+   <li>
+      <a href="#involvesPerson" title="https://ehu/wifi-csi/ontology#involvesPerson">involucra persona</a>
+   </li>
+   <li>
+      <a href="#hasResult" title="https://ehu/wifi-csi/ontology#hasResult">tiene resultado</a>
+   </li>
+</ul><h4>Propiedades de datos</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#campaign" title="https://ehu/wifi-csi/ontology#campaign">campaña</a>
+   </li>
+   <li>
+      <a href="#channel" title="https://ehu/wifi-csi/ontology#channel">canal</a>
+   </li>
+   <li>
+      <a href="#set" title="https://ehu/wifi-csi/ontology#set">conjunto</a>
+   </li>
+   <li>
+      <a href="#machine" title="https://ehu/wifi-csi/ontology#machine">máquina</a>
+   </li>
+   <li>
+      <a href="#nic" title="https://ehu/wifi-csi/ontology#nic">NIC</a>
+   </li>
+   <li>
+      <a href="#nFiles" title="https://ehu/wifi-csi/ontology#nFiles">número de archivos</a>
+   </li>
+   <li>
+      <a href="#nMachine" title="https://ehu/wifi-csi/ontology#nMachine">número de máquinas</a>
+   </li>
+   <li>
+      <a href="#nPeople" title="https://ehu/wifi-csi/ontology#nPeople">número de personas</a>
+   </li>
+   <li>
+      <a href="#nReceivers" title="https://ehu/wifi-csi/ontology#nReceivers">número de receptores</a>
+   </li>
+   <li>
+      <a href="#sequentialNumber" title="https://ehu/wifi-csi/ontology#sequentialNumber">número secuencial</a>
+   </li>
+   <li>
+      <a href="#receiver" title="https://ehu/wifi-csi/ontology#receiver">receptor</a>
+   </li>
+   <li>
+      <a href="#subcarriers" title="https://ehu/wifi-csi/ontology#subcarriers">subportadoras</a>
+   </li>
+   <li>
+      <a href="#occupiedSubcarriers"
+         title="https://ehu/wifi-csi/ontology#occupiedSubcarriers">subportadoras ocupadas</a>
+   </li>
+   <li>
+      <a href="#traffic" title="https://ehu/wifi-csi/ontology#traffic">tráfico</a>
+   </li>
+</ul><h4>Propiedades usadas para anotaci&oacute;n</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract">
+         <span>abstract</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation">
+         <span>bibliographic Citation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created">
+         <span>created</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator">
+         <span>creator</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description">
+         <span>description</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/isReferencedBy" title="http://purl.org/dc/terms/isReferencedBy">
+         <span>is Referenced By</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/language" title="http://purl.org/dc/terms/language">
+         <span>language</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license">
+         <span>license</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified">
+         <span>modified</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/2004/02/skos/core#notation" title="http://www.w3.org/2004/02/skos/core#notation">
+         <span>notation</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespacePrefix"
+         title="http://purl.org/vocab/vann/preferredNamespacePrefix">
+         <span>preferred Namespace Prefix</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri">
+         <span>preferred Namespace Uri</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/source" title="http://purl.org/dc/terms/source">
+         <span>source</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title">
+         <span>title</span>
+      </a>
+   </li>
+   <li>
+      <a href="#http://www.w3.org/ns/prov#wasDerivedFrom" title="http://www.w3.org/ns/prov#wasDerivedFrom">
+         <span>was Derived From</span>
+      </a>
+   </li>
+</ul><h4>Individuos</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    class="hlist">
+   <li>
+      <a href="#EmptyApplication" title="https://ehu/wifi-csi/ontology#EmptyApplication">Aplicación vacía</a>
+   </li>
+   <li>
+      <a href="#Classroom" title="https://ehu/wifi-csi/ontology#Classroom">Aula</a>
+   </li>
+   <li>
+      <a href="#Walking" title="https://ehu/wifi-csi/ontology#Walking">Caminando</a>
+   </li>
+   <li>
+      <a href="#Falling" title="https://ehu/wifi-csi/ontology#Falling">Cayendo</a>
+   </li>
+   <li>
+      <a href="#PC" title="https://ehu/wifi-csi/ontology#PC">Conteo de personas</a>
+   </li>
+   <li>
+      <a href="#PCMAR" title="https://ehu/wifi-csi/ontology#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a>
+   </li>
+   <li>
+      <a href="#AtherosCSIExtractor"
+         title="https://ehu/wifi-csi/ontology#AtherosCSIExtractor">Extractor de CSI Atheros</a>
+   </li>
+   <li>
+      <a href="#NexmonCSIExtractor"
+         title="https://ehu/wifi-csi/ontology#NexmonCSIExtractor">Extractor de CSI Nexmon</a>
+   </li>
+   <li>
+      <a href="#IEEE_802_11ac" title="https://ehu/wifi-csi/ontology#IEEE_802_11ac">IEEE 802.11ac</a>
+   </li>
+   <li>
+      <a href="#IEEE_802_11n" title="https://ehu/wifi-csi/ontology#IEEE_802_11n">IEEE 802.11n</a>
+   </li>
+   <li>
+      <a href="#Laboratory" title="https://ehu/wifi-csi/ontology#Laboratory">Laboratorio</a>
+   </li>
+   <li>
+      <a href="#IndustrialLaboratory"
+         title="https://ehu/wifi-csi/ontology#IndustrialLaboratory">Laboratorio industrial</a>
+   </li>
+   <li>
+      <a href="#MachineRunning" title="https://ehu/wifi-csi/ontology#MachineRunning">Máquina en ejecución</a>
+   </li>
+   <li>
+      <a href="#MachineOn" title="https://ehu/wifi-csi/ontology#MachineOn">Máquina encendida (sin ejecutar)</a>
+   </li>
+   <li>
+      <a href="#Office1" title="https://ehu/wifi-csi/ontology#Office1">Oficina 1</a>
+   </li>
+   <li>
+      <a href="#Office2" title="https://ehu/wifi-csi/ontology#Office2">Oficina 2</a>
+   </li>
+   <li>
+      <a href="#StandingStill" title="https://ehu/wifi-csi/ontology#StandingStill">Parado sin moverse</a>
+   </li>
+   <li>
+      <a href="#MAR" title="https://ehu/wifi-csi/ontology#MAR">Reconocimiento de actividad de máquinas</a>
+   </li>
+   <li>
+      <a href="#HAR" title="https://ehu/wifi-csi/ontology#HAR">Reconocimiento de actividad humana</a>
+   </li>
+   <li>
+      <a href="#MR" title="https://ehu/wifi-csi/ontology#MR">Reconocimiento de máquinas</a>
+   </li>
+   <li>
+      <a href="#StorageRoom" title="https://ehu/wifi-csi/ontology#StorageRoom">Sala de almacenamiento</a>
+   </li>
+   <li>
+      <a href="#MeetingRoom" title="https://ehu/wifi-csi/ontology#MeetingRoom">Sala de reuniones</a>
+   </li>
+   <li>
+      <a href="#Jumping" title="https://ehu/wifi-csi/ontology#Jumping">Saltando</a>
+   </li>
+   <li>
+      <a href="#SittingStill" title="https://ehu/wifi-csi/ontology#SittingStill">Sentado sin moverse</a>
+   </li>
+   <li>
+      <a href="#SittingDownAndGettingUp"
+         title="https://ehu/wifi-csi/ontology#SittingDownAndGettingUp">Sentándose y levantándose</a>
+   </li>
+   <li>
+      <a href="#BasementRoom" title="https://ehu/wifi-csi/ontology#BasementRoom">Sótano</a>
+   </li>
+   <li>
+      <a href="#Empty" title="https://ehu/wifi-csi/ontology#Empty">Vacío</a>
+   </li>
+</ul><iframe src="webvowl/index.html"></iframe> 
+</div>
+  
+
+<!--DESCRIPTION SECTION-->
+    <div id="description"><h2 id="desc" class="list">Ontología de actividad WiFi CSI de EHUNAM: Descripci&oacute;n <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+
+<span class="markdown">Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos.</span></div>
+   
+
+<!--CROSSREF SECTION-->
+   <div id="crossref"><h2 id="crossreference" class="list">T&eacute;rminos de Ontología de actividad WiFi CSI de EHUNAM para clases, propiedades de objeto y propiedades de datos <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad definida por Ontología de actividad WiFi CSI de EHUNAM.
+<div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
+ <h3 id="classes-headline" class="list">Clases</h3>
+ <ul class="hlist">
+  <li><a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a></li>
+  <li><a href="#Bandwidth" title="https://ehu/wifi-csi/ontology#Bandwidth">Ancho de banda</a></li>
+  <li><a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a></li>
+  <li><a href="#FrequencyBand" title="https://ehu/wifi-csi/ontology#FrequencyBand">Banda de frecuencia</a></li>
+  <li><a href="#Duration" title="https://ehu/wifi-csi/ontology#Duration">Duración (segundos)</a></li>
+  <li><a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a></li>
+  <li><a href="#MachineStatus" title="https://ehu/wifi-csi/ontology#MachineStatus">Estado de la máquina</a></li>
+  <li><a href="#WifiStandard" title="https://ehu/wifi-csi/ontology#WifiStandard">Estándar WiFi</a></li>
+  <li><a href="#CSIExtractor" title="https://ehu/wifi-csi/ontology#CSIExtractor">Extractor de CSI</a></li>
+  <li><a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a></li>
+  <li><a href="#Person" title="https://ehu/wifi-csi/ontology#Person">Persona</a></li>
+  <li><a href="#CSIResult" title="https://ehu/wifi-csi/ontology#CSIResult">Resultado CSI</a></li>
+ </ul>
+ <div class="entity" id="Activity">
+  <h3>Actividad<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Activity</p>
+  <div class="comment">
+   <span class="markdown">Tipo de actividad realizada por una persona durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#activity" title="https://ehu/wifi-csi/ontology#activity">Actividad</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+   <dt>
+    miembros
+   </dt>
+   <dd>
+    <a href="#Walking" title="https://ehu/wifi-csi/ontology#Walking">Caminando</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Falling" title="https://ehu/wifi-csi/ontology#Falling">Cayendo</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#StandingStill" title="https://ehu/wifi-csi/ontology#StandingStill">Parado sin moverse</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Jumping" title="https://ehu/wifi-csi/ontology#Jumping">Saltando</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#SittingStill" title="https://ehu/wifi-csi/ontology#SittingStill">Sentado sin moverse</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#SittingDownAndGettingUp" title="https://ehu/wifi-csi/ontology#SittingDownAndGettingUp">Sentándose y levantándose</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Empty" title="https://ehu/wifi-csi/ontology#Empty">Vacío</a> <sup class="type-ni" title="Individuo">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Bandwidth">
+  <h3>Ancho de banda<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Bandwidth</p>
+  <div class="comment">
+   <span class="markdown">Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#bandwidth" title="https://ehu/wifi-csi/ontology#bandwidth">Ancho de banda</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Application">
+  <h3>Aplicación<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Application</p>
+  <div class="comment">
+   <span class="markdown">Tipo de aplicación o caso de uso de una medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#application" title="https://ehu/wifi-csi/ontology#application">Aplicación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+   <dt>
+    miembros
+   </dt>
+   <dd>
+    <a href="#EmptyApplication" title="https://ehu/wifi-csi/ontology#EmptyApplication">Aplicación vacía</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#PC" title="https://ehu/wifi-csi/ontology#PC">Conteo de personas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#PCMAR" title="https://ehu/wifi-csi/ontology#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MAR" title="https://ehu/wifi-csi/ontology#MAR">Reconocimiento de actividad de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#HAR" title="https://ehu/wifi-csi/ontology#HAR">Reconocimiento de actividad humana</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MR" title="https://ehu/wifi-csi/ontology#MR">Reconocimiento de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="FrequencyBand">
+  <h3>Banda de frecuencia<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#FrequencyBand</p>
+  <div class="comment">
+   <span class="markdown">Banda de frecuencia de la señal WiFi, expresada en GHz (2.4 GHz o 5 GHz)</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#frequencyBand" title="https://ehu/wifi-csi/ontology#frequencyBand">Banda de frecuencia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Duration">
+  <h3>Duración (segundos)<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Duration</p>
+  <div class="comment">
+   <span class="markdown">Duración de la medición WiFi en segundos</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#measurementDuration" title="https://ehu/wifi-csi/ontology#measurementDuration">Duración de la medición</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Environment">
+  <h3>Entorno<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Environment</p>
+  <div class="comment">
+   <span class="markdown">Tipo de entorno físico donde se tomó la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#environment" title="https://ehu/wifi-csi/ontology#environment">Entorno</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+   <dt>
+    miembros
+   </dt>
+   <dd>
+    <a href="#Classroom" title="https://ehu/wifi-csi/ontology#Classroom">Aula</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Laboratory" title="https://ehu/wifi-csi/ontology#Laboratory">Laboratorio</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#IndustrialLaboratory" title="https://ehu/wifi-csi/ontology#IndustrialLaboratory">Laboratorio industrial</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Office1" title="https://ehu/wifi-csi/ontology#Office1">Oficina 1</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Office2" title="https://ehu/wifi-csi/ontology#Office2">Oficina 2</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#StorageRoom" title="https://ehu/wifi-csi/ontology#StorageRoom">Sala de almacenamiento</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MeetingRoom" title="https://ehu/wifi-csi/ontology#MeetingRoom">Sala de reuniones</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#BasementRoom" title="https://ehu/wifi-csi/ontology#BasementRoom">Sótano</a> <sup class="type-ni" title="Individuo">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MachineStatus">
+  <h3>Estado de la máquina<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#MachineStatus</p>
+  <div class="comment">
+   <span class="markdown">Estado operativo de una máquina durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#machineStatus" title="https://ehu/wifi-csi/ontology#machineStatus">Estado de la máquina</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+   <dt>
+    miembros
+   </dt>
+   <dd>
+    <a href="#MachineRunning" title="https://ehu/wifi-csi/ontology#MachineRunning">Máquina en ejecución</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MachineOn" title="https://ehu/wifi-csi/ontology#MachineOn">Máquina encendida (sin ejecutar)</a> <sup class="type-ni" title="Individuo">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="WifiStandard">
+  <h3>Estándar WiFi<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#WifiStandard</p>
+  <div class="comment">
+   <span class="markdown">Estándar WiFi utilizado para la medición</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#wifiStandard" title="https://ehu/wifi-csi/ontology#wifiStandard">Estándar WiFi</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+   <dt>
+    miembros
+   </dt>
+   <dd>
+    <a href="#IEEE_802_11ac" title="https://ehu/wifi-csi/ontology#IEEE_802_11ac">IEEE 802.11ac</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#IEEE_802_11n" title="https://ehu/wifi-csi/ontology#IEEE_802_11n">IEEE 802.11n</a> <sup class="type-ni" title="Individuo">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CSIExtractor">
+  <h3>Extractor de CSI<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#CSIExtractor</p>
+  <div class="comment">
+   <span class="markdown">Herramienta o método utilizado para extraer los datos CSI de las señales WiFi crudas</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#csiExtractor" title="https://ehu/wifi-csi/ontology#csiExtractor">Extractor de CSI</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+   <dt>
+    miembros
+   </dt>
+   <dd>
+    <a href="#AtherosCSIExtractor" title="https://ehu/wifi-csi/ontology#AtherosCSIExtractor">Extractor de CSI Atheros</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#NexmonCSIExtractor" title="https://ehu/wifi-csi/ontology#NexmonCSIExtractor">Extractor de CSI Nexmon</a> <sup class="type-ni" title="Individuo">ni</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="WifiMeasurement">
+  <h3>Medición WiFi<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#WifiMeasurement</p>
+  <div class="comment">
+   <span class="markdown">Observación o medición basada en señales WiFi (CSI) en un entorno específico</span>
+  </div>
+  <dl class="description">
+   <dt>
+    tiene superclases
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/sosa/Observation" target="_blank" title="http://www.w3.org/ns/sosa/Observation">Observation</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    en dominio de
+   </dt>
+   <dd>
+    <a href="#activity" title="https://ehu/wifi-csi/ontology#activity">Actividad</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#bandwidth" title="https://ehu/wifi-csi/ontology#bandwidth">Ancho de banda</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#application" title="https://ehu/wifi-csi/ontology#application">Aplicación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#frequencyBand" title="https://ehu/wifi-csi/ontology#frequencyBand">Banda de frecuencia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measurementDuration" title="https://ehu/wifi-csi/ontology#measurementDuration">Duración de la medición</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#environment" title="https://ehu/wifi-csi/ontology#environment">Entorno</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#machineStatus" title="https://ehu/wifi-csi/ontology#machineStatus">Estado de la máquina</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#wifiStandard" title="https://ehu/wifi-csi/ontology#wifiStandard">Estándar WiFi</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#csiExtractor" title="https://ehu/wifi-csi/ontology#csiExtractor">Extractor de CSI</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#nic" title="https://ehu/wifi-csi/ontology#nic">NIC</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#campaign" title="https://ehu/wifi-csi/ontology#campaign">campaña</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#channel" title="https://ehu/wifi-csi/ontology#channel">canal</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#set" title="https://ehu/wifi-csi/ontology#set">conjunto</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#involvesPerson" title="https://ehu/wifi-csi/ontology#involvesPerson">involucra persona</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#machine" title="https://ehu/wifi-csi/ontology#machine">máquina</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nFiles" title="https://ehu/wifi-csi/ontology#nFiles">número de archivos</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nMachine" title="https://ehu/wifi-csi/ontology#nMachine">número de máquinas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nPeople" title="https://ehu/wifi-csi/ontology#nPeople">número de personas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nReceivers" title="https://ehu/wifi-csi/ontology#nReceivers">número de receptores</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#sequentialNumber" title="https://ehu/wifi-csi/ontology#sequentialNumber">número secuencial</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#receiver" title="https://ehu/wifi-csi/ontology#receiver">receptor</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#subcarriers" title="https://ehu/wifi-csi/ontology#subcarriers">subportadoras</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#occupiedSubcarriers" title="https://ehu/wifi-csi/ontology#occupiedSubcarriers">subportadoras ocupadas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasResult" title="https://ehu/wifi-csi/ontology#hasResult">tiene resultado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#traffic" title="https://ehu/wifi-csi/ontology#traffic">tráfico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Person">
+  <h3>Persona<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Person</p>
+  <div class="comment">
+   <span class="markdown">Identificador de una persona participante en una medición WiFi por medio de una letra minúscula (a-u)</span>
+  </div>
+  <dl class="description">
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#involvesPerson" title="https://ehu/wifi-csi/ontology#involvesPerson">involucra persona</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="CSIResult">
+  <h3>Resultado CSI<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#CSIResult</p>
+  <div class="comment">
+   <span class="markdown">Recurso que referencia al archivo .mat con datos CSI/RSSI/timestamps</span>
+  </div>
+  <dl class="description">
+   <dt>
+    tiene superclases
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/ns/sosa/Result" target="_blank" title="http://www.w3.org/ns/sosa/Result">Result</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    en rango de
+   </dt>
+   <dd>
+    <a href="#hasResult" title="https://ehu/wifi-csi/ontology#hasResult">tiene resultado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+   </dd>
+  </dl>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
+ <h2>Propiedades entre objetos</h2>
+ <ul class="hlist">
+  <li><a href="#activity" title="https://ehu/wifi-csi/ontology#activity">Actividad</a></li>
+  <li><a href="#bandwidth" title="https://ehu/wifi-csi/ontology#bandwidth">Ancho de banda</a></li>
+  <li><a href="#application" title="https://ehu/wifi-csi/ontology#application">Aplicación</a></li>
+  <li><a href="#frequencyBand" title="https://ehu/wifi-csi/ontology#frequencyBand">Banda de frecuencia</a></li>
+  <li><a href="#measurementDuration" title="https://ehu/wifi-csi/ontology#measurementDuration">Duración de la medición</a></li>
+  <li><a href="#environment" title="https://ehu/wifi-csi/ontology#environment">Entorno</a></li>
+  <li><a href="#machineStatus" title="https://ehu/wifi-csi/ontology#machineStatus">Estado de la máquina</a></li>
+  <li><a href="#wifiStandard" title="https://ehu/wifi-csi/ontology#wifiStandard">Estándar WiFi</a></li>
+  <li><a href="#csiExtractor" title="https://ehu/wifi-csi/ontology#csiExtractor">Extractor de CSI</a></li>
+  <li><a href="#involvesPerson" title="https://ehu/wifi-csi/ontology#involvesPerson">involucra persona</a></li>
+  <li><a href="#hasResult" title="https://ehu/wifi-csi/ontology#hasResult">tiene resultado</a></li>
+ </ul>
+ <div class="entity" id="activity">
+  <h3>Actividad<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#activity</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con el tipo de actividad realizada por una persona durante la medición</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="bandwidth">
+  <h3>Ancho de banda<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#bandwidth</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con el ancho de banda de la señal WiFi utilizada para la medición</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#Bandwidth" title="https://ehu/wifi-csi/ontology#Bandwidth">Ancho de banda</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="application">
+  <h3>Aplicación<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#application</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con la aplicación o caso de uso con el que está asociada</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="frequencyBand">
+  <h3>Banda de frecuencia<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#frequencyBand</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con la banda de frecuencia de la señal WiFi utilizada para la medición</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#FrequencyBand" title="https://ehu/wifi-csi/ontology#FrequencyBand">Banda de frecuencia</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="measurementDuration">
+  <h3>Duración de la medición<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#measurementDuration</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con su duración en segundos</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#Duration" title="https://ehu/wifi-csi/ontology#Duration">Duración (segundos)</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="environment">
+  <h3>Entorno<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#environment</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con el entorno físico donde se tomó</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="machineStatus">
+  <h3>Estado de la máquina<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#machineStatus</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con el estado operativo de una máquina durante la medición</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#MachineStatus" title="https://ehu/wifi-csi/ontology#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="wifiStandard">
+  <h3>Estándar WiFi<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#wifiStandard</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con el estándar WiFi utilizado para la medición</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#WifiStandard" title="https://ehu/wifi-csi/ontology#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="csiExtractor">
+  <h3>Extractor de CSI<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#csiExtractor</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con la herramienta o método extractor de CSI utilizado para obtener los datos CSI</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#CSIExtractor" title="https://ehu/wifi-csi/ontology#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="involvesPerson">
+  <h3>involucra persona<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#involvesPerson</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con la persona (la letra) involucrada en la medición</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#Person" title="https://ehu/wifi-csi/ontology#Person">Persona</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="hasResult">
+  <h3>tiene resultado<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#hasResult</p>
+  <div class="comment">
+   <span class="markdown">Relaciona una medición WiFi con su resultado que contiene los datos CSI y timestamps</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     tiene superpropiedades
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/ns/sosa/hasResult" target="_blank" title="http://www.w3.org/ns/sosa/hasResult">has Result</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    </dd>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="#CSIResult" title="https://ehu/wifi-csi/ontology#CSIResult">Resultado CSI</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
+ <h3 id="dataproperties-headline" class="list">Propiedades de datos</h3>
+ <ul class="hlist">
+  <li><a href="#campaign" title="https://ehu/wifi-csi/ontology#campaign">campaña</a></li>
+  <li><a href="#channel" title="https://ehu/wifi-csi/ontology#channel">canal</a></li>
+  <li><a href="#set" title="https://ehu/wifi-csi/ontology#set">conjunto</a></li>
+  <li><a href="#machine" title="https://ehu/wifi-csi/ontology#machine">máquina</a></li>
+  <li><a href="#nic" title="https://ehu/wifi-csi/ontology#nic">NIC</a></li>
+  <li><a href="#nFiles" title="https://ehu/wifi-csi/ontology#nFiles">número de archivos</a></li>
+  <li><a href="#nMachine" title="https://ehu/wifi-csi/ontology#nMachine">número de máquinas</a></li>
+  <li><a href="#nPeople" title="https://ehu/wifi-csi/ontology#nPeople">número de personas</a></li>
+  <li><a href="#nReceivers" title="https://ehu/wifi-csi/ontology#nReceivers">número de receptores</a></li>
+  <li><a href="#sequentialNumber" title="https://ehu/wifi-csi/ontology#sequentialNumber">número secuencial</a></li>
+  <li><a href="#receiver" title="https://ehu/wifi-csi/ontology#receiver">receptor</a></li>
+  <li><a href="#subcarriers" title="https://ehu/wifi-csi/ontology#subcarriers">subportadoras</a></li>
+  <li><a href="#occupiedSubcarriers" title="https://ehu/wifi-csi/ontology#occupiedSubcarriers">subportadoras ocupadas</a></li>
+  <li><a href="#traffic" title="https://ehu/wifi-csi/ontology#traffic">tráfico</a></li>
+ </ul>
+ <div class="entity" id="campaign">
+  <h3>campaña<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#campaign</p>
+  <div class="comment">
+   <span class="markdown">Identificador de la campaña de medición (e.g. MC1).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="channel">
+  <h3>canal<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#channel</p>
+  <div class="comment">
+   <span class="markdown">Canal WiFi utilizado durante la medición (11, 13 or 40).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="set">
+  <h3>conjunto<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#set</p>
+  <div class="comment">
+   <span class="markdown">Identificador del conjunto dentro de la campaña (e.g. MC1_01A). Cada conjunto corresponde a una ubicación específica.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="machine">
+  <h3>máquina<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#machine</p>
+  <div class="comment">
+   <span class="markdown">Identificador de la máquina presente durante la medición (1–9).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="nic">
+  <h3>NIC<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#nic</p>
+  <div class="comment">
+   <span class="markdown">Modelo de la tarjeta de interfaz de red del receptor de CSI.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="nFiles">
+  <h3>número de archivos<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#nFiles</p>
+  <div class="comment">
+   <span class="markdown">Número total de archivos .mat en el conjunto al que pertenece esta medición.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="nMachine">
+  <h3>número de máquinas<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#nMachine</p>
+  <div class="comment">
+   <span class="markdown">Número total de máquinas involucradas en la medición.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="nPeople">
+  <h3>número de personas<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#nPeople</p>
+  <div class="comment">
+   <span class="markdown">Número total de personas presentes durante la medición.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="nReceivers">
+  <h3>número de receptores<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#nReceivers</p>
+  <div class="comment">
+   <span class="markdown">Número de dispositivos receptores utilizados en la medición (1–4).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="sequentialNumber">
+  <h3>número secuencial<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#sequentialNumber</p>
+  <div class="comment">
+   <span class="markdown">Número secuencial para distinguir mediciones con metadatos idénticos.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="receiver">
+  <h3>receptor<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#receiver</p>
+  <div class="comment">
+   <span class="markdown">Identificador del dispositivo receptor que capturó la medición (1–4).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="subcarriers">
+  <h3>subportadoras<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#subcarriers</p>
+  <div class="comment">
+   <span class="markdown">Número total de subportadoras OFDM capturadas (64 para 20 MHz, 256 para 80 MHz en MC1).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="occupiedSubcarriers">
+  <h3>subportadoras ocupadas<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#occupiedSubcarriers</p>
+  <div class="comment">
+   <span class="markdown">Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac.</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">integer</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+ <div class="entity" id="traffic">
+  <h3>tráfico<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#traffic</p>
+  <div class="comment">
+   <span class="markdown">Tipo de tráfico de red presente durante la medición (e.g. FTP).</span>
+  </div>
+  <div class="description">
+   <dl>
+    <dt>
+     dominio
+    </dt>
+    <dd>
+     <a href="#WifiMeasurement" title="https://ehu/wifi-csi/ontology#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+    </dd>
+    <dt>
+     rango
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">string</a>
+    </dd>
+   </dl>
+  </div>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="annotationproperties">
+ <h2>Propiedades de anotación</h2>
+ <ul class="hlist">
+  <li><a href="#http://purl.org/dc/terms/abstract" title="http://purl.org/dc/terms/abstract"> <span>abstract</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/bibliographicCitation" title="http://purl.org/dc/terms/bibliographicCitation"> <span>bibliographic Citation</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/created" title="http://purl.org/dc/terms/created"> <span>created</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/creator" title="http://purl.org/dc/terms/creator"> <span>creator</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/description" title="http://purl.org/dc/terms/description"> <span>description</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/isReferencedBy" title="http://purl.org/dc/terms/isReferencedBy"> <span>is Referenced By</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/language" title="http://purl.org/dc/terms/language"> <span>language</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/license" title="http://purl.org/dc/terms/license"> <span>license</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/modified" title="http://purl.org/dc/terms/modified"> <span>modified</span> </a></li>
+  <li><a href="#http://www.w3.org/2004/02/skos/core#notation" title="http://www.w3.org/2004/02/skos/core#notation"> <span>notation</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespacePrefix" title="http://purl.org/vocab/vann/preferredNamespacePrefix"> <span>preferred Namespace Prefix</span> </a></li>
+  <li><a href="#http://purl.org/vocab/vann/preferredNamespaceUri" title="http://purl.org/vocab/vann/preferredNamespaceUri"> <span>preferred Namespace Uri</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/source" title="http://purl.org/dc/terms/source"> <span>source</span> </a></li>
+  <li><a href="#http://purl.org/dc/terms/title" title="http://purl.org/dc/terms/title"> <span>title</span> </a></li>
+  <li><a href="#http://www.w3.org/ns/prov#wasDerivedFrom" title="http://www.w3.org/ns/prov#wasDerivedFrom"> <span>was Derived From</span> </a></li>
+ </ul>
+ <div class="entity" id="http://purl.org/dc/terms/abstract">
+  <h3>abstract<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/abstract</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/bibliographicCitation">
+  <h3>bibliographic Citation<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/bibliographicCitation</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/created">
+  <h3>created<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/creator">
+  <h3>creator<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/description">
+  <h3>description<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/isReferencedBy">
+  <h3>is Referenced By<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/isReferencedBy</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/language">
+  <h3>language<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/language</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/license">
+  <h3>license<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/modified">
+  <h3>modified<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/modified</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/2004/02/skos/core#notation">
+  <h3>notation<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/2004/02/skos/core#notation</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespacePrefix">
+  <h3>preferred Namespace Prefix<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespacePrefix</p>
+ </div>
+ <div class="entity" id="http://purl.org/vocab/vann/preferredNamespaceUri">
+  <h3>preferred Namespace Uri<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/vocab/vann/preferredNamespaceUri</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/source">
+  <h3>source<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/source</p>
+ </div>
+ <div class="entity" id="http://purl.org/dc/terms/title">
+  <h3>title<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+ </div>
+ <div class="entity" id="http://www.w3.org/ns/prov#wasDerivedFrom">
+  <h3>was Derived From<sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#annotationproperties">Índice de propiedades de anotación</a> </span></h3>
+  <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasDerivedFrom</p>
+ </div>
+</div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
+ <h3 id="namedindividuals" class="list">Individuos</h3>
+ <ul class="hlist">
+  <li><a href="#EmptyApplication" title="https://ehu/wifi-csi/ontology#EmptyApplication">Aplicación vacía</a></li>
+  <li><a href="#Classroom" title="https://ehu/wifi-csi/ontology#Classroom">Aula</a></li>
+  <li><a href="#Walking" title="https://ehu/wifi-csi/ontology#Walking">Caminando</a></li>
+  <li><a href="#Falling" title="https://ehu/wifi-csi/ontology#Falling">Cayendo</a></li>
+  <li><a href="#PC" title="https://ehu/wifi-csi/ontology#PC">Conteo de personas</a></li>
+  <li><a href="#PCMAR" title="https://ehu/wifi-csi/ontology#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a></li>
+  <li><a href="#AtherosCSIExtractor" title="https://ehu/wifi-csi/ontology#AtherosCSIExtractor">Extractor de CSI Atheros</a></li>
+  <li><a href="#NexmonCSIExtractor" title="https://ehu/wifi-csi/ontology#NexmonCSIExtractor">Extractor de CSI Nexmon</a></li>
+  <li><a href="#IEEE_802_11ac" title="https://ehu/wifi-csi/ontology#IEEE_802_11ac">IEEE 802.11ac</a></li>
+  <li><a href="#IEEE_802_11n" title="https://ehu/wifi-csi/ontology#IEEE_802_11n">IEEE 802.11n</a></li>
+  <li><a href="#Laboratory" title="https://ehu/wifi-csi/ontology#Laboratory">Laboratorio</a></li>
+  <li><a href="#IndustrialLaboratory" title="https://ehu/wifi-csi/ontology#IndustrialLaboratory">Laboratorio industrial</a></li>
+  <li><a href="#MachineRunning" title="https://ehu/wifi-csi/ontology#MachineRunning">Máquina en ejecución</a></li>
+  <li><a href="#MachineOn" title="https://ehu/wifi-csi/ontology#MachineOn">Máquina encendida (sin ejecutar)</a></li>
+  <li><a href="#Office1" title="https://ehu/wifi-csi/ontology#Office1">Oficina 1</a></li>
+  <li><a href="#Office2" title="https://ehu/wifi-csi/ontology#Office2">Oficina 2</a></li>
+  <li><a href="#StandingStill" title="https://ehu/wifi-csi/ontology#StandingStill">Parado sin moverse</a></li>
+  <li><a href="#MAR" title="https://ehu/wifi-csi/ontology#MAR">Reconocimiento de actividad de máquinas</a></li>
+  <li><a href="#HAR" title="https://ehu/wifi-csi/ontology#HAR">Reconocimiento de actividad humana</a></li>
+  <li><a href="#MR" title="https://ehu/wifi-csi/ontology#MR">Reconocimiento de máquinas</a></li>
+  <li><a href="#StorageRoom" title="https://ehu/wifi-csi/ontology#StorageRoom">Sala de almacenamiento</a></li>
+  <li><a href="#MeetingRoom" title="https://ehu/wifi-csi/ontology#MeetingRoom">Sala de reuniones</a></li>
+  <li><a href="#Jumping" title="https://ehu/wifi-csi/ontology#Jumping">Saltando</a></li>
+  <li><a href="#SittingStill" title="https://ehu/wifi-csi/ontology#SittingStill">Sentado sin moverse</a></li>
+  <li><a href="#SittingDownAndGettingUp" title="https://ehu/wifi-csi/ontology#SittingDownAndGettingUp">Sentándose y levantándose</a></li>
+  <li><a href="#BasementRoom" title="https://ehu/wifi-csi/ontology#BasementRoom">Sótano</a></li>
+  <li><a href="#Empty" title="https://ehu/wifi-csi/ontology#Empty">Vacío</a></li>
+ </ul>
+ <div class="entity" id="EmptyApplication">
+  <h3>Aplicación vacía<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#EmptyApplication</p>
+  <div class="comment">
+   <span class="markdown">No hay una aplicación o caso de uso específico asociado con la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"E"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Classroom">
+  <h3>Aula<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Classroom</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada en un entorno de aula con pupitres y sillas</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Walking">
+  <h3>Caminando<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Walking</p>
+  <div class="comment">
+   <span class="markdown">La persona está caminando durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"W"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Falling">
+  <h3>Cayendo<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Falling</p>
+  <div class="comment">
+   <span class="markdown">La persona está cayendo durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"F"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PC">
+  <h3>Conteo de personas<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#PC</p>
+  <div class="comment">
+   <span class="markdown">Aplicación para conteo de personas usando mediciones WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"PC"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="PCMAR">
+  <h3>Conteo de personas y reconocimiento de actividad de máquinas<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#PCMAR</p>
+  <div class="comment">
+   <span class="markdown">Aplicación para conteo de personas y reconocimiento de actividad de máquinas usando mediciones WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"PCMAR"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="AtherosCSIExtractor">
+  <h3>Extractor de CSI Atheros<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#AtherosCSIExtractor</p>
+  <div class="comment">
+   <span class="markdown">Extractor de CSI basado en el framework Nexmon para chipsets WiFi Atheros</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#CSIExtractor" title="https://ehu/wifi-csi/ontology#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"ACT"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="NexmonCSIExtractor">
+  <h3>Extractor de CSI Nexmon<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#NexmonCSIExtractor</p>
+  <div class="comment">
+   <span class="markdown">Extractor de CSI basado en el framework Nexmon para modificación de firmware WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#CSIExtractor" title="https://ehu/wifi-csi/ontology#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"NCE"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="IEEE_802_11ac">
+  <h3>IEEE 802.11ac<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#IEEE_802_11ac</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada utilizando el estándar IEEE 802.11ac</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#WifiStandard" title="https://ehu/wifi-csi/ontology#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="IEEE_802_11n">
+  <h3>IEEE 802.11n<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#IEEE_802_11n</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada utilizando el estándar IEEE 802.11n</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#WifiStandard" title="https://ehu/wifi-csi/ontology#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Laboratory">
+  <h3>Laboratorio<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Laboratory</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada en un entorno de laboratorio</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="IndustrialLaboratory">
+  <h3>Laboratorio industrial<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#IndustrialLaboratory</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada en un entorno de laboratorio industrial con máquinas y equipos</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MachineRunning">
+  <h3>Máquina en ejecución<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#MachineRunning</p>
+  <div class="comment">
+   <span class="markdown">La máquina está en ejecución durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#MachineStatus" title="https://ehu/wifi-csi/ontology#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"R"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MachineOn">
+  <h3>Máquina encendida (sin ejecutar)<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#MachineOn</p>
+  <div class="comment">
+   <span class="markdown">La máquina está encendida (pero no ejecutándose) y operativa durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#MachineStatus" title="https://ehu/wifi-csi/ontology#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"O"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Office1">
+  <h3>Oficina 1<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Office1</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada en un entorno de oficina con muebles y objetos</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Office2">
+  <h3>Oficina 2<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Office2</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada en un entorno de oficina con más personas y máquinas</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="StandingStill">
+  <h3>Parado sin moverse<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#StandingStill</p>
+  <div class="comment">
+   <span class="markdown">La persona está parada sin moverse durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"S"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MAR">
+  <h3>Reconocimiento de actividad de máquinas<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#MAR</p>
+  <div class="comment">
+   <span class="markdown">Aplicación para reconocimiento de actividad de máquinas usando mediciones WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"MAR"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="HAR">
+  <h3>Reconocimiento de actividad humana<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#HAR</p>
+  <div class="comment">
+   <span class="markdown">Aplicación para reconocimiento de actividad humana usando mediciones WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"HAR"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MR">
+  <h3>Reconocimiento de máquinas<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#MR</p>
+  <div class="comment">
+   <span class="markdown">Aplicación para reconocimiento de máquinas usando mediciones WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Application" title="https://ehu/wifi-csi/ontology#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"MR"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="StorageRoom">
+  <h3>Sala de almacenamiento<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#StorageRoom</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada en un entorno de trastero</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="MeetingRoom">
+  <h3>Sala de reuniones<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#MeetingRoom</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada en un entorno de sala de reuniones con una mesa y sillas</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Jumping">
+  <h3>Saltando<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Jumping</p>
+  <div class="comment">
+   <span class="markdown">La persona está saltando durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"J"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SittingStill">
+  <h3>Sentado sin moverse<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#SittingStill</p>
+  <div class="comment">
+   <span class="markdown">La persona está sentada sin moverse durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"T"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="SittingDownAndGettingUp">
+  <h3>Sentándose y levantándose<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#SittingDownAndGettingUp</p>
+  <div class="comment">
+   <span class="markdown">La persona alterna entre sentarse y levantarse durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"G"</span>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="BasementRoom">
+  <h3>Sótano<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#BasementRoom</p>
+  <div class="comment">
+   <span class="markdown">Medición WiFi tomada en un entorno de sótano</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Environment" title="https://ehu/wifi-csi/ontology#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+  </dl>
+ </div>
+ <div class="entity" id="Empty">
+  <h3>Vacío<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://ehu/wifi-csi/ontology#Empty</p>
+  <div class="comment">
+   <span class="markdown">No hay actividad de ninguna persona durante la medición WiFi</span>
+  </div>
+  <dl class="description">
+   <dt>
+    pertenece a
+   </dt>
+   <dd>
+    <a href="#Activity" title="https://ehu/wifi-csi/ontology#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+   </dd>
+   <dt>
+    hechos
+   </dt>
+   <dd>
+    <a href="http://www.w3.org/2004/02/skos/core#notation" target="_blank" title="http://www.w3.org/2004/02/skos/core#notation">notation</a> <sup class="type-ap" title="propiedad de anotación">ap</sup> <span class="literal">"E"</span>
+   </dd>
+  </dl>
+ </div>
+</div><div id="legend">
+<h2>Leyenda <span class="backlink"> volver a <a href="#toc">ToC</a></span></h2>
+<div   class="entity">
+<sup class="type-c" title="Clases">c</sup>: Clases <br/>
+<sup class="type-op" title="Propiedades de objeto">op</sup>: Propiedades de objeto <br/>
+<sup class="type-dp" title="Propiedades de datos">dp</sup>: Propiedades de datos <br/>
+<sup class="type-ni" title="Individuos">ni</sup>: Individuos <br/>
+</div>
+</div>
+</div>
+    
+
+<!--REFERENCES SECTION-->
+  <div id="references">
+<h2 id="ref" class="list">Referencias <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+<span class="markdown">A&ntilde;ade aqu&iacute; tus referencias, a ser posible en una lista.</span>
+
+</div>
+<div id="acknowledgments">
+<h2 id="ack" class="list">Agradecimientos <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
+<p>Los autores agradecen a <a href="http://www.essepuntato.it/">Silvio Peroni</a> el desarrollo de <a href="http://www.essepuntato.it/lode">LODE</a>, un entorno de documentaci&oacute;n para OWL que es usado para generar la descripci&oacute;n de t&eacute;rminos de la ontolog&iacute;a de este documento; y a  <a href="http://purl.org/net/dgarijo">Daniel Garijo</a> por desarrollar <a href="https://github.com/dgarijo/Widoco">Widoco</a>, el programa utilizado para producir la plantilla en la que se basa este documento.</p>
+</div>
+
+
+</div>
+</body>
+</html>

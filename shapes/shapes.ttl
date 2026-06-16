@@ -80,7 +80,7 @@
     sh:nodeKind sh:IRI ;
   ] ;
   sh:property [ 
-    sh:path wifi:measurementNumber ; 
+    sh:path wifi:sequentialNumber ; 
     sh:minCount 1 ;
     sh:datatype xsd:integer ;
   ] ;

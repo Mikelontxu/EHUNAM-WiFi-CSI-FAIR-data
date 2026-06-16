@@ -241,7 +241,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
     g.add((meas_uri, DCT.identifier, Literal(meas_id)))
 
     if (number := define_int(meta.get("Number"))) is not None:
-        g.add((meas_uri, WIFI.measurementNumber, Literal(number, datatype=XSD.integer)))
+        g.add((meas_uri, WIFI.sequentialNumber, Literal(number, datatype=XSD.integer)))
 
     # ── Receptor ──────────────────────────────────────────────────────────────
     if (rx := define_int(meta.get("Rx"))) is not None:
@@ -266,7 +266,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
 
     # ── Máquina y estado ─────────────────────────────────────────────────────
     if machine := empty_lists_to_none(meta.get("Machine")):
-        g.add((meas_uri, WIFI.machine, Literal(str(machine))))
+        g.add((meas_uri, WIFI.machine, Literal(machine, datatype=XSD.integer)))
     status_raw = (empty_lists_to_none(meta.get("Status")) or "").upper()
     if status_uri := idx["machine_status"].get(status_raw):
         g.add((meas_uri, WIFI.machineStatus, status_uri))
@@ -311,7 +311,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
         g.add((t_node, QUDT.unit, UNIT.Second))
 
     # N_Files, N_Rx, N_Machine
-    for field, predicate in [("N_Files",   WIFI.nFiles), ("N_Rx",      WIFI.nReceivers), ("N_Machine", WIFI.nMachine)]:
+    for field, predicate in [("N_Files",   WIFI.nFiles), ("N_Rx", WIFI.nReceivers), ("N_Machine", WIFI.nMachine)]:
         val = meta.get(field)
         if isinstance(val, list):
             val = val[0] if val else None
@@ -403,8 +403,9 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, DCT.description, Literal("Versión FAIR del conjunto de datos EHUNAM WiFi CSI publicado originalmente en Figshare. El conjunto original contiene archivos .mat en bruto; esta versión proporciona metadatos RDF/OWL siguiendo los principios FAIR, con referencias a los archivos de datos originales.", lang="es")))
     g.add((DATASET_URI, DCT.issued,      Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
     g.add((DATASET_URI, DCT.modified,    Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
-    g.add((DATASET_URI, DCT.version,     Literal("version 1.0")))
-    g.add((DATASET_URI, DCAT.keyword,    Literal("WiFi CSI")))
+    g.add((DATASET_URI, DCT.version,     Literal("1.0")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("CSI, human Activity Recognition, WiFi, people counting", lang="en")))
+    g.add((DATASET_URI, DCAT.THEME,      Literal("http://publications.europa.eu/resource/authority/data-theme/TECH")))
     g.add((DATASET_URI, DCT.license,     LICENSE_URI))
     g.add((DATASET_URI, PROV.wasDerivedFrom, ORIGINAL_DATASET_URI))
     # needs to be a dct:Dataset
@@ -417,10 +418,11 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI,          DCT.source,          ORIGINAL_DATASET_URI))
     # needs to be a foaf:Agent
     PUBLISHER_URI = URIRef("https://research.science.eus/documentos/695028cd9244cb45822e855e?lang=gl")
+    CREATOR_URI   = URIRef("https://github.com/Mikelontxu")
     g.add((PUBLISHER_URI, RDF.type,  FOAF.Agent))
     g.add((PUBLISHER_URI, FOAF.name, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
     g.add((DATASET_URI, DCT.publisher, PUBLISHER_URI))
-    g.add((DATASET_URI, DCT.creator,   PUBLISHER_URI))
+    g.add((DATASET_URI, DCT.creator,   CREATOR_URI)) 
 
     g.add((DATASET_DIST_URI, RDF.type, DCAT.Distribution))
     g.add((DATASET_URI, DCAT.distribution, DATASET_DIST_URI))
@@ -429,8 +431,10 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_DIST_URI, DCAT.downloadURL, URIRef("https://springernature.figshare.com/ndownloader/articles/28541225/versions/1")))
     g.add((DATASET_DIST_URI, DCAT.accessURL,   URIRef("https://doi.org/10.6084/m9.figshare.28541225")))
     # SPARQL endpoint to follow FAIR best practices for accessibility
-    SPARQL_ENDPOINT = URIRef("http://localhost:7200/repositories/fdp")
+    SPARQL_ENDPOINT = URIRef("http://localhost:7200/repositories/fdp")      #temporal
     g.add((SPARQL_ENDPOINT, RDF.type,           DCAT.DataService))
+    SPARQL_DOCS_URI = URIRef("https://graphdb.ontotext.com/documentation/11.3/sparql.html")
+    g.add((SPARQL_ENDPOINT, DCAT.endpointDescription, SPARQL_DOCS_URI))    
     g.add((SPARQL_ENDPOINT, DCT.title,          Literal("SPARQL endpoint – EHUNAM WiFi CSI", lang="en")))
     g.add((SPARQL_ENDPOINT, DCAT.endpointURL,   SPARQL_ENDPOINT))
     g.add((SPARQL_ENDPOINT, DCAT.servesDataset, DATASET_URI))
@@ -441,7 +445,9 @@ def add_dataset_metadata(g: Graph):
     g.add((SPARQL_DIST_URI, DCAT.accessService, SPARQL_ENDPOINT))
     g.add((SPARQL_DIST_URI, DCAT.accessURL,     SPARQL_ENDPOINT))
 
-
+    ONTOLOGY_URI = URIRef("https://localhost:7200/repositories/fdp/ontology/wifi_activity.ttl")
+    g.add((ONTOLOGY_URI, RDF.type, DCT.Standard))
+    g.add((DATASET_URI, DCT.conformsTo, ONTOLOGY_URI))
 # ── Funciones principales ──────────────────────────────────────────────────────────────────
 
 def _bind_namespaces(g: Graph):

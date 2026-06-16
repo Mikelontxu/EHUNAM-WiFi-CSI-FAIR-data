@@ -52,7 +52,7 @@ def main() -> None:
     #        ],
     #    )
 
-    if not args.skip_enrichment and not args.skip_validation:
+    if not args.skip_validation:
         run_step("validate_shacl.py")
 
     if not args.skip_upload:

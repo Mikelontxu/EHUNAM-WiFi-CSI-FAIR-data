@@ -1,0 +1,741 @@
+@prefix : <https://ehu/wifi-csi/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://ehu/wifi-csi/ontology#> .
+
+<https://ehu/wifi-csi/ontology> rdf:type owl:Ontology ;
+                                 owl:versionIRI <https://ehu/wifi-csi/ontology/1.0.0> ;
+                                 <http://purl.org/dc/terms/abstract> "This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters."@en ;
+                                 <http://purl.org/dc/terms/bibliographicCitation> "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology"@en ;
+                                 <http://purl.org/dc/terms/created> "2026-06-01"^^xsd:date ;
+                                 <http://purl.org/dc/terms/creator> <https://github.com/Mikelontxu> ;
+                                 <http://purl.org/dc/terms/description> "Ontology for describing WiFi CSI measurements of human and machine activity captured in different environments."@en ,
+                                                                        "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."@es ;
+                                 <http://purl.org/dc/terms/isReferencedBy> <https://doi.org/10.1038/s41597-025-06238-4> ;
+                                 <http://purl.org/dc/terms/language> "en" ,
+                                                                     "es" ;
+                                 <http://purl.org/dc/terms/license> <https://creativecommons.org/licenses/by/4.0/> ;
+                                 <http://purl.org/dc/terms/modified> "2026-06-01"^^xsd:date ;
+                                 <http://purl.org/dc/terms/source> <https://doi.org/10.6084/m9.figshare.28541225> ;
+                                 <http://purl.org/dc/terms/title> "EHUNAM WiFi CSI Activity Ontology"@en ,
+                                                                  "Ontología de actividad WiFi CSI de EHUNAM"@es ;
+                                 <http://purl.org/vocab/vann/preferredNamespacePrefix> "wifi" ;
+                                 <http://purl.org/vocab/vann/preferredNamespaceUri> "https://ehu/wifi-csi/ontology#" ;
+                                 rdfs:seeAlso <https://doi.org/10.1038/s41597-025-06238-4> ,
+                                              <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
+                                 owl:versionInfo "1.0.0" ;
+                                 <http://www.w3.org/ns/prov#wasDerivedFrom> <https://doi.org/10.6084/m9.figshare.28541225> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/abstract
+<http://purl.org/dc/terms/abstract> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/bibliographicCitation
+<http://purl.org/dc/terms/bibliographicCitation> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+<http://purl.org/dc/terms/created> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/isReferencedBy
+<http://purl.org/dc/terms/isReferencedBy> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/language
+<http://purl.org/dc/terms/language> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+<http://purl.org/dc/terms/source> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#notation
+<http://www.w3.org/2004/02/skos/core#notation> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/prov#wasDerivedFrom
+<http://www.w3.org/ns/prov#wasDerivedFrom> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.w3.org/ns/sosa/hasResult
+<http://www.w3.org/ns/sosa/hasResult> rdf:type owl:ObjectProperty .
+
+
+###  https://ehu/wifi-csi/ontology#activity
+:activity rdf:type owl:ObjectProperty ;
+          rdfs:domain :WifiMeasurement ;
+          rdfs:range :Activity ;
+          rdfs:comment "Relaciona una medición WiFi con el tipo de actividad realizada por una persona durante la medición"@es ,
+                       "Relates a WiFi measurement to the type of activity performed by a person during the measurement"@en ;
+          rdfs:label "Actividad"@es ,
+                     "Activity"@en .
+
+
+###  https://ehu/wifi-csi/ontology#application
+:application rdf:type owl:ObjectProperty ;
+             rdfs:domain :WifiMeasurement ;
+             rdfs:range :Application ;
+             rdfs:comment "Relaciona una medición WiFi con la aplicación o caso de uso con el que está asociada"@es ,
+                          "Relates a WiFi measurement to the application or use case it is associated with"@en ;
+             rdfs:label "Aplicación"@es ,
+                        "Application"@en .
+
+
+###  https://ehu/wifi-csi/ontology#bandwidth
+:bandwidth rdf:type owl:ObjectProperty ;
+           rdfs:domain :WifiMeasurement ;
+           rdfs:range :Bandwidth ;
+           rdfs:comment "Relaciona una medición WiFi con el ancho de banda de la señal WiFi utilizada para la medición"@es ,
+                        "Relates a WiFi measurement to the bandwidth of the WiFi signal used for the measurement"@en ;
+           rdfs:label "Ancho de banda"@es ,
+                      "Bandwidth"@en .
+
+
+###  https://ehu/wifi-csi/ontology#csiExtractor
+:csiExtractor rdf:type owl:ObjectProperty ;
+              rdfs:domain :WifiMeasurement ;
+              rdfs:range :CSIExtractor ;
+              rdfs:comment "Relaciona una medición WiFi con la herramienta o método extractor de CSI utilizado para obtener los datos CSI"@es ,
+                           "Relates a WiFi measurement to the CSI extractor tool or method used to obtain the CSI data"@en ;
+              rdfs:label "CSI extractor"@en ,
+                         "Extractor de CSI"@es .
+
+
+###  https://ehu/wifi-csi/ontology#environment
+:environment rdf:type owl:ObjectProperty ;
+             rdfs:domain :WifiMeasurement ;
+             rdfs:range :Environment ;
+             rdfs:comment "Relaciona una medición WiFi con el entorno físico donde se tomó"@es ,
+                          "Relates a WiFi measurement to the physical environment where it was taken"@en ;
+             rdfs:label "Entorno"@es ,
+                        "Environment"@en .
+
+
+###  https://ehu/wifi-csi/ontology#frequencyBand
+:frequencyBand rdf:type owl:ObjectProperty ;
+               rdfs:domain :WifiMeasurement ;
+               rdfs:range :FrequencyBand ;
+               rdfs:comment "Relaciona una medición WiFi con la banda de frecuencia de la señal WiFi utilizada para la medición"@es ,
+                            "Relates a WiFi measurement to the frequency band of the WiFi signal used for the measurement"@en ;
+               rdfs:label "Banda de frecuencia"@es ,
+                          "Frequency band"@en .
+
+
+###  https://ehu/wifi-csi/ontology#hasResult
+:hasResult rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf <http://www.w3.org/ns/sosa/hasResult> ;
+           rdfs:domain :WifiMeasurement ;
+           rdfs:range :CSIResult ;
+           rdfs:comment "Relaciona una medición WiFi con su resultado que contiene los datos CSI y timestamps"@es ,
+                        "Relates a WiFi measurement to its result containing the CSI data and timestamps"@en ;
+           rdfs:label "has result"@en ,
+                      "tiene resultado"@es .
+
+
+###  https://ehu/wifi-csi/ontology#involvesPerson
+:involvesPerson rdf:type owl:ObjectProperty ;
+                rdfs:domain :WifiMeasurement ;
+                rdfs:range :Person ;
+                rdfs:comment "Relaciona una medición WiFi con la persona (la letra) involucrada en la medición"@es ,
+                             "Relates a WiFi measurement to the person (the letter) involved in the measurement"@en ;
+                rdfs:label "involucra persona"@es ,
+                           "involves person"@en .
+
+
+###  https://ehu/wifi-csi/ontology#machineStatus
+:machineStatus rdf:type owl:ObjectProperty ;
+               rdfs:domain :WifiMeasurement ;
+               rdfs:range :MachineStatus ;
+               rdfs:comment "Relaciona una medición WiFi con el estado operativo de una máquina durante la medición"@es ,
+                            "Relates a WiFi measurement to the operational status of a machine during the measurement"@en ;
+               rdfs:label "Estado de la máquina"@es ,
+                          "Machine status"@en .
+
+
+###  https://ehu/wifi-csi/ontology#measurementDuration
+:measurementDuration rdf:type owl:ObjectProperty ;
+                     rdfs:domain :WifiMeasurement ;
+                     rdfs:range :Duration ;
+                     rdfs:comment "Relaciona una medición WiFi con su duración en segundos"@es ,
+                                  "Relates a WiFi measurement to its duration in seconds"@en ;
+                     rdfs:label "Duración de la medición"@es ,
+                                "Measurement duration"@en .
+
+
+###  https://ehu/wifi-csi/ontology#wifiStandard
+:wifiStandard rdf:type owl:ObjectProperty ;
+              rdfs:domain :WifiMeasurement ;
+              rdfs:range :WifiStandard ;
+              rdfs:comment "Relaciona una medición WiFi con el estándar WiFi utilizado para la medición"@es ,
+                           "Relates a WiFi measurement to the WiFi standard used for the measurement"@en ;
+              rdfs:label "Estándar WiFi"@es ,
+                         "WiFi standard"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://ehu/wifi-csi/ontology#campaign
+:campaign rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WifiMeasurement ;
+          rdfs:range xsd:string ;
+          rdfs:comment "Identificador de la campaña de medición (e.g. MC1)."@es ,
+                       "Measurement campaign identifier (e.g. MC1)."@en ;
+          rdfs:label "campaign"@en ,
+                     "campaña"@es .
+
+
+###  https://ehu/wifi-csi/ontology#channel
+:channel rdf:type owl:DatatypeProperty ;
+         rdfs:domain :WifiMeasurement ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "Canal WiFi utilizado durante la medición (11, 13 or 40)."@es ,
+                      "WiFi channel used during the measurement (11, 13 or 40)."@en ;
+         rdfs:label "canal"@es ,
+                    "channel"@en .
+
+
+###  https://ehu/wifi-csi/ontology#machine
+:machine rdf:type owl:DatatypeProperty ;
+         rdfs:domain :WifiMeasurement ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "Identificador de la máquina presente durante la medición (1–9)."@es ,
+                      "Identifier of the machine present during the measurement (1–9)."@en ;
+         rdfs:label "machine"@en ,
+                    "máquina"@es .
+
+
+###  https://ehu/wifi-csi/ontology#nFiles
+:nFiles rdf:type owl:DatatypeProperty ;
+        rdfs:domain :WifiMeasurement ;
+        rdfs:range xsd:integer ;
+        rdfs:comment "Número total de archivos .mat en el conjunto al que pertenece esta medición."@es ,
+                     "Total number of .mat files in the set this measurement belongs to."@en ;
+        rdfs:label "number of files"@en ,
+                   "número de archivos"@es .
+
+
+###  https://ehu/wifi-csi/ontology#nMachine
+:nMachine rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WifiMeasurement ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Número total de máquinas involucradas en la medición."@es ,
+                       "Total number of machines involved in the measurement."@en ;
+          rdfs:label "number of machines"@en ,
+                     "número de máquinas"@es .
+
+
+###  https://ehu/wifi-csi/ontology#nPeople
+:nPeople rdf:type owl:DatatypeProperty ;
+         rdfs:domain :WifiMeasurement ;
+         rdfs:range xsd:integer ;
+         rdfs:comment "Número total de personas presentes durante la medición."@es ,
+                      "Total number of people present during the measurement."@en ;
+         rdfs:label "number of people"@en ,
+                    "número de personas"@es .
+
+
+###  https://ehu/wifi-csi/ontology#nReceivers
+:nReceivers rdf:type owl:DatatypeProperty ;
+            rdfs:domain :WifiMeasurement ;
+            rdfs:range xsd:integer ;
+            rdfs:comment "Number of receiver devices used in the measurement (1–4)."@en ,
+                         "Número de dispositivos receptores utilizados en la medición (1–4)."@es ;
+            rdfs:label "number of receivers"@en ,
+                       "número de receptores"@es .
+
+
+###  https://ehu/wifi-csi/ontology#nic
+:nic rdf:type owl:DatatypeProperty ;
+     rdfs:domain :WifiMeasurement ;
+     rdfs:range xsd:string ;
+     rdfs:comment "Model of the network interface card of the CSI receiver."@en ,
+                  "Modelo de la tarjeta de interfaz de red del receptor de CSI."@es ;
+     rdfs:label "NIC"@en ,
+                "NIC"@es .
+
+
+###  https://ehu/wifi-csi/ontology#occupiedSubcarriers
+:occupiedSubcarriers rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :WifiMeasurement ;
+                     rdfs:range xsd:integer ;
+                     rdfs:comment "Number of useful subcarriers (data + pilots) after excluding null subcarriers per IEEE 802.11n/ac."@en ,
+                                  "Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac."@es ;
+                     rdfs:label "occupied subcarriers"@en ,
+                                "subportadoras ocupadas"@es .
+
+
+###  https://ehu/wifi-csi/ontology#receiver
+:receiver rdf:type owl:DatatypeProperty ;
+          rdfs:domain :WifiMeasurement ;
+          rdfs:range xsd:integer ;
+          rdfs:comment "Identificador del dispositivo receptor que capturó la medición (1–4)."@es ,
+                       "Identifier of the receiver device that captured the measurement (1–4)."@en ;
+          rdfs:label "receiver"@en ,
+                     "receptor"@es .
+
+
+###  https://ehu/wifi-csi/ontology#sequentialNumber
+:sequentialNumber rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :WifiMeasurement ;
+                  rdfs:range xsd:integer ;
+                  rdfs:comment "Número secuencial para distinguir mediciones con metadatos idénticos."@es ,
+                               "Sequential number to distinguish measurements with otherwise identical metadata."@en ;
+                  rdfs:label "número secuencial"@es ,
+                             "sequential number"@en .
+
+
+###  https://ehu/wifi-csi/ontology#set
+:set rdf:type owl:DatatypeProperty ;
+     rdfs:domain :WifiMeasurement ;
+     rdfs:range xsd:string ;
+     rdfs:comment "Identificador del conjunto dentro de la campaña (e.g. MC1_01A). Cada conjunto corresponde a una ubicación específica."@es ,
+                  "Set identifier within the campaign (e.g. MC1_01A). Each set corresponds to a specific location."@en ;
+     rdfs:label "conjunto"@es ,
+                "set"@en .
+
+
+###  https://ehu/wifi-csi/ontology#subcarriers
+:subcarriers rdf:type owl:DatatypeProperty ;
+             rdfs:domain :WifiMeasurement ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "Número total de subportadoras OFDM capturadas (64 para 20 MHz, 256 para 80 MHz en MC1)."@es ,
+                          "Total number of OFDM subcarriers captured (64 for 20 MHz, 256 for 80 MHz in MC1)."@en ;
+             rdfs:label "subcarriers"@en ,
+                        "subportadoras"@es .
+
+
+###  https://ehu/wifi-csi/ontology#traffic
+:traffic rdf:type owl:DatatypeProperty ;
+         rdfs:domain :WifiMeasurement ;
+         rdfs:range xsd:string ;
+         rdfs:comment "Network traffic type present during the measurement (e.g. FTP)."@en ,
+                      "Tipo de tráfico de red presente durante la medición (e.g. FTP)."@es ;
+         rdfs:label "traffic"@en ,
+                    "tráfico"@es .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.w3.org/ns/sosa/Observation
+<http://www.w3.org/ns/sosa/Observation> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Result
+<http://www.w3.org/ns/sosa/Result> rdf:type owl:Class .
+
+
+###  https://ehu/wifi-csi/ontology#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:comment "Tipo de actividad realizada por una persona durante la medición WiFi"@es ,
+                       "Type of activity performed by a person during the WiFi measurement"@en ;
+          rdfs:label "Actividad"@es ,
+                     "Activity"@en .
+
+
+###  https://ehu/wifi-csi/ontology#Application
+:Application rdf:type owl:Class ;
+             rdfs:comment "Tipo de aplicación o caso de uso de una medición WiFi"@es ,
+                          "Type of application or use case of a WiFi measurement"@en ;
+             rdfs:label "Aplicación"@es ,
+                        "Application"@en .
+
+
+###  https://ehu/wifi-csi/ontology#Bandwidth
+:Bandwidth rdf:type owl:Class ;
+           rdfs:comment "Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)"@es ,
+                        "Bandwidth of the WiFi signal, expressed in MHz (20 MHz or 80 MHz)"@en ;
+           rdfs:label "Ancho de banda"@es ,
+                      "Bandwidth"@en .
+
+
+###  https://ehu/wifi-csi/ontology#CSIExtractor
+:CSIExtractor rdf:type owl:Class ;
+              rdfs:comment "Herramienta o método utilizado para extraer los datos CSI de las señales WiFi crudas"@es ,
+                           "Software tool or method used to extract CSI data from the raw WiFi signals"@en ;
+              rdfs:label "CSI Extractor"@en ,
+                         "Extractor de CSI"@es .
+
+
+###  https://ehu/wifi-csi/ontology#CSIResult
+:CSIResult rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/ns/sosa/Result> ;
+           rdfs:comment "Recurso que referencia al archivo .mat con datos CSI/RSSI/timestamps"@es ,
+                        "Result of a WiFi measurement containing the CSI/RSSI data and timestamps"@en ;
+           rdfs:label "CSI Result"@en ,
+                      "Resultado CSI"@es .
+
+
+###  https://ehu/wifi-csi/ontology#Duration
+:Duration rdf:type owl:Class ;
+          rdfs:comment "Duración de la medición WiFi en segundos"@es ,
+                       "Duration of the WiFi measurement in seconds"@en ;
+          rdfs:label "Duración (segundos)"@es ,
+                     "Duration (seconds)"@en .
+
+
+###  https://ehu/wifi-csi/ontology#Environment
+:Environment rdf:type owl:Class ;
+             rdfs:comment "Tipo de entorno físico donde se tomó la medición WiFi"@es ,
+                          "Type of physical environment where the WiFi measurement was taken"@en ;
+             rdfs:label "Entorno"@es ,
+                        "Environment"@en .
+
+
+###  https://ehu/wifi-csi/ontology#FrequencyBand
+:FrequencyBand rdf:type owl:Class ;
+               rdfs:comment "Banda de frecuencia de la señal WiFi, expresada en GHz (2.4 GHz o 5 GHz)"@es ,
+                            "Frequency band of the WiFi signal, expressed in GHz (2.4 GHz or 5 GHz)"@en ;
+               rdfs:label "Banda de frecuencia"@es ,
+                          "Frequency band"@en .
+
+
+###  https://ehu/wifi-csi/ontology#MachineStatus
+:MachineStatus rdf:type owl:Class ;
+               rdfs:comment "Estado operativo de una máquina durante la medición WiFi"@es ,
+                            "Operational status of a machine during the WiFi measurement"@en ;
+               rdfs:label "Estado de la máquina"@es ,
+                          "Machine Status"@en .
+
+
+###  https://ehu/wifi-csi/ontology#Person
+:Person rdf:type owl:Class ;
+        rdfs:comment "Identificador de una persona participante en una medición WiFi por medio de una letra minúscula (a-u)"@es ,
+                     "Identifier for a person involved during a WiFi measurement by a lowercase letter (a-u)"@en ;
+        rdfs:label "Person"@en ,
+                   "Persona"@es .
+
+
+###  https://ehu/wifi-csi/ontology#WifiMeasurement
+:WifiMeasurement rdf:type owl:Class ;
+                 rdfs:subClassOf <http://www.w3.org/ns/sosa/Observation> ;
+                 rdfs:comment "Observación o medición basada en señales WiFi (CSI) en un entorno específico"@es ,
+                              "WiFi measurement based on CSI data in a specific environment"@en ;
+                 rdfs:label "Medición WiFi"@es ,
+                            "Wifi measurement"@en .
+
+
+###  https://ehu/wifi-csi/ontology#WifiStandard
+:WifiStandard rdf:type owl:Class ;
+              rdfs:comment "Estándar WiFi utilizado para la medición"@es ,
+                           "WiFi standard used for the measurement"@en ;
+              rdfs:label "Estándar WiFi"@es ,
+                         "WiFi Standard"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://ehu/wifi-csi/ontology#AtherosCSIExtractor
+:AtherosCSIExtractor rdf:type owl:NamedIndividual ,
+                              :CSIExtractor ;
+                     rdfs:comment "CSI extractor based on the Nexmon framework for Atheros WiFi chipsets"@en ,
+                                  "Extractor de CSI basado en el framework Nexmon para chipsets WiFi Atheros"@es ;
+                     rdfs:label "Atheros CSI Extractor"@en ,
+                                "Extractor de CSI Atheros"@es ;
+                     <http://www.w3.org/2004/02/skos/core#notation> "ACT" .
+
+
+###  https://ehu/wifi-csi/ontology#BasementRoom
+:BasementRoom rdf:type owl:NamedIndividual ,
+                       :Environment ;
+              rdfs:comment "Medición WiFi tomada en un entorno de sótano"@es ,
+                           "WiFi measurement taken in a basement environment"@en ;
+              rdfs:label "Basement Room"@en ,
+                         "Sótano"@es .
+
+
+###  https://ehu/wifi-csi/ontology#Classroom
+:Classroom rdf:type owl:NamedIndividual ,
+                    :Environment ;
+           rdfs:comment "Medición WiFi tomada en un entorno de aula con pupitres y sillas"@es ,
+                        "WiFi measurement taken in a classroom environment with desks and chairs"@en ;
+           rdfs:label "Aula"@es ,
+                      "Classroom"@en .
+
+
+###  https://ehu/wifi-csi/ontology#Empty
+:Empty rdf:type owl:NamedIndividual ,
+                :Activity ;
+       rdfs:comment "No hay actividad de ninguna persona durante la medición WiFi"@es ,
+                    "No person activity is present during the WiFi measurement"@en ;
+       rdfs:label "Empty"@en ,
+                  "Vacío"@es ;
+       <http://www.w3.org/2004/02/skos/core#notation> "E" .
+
+
+###  https://ehu/wifi-csi/ontology#EmptyApplication
+:EmptyApplication rdf:type owl:NamedIndividual ,
+                           :Application ;
+                  rdfs:comment "No hay una aplicación o caso de uso específico asociado con la medición WiFi"@es ,
+                               "No specific application or use case is associated with the WiFi measurement"@en ;
+                  rdfs:label "Aplicación vacía"@es ,
+                             "Empty application"@en ;
+                  <http://www.w3.org/2004/02/skos/core#notation> "E" .
+
+
+###  https://ehu/wifi-csi/ontology#Falling
+:Falling rdf:type owl:NamedIndividual ,
+                  :Activity ;
+         rdfs:comment "La persona está cayendo durante la medición WiFi"@es ,
+                      "Person is falling during the WiFi measurement"@en ;
+         rdfs:label "Cayendo"@es ,
+                    "Falling"@en ;
+         <http://www.w3.org/2004/02/skos/core#notation> "F" .
+
+
+###  https://ehu/wifi-csi/ontology#HAR
+:HAR rdf:type owl:NamedIndividual ,
+              :Application ;
+     rdfs:comment "Aplicación para reconocimiento de actividad humana usando mediciones WiFi"@es ,
+                  "Application for human activity recognition using WiFi measurements"@en ;
+     rdfs:label "Human Activity Recognition"@en ,
+                "Reconocimiento de actividad humana"@es ;
+     <http://www.w3.org/2004/02/skos/core#notation> "HAR" .
+
+
+###  https://ehu/wifi-csi/ontology#IEEE_802_11ac
+:IEEE_802_11ac rdf:type owl:NamedIndividual ,
+                        :WifiStandard ;
+               rdfs:comment "Medición WiFi tomada utilizando el estándar IEEE 802.11ac"@es ,
+                            "WiFi measurement taken using the IEEE 802.11ac standard"@en ;
+               rdfs:label "IEEE 802.11ac"@en ,
+                          "IEEE 802.11ac"@es .
+
+
+###  https://ehu/wifi-csi/ontology#IEEE_802_11n
+:IEEE_802_11n rdf:type owl:NamedIndividual ,
+                       :WifiStandard ;
+              rdfs:comment "Medición WiFi tomada utilizando el estándar IEEE 802.11n"@es ,
+                           "WiFi measurement taken using the IEEE 802.11n standard"@en ;
+              rdfs:label "IEEE 802.11n"@en ,
+                         "IEEE 802.11n"@es .
+
+
+###  https://ehu/wifi-csi/ontology#IndustrialLaboratory
+:IndustrialLaboratory rdf:type owl:NamedIndividual ,
+                               :Environment ;
+                      rdfs:comment "Medición WiFi tomada en un entorno de laboratorio industrial con máquinas y equipos"@es ,
+                                   "WiFi measurement taken in an industrial laboratory environment with machines and equipment"@en ;
+                      rdfs:label "Industrial Laboratory"@en ,
+                                 "Laboratorio industrial"@es .
+
+
+###  https://ehu/wifi-csi/ontology#Jumping
+:Jumping rdf:type owl:NamedIndividual ,
+                  :Activity ;
+         rdfs:comment "La persona está saltando durante la medición WiFi"@es ,
+                      "Person is jumping during the WiFi measurement"@en ;
+         rdfs:label "Jumping"@en ,
+                    "Saltando"@es ;
+         <http://www.w3.org/2004/02/skos/core#notation> "J" .
+
+
+###  https://ehu/wifi-csi/ontology#Laboratory
+:Laboratory rdf:type owl:NamedIndividual ,
+                     :Environment ;
+            rdfs:comment "Medición WiFi tomada en un entorno de laboratorio"@es ,
+                         "WiFi measurement taken in a laboratory environment"@en ;
+            rdfs:label "Laboratorio"@es ,
+                       "Laboratory"@en .
+
+
+###  https://ehu/wifi-csi/ontology#MAR
+:MAR rdf:type owl:NamedIndividual ,
+              :Application ;
+     rdfs:comment "Aplicación para reconocimiento de actividad de máquinas usando mediciones WiFi"@es ,
+                  "Application for machine activity recognition using WiFi measurements"@en ;
+     rdfs:label "Machine Activity Recognition"@en ,
+                "Reconocimiento de actividad de máquinas"@es ;
+     <http://www.w3.org/2004/02/skos/core#notation> "MAR" .
+
+
+###  https://ehu/wifi-csi/ontology#MR
+:MR rdf:type owl:NamedIndividual ,
+             :Application ;
+    rdfs:comment "Aplicación para reconocimiento de máquinas usando mediciones WiFi"@es ,
+                 "Application for machine recognition using WiFi measurements"@en ;
+    rdfs:label "Machine Recognition"@en ,
+               "Reconocimiento de máquinas"@es ;
+    <http://www.w3.org/2004/02/skos/core#notation> "MR" .
+
+
+###  https://ehu/wifi-csi/ontology#MachineOn
+:MachineOn rdf:type owl:NamedIndividual ,
+                    :MachineStatus ;
+           rdfs:comment "La máquina está encendida (pero no ejecutándose) y operativa durante la medición WiFi"@es ,
+                        "The machine is turned on (but not running) and operational during the WiFi measurement"@en ;
+           rdfs:label "Machine On (not running)"@en ,
+                      "Máquina encendida (sin ejecutar)"@es ;
+           <http://www.w3.org/2004/02/skos/core#notation> "O" .
+
+
+###  https://ehu/wifi-csi/ontology#MachineRunning
+:MachineRunning rdf:type owl:NamedIndividual ,
+                         :MachineStatus ;
+                rdfs:comment "La máquina está en ejecución durante la medición WiFi"@es ,
+                             "The machine is running during the WiFi measurement"@en ;
+                rdfs:label "Machine Running"@en ,
+                           "Máquina en ejecución"@es ;
+                <http://www.w3.org/2004/02/skos/core#notation> "R" .
+
+
+###  https://ehu/wifi-csi/ontology#MeetingRoom
+:MeetingRoom rdf:type owl:NamedIndividual ,
+                      :Environment ;
+             rdfs:comment "Medición WiFi tomada en un entorno de sala de reuniones con una mesa y sillas"@es ,
+                          "WiFi measurement taken in a meeting room environment with a table and chairs"@en ;
+             rdfs:label "Meeting Room"@en ,
+                        "Sala de reuniones"@es .
+
+
+###  https://ehu/wifi-csi/ontology#NexmonCSIExtractor
+:NexmonCSIExtractor rdf:type owl:NamedIndividual ,
+                             :CSIExtractor ;
+                    rdfs:comment "CSI extractor based on the Nexmon framework for WiFi firmware modification"@en ,
+                                 "Extractor de CSI basado en el framework Nexmon para modificación de firmware WiFi"@es ;
+                    rdfs:label "Extractor de CSI Nexmon"@es ,
+                               "Nexmon CSI Extractor"@en ;
+                    <http://www.w3.org/2004/02/skos/core#notation> "NCE" .
+
+
+###  https://ehu/wifi-csi/ontology#Office1
+:Office1 rdf:type owl:NamedIndividual ,
+                  :Environment ;
+         rdfs:comment "Medición WiFi tomada en un entorno de oficina con muebles y objetos"@es ,
+                      "WiFi measurement taken in an office environment with furniture and objects"@en ;
+         rdfs:label "Office 1"@en ,
+                    "Oficina 1"@es .
+
+
+###  https://ehu/wifi-csi/ontology#Office2
+:Office2 rdf:type owl:NamedIndividual ,
+                  :Environment ;
+         rdfs:comment "Medición WiFi tomada en un entorno de oficina con más personas y máquinas"@es ,
+                      "WiFi measurement taken in an office environment with more people and machines"@en ;
+         rdfs:label "Office 2"@en ,
+                    "Oficina 2"@es .
+
+
+###  https://ehu/wifi-csi/ontology#PC
+:PC rdf:type owl:NamedIndividual ,
+             :Application ;
+    rdfs:comment "Aplicación para conteo de personas usando mediciones WiFi"@es ,
+                 "Application for people counting using WiFi measurements"@en ;
+    rdfs:label "Conteo de personas"@es ,
+               "People Counting"@en ;
+    <http://www.w3.org/2004/02/skos/core#notation> "PC" .
+
+
+###  https://ehu/wifi-csi/ontology#PCMAR
+:PCMAR rdf:type owl:NamedIndividual ,
+                :Application ;
+       rdfs:comment "Aplicación para conteo de personas y reconocimiento de actividad de máquinas usando mediciones WiFi"@es ,
+                    "Application for people counting and machine activity recognition using WiFi measurements"@en ;
+       rdfs:label "Conteo de personas y reconocimiento de actividad de máquinas"@es ,
+                  "People Counting and Machine Activity Recognition"@en ;
+       <http://www.w3.org/2004/02/skos/core#notation> "PCMAR" .
+
+
+###  https://ehu/wifi-csi/ontology#SittingDownAndGettingUp
+:SittingDownAndGettingUp rdf:type owl:NamedIndividual ,
+                                  :Activity ;
+                         rdfs:comment "La persona alterna entre sentarse y levantarse durante la medición WiFi"@es ,
+                                      "Person alternates between sitting down and getting up during the WiFi measurement"@en ;
+                         rdfs:label "Sentándose y levantándose"@es ,
+                                    "Sitting down and getting up"@en ;
+                         <http://www.w3.org/2004/02/skos/core#notation> "G" .
+
+
+###  https://ehu/wifi-csi/ontology#SittingStill
+:SittingStill rdf:type owl:NamedIndividual ,
+                       :Activity ;
+              rdfs:comment "La persona está sentada sin moverse durante la medición WiFi"@es ,
+                           "Person is sitting still during the WiFi measurement"@en ;
+              rdfs:label "Sentado sin moverse"@es ,
+                         "Sitting Still"@en ;
+              <http://www.w3.org/2004/02/skos/core#notation> "T" .
+
+
+###  https://ehu/wifi-csi/ontology#StandingStill
+:StandingStill rdf:type owl:NamedIndividual ,
+                        :Activity ;
+               rdfs:comment "La persona está parada sin moverse durante la medición WiFi"@es ,
+                            "Person is standing still during the WiFi measurement"@en ;
+               rdfs:label "Parado sin moverse"@es ,
+                          "Standing Still"@en ;
+               <http://www.w3.org/2004/02/skos/core#notation> "S" .
+
+
+###  https://ehu/wifi-csi/ontology#StorageRoom
+:StorageRoom rdf:type owl:NamedIndividual ,
+                      :Environment ;
+             rdfs:comment "Medición WiFi tomada en un entorno de trastero"@es ,
+                          "WiFi measurement taken in a storage room environment"@en ;
+             rdfs:label "Sala de almacenamiento"@es ,
+                        "Storage Room"@en .
+
+
+###  https://ehu/wifi-csi/ontology#Walking
+:Walking rdf:type owl:NamedIndividual ,
+                  :Activity ;
+         rdfs:comment "La persona está caminando durante la medición WiFi"@es ,
+                      "Person is walking during the WiFi measurement"@en ;
+         rdfs:label "Caminando"@es ,
+                    "Walking"@en ;
+         <http://www.w3.org/2004/02/skos/core#notation> "W" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

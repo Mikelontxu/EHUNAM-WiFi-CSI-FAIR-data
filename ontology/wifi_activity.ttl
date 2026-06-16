@@ -27,8 +27,9 @@
     dct:title "EHUNAM WiFi CSI Activity Ontology"@en ;
     dct:title "Ontología de actividad WiFi CSI de EHUNAM"@es ;
     dct:description "Ontology for describing WiFi CSI measurements of human and machine activity captured in different environments."@en ;
-    dct:description "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."@es ;    
-    dct:creator "EHUNAM Research Group - University of the Basque Country (EHU) and National Autonomous University of Mexico (UNAM)" ;
+    dct:description "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."@es ;   
+    dct:abstract "This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters."@en ; 
+    dct:creator <https://github.com/Mikelontxu> ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     dct:created "2026-06-01"^^xsd:date ;
     dct:modified "2026-06-01"^^xsd:date ;
@@ -39,12 +40,11 @@
     # DOI del articulo original
     dct:isReferencedBy <https://doi.org/10.1038/s41597-025-06238-4> ;
     rdfs:seeAlso <https://doi.org/10.1038/s41597-025-06238-4> ;
-    # Repositorio del poryecto de Github
+    # Repositorio del proyecto de Github
     rdfs:seeAlso <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
     vann:preferredNamespaceUri "https://ehu/wifi-csi/ontology#" ;
     vann:preferredNamespacePrefix "wifi" ;
-    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology"@en ;
-    dct:bibliographicCitation "Ontología de actividad WiFi CSI de EHUNAM, versión 1.0.0, disponible en https://ehu/wifi-csi/ontology"@es .
+    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology"@en .
     #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # Todavia no hay ninguna version previa
 
 # Clases principales
