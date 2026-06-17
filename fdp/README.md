@@ -5,7 +5,7 @@ It brings up these services:
 - fdp-client: FDP UI
 - graphdb: RDF triple store that FDP uses
 - mongo: FDP persistence
-- ontology: static host for the ontology TTL
+- ontology: static host for the ontology TTL + own page and formats
 - fuji: FAIR metrics evaluator
 
 Prerequisites

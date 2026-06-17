@@ -4,3 +4,4 @@ __pycache__/
 output/
 fdp/mongo/
 fdp/graphdb/
+*.env
