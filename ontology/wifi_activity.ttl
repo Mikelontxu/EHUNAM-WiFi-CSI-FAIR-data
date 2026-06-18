@@ -48,7 +48,7 @@
     #vann:preferredNamespaceUri "https://ehu/wifi-csi/ontology#" ;
     vann:preferredNamespaceUri "http://34.51.146.173:8090/ontology/wifi_activity.ttl#" ;
     vann:preferredNamespacePrefix "wifi" ;
-    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology"@en .
+    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at http://34.51.146.173:8090/ontology/wifi_activity.ttl"@en .
     #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # Todavia no hay ninguna version previa
 
 # Clases principales

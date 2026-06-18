@@ -423,6 +423,8 @@ def add_dataset_metadata(g: Graph):
     g.add((PUBLISHER_URI, RDF.type,  FOAF.Agent))
     g.add((PUBLISHER_URI, FOAF.name, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
     g.add((DATASET_URI, DCT.publisher, PUBLISHER_URI))
+    g.add((CREATOR_URI, RDF.type,  FOAF.Agent))
+    g.add((CREATOR_URI, FOAF.name, Literal("Mikelontxu")))
     g.add((DATASET_URI, DCT.creator,   CREATOR_URI)) 
 
     g.add((DATASET_DIST_URI, RDF.type, DCAT.Distribution))
