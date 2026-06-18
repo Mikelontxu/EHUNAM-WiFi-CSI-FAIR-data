@@ -3,7 +3,8 @@
 #   
 # Este archivo define la ontología para describir las mediciones de actividad WiFi (CSI/RSSI) realizadas en el proyecto. Se utiliza el formato Turtle (TTL) para representar la ontología de manera legible y estructurada.
 # La ontología tiene que estar ubicada en el servidor de la universidad con un IRI estable, pero por el momento se usará de manera local con el archivo TTL de ontology.
-@prefix : <https://ehu/wifi-csi/ontology#> .
+#@prefix : <https://ehu/wifi-csi/ontology#> .
+@prefix : <http://34.51.146.173:8090/ontology/wifi_activity.ttl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -20,9 +21,11 @@
 
 # Declaración de la ontología
 
-<https://ehu/wifi-csi/ontology>
+#<https://ehu/wifi-csi/ontology>
+<http://34.51.146.173:8090/ontology/wifi_activity.ttl>
     a owl:Ontology ;
-    owl:versionIRI <https://ehu/wifi-csi/ontology/1.0.0> ;
+    #owl:versionIRI <https://ehu/wifi-csi/ontology/1.0.0> ;
+    owl:versionIRI <http://34.51.146.173:8090/ontology/wifi_activity.ttl/1.0.0> ;
     owl:versionInfo "1.0.0" ;
     dct:title "EHUNAM WiFi CSI Activity Ontology"@en ;
     dct:title "Ontología de actividad WiFi CSI de EHUNAM"@es ;
@@ -42,7 +45,8 @@
     rdfs:seeAlso <https://doi.org/10.1038/s41597-025-06238-4> ;
     # Repositorio del proyecto de Github
     rdfs:seeAlso <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
-    vann:preferredNamespaceUri "https://ehu/wifi-csi/ontology#" ;
+    #vann:preferredNamespaceUri "https://ehu/wifi-csi/ontology#" ;
+    vann:preferredNamespaceUri "http://34.51.146.173:8090/ontology/wifi_activity.ttl#" ;
     vann:preferredNamespacePrefix "wifi" ;
     dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology"@en .
     #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # Todavia no hay ninguna version previa

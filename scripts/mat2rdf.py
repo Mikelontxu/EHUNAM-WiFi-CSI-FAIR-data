@@ -8,7 +8,7 @@ Ontologías utilizadas:
     dct     → http://purl.org/dc/terms/
     prov    → http://www.w3.org/ns/prov#
     spdx    → http://spdx.org/rdf/terms#
-    wifi    → https://ehu/wifi-csi/ontology#   
+    wifi    → https://{SERVER_HOST}:{NGINX_PORT}/wifi_activity.ttl#
 """
 
 import hashlib
@@ -21,6 +21,7 @@ from matio import load_from_mat
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import FOAF, RDF, RDFS, SKOS, XSD
 
+from config import SERVER_HOST, NGINX_PORT, WIFI, MEAS, CSI_BASE, DATASET, GRAPHDB_REPO, ONTOLOGY_URI
 # ── Namespaces ────────────────────────────────────────────────────────────────
 
 SOSA     = Namespace("http://www.w3.org/ns/sosa/")
@@ -31,10 +32,10 @@ DCAT     = Namespace("http://www.w3.org/ns/dcat#")
 DCT      = Namespace("http://purl.org/dc/terms/")
 PROV     = Namespace("http://www.w3.org/ns/prov#")
 SPDX     = Namespace("http://spdx.org/rdf/terms#")
-WIFI     = Namespace("https://ehu/wifi-csi/ontology#")      # temporal, ontologia en el servidor
-MEAS     = Namespace("https://ehu/wifi-csi/measurement/")   # temporal, ubicación de las instancias
-CSI_BASE = Namespace("https://ehu/wifi-csi/")               # temporal, esto es para redirigir a los archivos CSI, RSSI y timestamp.
-DATASET  = Namespace("https://ehu/wifi-csi/dataset/")       # temporal, IRI del dataset 
+#WIFI     = Namespace("https://ehu/wifi-csi/ontology#")      # temporal, ontologia en el servidor
+#MEAS     = Namespace("https://ehu/wifi-csi/measurement/")   # temporal, ubicación de las instancias
+#CSI_BASE = Namespace("https://ehu/wifi-csi/")               # temporal, esto es para redirigir a los archivos CSI, RSSI y timestamp.
+#DATASET  = Namespace("https://ehu/wifi-csi/dataset/")       # temporal, IRI del dataset 
 
 DATASET_ID           = "EHUNAM-WiFi-CSI-FAIR-data"
 DATASET_URI          = DATASET[DATASET_ID]
@@ -43,7 +44,7 @@ PROJECT_REPO         = URIRef("https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAI
 ORIGINAL_DATASET_URI = URIRef("https://doi.org/10.6084/m9.figshare.28541225")
 LICENSE_URI          = URIRef("https://creativecommons.org/licenses/by/4.0/")
 ONTOLOGY_FILE        = Path("ontology/wifi_activity.ttl")   # ontologia del github local
-GRAPHDB_REPO         = "http://localhost:7200/repositories/fdp"  # temporal, base del repo en GraphDB
+#GRAPHDB_REPO         = "http://localhost:7200/repositories/fdp"  # temporal, base del repo en GraphDB
 TURTLE_MEDIATYPE_URI = URIRef("https://www.iana.org/assignments/media-types/text/turtle")
 
 # Campos que no se trasladan a RDF: matrices de datos grandes (y relacionados), artefactos internos
@@ -217,14 +218,14 @@ def build_measurement_id(meta: dict) -> str:
     ])
 
 def _node_uri(base: URIRef, suffix: str) -> URIRef:
-    """IRI de un nodo auxiliar de una medición (tiempo, banda, checksum…)."""
+    #IRI de un nodo auxiliar de una medición (tiempo, banda, checksum…).
     return URIRef(f"{base}/{suffix}")
 
 
 # ── Conversión metadatos → RDF ────────────────────────────────────────────────
 
 def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
-    """Añade los triples de una medición al grafo g usando los índices de la ontología."""
+    #Añade los triples de una medición al grafo g usando los índices de la ontología.
     meas_id  = build_measurement_id(meta)
     meas_uri = MEAS[meas_id]
     raw_set  = str(meta.get("Set") or "")
@@ -431,7 +432,7 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_DIST_URI, DCAT.downloadURL, URIRef("https://springernature.figshare.com/ndownloader/articles/28541225/versions/1")))
     g.add((DATASET_DIST_URI, DCAT.accessURL,   URIRef("https://doi.org/10.6084/m9.figshare.28541225")))
     # SPARQL endpoint to follow FAIR best practices for accessibility
-    SPARQL_ENDPOINT = URIRef("http://localhost:7200/repositories/fdp")      #temporal
+    SPARQL_ENDPOINT = URIRef(GRAPHDB_REPO)
     g.add((SPARQL_ENDPOINT, RDF.type,           DCAT.DataService))
     SPARQL_DOCS_URI = URIRef("https://graphdb.ontotext.com/documentation/11.3/sparql.html")
     g.add((SPARQL_ENDPOINT, DCAT.endpointDescription, SPARQL_DOCS_URI))    
@@ -445,7 +446,7 @@ def add_dataset_metadata(g: Graph):
     g.add((SPARQL_DIST_URI, DCAT.accessService, SPARQL_ENDPOINT))
     g.add((SPARQL_DIST_URI, DCAT.accessURL,     SPARQL_ENDPOINT))
 
-    ONTOLOGY_URI = URIRef("https://localhost:7200/repositories/fdp/ontology/wifi_activity.ttl")
+    #ONTOLOGY_URI = URIRef("https://localhost:7200/repositories/fdp/ontology/wifi_activity.ttl")
     g.add((ONTOLOGY_URI, RDF.type, DCT.Standard))
     g.add((DATASET_URI, DCT.conformsTo, ONTOLOGY_URI))
 # ── Funciones principales ──────────────────────────────────────────────────────────────────

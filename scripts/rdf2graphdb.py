@@ -4,7 +4,10 @@ from pathlib import Path
 from rdflib import Graph, Namespace
 from rdflib.namespace import RDF
 
-ENDPOINT = "http://localhost:7200/repositories/fdp"
+from config import GRAPHDB_REPO
+
+#ENDPOINT = "http://localhost:7200/repositories/fdp"
+ENDPOINT = GRAPHDB_REPO
 RDF_DIR  = Path("output/rdf")
 METADATA = Path("output/dataset_metadata.ttl")
 SOSA     = Namespace("http://www.w3.org/ns/sosa/")

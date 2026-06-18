@@ -1,5 +1,0 @@
-repository:
-  type: 4
-  graphDb:
-    url: http://graphdb:7200
-    repository: fdp

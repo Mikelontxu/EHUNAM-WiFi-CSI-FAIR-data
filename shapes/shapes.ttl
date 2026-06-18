@@ -6,12 +6,15 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix wifi: <https://ehu/wifi-csi/ontology#> .
+#@prefix wifi: <https://ehu/wifi-csi/ontology#> .
+@prefix wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix : <https://ehu/wifi-csi/shapes#> .
-@prefix dataset: <https://ehu/wifi-csi/dataset/> .
+#@prefix : <https://ehu/wifi-csi/shapes#> .
+@prefix : <http://34.51.146.173:8090/wifi-csi/shapes#> .
+#@prefix dataset: <https://ehu/wifi-csi/dataset/> .
+@prefix dataset: <http://34.51.146.173:8090/wifi-csi/dataset/> .
 
 
 # Measurement checks
