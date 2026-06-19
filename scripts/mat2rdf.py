@@ -386,8 +386,9 @@ def add_measurement_distributions(g: Graph, measurement_ids: list[str]):
     for meas_id in measurement_ids:
         meas_uri  = MEAS[meas_id]
         dist_uri  = MEAS[f"{meas_id}-distribution"]
-        graph_url = URIRef(f"{GRAPHDB_REPO}/rdf-graphs/service?graph={CSI_BASE}{meas_id}")
-
+        named_graph_iri = str(MEAS[meas_id])
+        graph_url = URIRef(f"{GRAPHDB_REPO}/statements?context=%3C{quote(named_graph_iri, safe='')}%3E")
+        
         g.add((dist_uri, RDF.type, DCAT.Distribution))
         g.add((dist_uri, DCT["format"], TURTLE_MEDIATYPE_URI))
         g.add((dist_uri, DCAT.downloadURL, graph_url))
