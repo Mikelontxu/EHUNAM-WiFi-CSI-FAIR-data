@@ -25,7 +25,7 @@
 <http://34.51.146.173:8090/ontology/wifi_activity.ttl>
     a owl:Ontology ;
     #owl:versionIRI <https://ehu/wifi-csi/ontology/1.0.0> ;
-    owl:versionIRI <http://34.51.146.173:8090/ontology/wifi_activity.ttl/1.0.0> ;
+    owl:versionIRI <http://34.51.146.173:8090/ontology/wifi_activity.ttl> ;
     owl:versionInfo "1.0.0" ;
     dct:title "EHUNAM WiFi CSI Activity Ontology"@en ;
     dct:title "Ontología de actividad WiFi CSI de EHUNAM"@es ;
@@ -36,6 +36,7 @@
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     dct:created "2026-06-01"^^xsd:date ;
     dct:modified "2026-06-01"^^xsd:date ;
+    dct:issued "2026-06-01"^^xsd:date ;
     dct:language "en" , "es" ;
     # DOI del dataset original en Figshare, que es la fuente de datos para esta ontología
     dct:source <https://doi.org/10.6084/m9.figshare.28541225> ;
