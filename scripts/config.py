@@ -18,8 +18,7 @@ NGINX_PORT   = os.environ.get("NGINX_PORT", "8090")
 # La ontología y los .mat los sirve nginx (servicio "ontology" del compose)
 # en http://{SERVER_HOST}:{NGINX_PORT}/ontology/ y /data/ respectivamente.
 WIFI     = Namespace(f"http://{SERVER_HOST}:{NGINX_PORT}/ontology/wifi_activity.ttl#") # carpeta /ontology/ servida por nginx
-MEAS     = Namespace(f"http://{SERVER_HOST}:{NGINX_PORT}/wifi-csi/measurement/")
-CSI_BASE = Namespace(f"http://{SERVER_HOST}:{NGINX_PORT}/data/")              # carpeta /data/ servida por nginx
+MEAS = Namespace(f"http://{SERVER_HOST}:{NGINX_PORT}/data/")           # carpeta /data/ servida por nginx
 DATASET  = Namespace(f"http://{SERVER_HOST}:{NGINX_PORT}/wifi-csi/dataset/")
 
 GRAPHDB_REPO  = f"http://{SERVER_HOST}:{GRAPHDB_PORT}/repositories/fdp"        # base del repo en GraphDB

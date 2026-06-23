@@ -21,7 +21,7 @@ from matio import load_from_mat
 from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import FOAF, RDF, RDFS, SKOS, XSD
 
-from config import SERVER_HOST, NGINX_PORT, WIFI, MEAS, CSI_BASE, DATASET, GRAPHDB_REPO, ONTOLOGY_URI
+from config import  WIFI, MEAS, DATASET, GRAPHDB_REPO, ONTOLOGY_URI
 # ── Namespaces ────────────────────────────────────────────────────────────────
 
 SOSA     = Namespace("http://www.w3.org/ns/sosa/")
@@ -362,7 +362,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
     if filename := meta.get("filename"):
         result_node   = _node_uri(meas_uri, "result")
         safe_filename = quote(filename, safe="-_.~")
-        mat_url       = CSI_BASE[safe_filename]
+        mat_url       = MEAS[safe_filename]
         g.add((meas_uri, SOSA.hasResult, result_node))
         g.add((result_node, RDF.type, WIFI.CSIResult))
         g.add((result_node, DCAT.downloadURL, mat_url))
@@ -388,7 +388,7 @@ def add_measurement_distributions(g: Graph, measurement_ids: list[str]):
         dist_uri  = MEAS[f"{meas_id}-distribution"]
         named_graph_iri = str(MEAS[meas_id])
         graph_url = URIRef(f"{GRAPHDB_REPO}/statements?context=%3C{quote(named_graph_iri, safe='')}%3E")
-        
+
         g.add((dist_uri, RDF.type, DCAT.Distribution))
         g.add((dist_uri, DCT["format"], TURTLE_MEDIATYPE_URI))
         g.add((dist_uri, DCAT.downloadURL, graph_url))
