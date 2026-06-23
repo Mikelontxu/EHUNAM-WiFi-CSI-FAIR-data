@@ -384,18 +384,18 @@ def add_measurement_distributions(g: Graph, measurement_ids: list[str]):
     #Por cada medición se crea su dcat:Distribution apuntando a cada named graph en GraphDB
     
     for meas_id in measurement_ids:
-        meas_uri  = MEAS[meas_id]
-        dist_uri  = MEAS[f"{meas_id}-distribution"]
+        meas_uri        = MEAS[meas_id]
+        dist_uri        = MEAS[f"{meas_id}-distribution"]
         named_graph_iri = str(MEAS[meas_id])
-        graph_url = URIRef(f"{GRAPHDB_REPO}/statements?context=%3C{quote(named_graph_iri, safe='')}%3E")
+        graph_url       = URIRef(f"{GRAPHDB_REPO}/rdf-graphs/service?graph={quote(named_graph_iri, safe='')}")
 
-        g.add((dist_uri, RDF.type, DCAT.Distribution))
-        g.add((dist_uri, DCT["format"], TURTLE_MEDIATYPE_URI))
-        g.add((dist_uri, DCAT.downloadURL, graph_url))
-        g.add((dist_uri, DCAT.accessURL, graph_url))
+        g.add((dist_uri, RDF.type,           DCAT.Distribution))
+        g.add((dist_uri, DCT["format"],      TURTLE_MEDIATYPE_URI))
+        g.add((dist_uri, DCAT.downloadURL,   graph_url))
+        g.add((dist_uri, DCAT.accessURL,     graph_url))
 
         g.add((DATASET_URI, DCAT.distribution, dist_uri))
-        g.add((DATASET_URI, DCT.hasPart, meas_uri))
+        g.add((DATASET_URI, DCT.hasPart,       meas_uri))
 
 def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, RDF.type,        DCAT.Dataset))
