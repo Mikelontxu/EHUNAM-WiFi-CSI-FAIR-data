@@ -12,7 +12,7 @@ from config import GRAPHDB_REPO
 
 from dotenv import load_dotenv
 import os
-load_dotenv()
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / "fdp" / ".env")  # ← aquí
 
 GRAPHDB_USER = os.environ.get("GRAPHDB_USER", "")
 GRAPHDB_PASSWORD = os.environ.get("GRAPHDB_PASSWORD", "")
