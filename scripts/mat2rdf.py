@@ -468,7 +468,7 @@ def _bind_namespaces(g: Graph):
     g.bind("dataset", DATASET)
 
 
-def process_folder(mat_dir: str = "data/samples", output_dir: str = "output"):
+def process_folder(mat_dir: str = "data", output_dir: str = "output"):
 
     # Procesa todos los .mat de mat_dir y genera:
     #  - Un .ttl individual por medición en output_dir/rdf/
