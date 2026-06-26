@@ -75,18 +75,21 @@
     rdfs:comment "Recurso que referencia al archivo .mat con datos CSI/RSSI/timestamps"@es .
 
 :FrequencyBand a owl:Class ;
+    rdfs:subClassOf qudt:Quantity ; 
     rdfs:label "Frequency band"@en ;
     rdfs:label "Banda de frecuencia"@es ;
     rdfs:comment "Frequency band of the WiFi signal, expressed in GHz (2.4 GHz or 5 GHz)"@en ;
     rdfs:comment "Banda de frecuencia de la señal WiFi, expresada en GHz (2.4 GHz o 5 GHz)"@es .
 
 :Bandwidth a owl:Class ;
+    rdfs:subClassOf qudt:Quantity ;
     rdfs:label "Bandwidth"@en ;
     rdfs:label "Ancho de banda"@es ;
     rdfs:comment "Bandwidth of the WiFi signal, expressed in MHz (20 MHz or 80 MHz)"@en ;
     rdfs:comment "Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)"@es .
 
 :Duration a owl:Class ;
+    rdfs:subClassOf qudt:Quantity ;
     rdfs:label "Duration (seconds)"@en ;
     rdfs:label "Duración (segundos)"@es ;
     rdfs:comment "Duration of the WiFi measurement in seconds"@en ;

@@ -22,8 +22,8 @@ from rdflib import Graph, Literal, Namespace, URIRef
 from rdflib.namespace import FOAF, RDF, RDFS, SKOS, XSD
 
 from config import  WIFI, MEAS, DATASET, GRAPHDB_REPO, ONTOLOGY_URI
-# ── Namespaces ────────────────────────────────────────────────────────────────
 
+# ── Namespaces ────────────────────────────────────────────────────────────────
 SOSA     = Namespace("http://www.w3.org/ns/sosa/")
 QUDT     = Namespace("http://qudt.org/schema/qudt/")
 UNIT     = Namespace("http://qudt.org/vocab/unit/")
@@ -37,6 +37,8 @@ SPDX     = Namespace("http://spdx.org/rdf/terms#")
 #CSI_BASE = Namespace("https://ehu/wifi-csi/")               # temporal, esto es para redirigir a los archivos CSI, RSSI y timestamp.
 #DATASET  = Namespace("https://ehu/wifi-csi/dataset/")       # temporal, IRI del dataset 
 
+# ── variables globales para el dataset ────────────────────────────────────────────────────────
+#GRAPHDB_REPO         = "http://localhost:7200/repositories/fdp"  # temporal, base del repo en GraphDB
 DATASET_ID           = "EHUNAM-WiFi-CSI-FAIR-data"
 DATASET_URI          = DATASET[DATASET_ID]
 DATASET_DIST_URI     = DATASET[f"{DATASET_ID}-distribution"]
@@ -44,8 +46,14 @@ PROJECT_REPO         = URIRef("https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAI
 ORIGINAL_DATASET_URI = URIRef("https://doi.org/10.6084/m9.figshare.28541225")
 LICENSE_URI          = URIRef("https://creativecommons.org/licenses/by/4.0/")
 ONTOLOGY_FILE        = Path("ontology/wifi_activity.ttl")   # ontologia del github local
-#GRAPHDB_REPO         = "http://localhost:7200/repositories/fdp"  # temporal, base del repo en GraphDB
 TURTLE_MEDIATYPE_URI = URIRef("https://www.iana.org/assignments/media-types/text/turtle")
+THEME_URI = URIRef("http://publications.europa.eu/resource/authority/data-theme/TECH")
+PUBLISHER_URI = URIRef("https://research.science.eus/documentos/695028cd9244cb45822e855e?lang=gl")
+CREATOR_URI   = URIRef("https://github.com/Mikelontxu")
+SPARQL_ENDPOINT = URIRef(GRAPHDB_REPO)
+SPARQL_DOCS_URI = URIRef("https://graphdb.ontotext.com/documentation/11.3/sparql.html")
+SPARQL_DIST_URI = DATASET[f"{DATASET_ID}-sparql-distribution"]
+
 
 # Campos que no se trasladan a RDF: matrices de datos grandes (y relacionados), artefactos internos
 SKIP_FIELDS = {
@@ -406,10 +414,17 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, DCT.issued,      Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
     g.add((DATASET_URI, DCT.modified,    Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
     g.add((DATASET_URI, DCT.version,     Literal("1.0")))
-    g.add((DATASET_URI, DCAT.keyword,    Literal("CSI, human Activity Recognition, WiFi, people counting", lang="en")))
-    g.add((DATASET_URI, DCAT.THEME,      Literal("http://publications.europa.eu/resource/authority/data-theme/TECH")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("CSI", lang="en")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("human Activity Recognition", lang="en")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("WiFi", lang="en")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("people counting", lang="en")))
     g.add((DATASET_URI, DCT.license,     LICENSE_URI))
     g.add((DATASET_URI, PROV.wasDerivedFrom, ORIGINAL_DATASET_URI))
+
+    g.add((THEME_URI,   RDF.type,   SKOS.Concept))
+    g.add((DATASET_URI, DCAT.theme, THEME_URI))  
+    g.add((THEME_URI, SKOS.prefLabel, Literal("Technology", lang="en")))
+  
     # needs to be a dct:Dataset
     g.add((ORIGINAL_DATASET_URI, RDF.type,            DCAT.Dataset))
     g.add((ORIGINAL_DATASET_URI, DCT.title,           Literal("EHUNAM WiFi CSI Dataset (Figshare)", lang="en")))
@@ -419,8 +434,6 @@ def add_dataset_metadata(g: Graph):
     g.add((ORIGINAL_DATASET_URI, PROV.wasDerivedFrom, ORIGINAL_DATASET_URI))
     g.add((DATASET_URI,          DCT.source,          ORIGINAL_DATASET_URI))
     # needs to be a foaf:Agent
-    PUBLISHER_URI = URIRef("https://research.science.eus/documentos/695028cd9244cb45822e855e?lang=gl")
-    CREATOR_URI   = URIRef("https://github.com/Mikelontxu")
     g.add((PUBLISHER_URI, RDF.type,  FOAF.Agent))
     g.add((PUBLISHER_URI, FOAF.name, Literal("EHUNAM Research Group - University of the Basque Country and the National Autonomous University of Mexico")))
     g.add((DATASET_URI, DCT.publisher, PUBLISHER_URI))
@@ -434,22 +447,20 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_DIST_URI, DCT["format"],    TURTLE_MEDIATYPE_URI))
     g.add((DATASET_DIST_URI, DCAT.downloadURL, URIRef("https://springernature.figshare.com/ndownloader/articles/28541225/versions/1")))
     g.add((DATASET_DIST_URI, DCAT.accessURL,   URIRef("https://doi.org/10.6084/m9.figshare.28541225")))
+    
     # SPARQL endpoint to follow FAIR best practices for accessibility
-    SPARQL_ENDPOINT = URIRef(GRAPHDB_REPO)
     g.add((SPARQL_ENDPOINT, RDF.type,           DCAT.DataService))
-    SPARQL_DOCS_URI = URIRef("https://graphdb.ontotext.com/documentation/11.3/sparql.html")
     g.add((SPARQL_ENDPOINT, DCAT.endpointDescription, SPARQL_DOCS_URI))    
     g.add((SPARQL_ENDPOINT, DCT.title,          Literal("SPARQL endpoint – EHUNAM WiFi CSI", lang="en")))
     g.add((SPARQL_ENDPOINT, DCAT.endpointURL,   SPARQL_ENDPOINT))
     g.add((SPARQL_ENDPOINT, DCAT.servesDataset, DATASET_URI))
-    # In DCAT-AP, a DataService isn't directly a Distribution. We wrap it in a proper Distribution:
-    SPARQL_DIST_URI = DATASET[f"{DATASET_ID}-sparql-distribution"]
+
+    # In DCAT-AP a DataService needs to be associated with a Distribution:
     g.add((SPARQL_DIST_URI, RDF.type,           DCAT.Distribution))
     g.add((DATASET_URI,     DCAT.distribution,  SPARQL_DIST_URI))
     g.add((SPARQL_DIST_URI, DCAT.accessService, SPARQL_ENDPOINT))
     g.add((SPARQL_DIST_URI, DCAT.accessURL,     SPARQL_ENDPOINT))
 
-    #ONTOLOGY_URI = URIRef("https://localhost:7200/repositories/fdp/ontology/wifi_activity.ttl")
     g.add((ONTOLOGY_URI, RDF.type, DCT.Standard))
     g.add((DATASET_URI, DCT.conformsTo, ONTOLOGY_URI))
 # ── Funciones principales ──────────────────────────────────────────────────────────────────
