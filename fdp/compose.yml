@@ -3,7 +3,7 @@
 services:
 
     fdp:            # imagen de FAIR Data Point para servir los datos y metadatos FAIR
-        image: fairdata/fairdatapoint:1.16
+        image: fairdata/fairdatapoint:latest
         volumes:
             - ./application.yml:/fdp/application.yml:ro
         depends_on:
@@ -19,7 +19,7 @@ services:
             start_period: 30s
 
     fdp-client:     # imagen de FAIR Data Point Client para interactuar con el FAIR Data Point
-        image: fairdata/fairdatapoint-client:1.16
+        image: fairdata/fairdatapoint-client:latest
         ports:
             - 80:80
         environment:
