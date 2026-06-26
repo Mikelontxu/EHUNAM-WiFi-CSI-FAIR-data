@@ -12,7 +12,7 @@ services:
             mongo:
                 condition: service_started
         healthcheck:
-            test: wget -qO- http://localhost:80/actuator/health || exit 1
+            test: wget -qO- http://localhost:8080/actuator/health || exit 1
             interval: 10s
             timeout: 5s
             retries: 10
@@ -23,7 +23,7 @@ services:
         ports:
             - 80:80
         environment:
-            - FDP_HOST=fdp
+            - FDP_HOST=fdp:8080
         depends_on:
             fdp:
                 condition: service_healthy
