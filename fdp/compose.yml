@@ -1,18 +1,21 @@
-# compose.yml
-
 services:
 
     fdp:            # imagen de FAIR Data Point para servir los datos y metadatos FAIR
-        image: fairdata/fairdatapoint:latest
+        image: fairdata/fairdatapoint:1.20.3
         volumes:
             - ./application.yml:/fdp/application.yml:ro
+        environment:
+            - SPRING_MONGODB_URI=mongodb://${MONGO_ROOT_USER}:${MONGO_ROOT_PASSWORD}@mongo:27017/fdp?authSource=admin
+            - FDP_TRIPLE_STORE_USERNAME=${GRAPHDB_USER}
+            - FDP_TRIPLE_STORE_PASSWORD=${GRAPHDB_PASSWORD}
+            - FDP_JWT_SECRET_KEY=${FDP_JWT_SECRET_KEY}
         depends_on:
             graphdb:
                 condition: service_healthy
             mongo:
                 condition: service_started
         healthcheck:
-            test: wget -qO- http://localhost:8080/actuator/health || exit 1
+            test: wget -qO- http://localhost/actuator/health || exit 1
             interval: 10s
             timeout: 5s
             retries: 10
@@ -23,13 +26,13 @@ services:
         ports:
             - 80:80
         environment:
-            - FDP_HOST=fdp:8080
+            - FDP_HOST=fdp
         depends_on:
             fdp:
                 condition: service_healthy
 
     mongo:          # imagen de MongoDB para almacenar los datos de FAIR Data Point (entre ellos los usuarios)
-        image: mongo:8.0
+        image: mongo:7.0
         environment:
             - MONGO_INITDB_ROOT_USERNAME=${MONGO_ROOT_USER}
             - MONGO_INITDB_ROOT_PASSWORD=${MONGO_ROOT_PASSWORD}
@@ -42,6 +45,8 @@ services:
                 - 7200:7200
             environment:
                 - GDB_JAVA_OPTS=-Dgraphdb.home=/opt/graphdb/home
+                - GRAPHDB_USERNAME=${GRAPHDB_USER}
+                - GRAPHDB_PASSWORD=${GRAPHDB_PASSWORD}
             volumes:
                 - ./graphdb:/opt/graphdb/home
                 - ./repo.json:/tmp/repo.json:ro
@@ -51,12 +56,12 @@ services:
                 - |
                   set -m
                   /opt/graphdb/dist/bin/graphdb &
-                  
+
                   until curl -sf http://localhost:7200/rest/repositories; do
                     echo "Waiting for GraphDB..."
                     sleep 3
                   done
-                  
+
                   if ! curl -sf http://localhost:7200/rest/repositories/fdp > /dev/null; then
                     echo "Creating fdp repository..."
                     curl -X POST http://localhost:7200/rest/repositories \
@@ -65,7 +70,7 @@ services:
                   else
                     echo "Repository fdp already exists, skipping creation."
                   fi
-                  
+
                   fg
             healthcheck:
                 test: curl --fail-with-body http://localhost:7200/repositories/fdp/health || exit 1

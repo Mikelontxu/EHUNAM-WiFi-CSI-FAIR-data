@@ -1,0 +1,8 @@
+repository:
+  type: 4
+  graphDb:
+    url: http://graphdb:7200
+    repository: fdp
+instance:
+  clientUrl: http://34.51.146.173/fdp
+  persistentUrl: http://34.51.146.173/fdp
