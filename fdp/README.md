@@ -25,14 +25,11 @@ Start the stack
         docker compose ps
 
 Service URLs (host)
-- FDP UI: http://localhost/
-- GraphDB: http://localhost:7200/
-- Ontology: http://localhost:8090/
-- Fuji UI: http://localhost:1071/fuji/api/v1/ui/
-
-Notes
-- If you are calling FDP from inside a container, use http://fdp-client/... instead of localhost.
-- Fuji API uses Basic Auth. If you see 401, check the Fuji credentials in the container config. You can us the default credentials of Fuji.
+- FDP UI: http://34.51.146.173/
+- GraphDB: http://34.51.146.173:7200/
+- Ontology: http://34.51.146.173:8090/ontology/docs/index-en.html#toc
+            http://34.51.146.173:8090/ontology/docs/index-es.html#toc
+- Fuji UI: http://34.51.146.173:1071/fuji/api/v1/ui/
 
 Stop the stack
     root:
