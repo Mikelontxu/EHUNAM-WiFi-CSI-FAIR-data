@@ -45,8 +45,6 @@ services:
                 - 7200:7200
             environment:
                 - GDB_JAVA_OPTS=-Dgraphdb.home=/opt/graphdb/home
-                - GRAPHDB_USERNAME=${GRAPHDB_USER}
-                - GRAPHDB_PASSWORD=${GRAPHDB_PASSWORD}
             volumes:
                 - ./graphdb:/opt/graphdb/home
                 - ./repo.json:/tmp/repo.json:ro
