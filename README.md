@@ -10,6 +10,7 @@ This project transforms those files into RDF/OWL following FAIR principles.
 ## Content
 
 * [Structure](#structure)
+* [Prerequisites](#prerequisites)
 * [User manual](#user-manual)
 * [License](#license)
 * [Disclaimer](#disclaimer)
@@ -68,6 +69,12 @@ This project transforms those files into RDF/OWL following FAIR principles.
 </tr> 
 </tbody>  
 </table>
+
+## Prerequisites
+
+- A /data folder with .mat files of EHUNAM dataset.
+- A system with at least (2 vCPUs, 4 GB RAM memory).
+- Enough storage space for the EHUNAM dataset (recommended at least 70GB for MC1).
 
 ## User manual
 
