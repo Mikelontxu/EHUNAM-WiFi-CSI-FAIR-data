@@ -98,4 +98,4 @@ As mentioned previously, all the data is property of EHUNAM. The original datase
 
 **Original dataset**: [EHUNAM WiFi CSI Dataset on Figshare](https://doi.org/10.6084/m9.figshare.28541225)
 
-**Original article**: [EHUNAM, a WiFi CSI-based dataset for human and machine sensing] (https://doi.org/10.1038/s41597-025-06238-4)
+**Original article**: [EHUNAM, a WiFi CSI-based dataset for human and machine sensing](https://doi.org/10.1038/s41597-025-06238-4)
