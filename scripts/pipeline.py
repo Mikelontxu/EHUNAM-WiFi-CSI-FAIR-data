@@ -1,9 +1,10 @@
-"""Pipeline de procesamiento EHUNAM WiFi CSI.
+"""Pipeline to process EHUNAM WiFi CSI data.
 
 Orden:
 1. mat2rdf.py
 2. validate_shacl.py
 3. rdf2graphdb.py
+
 """
 
 from __future__ import annotations
@@ -24,17 +25,17 @@ def run_step(script_name: str, args: list[str] | None = None) -> None:
     if args:
         command.extend(args)
 
-    print(f"  Ejecutando {script_name}...")
+    print(f"  Executing {script_name}...")
     result = subprocess.run(command, cwd=str(PROJECT_ROOT))
     if result.returncode != 0:
-        raise SystemExit(f"[✗] {script_name} falló con código {result.returncode}")
-    print(f" {script_name} completado\n")
+        raise SystemExit(f" {script_name} failed with code {result.returncode}")
+    print(f" {script_name} completed\n")
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Pipeline completo de transformación y enriquecimiento")
-    parser.add_argument("--skip-validation",  action="store_true", help="No ejecutar la validación SHACL")
-    parser.add_argument("--skip-upload",      action="store_true", help="No subir a GraphDB")
+    parser = argparse.ArgumentParser(description="Complete pipeline to process EHUNAM WiFi CSI data")
+    parser.add_argument("--skip-validation",  action="store_true", help="Dont validate SHACL")
+    parser.add_argument("--skip-upload",      action="store_true", help="Dont upload RDF to GraphDB")
     args = parser.parse_args()
 
     run_step("mat2rdf.py")
@@ -45,7 +46,7 @@ def main() -> None:
     if not args.skip_upload:
         run_step("rdf2graphdb.py")
 
-    print("\n Pipeline completado correctamente")
+    print("\n Pipeline completed successfully")
 
 
 if __name__ == "__main__":

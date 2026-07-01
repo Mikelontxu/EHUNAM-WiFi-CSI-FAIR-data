@@ -29,7 +29,7 @@ def main() -> int:
 
     all_ok = True
 
-    # dcat-ap.shacl.ttl + shapes_dataset.ttl contra la metadataa comun
+    # dcat-ap.shacl.ttl + shapes_dataset.ttl against dataset_metadata.ttl
     print("\n=== DCAT-AP validation (dataset_metadata.ttl) ===")
     for shapes_path in shapes_metadata:
         if not Path(shapes_path).exists():
@@ -39,7 +39,7 @@ def main() -> int:
         if not validate_dataset(str(metadata_path), shapes_path):
             all_ok = False
 
-    # shapes.ttl → contra cada RDF individual
+    # shapes.ttl → against each individual RDF file
     print("\n=== Domain validation (output/rdf/*.ttl) ===")
     rdf_files = sorted(rdf_dir.glob("*.ttl"))
     if not rdf_files:

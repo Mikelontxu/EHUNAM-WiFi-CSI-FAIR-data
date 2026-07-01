@@ -12,20 +12,20 @@ from config import GRAPHDB_REPO
 
 from dotenv import load_dotenv
 import os
-load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / "fdp" / ".env")  # ← aquí
+load_dotenv(dotenv_path=Path(__file__).resolve().parents[1] / "fdp" / ".env") 
 
 GRAPHDB_USER = os.environ.get("GRAPHDB_USER", "")
 GRAPHDB_PASSWORD = os.environ.get("GRAPHDB_PASSWORD", "")
 
 if not GRAPHDB_USER or not GRAPHDB_PASSWORD:
     raise EnvironmentError(
-        "Faltan credenciales de GraphDB. "
-        "Define GRAPHDB_USER y GRAPHDB_PASSWORD en el archivo .env o en las variables de entorno."
+        "Missing GraphDB credentials. "
+        "Define GRAPHDB_USER and GRAPHDB_PASSWORD in the .env file or as environment variables."
     )
 
 AUTH_HEADER = "Basic " + base64.b64encode(f"{GRAPHDB_USER}:{GRAPHDB_PASSWORD}".encode()).decode()
 
-#ENDPOINT = "http://localhost:7200/repositories/fdp"
+
 ENDPOINT = GRAPHDB_REPO
 RDF_DIR  = Path("output/rdf")
 METADATA = Path("output/dataset_metadata.ttl")
@@ -52,14 +52,14 @@ def upload(path: Path, named_graph: str | None = None) -> None:
         return r.status
 
 
-# Los metadatos del dataset van al grafo por defecto
+# The default graph is used for the general dataset metadata.
 upload(METADATA)
-print(f"{METADATA.name} subido al grafo por defecto")
+print(f"{METADATA.name} uploaded to the default graph")
 
-# Cada medición → su propio Named Graph
+# Each measurement RDFq file is uploaded to its own named graph.
 for ttl in sorted(RDF_DIR.glob("*.ttl")):
     g = Graph()
     g.parse(str(ttl), format="turtle")
     named_graph = str(next(g.subjects(RDF.type, SOSA.Observation)))
     upload(ttl, named_graph)
-    print(f"{ttl.name} subido al grafo {named_graph}")
+    print(f"{ttl.name} uploaded to named graph {named_graph}")

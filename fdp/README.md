@@ -1,40 +1,171 @@
-This folder called fdp (FAIR Data Point) its used to import the docker that contains the local build of FDP. This FAIR Data Point is configurated to maintain persistance even if docker compose down is executed.
+This folder called fdp (FAIR Data Point) its used to import the docker that contains the build of FDP. This FAIR Data Point is configurated to maintain persistance even if docker compose down is executed.
 
-It brings up these services:
-- fdp: FAIR Data Point backend
-- fdp-client: FDP UI
-- graphdb: RDF triple store that FDP uses
-- mongo: FDP persistence
-- ontology: static host for the ontology TTL + own page and formats
-- fuji: FAIR metrics evaluator
+## Content
 
-Prerequisites
-- Docker Desktop (or Docker Engine + Compose)
+* [Services](#services)
+* [Exposed endpoints](#exposed-endpoints)
+* [Prerequisites](#prerequisites)
+* [Deployment](#user-manual)
 
-Start the stack
-1) From the repository:
-    root:
-	    docker compose -f .\fdp\compose.yml up -d
-    fdp carpet:
-        docker compose up -d
 
-2) Check status:
-    root:
-	    docker compose -f .\fdp\compose.yml ps
-    fdp carpet:
-        docker compose ps
+## Services of compose.yml
 
-Service URLs (host)
-- FDP UI: http://34.51.146.173/
-- GraphDB: http://34.51.146.173:7200/
-- Ontology: http://34.51.146.173:8090/ontology/docs/index-en.html#toc
-            http://34.51.146.173:8090/ontology/docs/index-es.html#toc
-- Fuji UI: http://34.51.146.173:1071/fuji/api/v1/ui/
+<table>
+<tbody>
+<tr>
+<td><p><strong>Service</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+<td><p><strong>URL</strong></p></td>
+</tr>
+<tr>
+<td><p>fdp</p></td>
+<td><p>FAIR Data Point backend</p></td>
+<td><p>—</p></td>
+</tr>
+<tr>
+<td><p>fdp-client</p></td>
+<td><p>FDP web UI</p></td>
+<td><p>http://34.51.146.173/</p></td>
+</tr>
+<tr>
+<td><p>graphdb</p></td>
+<td><p>RDF triple store used by FDP</p></td>
+<td><p>http://34.51.146.173:7200/</p></td>
+</tr>
+<tr>
+<td><p>mongo</p></td>
+<td><p>MongoDB for FDP persistence</p></td>
+<td><p>—</p></td>
+</tr>
+<tr>
+<td><p>nginx</p></td>
+<td><p>Static file server for ontology and data</p></td>
+<td><p>http://34.51.146.173:8090/</p></td>
+</tr>
+<tr>
+<td><p>widoco</p></td>
+<td><p>Ontology documentation generator</p></td>
+<td><p>—</p></td>
+</tr>
+<tr>
+<td><p>fuji</p></td>
+<td><p>FAIR metrics evaluator</p></td>
+<td><p>http://34.51.146.173:1071/fuji/api/v1/ui/</p></td>
+</tr>
+</tbody>
+</table>
 
-Stop the stack
-    root:
-        docker compose -f .\fdp\compose.yml down
-    fdp carpet:
-        docker compose down
+## Exposed endpoints
 
-fuji-request.json: used to call fuji validator from console with a curl. To make a test, its neccesary to put which is the ID of the dataset from FDP.
+<table>
+<tbody>
+<tr>
+<td><p><strong>Resource</strong></p></td>
+<td><p><strong>URL</strong></p></td>
+</tr>
+<tr>
+<td><p>FDP UI</p></td>
+<td><p>http://34.51.146.173/</p></td>
+</tr>
+<tr>
+<td><p>GraphDB</p></td>
+<td><p>http://34.51.146.173:7200/</p></td>
+</tr>
+<tr>
+<td><p>Ontology docs (EN)</p></td>
+<td><p>http://34.51.146.173:8090/ontology/docs/index-en.html</p></td>
+</tr>
+<tr>
+<td><p>Ontology docs (ES)</p></td>
+<td><p>http://34.51.146.173:8090/ontology/docs/index-es.html</p></td>
+</tr>
+<tr>
+<td><p>Ontology files (Nginx)</p></td>
+<td><p>http://34.51.146.173:8090/ontology/</p></td>
+</tr>
+<tr>
+<td><p>Data files (Nginx)</p></td>
+<td><p>http://34.51.146.173:8090/data/</p></td>
+</tr>
+<tr>
+<td><p>FUJI UI</p></td>
+<td><p>http://34.51.146.173:1071/fuji/api/v1/ui/</p></td>
+</tr>
+</tbody>
+</table>
+
+## Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or Docker Engine + Compose)
+- A `.env` file with credentials and host configuration (see below)
+
+## Deployment
+
+**Before deployment:** 
+- Ensure the required ports are open on the host.
+- Check there is a .env file is present  with the credentials for GraphDB, MongoDB and FDP. 
+- Set the correct IP/URL of the host machine in both `.env` and `application.yml`.
+
+### 1. Build the docker images
+
+```bash
+docker compose up -d
+```
+### 2. Change default passwords
+
+Change the passwords for GraphDB and FDP through their endpoints (not automatized yet).
+
+### 3. Configure GraphDB security
+
+Activate the security features of GraphDB (Make sure FDP repository remains readable for Users)
+
+
+### 4. Build your FDP according to the data (MC1):
+
+<table>
+<tbody>
+<tr>
+<td><p><strong>Level</strong></p></td>
+<td><p><strong>Name</strong></p></td>
+</tr>
+<tr>
+<td><p>Catalog</p></td>
+<td><p>EHUNAM WiFi CSI</p></td>
+</tr>
+<tr>
+<td><p>Dataset</p></td>
+<td><p>EHUNAM WiFi CSI MC1</p></td>
+</tr>
+<tr>
+<td><p>Distributions</p></td>
+<td>
+<p>Original dataset files</p>
+<p>MC1 data files</p>
+<p>GraphDB</p>
+<p>SPARQL endpoint</p>
+<p>WiFi-CSI activity ontology</p>
+<p>WiFi-CSI activity ontology documentation</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+5) Create the documentation for the ontology:
+
+The ontology documentation is generated by **WIDOCO** and is served statically via Nginx. It is **not regenerated automatically on every boot**.
+
+Whenever the ontology (`wifi_activity.ttl`) is updated, it is adviced to use this commands to redo the documentation.
+```bash
+docker compose --profile widoco run --rm widoco
+```
+
+**If WIDOCO output is not displaying correctly!!**
+If the HTML is not displaying correctly it can be a problem of the permits of the `docs/` folder. Check and fix the folder permissions before re-running.
+
+**To stop and remove the containers:** <code> docker compose down </code>
+**To see the current state of the services:** <code> docker compose ps </code>
+**To check the logs:** <code> docker compose logs -f </code>
+
+
+
+
+

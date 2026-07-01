@@ -1,9 +1,8 @@
 # EHUNAM WiFi CSI Activity Ontology
-# Formato: Turtle (TTL)
+# Format: Turtle (TTL)
 #   
-# Este archivo define la ontología para describir las mediciones de actividad WiFi (CSI/RSSI) realizadas en el proyecto. Se utiliza el formato Turtle (TTL) para representar la ontología de manera legible y estructurada.
-# La ontología tiene que estar ubicada en el servidor de la universidad con un IRI estable, pero por el momento se usará de manera local con el archivo TTL de ontology.
-#@prefix : <https://ehu/wifi-csi/ontology#> .
+# This file defines the ontology for describing WiFi activity measurements (CSI/RSSI) created in the EHUNAM project. The Turtle (TTL) format is used to represent the ontology in a readable and structured manner.
+# Este archivo define la ontología para describir las mediciones de actividad WiFi (CSI/RSSI) realizadas en el proyecto de EHUNAM. Se utiliza el formato Turtle (TTL) para representar la ontología de manera legible y estructurada.
 @prefix : <http://34.51.146.173:8090/ontology/wifi_activity.ttl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,13 +17,12 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
 
-# Declaración de la ontología
+# Declaration of the ontology itself
 
-#<https://ehu/wifi-csi/ontology>
 <http://34.51.146.173:8090/ontology/wifi_activity.ttl>
     a owl:Ontology ;
-    #owl:versionIRI <https://ehu/wifi-csi/ontology/1.0.0> ;
     owl:versionIRI <http://34.51.146.173:8090/ontology/wifi_activity.ttl> ;
     owl:versionInfo "1.0.0" ;
     dct:title "EHUNAM WiFi CSI Activity Ontology"@en ;
@@ -38,21 +36,22 @@
     dct:modified "2026-06-01"^^xsd:date ;
     dct:issued "2026-06-01"^^xsd:date ;
     dct:language "en" , "es" ;
-    # DOI del dataset original en Figshare, que es la fuente de datos para esta ontología
+    bibo:status "Published" ;
+    dct:publisher <https://doi.org/10.6084/m9.figshare.28541225> ;
+    # DOI of the original dataset in Figshare, which is the data source for this ontology
     dct:source <https://doi.org/10.6084/m9.figshare.28541225> ;
     prov:wasDerivedFrom <https://doi.org/10.6084/m9.figshare.28541225> ;
-    # DOI del articulo original
+    # DOI of the original article
     dct:isReferencedBy <https://doi.org/10.1038/s41597-025-06238-4> ;
     rdfs:seeAlso <https://doi.org/10.1038/s41597-025-06238-4> ;
-    # Repositorio del proyecto de Github
+    # Repository of the Github project where the ontology is maintained
     rdfs:seeAlso <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
-    #vann:preferredNamespaceUri "https://ehu/wifi-csi/ontology#" ;
     vann:preferredNamespaceUri "http://34.51.146.173:8090/ontology/wifi_activity.ttl#" ;
     vann:preferredNamespacePrefix "wifi" ;
     dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at http://34.51.146.173:8090/ontology/wifi_activity.ttl"@en .
-    #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # Todavia no hay ninguna version previa
+    #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # There are no prior versions yet, this is the first version of the ontology.
 
-# Clases principales
+# Principal classes of the ontology
 
 :WifiMeasurement a owl:Class ;
     rdfs:subClassOf sosa:Observation ;
@@ -97,7 +96,7 @@
 
 
 # ───────────────────────────────────────────────────────────
-# Clase ACTIVITY + instancias
+# ACTIVITY class + instances
 
 :Activity a owl:Class ;
     rdfs:label "Activity"@en ;
@@ -154,7 +153,7 @@
     rdfs:comment "No hay actividad de ninguna persona durante la medición WiFi"@es ;
     skos:notation "E" .
 
-# Clase APPLICATION + instancias
+# APPLICATION class + instances
 
 :Application a owl:Class ;
     rdfs:label "Application"@en ;
@@ -204,7 +203,7 @@
     rdfs:comment "No hay una aplicación o caso de uso específico asociado con la medición WiFi"@es ;
     skos:notation "E" .
 
-# Clase ENVIRONMENT + instancias
+# ENVIRONMENT class + instances
 
 :Environment a owl:Class ;
     rdfs:label "Environment"@en ;
@@ -260,7 +259,7 @@
     rdfs:comment "WiFi measurement taken in an industrial laboratory environment with machines and equipment"@en ;
     rdfs:comment "Medición WiFi tomada en un entorno de laboratorio industrial con máquinas y equipos"@es .
 
-# Clase CSI_EXTRACTOR + instancias
+# CSI_EXTRACTOR class + instances
 
 :CSIExtractor a owl:Class ;
     rdfs:label "CSI Extractor"@en ;
@@ -282,7 +281,7 @@
     rdfs:comment "Extractor de CSI basado en el framework Nexmon para chipsets WiFi Atheros"@es ;
     skos:notation "ACT" .
 
-# Clase WIFISTANDARD + instancias
+# WiFi STANDARD class + instances
 
 :WifiStandard a owl:Class ;
     rdfs:label "WiFi Standard"@en ;
@@ -302,7 +301,7 @@
     rdfs:comment "WiFi measurement taken using the IEEE 802.11ac standard"@en ;
     rdfs:comment "Medición WiFi tomada utilizando el estándar IEEE 802.11ac"@es .
 
-# Clase MACHINESTATUS + instancias  
+# WiFi STANDARD class + instances
 
 :MachineStatus a owl:Class ;
     rdfs:label "Machine Status"@en ;

@@ -32,20 +32,15 @@ DCAT     = Namespace("http://www.w3.org/ns/dcat#")
 DCT      = Namespace("http://purl.org/dc/terms/")
 PROV     = Namespace("http://www.w3.org/ns/prov#")
 SPDX     = Namespace("http://spdx.org/rdf/terms#")
-#WIFI     = Namespace("https://ehu/wifi-csi/ontology#")      # temporal, ontologia en el servidor
-#MEAS     = Namespace("https://ehu/wifi-csi/measurement/")   # temporal, ubicación de las instancias
-#CSI_BASE = Namespace("https://ehu/wifi-csi/")               # temporal, esto es para redirigir a los archivos CSI, RSSI y timestamp.
-#DATASET  = Namespace("https://ehu/wifi-csi/dataset/")       # temporal, IRI del dataset 
 
-# ── variables globales para el dataset ────────────────────────────────────────────────────────
-#GRAPHDB_REPO         = "http://localhost:7200/repositories/fdp"  # temporal, base del repo en GraphDB
+# ── Global variables for the dataset ────────────────────────────────────────────────────────
 DATASET_ID           = "EHUNAM-WiFi-CSI-FAIR-data"
 DATASET_URI          = DATASET[DATASET_ID]
 DATASET_DIST_URI     = DATASET[f"{DATASET_ID}-distribution"]
 PROJECT_REPO         = URIRef("https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data")
 ORIGINAL_DATASET_URI = URIRef("https://doi.org/10.6084/m9.figshare.28541225")
 LICENSE_URI          = URIRef("https://creativecommons.org/licenses/by/4.0/")
-ONTOLOGY_FILE        = Path("ontology/wifi_activity.ttl")   # ontologia del github local
+ONTOLOGY_FILE        = Path("ontology/wifi_activity.ttl")   # ontology file path, used to load the ontology into the RDF graphs
 TURTLE_MEDIATYPE_URI = URIRef("https://www.iana.org/assignments/media-types/text/turtle")
 THEME_URI = URIRef("http://publications.europa.eu/resource/authority/data-theme/TECH")
 PUBLISHER_URI = URIRef("https://research.science.eus/documentos/695028cd9244cb45822e855e?lang=gl")
@@ -55,7 +50,7 @@ SPARQL_DOCS_URI = URIRef("https://graphdb.ontotext.com/documentation/11.3/sparql
 SPARQL_DIST_URI = DATASET[f"{DATASET_ID}-sparql-distribution"]
 
 
-# Campos que no se trasladan a RDF: matrices de datos grandes (y relacionados), artefactos internos
+# Fields that are not transferred to RDF: large data matrices(and related), internal artifacts
 SKIP_FIELDS = {
     "CSI", "RSSI", "TimeStamp", "Date", "Time", "Original_File",
     "__header__", "__version__", "__globals__", "__function_workspace__",
@@ -63,10 +58,10 @@ SKIP_FIELDS = {
 }
 
 
-# ── Extracción de metadatos del .mat ─────────────────────────────────────────
+# ── .mat metadata extraction ──────────────────────────────────────────
 
 def serialize(value):
-    #Convierte los arrays de matio a versión de python, aplanando arrays de un elemento.
+    # Transforms matio arrays to Python version, flattening single-element arrays.
     if not hasattr(value, "tolist"):
         return value
     val = value.tolist()
@@ -119,9 +114,9 @@ def extract_mat_metadata(filepath: Path) -> dict:
         if key not in SKIP_FIELDS
     }
 
-    # matio deserializa Date de manera legible
-    # el str() que devuelve tiene formato '2024-01-16T00:00:00.000000000' — se parte por T para obtener la fecha.
-    # Time viene directamente como string 'HH:MM:SS'.
+    # matio deserializes Date in a readable way, returning a string like '2024-01-16T00:00:00.000000000'. 
+    # We split by 'T' to get the correct date.
+    # This time is obtained directly as a string in the format 'HH:MM:SS'.
     date_raw     = mat.get("Date")
     time_raw     = mat.get("Time")
     date_str     = str(date_raw[0][0]).split("T")[0] if date_raw is not None else None
@@ -414,10 +409,12 @@ def add_dataset_metadata(g: Graph):
     g.add((DATASET_URI, DCT.issued,      Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
     g.add((DATASET_URI, DCT.modified,    Literal("2025-12-22T12:25:00Z", datatype=XSD.dateTimeStamp)))
     g.add((DATASET_URI, DCT.version,     Literal("1.0")))
-    g.add((DATASET_URI, DCAT.keyword,    Literal("CSI", lang="en")))
-    g.add((DATASET_URI, DCAT.keyword,    Literal("human Activity Recognition", lang="en")))
-    g.add((DATASET_URI, DCAT.keyword,    Literal("WiFi", lang="en")))
-    g.add((DATASET_URI, DCAT.keyword,    Literal("people counting", lang="en")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("Channel State Information (CSI)", lang="en")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("Human Activity Recognition (HAR)", lang="en")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("WiFi sensing", lang="en")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("People Counting (PC)", lang="en")))
+    g.add((DATASET_URI, DCAT.keyword,    Literal("Deep Learning Approaches", lang="en")))
+
     g.add((DATASET_URI, DCT.license,     LICENSE_URI))
     g.add((DATASET_URI, PROV.wasDerivedFrom, ORIGINAL_DATASET_URI))
 
