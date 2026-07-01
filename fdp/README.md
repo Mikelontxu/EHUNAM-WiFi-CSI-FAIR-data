@@ -116,7 +116,7 @@ Change the passwords for GraphDB and FDP through their endpoints (not automatize
 
 ### 3. Configure GraphDB security
 
-Activate the security features of GraphDB (Make sure FDP repository remains readable for Users)
+Activate the security features of GraphDB using the UI (Make sure FDP repository remains readable for Users).
 
 
 ### 4. Build your FDP according to the data (MC1):
