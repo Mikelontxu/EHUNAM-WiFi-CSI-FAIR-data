@@ -265,8 +265,9 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
 
     # ── Actividad ─────────────────────────────────────────────────────────────
     activity_raw = (empty_lists_to_none(meta.get("Activity")) or "").upper()
-    if activity_uri := idx["activity"].get(activity_raw):
-        g.add((meas_uri, WIFI.activity, activity_uri))
+    for letter in activity_raw:
+        if activity_uri := idx["activity"].get(letter):
+            g.add((meas_uri, WIFI.activity, activity_uri))
 
     # ── Máquina y estado ─────────────────────────────────────────────────────
     if machine := empty_lists_to_none(meta.get("Machine")):
