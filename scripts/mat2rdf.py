@@ -126,10 +126,10 @@ def extract_mat_metadata(filepath: Path) -> dict:
 
     return {
         "filepath":     str(filepath),                                     
-        "filename":     filepath.name,                                     #nombre del archivo para construir la URL de descarga en el RDF
-        "sha256":       hashlib.sha256(filepath.read_bytes()).hexdigest(), #sha256 del archivo para verificación de integridad
-        "datetime_iso": datetime_iso,                                       #fecha y hora en formato ISO 8601, combinando Date y Time
-        **metadata,                                                         #el resto de campos del .mat, como Set, Rx, Application, People, Activity, Machine, Status, Band, BW, Channel, Subcarriers, T_Meas… 
+        "filename":     filepath.name,                                      #file name to build the download URL in the RDF
+        "sha256":       hashlib.sha256(filepath.read_bytes()).hexdigest(),  #sha256 checksum of the .mat file to include in the RDF
+        "datetime_iso": datetime_iso,                                       #ISO 8601 datetime string combining Date and Time fields from the .mat file
+        **metadata,                                                         #the rest of the metadata fields extracted from the .mat file
     }
 
 
@@ -137,10 +137,10 @@ def extract_mat_metadata(filepath: Path) -> dict:
 
 def build_ontology_indexes(g: Graph) -> dict:
     """
-    Construye índices de lookup leyendo la ontología ya cargada en el grafo g.
+    Builds lookup indexes by reading the ontology already loaded in graph g.
     - by_notation: skos:notation.upper() -> URIRef  (Activity, Application, CSIExtractor, MachineStatus)
     - by_label:    rdfs:label.lower()    -> URIRef  (Environment, WifiStandard)
-    Estos índices permiten mapear los valores de los campos del .mat a las instancias de la ontología, buscando coincidencias por notación o etiqueta.
+    This function returns a dictionary of indexes for each class in the ontology, allowing to map .mat field values to ontology instances by notation or label.
     """
     def by_notation(cls):
         return {
@@ -166,23 +166,23 @@ def build_ontology_indexes(g: Graph) -> dict:
     }
 
 
-# ── Normalización de valores del JSON ─────────────────────────────────────────
+# ── JSON value normalization ─────────────────────────────────────────
 
 def empty_lists_to_none(value) -> str | None:
-    #Desempaqueta listas vacías y devuelve un string limpio o None para evitar valores vacíos.
+    #Unpacks empty lists and returns a clean string or None to avoid empty values.
     if isinstance(value, list):
         value = value[0] if value else None
     return str(value).strip() or None if value is not None else None
 
 def define_int(value) -> int | None:
-    #Convierte a int pasando por float para manejar valores como 40.0 a 40
+    #Transforms empty lists to None, and returns None for non-numeric values. Transforms numeric strings to int using float conversion to handle scientific notation.
     s = empty_lists_to_none(value)
     if s is None:
         return None
     return int(float(s))
 
 def secure_IRI_token(value, fallback="x") -> str:
-    #Convierte un valor a token seguro para componer IRIs.
+    #Transforms a string value into a safe IRI token by removing non-alphanumeric characters and replacing them with 'x'.
     lag = empty_lists_to_none(value)
     if lag is None:
         return fallback
@@ -191,13 +191,13 @@ def secure_IRI_token(value, fallback="x") -> str:
     return token or fallback
 
 
-# ── IRI de medición ───────────────────────────────────────────────────────────
+# ── Measurement ID building ────────────────────────────────────────────────
 
 def build_measurement_id(meta: dict) -> str:
     """
-    Construye un ID único y predecible para cada medición.
-    Formato: meas:{campaign}-{set}-{receiver}-{application}-{people}-{activity}-{machine}-{status}-{number}
-    Ejemplo: mc1-05-rx1-pc-abcdfgh-x-x-x-01
+    Builds a unique measurement ID from the metadata dictionary extracted from a .mat file.
+    Format: meas:{campaign}-{set}-{receiver}-{application}-{people}-{activity}-{machine}-{status}-{number}
+    Example: mc1-05-rx1-pc-abcdfgh-x-x-x-01
     """
     raw_set     = str(meta.get("Set") or "")
     parts       = re.split(r"[-_]", raw_set, maxsplit=1)
@@ -221,25 +221,25 @@ def build_measurement_id(meta: dict) -> str:
     ])
 
 def _node_uri(base: URIRef, suffix: str) -> URIRef:
-    #IRI de un nodo auxiliar de una medición (tiempo, banda, checksum…).
+    #IRI of an auxiliary node of a measurement (time, band, checksum…).
     return URIRef(f"{base}/{suffix}")
 
 
-# ── Conversión metadatos → RDF ────────────────────────────────────────────────
+# ── Metadata conversion → RDF ────────────────────────────────────────────────
 
 def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
-    #Añade los triples de una medición al grafo g usando los índices de la ontología.
+    #Adds the triples of a measurement to graph g using the ontology indexes.
     meas_id  = build_measurement_id(meta)
     meas_uri = MEAS[meas_id]
     raw_set  = str(meta.get("Set") or "")
     campaign = re.split(r"[-_]", raw_set, maxsplit=1)[0]
     people   = list(str(empty_lists_to_none(meta.get("People")) or ""))
 
-    # ── Tipo principal ────────────────────────────────────────────────────────
+    # ── Type definition ────────────────────────────────────────────────────────
     g.add((meas_uri, RDF.type, SOSA.Observation))
     g.add((meas_uri, RDF.type, WIFI.WifiMeasurement))
 
-    # ── Campaña y set ─────────────────────────────────────────────────────────
+    # ── Campaign and set ───────────────────────────────────────────────────────
     g.add((meas_uri, WIFI.campaign,  Literal(campaign)))
     g.add((meas_uri, WIFI.set,       Literal(raw_set)))
     g.add((meas_uri, DCT.identifier, Literal(meas_id)))
@@ -247,38 +247,38 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
     if (number := define_int(meta.get("Number"))) is not None:
         g.add((meas_uri, WIFI.sequentialNumber, Literal(number, datatype=XSD.integer)))
 
-    # ── Receptor ──────────────────────────────────────────────────────────────
+    # ── Receiver ──────────────────────────────────────────────────────────────
     if (rx := define_int(meta.get("Rx"))) is not None:
         g.add((meas_uri, WIFI.receiver, Literal(rx, datatype=XSD.integer)))
 
-    # ── Aplicación ────────────────────────────────────────────────────────────
+    # ── Application ────────────────────────────────────────────────────────────
     app_raw = (empty_lists_to_none(meta.get("Application")) or "").upper()
     if app_uri := idx["application"].get(app_raw):
         g.add((meas_uri, WIFI.application, app_uri))
 
-    # ── Personas ──────────────────────────────────────────────────────────────
+    # ── People ──────────────────────────────────────────────────────────────
     for person_id in people:
         g.add((meas_uri, WIFI.involvesPerson, WIFI[f"Person_{person_id}"]))
         g.add((WIFI[f"Person_{person_id}"], RDF.type, WIFI.Person))
     n_people = define_int(meta.get("N_People")) or len(people)
     g.add((meas_uri, WIFI.nPeople, Literal(n_people, datatype=XSD.integer)))
 
-    # ── Actividad ─────────────────────────────────────────────────────────────
+    # ── Activity ─────────────────────────────────────────────────────────────
     activity_raw = (empty_lists_to_none(meta.get("Activity")) or "").upper()
     for letter in activity_raw:
         if activity_uri := idx["activity"].get(letter):
             g.add((meas_uri, WIFI.activity, activity_uri))
 
-    # ── Máquina y estado ─────────────────────────────────────────────────────
+    # ── Machine and status ─────────────────────────────────────────────────────
     if machine := empty_lists_to_none(meta.get("Machine")):
         g.add((meas_uri, WIFI.machine, Literal(machine, datatype=XSD.integer)))
     status_raw = (empty_lists_to_none(meta.get("Status")) or "").upper()
     if status_uri := idx["machine_status"].get(status_raw):
         g.add((meas_uri, WIFI.machineStatus, status_uri))
 
-    # ── Parámetros WiFi (QUDT) ────────────────────────────────────────────────
+    # ── WiFi Parameters (QUDT) ────────────────────────────────────────────────
 
-    # Banda de frecuencia
+    # Frequency band
     band_val = meta.get("Band")
     if band_val is not None:
         band_node = _node_uri(meas_uri, "frequency-band")
@@ -287,7 +287,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
         g.add((band_node, QUDT.numericValue, Literal(float(band_val), datatype=XSD.double)))
         g.add((band_node, QUDT.unit, UNIT.GigaHertz))
 
-    # Ancho de banda
+    # Bandwidth
     bw_val = meta.get("BW") if meta.get("BW") is not None else meta.get("bandwidth")
     if bw_val is not None:
         bw_node = _node_uri(meas_uri, "bandwidth")
@@ -296,18 +296,18 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
         g.add((bw_node, QUDT.numericValue, Literal(float(bw_val), datatype=XSD.double)))
         g.add((bw_node, QUDT.unit, UNIT.MegaHertz))
 
-    # Canal
+    # Channel
     if (channel := meta.get("Channel")) is not None:
         g.add((meas_uri, WIFI.channel, Literal(int(channel), datatype=XSD.integer)))
 
-    # Subportadoras
+    # Subcarriers
     if (subcarriers := meta.get("Subcarriers")) is not None:
         g.add((meas_uri, WIFI.subcarriers, Literal(int(subcarriers), datatype=XSD.integer)))
 
     if (occupied_sc := meta.get("Occupied_SC")) is not None:
         g.add((meas_uri, WIFI.occupiedSubcarriers, Literal(int(occupied_sc), datatype=XSD.integer)))
 
-    # Duración de la medición (segundos)
+    # Duration (T_Meas) (seconds)
     if (t_meas := meta.get("T_Meas")) is not None:
         t_node = _node_uri(meas_uri, "duration")
         g.add((meas_uri, WIFI.measurementDuration, t_node))
@@ -323,7 +323,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
         if val is not None:
             g.add((meas_uri, predicate, Literal(int(val), datatype=XSD.integer)))
 
-    # ── Entorno ───────────────────────────────────────────────────────────────
+    # ── Environment ───────────────────────────────────────────────────────────────
     env_raw = str(meta.get("Enviroment") or meta.get("Environment") or "").lower().strip()
     env_uri = next(
         (uri for label, uri in idx["environment"].items() if label in env_raw or env_raw in label),
@@ -334,7 +334,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
     elif env_raw:
         g.add((meas_uri, WIFI.environment, Literal(env_raw)))
 
-    # ── Estándar WiFi ─────────────────────────────────────────────────────────
+    # ── WiFi Standard ─────────────────────────────────────────────────────────
     std_raw = str(meta.get("Standard") or "").strip()
     if std_uri := idx["wifi_standard"].get(std_raw.lower()):
         g.add((meas_uri, WIFI.wifiStandard, std_uri))
@@ -354,7 +354,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
     if traffic_raw := str(meta.get("Traffic") or "").strip():
         g.add((meas_uri, WIFI.traffic, Literal(traffic_raw)))
 
-    # ── Fecha y hora (OWL-Time) ───────────────────────────────────────────────
+    # ── Date and time (OWL-Time) ───────────────────────────────────────────────
     if datetime_iso := meta.get("datetime_iso"):
         time_node = _node_uri(meas_uri, "time")
         g.add((meas_uri, SOSA.resultTime, time_node))
@@ -362,7 +362,7 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
         g.add((time_node, TIME.inXSDDateTimeStamp,
                Literal(datetime_iso, datatype=XSD.dateTimeStamp)))
 
-    # ── Referencia al archivo .mat (CSI + RSSI + Timestamp) ──────────────────
+    # ── Reference to .mat file (CSI + RSSI + Timestamp) ──────────────────
     if filename := meta.get("filename"):
         result_node   = _node_uri(meas_uri, "result")
         safe_filename = quote(filename, safe="-_.~")
@@ -378,14 +378,14 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
             g.add((checksum_node, SPDX.checksumValue,
                    Literal(sha256, datatype=XSD.hexBinary)))
 
-    # ── Procedencia ───────────────────────────────────────────────────────────
+    # ── Provenance ───────────────────────────────────────────────────────────
     g.add((meas_uri, PROV.wasGeneratedBy, PROJECT_REPO))
 
 
 # ── Metadatos del dataset DCAT ────────────────────────────────────────────────
 
 def add_measurement_distributions(g: Graph, measurement_ids: list[str]):
-    #Por cada medición se crea su dcat:Distribution apuntando a cada named graph en GraphDB
+    #For each measurement, a dcat:Distribution is created pointing to each named graph in GraphDB
     
     for meas_id in measurement_ids:
         meas_uri        = MEAS[meas_id]
@@ -461,7 +461,8 @@ def add_dataset_metadata(g: Graph):
 
     g.add((ONTOLOGY_URI, RDF.type, DCT.Standard))
     g.add((DATASET_URI, DCT.conformsTo, ONTOLOGY_URI))
-# ── Funciones principales ──────────────────────────────────────────────────────────────────
+
+# ── Main Functions ──────────────────────────────────────────────────────────────────
 
 def _bind_namespaces(g: Graph):
     g.bind("sosa",    SOSA)
@@ -479,11 +480,11 @@ def _bind_namespaces(g: Graph):
 
 def process_folder(mat_dir: str = "data", output_dir: str = "output"):
 
-    # Procesa todos los .mat de mat_dir y genera:
-    #  - Un .ttl individual por medición en output_dir/rdf/
-    #  - Un dataset_metadata.ttl con los metadatos DCAT en output_dir/
-    # Cada .ttl individual se va a subir al GraphDB en un graph unico
-    # De esta manera se puede consultar individualmente y realizar actualizaciones especifcas.
+    # Process all .mat files in mat_dir and generate:
+    #  - An individual .ttl file for each measurement in output_dir/rdf/
+    #  - A dataset_metadata.ttl file with DCAT metadata in output_dir/
+    # Each individual .ttl file will be uploaded to GraphDB in a unique graph
+    # This way, each measurement can be queried individually and specific updates can be made.
 
     mat_path    = Path(mat_dir)
     output_path = Path(output_dir)
@@ -492,7 +493,7 @@ def process_folder(mat_dir: str = "data", output_dir: str = "output"):
 
     mat_files = sorted(mat_path.glob("*.mat"))
     if not mat_files:
-        print(f"No se encontraron archivos .mat en '{mat_dir}'")
+        print(f"No files found in '{mat_dir}'")
         return
 
     # Cargar ontología una sola vez y construir índices de lookup
@@ -502,15 +503,15 @@ def process_folder(mat_dir: str = "data", output_dir: str = "output"):
         if ONTOLOGY_FILE.exists():
             ontology_graph.parse(str(ONTOLOGY_FILE), format="turtle")
     except Exception as e:
-        print(f"No se pudo parsear la ontología {ONTOLOGY_FILE}: {e}")
+        print(f"The ontology could not be parsed: {e}")
     idx = build_ontology_indexes(ontology_graph)
 
-    print(f"Procesando {len(mat_files)} archivos .mat\n")
+    print(f"Processing {len(mat_files)} .mat files\n")
 
     measurement_id = []
 
     for mat_file in mat_files:
-        print(f"{'='*60}\nProcesando: {mat_file.name}")
+        print(f"{'='*60}\nProcessing: {mat_file.name}")
         try:
             meta = extract_mat_metadata(mat_file)
             g = Graph()
@@ -529,7 +530,7 @@ def process_folder(mat_dir: str = "data", output_dir: str = "output"):
             print(f"  [ERROR] {e}")
         print()
 
-    # Metadatos DCAT, fichero separado para subir al grafo por defecto de GraphDB
+    # Metadata DCAT, file separated for uploading to the default graph of GraphDB
     meta_graph = Graph()
     _bind_namespaces(meta_graph)
     add_dataset_metadata(meta_graph)
@@ -541,7 +542,7 @@ def process_folder(mat_dir: str = "data", output_dir: str = "output"):
 
 if __name__ == "__main__":
     if len(sys.argv) == 2:
-        # Test rápido con un único .mat para tests
+        # Fast testing of a single .mat file, printing the RDF.
         mat_file = Path(sys.argv[1])
         meta     = extract_mat_metadata(mat_file)
         g        = Graph()
@@ -550,9 +551,9 @@ if __name__ == "__main__":
             if ONTOLOGY_FILE.exists():
                 g.parse(str(ONTOLOGY_FILE), format="turtle")
         except Exception as e:
-            print(f"No se pudo parsear la ontología en el test: {e}")
+            print(f"The ontology could not be parsed: {e}")
         mat_to_rdf(meta, g, build_ontology_indexes(g))
         print(g.serialize(format="turtle"))
     else:
-        # Procesamiento completo de la carpeta de datos
+        # Entire dataset processing of the .mat files in the data folder, generating RDF files and metadata.
         process_folder()

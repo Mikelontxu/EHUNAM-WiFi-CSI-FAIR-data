@@ -6,3 +6,4 @@ fdp/mongo/
 fdp/graphdb/
 *.env
 data/
+test_folder/*
