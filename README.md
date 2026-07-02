@@ -67,6 +67,14 @@ This project transforms those files into RDF/OWL following FAIR principles.
 <p>This folder contains the SHACL shapes used to validate the RDF data generated against the ontology. It also includes the standard DCAT-AP SHACL shapes used to evaluate and validate the dataset metadata.</p>  
 </td>  
 </tr> 
+<tr>  
+<td>  
+<p>/test:</p>  
+</td> 
+<td>  
+<p>This folder contains some tests to validate the use of the SPARQL endpoint and prove that it works properly. Use <code> python test/test_sparql_endpoint.py </code> to execute the script and download the proper .mat files. The SPARQL queries can be changed for further testing.</p>  
+</td>  
+</tr> 
 </tbody>  
 </table>
 
