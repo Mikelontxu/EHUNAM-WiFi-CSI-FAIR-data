@@ -86,12 +86,15 @@ This project transforms those files into RDF/OWL following FAIR principles.
 
 ## User manual
 
+**Before Deployment:**
+- Change the ontology, shapes and fdp files to match the correct IP/URI.
+
 1. Install all the requirements:
 ```bash
    pip install -r requirements.txt
 ```
 
-2. Build the FDP Docker environment (see the `/fdp` folder's README for more details):
+2. Build the FDP Docker environment (**see the `/fdp` folder's README for more details**):
 ```bash
    docker compose up -d
 ```
