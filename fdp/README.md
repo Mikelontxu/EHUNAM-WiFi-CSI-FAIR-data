@@ -19,8 +19,8 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 </tr>
 <tr>
 <td><p>fdp</p></td>
-<td><p>FAIR Data Point backend</p></td>
-<td><p>—</p></td>
+<td><p>FAIR Data Point backend (API / persistent URIs)</p></td>
+<td><p>http://34.51.146.173:8080</p></td>
 </tr>
 <tr>
 <td><p>fdp-client</p></td>
@@ -68,6 +68,10 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 <td><p>http://34.51.146.173/</p></td>
 </tr>
 <tr>
+<td><p>FDP persistent URIs</p></td>
+<td><p>http://34.51.146.173:8080</p></td>
+</tr>
+<tr>
 <td><p>GraphDB</p></td>
 <td><p>http://34.51.146.173:7200/</p></td>
 </tr>
@@ -101,7 +105,7 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 ## Deployment
 
 **Before deployment:** 
-- Ensure the required ports are open on the host.
+- Ensure the required ports are open on the host (80, 7200, 8090, 1071, 8080).
 - Check if an .env file is present with the credentials for GraphDB, MongoDB and FDP.
 - Set the correct IP/URL of the host machine in both `.env` and `application.yml`.
 
