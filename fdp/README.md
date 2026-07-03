@@ -106,8 +106,9 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 
 **Before deployment:** 
 - Ensure the required ports are open on the host (80, 7200, 8090, 1071, 8080).
-- Check if an .env file is present with the credentials for GraphDB, MongoDB and FDP. This .env should also include de server_host IP or else it will use localhost.
-- Set the correct IP/URI of the host machine in both `.env` and `application.yml`.
+- Check if an .env file is present with the credentials for GraphDB, MongoDB and FDP. This .env should also include the server_host IP/URL or else it will use localhost.
+- Set the correct IP/URL of the host machine in both `.env` and `application.yml`.
+- As mentioned in the other README.md, SHACL shapes and the ontology need to be manually updated to match the same URIs too.
 
 ### 1. Build the docker images
 
