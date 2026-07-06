@@ -1,11 +1,11 @@
-#@prefix : <https://ehu/wifi-csi/shapes#> .
-@prefix : <http://34.51.146.173:8090/wifi-csi/shapes#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
-#@prefix dataset: <https://ehu/wifi-csi/dataset/> .
+
+# Change the following domain and prefix declarations to match your dataset's namespace and prefix.
 @prefix dataset: <http://34.51.146.173:8090/wifi-csi/dataset/> .
+@prefix : <http://34.51.146.173:8090/wifi-csi/shapes#> .
 
 # Dataset-level checks
 
