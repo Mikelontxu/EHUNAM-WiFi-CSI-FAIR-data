@@ -20,24 +20,18 @@ QUERIES = {
         PREFIX qudt: <http://qudt.org/schema/qudt/>
         SELECT DISTINCT ?measurement ?downloadURL
         WHERE {
-          ?measurement a wifi:WifiMeasurement ;
-              wifi:campaign    "MC1" ;
-              wifi:receiver    2 ;
-              wifi:environment wifi:BasementRoom ;
-              wifi:bandwidth   ?bwNode ;
-              sosa:hasResult   ?result .
-          ?bwNode  qudt:numericValue ?bwValue .
-          ?result  dcat:downloadURL  ?downloadURL .
-          FILTER(?bwValue = 80.0)
-          {
-            ?measurement wifi:application wifi:EmptyApplication .
-          }
-          UNION
-          {
-            ?measurement wifi:application wifi:HAR ;
-                         wifi:activity    ?activity .
-            FILTER(?activity IN (wifi:Walking, wifi:StandingStill, wifi:Jumping))
-          }
+        ?measurement a wifi:WifiMeasurement ;
+            wifi:campaign    "MC1" ;
+            wifi:receiver    2 ;
+            wifi:environment wifi:BasementRoom ;
+            wifi:bandwidth   ?bwNode ;
+            wifi:application wifi:HAR ;
+            wifi:activity    ?activity ;
+            sosa:hasResult   ?result .
+        ?bwNode  qudt:numericValue ?bwValue .
+        ?result  dcat:downloadURL  ?downloadURL .
+        FILTER(?bwValue = 80.0)
+        FILTER(?activity IN (wifi:Walking, wifi:StandingStill, wifi:Jumping, wifi:Empty))
         }
         ORDER BY ?downloadURL
     """,
@@ -96,7 +90,7 @@ QUERIES = {
           ?bwNode  qudt:numericValue ?bwValue .
           ?result  dcat:downloadURL  ?downloadURL .
           FILTER(?bwValue = 20.0)
-          FILTER(?app IN (wifi:EmptyApplication, wifi:PC))
+          FILTER(?app IN (wifi:PC))
           FILTER(?nPeople >= 0 && ?nPeople <= 4)
         }
         ORDER BY ?nPeople
