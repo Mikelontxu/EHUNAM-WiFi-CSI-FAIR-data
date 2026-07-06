@@ -1,20 +1,17 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
-#@prefix wifi: <https://ehu/wifi-csi/ontology#> .
-@prefix wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#> .
 @prefix qudt: <http://qudt.org/schema/qudt/> .
 @prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix time: <http://www.w3.org/2006/time#> .
-#@prefix : <https://ehu/wifi-csi/shapes#> .
+
+# Change the following domain and prefix declarations to match your dataset's namespace and prefix.
+@prefix wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#> .
 @prefix : <http://34.51.146.173:8090/wifi-csi/shapes#> .
-#@prefix dataset: <https://ehu/wifi-csi/dataset/> .
-@prefix dataset: <http://34.51.146.173:8090/wifi-csi/dataset/> .
 
 
 # Measurement checks
@@ -124,7 +121,7 @@
   ] ;
   sh:property [ 
     sh:path wifi:traffic ; 
-    sh:minCount 1 ; 
+    sh:minCount 0 ; 
     sh:datatype xsd:string ;
   ] ;
   sh:property [ 
@@ -228,6 +225,7 @@
   sh:property [
     sh:path spdx:checksumValue ;
     sh:minCount 1 ;
+    sh:datatype xsd:hexBinary ;
     sh:pattern "^[0-9a-f]{64}$" ;
     sh:message "checksumValue must be a 64-character lowercase hexadecimal string" ;
   ] .

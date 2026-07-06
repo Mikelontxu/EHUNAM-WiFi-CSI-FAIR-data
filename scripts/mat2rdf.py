@@ -253,9 +253,20 @@ def mat_to_rdf(meta: dict, g: Graph, idx: dict) -> None:
 
     # ── Application ────────────────────────────────────────────────────────────
     app_raw = (empty_lists_to_none(meta.get("Application")) or "").upper()
-    if app_uri := idx["application"].get(app_raw):
-        g.add((meas_uri, WIFI.application, app_uri))
+    if app_raw == "E":
+        if har_uri := idx["application"].get("HAR"):
+            g.add((meas_uri, WIFI.application, har_uri))
+        if pc_uri := idx["application"].get("PC"):
+            g.add((meas_uri, WIFI.application, pc_uri))
 
+        if empty_activity_uri := idx["activity"].get("E"):
+            g.add((meas_uri, WIFI.activity, empty_activity_uri))
+
+        g.add((meas_uri, WIFI.nPeople, Literal(0, datatype=XSD.integer)))
+
+    else:
+        if app_uri := idx["application"].get(app_raw):
+            g.add((meas_uri, WIFI.application, app_uri))
     # ── People ──────────────────────────────────────────────────────────────
     for person_id in people:
         g.add((meas_uri, WIFI.involvesPerson, WIFI[f"Person_{person_id}"]))
