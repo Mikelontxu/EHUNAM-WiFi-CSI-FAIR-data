@@ -23,6 +23,72 @@ services:
             retries: 10
             start_period: 30s
 
+    fdp-init:       # One-off job that replaces the FDP default admin account with FDP_ADMIN_EMAIL / FDP_ADMIN_PASSWORD
+        image: alpine:3.20
+        depends_on:
+            fdp:
+                condition: service_healthy
+        entrypoint:
+            - sh
+            - -c
+            - |
+              set -e
+              apk add --no-cache curl jq >/dev/null
+
+              # ADMIN_EMAIL / ADMIN_PASSWORD are baked in by Compose from _env at parse time.
+              # Everything else below is a plain bash-runtime variable, escaped as $$ so Compose
+              # leaves it as a literal $ for the shell to expand at container run time.
+              FDP_URL="http://fdp:80"
+              DEFAULT_EMAIL="albert.einstein@example.com"
+              DEFAULT_PASSWORD="password"
+              ADMIN_EMAIL="${FDP_ADMIN_EMAIL}"
+              ADMIN_PASSWORD="${FDP_ADMIN_PASSWORD}"
+
+              get_token() {
+                curl -s -X POST "$$FDP_URL/tokens" \
+                  -H "Content-Type: application/json" -H "Accept: application/json" \
+                  -d "{\"email\":\"$$1\",\"password\":\"$$2\"}" | jq -r '.token // empty'
+              }
+
+              # If the configured admin credentials already work, there is nothing to do (idempotent).
+              TOKEN=$$(get_token "$$ADMIN_EMAIL" "$$ADMIN_PASSWORD")
+              if [ -n "$$TOKEN" ]; then
+                echo "FDP admin account already configured, skipping."
+                exit 0
+              fi
+
+              # Otherwise fall back to the FDP default admin account and update it.
+              TOKEN=$$(get_token "$$DEFAULT_EMAIL" "$$DEFAULT_PASSWORD")
+              if [ -z "$$TOKEN" ]; then
+                echo "Could not log in with either the configured or the default FDP admin credentials. Aborting."
+                exit 1
+              fi
+
+              echo "Updating default FDP admin account (albert.einstein@example.com)..."
+              CURRENT_USER=$$(curl -s "$$FDP_URL/users/current" -H "Authorization: Bearer $$TOKEN" -H "Accept: application/json")
+              UUID=$$(echo "$$CURRENT_USER" | jq -r '.uuid')
+
+              # Merge the current user object with the new email/password so required fields stay populated.
+              PAYLOAD=$$(echo "$$CURRENT_USER" | jq \
+                --arg email "$$ADMIN_EMAIL" \
+                --arg password "$$ADMIN_PASSWORD" \
+                '. + {email: $$email, newPassword: $$password, password: $$password}')
+
+              HTTP_CODE=$$(curl -s -o /tmp/resp.json -w "%{http_code}" -X PUT "$$FDP_URL/users/$$UUID" \
+                -H "Authorization: Bearer $$TOKEN" -H "Content-Type: application/json" -H "Accept: application/json" \
+                -d "$$PAYLOAD")
+
+              if [ "$$HTTP_CODE" -ge 400 ]; then
+                echo "Failed to update FDP admin account (HTTP $$HTTP_CODE). Response body:"
+                cat /tmp/resp.json
+                echo ""
+                echo "Check http://localhost:8080/swagger-ui.html for the exact /users/{uuid} schema on this FDP version and adjust the PAYLOAD line in compose.yml accordingly."
+                exit 1
+              fi
+
+              echo "FDP admin account updated. New login: $$ADMIN_EMAIL"
+        restart: "no"
+
     fdp-client:     # FAIR Data Point Client image to interact with the FAIR Data Point
         image: fairdata/fairdatapoint-client:latest
         ports:
@@ -57,23 +123,44 @@ services:
                   set -m
                   /opt/graphdb/dist/bin/graphdb &
 
-                  until curl -sf http://localhost:7200/rest/repositories; do
+                  # Basic auth is added: this auth is ignored while security is disabled, and becomes required as soon as security is turned on below
+                  #  (e.g. on a container restart after the first successful run).
+                  until curl -sf -u "${GRAPHDB_USER}:${GRAPHDB_PASSWORD}" http://localhost:7200/rest/repositories; do
                     echo "Waiting for GraphDB..."
                     sleep 3
                   done
 
-                  if ! curl -sf http://localhost:7200/rest/repositories/fdp > /dev/null; then
+                  if ! curl -sf -u "${GRAPHDB_USER}:${GRAPHDB_PASSWORD}" http://localhost:7200/rest/repositories/fdp > /dev/null; then
                     echo "Creating fdp repository..."
-                    curl -X POST http://localhost:7200/rest/repositories \
+                    curl -u "${GRAPHDB_USER}:${GRAPHDB_PASSWORD}" -X POST http://localhost:7200/rest/repositories \
                         -H "Content-Type: application/json" \
                         -d "@/tmp/repo.json"
                   else
                     echo "Repository fdp already exists, skipping creation."
                   fi
 
+                  # Detect whether security is already enabled by probing an admin endpoint without
+                  # credentials. $$SEC_PROBE is a bash runtime variable (escaped so Compose doesn't
+                  # try to interpolate it as a compose variable).
+                  SEC_PROBE=$$(curl -s -o /dev/null -w "%{http_code}" http://localhost:7200/rest/security/users)
+
+                  if [ "$$SEC_PROBE" = "401" ] || [ "$$SEC_PROBE" = "403" ]; then
+                    echo "GraphDB security already enabled, skipping initial user/security setup."
+                  else
+                    echo "Setting password for GraphDB user '${GRAPHDB_USER}'..."
+                    curl -X PUT "http://localhost:7200/rest/security/users/${GRAPHDB_USER}" \
+                        -H "Content-Type: application/json" \
+                        -d "{\"username\":\"${GRAPHDB_USER}\",\"password\":\"${GRAPHDB_PASSWORD}\",\"grantedAuthorities\":[\"ROLE_ADMIN\"]}"
+
+                    echo "Enabling GraphDB security..."
+                    curl -X POST http://localhost:7200/rest/security \
+                        -H "Content-Type: application/json" \
+                        -d "true"
+                  fi
+
                   fg
             healthcheck:
-                test: curl --fail-with-body http://localhost:7200/repositories/fdp/health || exit 1
+                test: curl --fail-with-body -u "${GRAPHDB_USER}:${GRAPHDB_PASSWORD}" http://localhost:7200/repositories/fdp/health || exit 1
                 interval: 5s
 
     nginx:       # NGINX image to serve the .mat files, ontology and documentation generated by widoco
