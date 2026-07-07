@@ -100,13 +100,55 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 
 ## Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or Docker Engine + Compose)
-- A `.env` file with credentials and host configuration (see below)
+- A `.env` file with credentials and host configuration. This `.env` file must be inside /fdp and has the following structure:
+
+<table>
+<tbody>
+<tr>
+<td><p><strong>Variable</strong></p></td>
+<td><p><strong>Description</strong></p></td>
+</tr>
+<tr>
+<td><p>SERVER_HOST</p></td>
+<td><p>Public IP/domain of the host machine (e.g. <code>34.51.146.173</code>). Used by the project's other processing scripts. </p></td>
+</tr>
+<tr>
+<td><p>MONGO_ROOT_USER</p></td>
+<td><p>MongoDB root username</p></td>
+</tr>
+<tr>
+<td><p>MONGO_ROOT_PASSWORD</p></td>
+<td><p>MongoDB root password</p></td>
+</tr>
+<tr>
+<td><p>GRAPHDB_USER</p></td>
+<td><p>GraphDB admin username</p></td>
+</tr>
+<tr>
+<td><p>GRAPHDB_PASSWORD</p></td>
+<td><p>GraphDB admin password</p></td>
+</tr>
+<tr>
+<td><p>FDP_JWT_SECRET_KEY</p></td>
+<td><p>Secret key used by FDP to sign JWT auth tokens. Generate with <code>openssl rand -base64 64</code></p></td>
+</tr>
+<tr>
+<td><p>GRAPHDB_PORT</p></td>
+<td><p>Public port for GraphDB (optional, has a default)</p></td>
+</tr>
+<tr>
+<td><p>NGINX_PORT</p></td>
+<td><p>Public port for the nginx ontology/data server (optional, has a default)</p></td>
+</tr>
+</tbody>
+</table>
 
 ## Deployment
 
 **Before deployment:** 
 - Ensure the required ports are open on the host (80, 7200, 8090, 1071, 8080).
-- Check if an .env file is present with the credentials for GraphDB and MongoDB. This .env should also include the server_host IP/URL or else it will use localhost.
+- Check if an `.env` file is present with the credentials for GraphDB, MongoDB and a FDP_JWT_SECRET_KEY.
+- This `.env` should also include the SERVER_HOST IP/URL or else it will use localhost.
 - Set the correct IP/URL of the host machine in both `.env` and `application.yml`.
 - As mentioned in the other README.md, **SHACL shapes and the ontology** need to be manually updated to match the same URIs too.
 
@@ -117,7 +159,7 @@ docker compose up -d
 ```
 ### 2. Change default passwords
 
-Change the passwords for FDP through his endpoint (there is no documentation to automatize this).
+Change the password for FDP through his endpoint (there is no documentation to automatize this).
 
 ### 3. Build your FDP according to the data (MC1):
 
