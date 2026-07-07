@@ -93,7 +93,7 @@ services:
 
                   # Enable Free Access so the fdp repository can be read without credentials
                   echo "Enabling GraphDB Free Access (read-only) for the fdp repository..."
-                  curl -X POST -u "${GRAPHDB_USER}:${GRAPHDB_PASSWORD}" http://localhost:7200/rest/security/freeaccess \
+                  curl -X POST -u "${GRAPHDB_USER}:${GRAPHDB_PASSWORD}" http://localhost:7200/rest/security/free-access \
                       -H "Content-Type: application/json" \
                       -d '{"enabled": true, "authorities": ["READ_REPO_fdp"], "appSettings": {"DEFAULT_SAMEAS": true, "DEFAULT_INFERENCE": true, "EXECUTE_COUNT": true, "IGNORE_SHARED_QUERIES": false}}'
 
