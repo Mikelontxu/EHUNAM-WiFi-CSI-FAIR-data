@@ -134,11 +134,11 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 </tr>
 <tr>
 <td><p>GRAPHDB_PORT</p></td>
-<td><p>Public port for GraphDB (optional, has a default)</p></td>
+<td><p>Public port for GraphDB (optional, has a default -> 7200)</p></td>
 </tr>
 <tr>
 <td><p>NGINX_PORT</p></td>
-<td><p>Public port for the nginx ontology/data server (optional, has a default)</p></td>
+<td><p>Public port for the nginx ontology/data server (optional, has a d  efault -> 8090)</p></td>
 </tr>
 </tbody>
 </table>
