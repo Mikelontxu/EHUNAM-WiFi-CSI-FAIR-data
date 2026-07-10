@@ -37,8 +37,8 @@
     bibo:doi "10.5281/zenodo.21089086" ;    
     owl:sameAs <https://doi.org/10.5281/zenodo.21089086> ;
     dct:created "2026-05-27"^^xsd:date ;
-    dct:modified "2026-07-01"^^xsd:date ;
-    dct:issued "2026-07-01"^^xsd:date ;
+    dct:modified "2026-07-10"^^xsd:date ;
+    dct:issued "2026-07-10"^^xsd:date ;
     dct:language "en" , "es" ;
     bibo:status "Published" ;
     dct:publisher <https://doi.org/10.6084/m9.figshare.28541225> ;

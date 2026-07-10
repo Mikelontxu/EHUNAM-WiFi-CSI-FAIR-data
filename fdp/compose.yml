@@ -125,7 +125,7 @@ services:
             - ../ontology:/ontology
         command: >
             -ontFile /ontology/wifi_activity.ttl
-            -outFolder /ontology/docs
+            -outFolder /docs
             -lang en-es
             -getOntologyMetadata
             -includeAnnotationProperties
