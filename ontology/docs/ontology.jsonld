@@ -1,74 +1,17 @@
 [ {
-  "@id" : "http://purl.org/dc/terms/abstract",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/bibliographicCitation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/created",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/creator",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/description",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/isReferencedBy",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/language",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/license",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/modified",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/source",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/dc/terms/title",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://www.w3.org/2001/XMLSchema#date",
-  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
-}, {
-  "@id" : "http://www.w3.org/2004/02/skos/core#notation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
-}, {
-  "@id" : "http://www.w3.org/ns/sosa/Observation",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/ns/sosa/Result",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
-}, {
-  "@id" : "http://www.w3.org/ns/sosa/hasResult",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
-}, {
-  "@id" : "https://ehu/wifi-csi/ontology",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://purl.org/dc/terms/abstract" : [ {
     "@language" : "en",
     "@value" : "This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters."
   } ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
     "@language" : "en",
-    "@value" : "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://ehu/wifi-csi/ontology"
+    "@value" : "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at http://34.51.146.173:8090/ontology/wifi_activity.ttl. DOI: https://doi.org/10.5281/zenodo.21089086"
   } ],
   "http://purl.org/dc/terms/created" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-06-01"
+    "@value" : "2026-05-27"
   } ],
   "http://purl.org/dc/terms/creator" : [ {
     "@id" : "https://github.com/Mikelontxu"
@@ -80,8 +23,15 @@
     "@language" : "es",
     "@value" : "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."
   } ],
+  "http://purl.org/dc/terms/identifier" : [ {
+    "@value" : "https://doi.org/10.5281/zenodo.21089086"
+  } ],
   "http://purl.org/dc/terms/isReferencedBy" : [ {
     "@id" : "https://doi.org/10.1038/s41597-025-06238-4"
+  } ],
+  "http://purl.org/dc/terms/issued" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-07-01"
   } ],
   "http://purl.org/dc/terms/language" : [ {
     "@value" : "en"
@@ -93,7 +43,10 @@
   } ],
   "http://purl.org/dc/terms/modified" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-06-01"
+    "@value" : "2026-07-01"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
   } ],
   "http://purl.org/dc/terms/source" : [ {
     "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
@@ -105,19 +58,28 @@
     "@language" : "es",
     "@value" : "Ontología de actividad WiFi CSI de EHUNAM"
   } ],
+  "http://purl.org/ontology/bibo/doi" : [ {
+    "@value" : "10.5281/zenodo.21089086"
+  } ],
+  "http://purl.org/ontology/bibo/status" : [ {
+    "@value" : "Published"
+  } ],
   "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
     "@value" : "wifi"
   } ],
   "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "https://ehu/wifi-csi/ontology#"
+    "@value" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
     "@id" : "https://doi.org/10.1038/s41597-025-06238-4"
   }, {
     "@id" : "https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data"
   } ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://doi.org/10.5281/zenodo.21089086"
+  } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology/1.0.0"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
     "@value" : "1.0.0"
@@ -126,7 +88,7 @@
     "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Activity",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -143,7 +105,7 @@
     "@value" : "Activity"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Application",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -160,10 +122,10 @@
     "@value" : "Application"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#AtherosCSIExtractor",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#AtherosCSIExtractor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#CSIExtractor"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -183,7 +145,7 @@
     "@value" : "ACT"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Bandwidth",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Bandwidth",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -198,12 +160,15 @@
   }, {
     "@language" : "en",
     "@value" : "Bandwidth"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Quantity"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#BasementRoom",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#BasementRoom",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -220,7 +185,7 @@
     "@value" : "Sótano"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#CSIExtractor",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -237,7 +202,7 @@
     "@value" : "Extractor de CSI"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#CSIResult",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIResult",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -257,10 +222,10 @@
     "@id" : "http://www.w3.org/ns/sosa/Result"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Classroom",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Classroom",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -277,7 +242,7 @@
     "@value" : "Classroom"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Duration",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Duration",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -292,12 +257,15 @@
   }, {
     "@language" : "en",
     "@value" : "Duration (seconds)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Quantity"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Empty",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Empty",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Activity"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -317,10 +285,10 @@
     "@value" : "E"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#EmptyApplication",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#EmptyApplication",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Application"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -340,7 +308,7 @@
     "@value" : "E"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Environment",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -357,10 +325,10 @@
     "@value" : "Environment"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Falling",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Falling",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Activity"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -380,7 +348,7 @@
     "@value" : "F"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#FrequencyBand",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#FrequencyBand",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -395,12 +363,15 @@
   }, {
     "@language" : "en",
     "@value" : "Frequency band"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Quantity"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#HAR",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#HAR",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Application"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -420,10 +391,10 @@
     "@value" : "HAR"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#IEEE_802_11ac",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11ac",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiStandard"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -440,10 +411,10 @@
     "@value" : "IEEE 802.11ac"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#IEEE_802_11n",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11n",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiStandard"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -460,10 +431,10 @@
     "@value" : "IEEE 802.11n"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#IndustrialLaboratory",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#IndustrialLaboratory",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -480,10 +451,10 @@
     "@value" : "Laboratorio industrial"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Jumping",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Jumping",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Activity"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -503,10 +474,10 @@
     "@value" : "J"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Laboratory",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Laboratory",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -523,10 +494,10 @@
     "@value" : "Laboratory"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#MAR",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MAR",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Application"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -546,10 +517,10 @@
     "@value" : "MAR"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#MR",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MR",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Application"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -569,10 +540,10 @@
     "@value" : "MR"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#MachineOn",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineOn",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#MachineStatus"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -592,10 +563,10 @@
     "@value" : "O"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#MachineRunning",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineRunning",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#MachineStatus"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -615,7 +586,7 @@
     "@value" : "R"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#MachineStatus",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -632,10 +603,10 @@
     "@value" : "Machine Status"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#MeetingRoom",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MeetingRoom",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -652,10 +623,10 @@
     "@value" : "Sala de reuniones"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#NexmonCSIExtractor",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#NexmonCSIExtractor",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#CSIExtractor"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -675,10 +646,10 @@
     "@value" : "NCE"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Office1",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office1",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -695,10 +666,10 @@
     "@value" : "Oficina 1"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Office2",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office2",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -715,10 +686,10 @@
     "@value" : "Oficina 2"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#PC",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#PC",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Application"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -738,10 +709,10 @@
     "@value" : "PC"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#PCMAR",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#PCMAR",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Application"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -761,7 +732,7 @@
     "@value" : "PCMAR"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Person",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Person",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -778,10 +749,10 @@
     "@value" : "Persona"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#SittingDownAndGettingUp",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingDownAndGettingUp",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Activity"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -801,10 +772,10 @@
     "@value" : "G"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#SittingStill",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingStill",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Activity"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -824,10 +795,10 @@
     "@value" : "T"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#StandingStill",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#StandingStill",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Activity"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -847,10 +818,10 @@
     "@value" : "S"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#StorageRoom",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#StorageRoom",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -867,10 +838,10 @@
     "@value" : "Storage Room"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#Walking",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Walking",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Activity"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -890,7 +861,7 @@
     "@value" : "W"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -910,7 +881,7 @@
     "@id" : "http://www.w3.org/ns/sosa/Observation"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#WifiStandard",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard",
   "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -927,7 +898,7 @@
     "@value" : "WiFi Standard"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#activity",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#activity",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -937,7 +908,7 @@
     "@value" : "Relates a WiFi measurement to the type of activity performed by a person during the measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -947,10 +918,10 @@
     "@value" : "Activity"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Activity"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#application",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#application",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -960,7 +931,7 @@
     "@value" : "Relates a WiFi measurement to the application or use case it is associated with"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -970,10 +941,10 @@
     "@value" : "Application"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Application"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#bandwidth",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#bandwidth",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -983,7 +954,7 @@
     "@value" : "Relates a WiFi measurement to the bandwidth of the WiFi signal used for the measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -993,10 +964,10 @@
     "@value" : "Bandwidth"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Bandwidth"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Bandwidth"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#campaign",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#campaign",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1006,7 +977,7 @@
     "@value" : "Measurement campaign identifier (e.g. MC1)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1019,7 +990,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#channel",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#channel",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1029,7 +1000,7 @@
     "@value" : "WiFi channel used during the measurement (11, 13 or 40)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1042,7 +1013,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#csiExtractor",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#csiExtractor",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1052,7 +1023,7 @@
     "@value" : "Relates a WiFi measurement to the CSI extractor tool or method used to obtain the CSI data"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1062,10 +1033,10 @@
     "@value" : "Extractor de CSI"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#CSIExtractor"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#environment",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#environment",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1075,7 +1046,7 @@
     "@value" : "Relates a WiFi measurement to the physical environment where it was taken"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1085,10 +1056,10 @@
     "@value" : "Environment"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Environment"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#frequencyBand",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#frequencyBand",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1098,7 +1069,7 @@
     "@value" : "Relates a WiFi measurement to the frequency band of the WiFi signal used for the measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1108,10 +1079,10 @@
     "@value" : "Frequency band"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#FrequencyBand"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#FrequencyBand"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#hasResult",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#hasResult",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1121,7 +1092,7 @@
     "@value" : "Relates a WiFi measurement to its result containing the CSI data and timestamps"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1131,13 +1102,13 @@
     "@value" : "tiene resultado"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#CSIResult"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIResult"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
     "@id" : "http://www.w3.org/ns/sosa/hasResult"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#involvesPerson",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#involvesPerson",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1147,7 +1118,7 @@
     "@value" : "Relates a WiFi measurement to the person (the letter) involved in the measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1157,10 +1128,10 @@
     "@value" : "involves person"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Person"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Person"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#machine",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#machine",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1170,7 +1141,7 @@
     "@value" : "Identifier of the machine present during the measurement (1–9)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1183,7 +1154,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#machineStatus",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#machineStatus",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1193,7 +1164,7 @@
     "@value" : "Relates a WiFi measurement to the operational status of a machine during the measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1203,10 +1174,10 @@
     "@value" : "Machine status"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#MachineStatus"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#measurementDuration",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#measurementDuration",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1216,7 +1187,7 @@
     "@value" : "Relates a WiFi measurement to its duration in seconds"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1226,10 +1197,10 @@
     "@value" : "Measurement duration"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#Duration"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Duration"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#nFiles",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nFiles",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1239,7 +1210,7 @@
     "@value" : "Total number of .mat files in the set this measurement belongs to."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1252,7 +1223,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#nMachine",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nMachine",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1262,7 +1233,7 @@
     "@value" : "Total number of machines involved in the measurement."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1275,7 +1246,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#nPeople",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nPeople",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1285,7 +1256,7 @@
     "@value" : "Total number of people present during the measurement."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1298,7 +1269,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#nReceivers",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nReceivers",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1308,7 +1279,7 @@
     "@value" : "Número de dispositivos receptores utilizados en la medición (1–4)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1321,7 +1292,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#nic",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nic",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1331,7 +1302,7 @@
     "@value" : "Modelo de la tarjeta de interfaz de red del receptor de CSI."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1344,7 +1315,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#occupiedSubcarriers",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#occupiedSubcarriers",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1354,7 +1325,7 @@
     "@value" : "Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1367,7 +1338,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#receiver",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#receiver",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1377,7 +1348,7 @@
     "@value" : "Identifier of the receiver device that captured the measurement (1–4)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1390,7 +1361,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#sequentialNumber",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#sequentialNumber",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1400,7 +1371,7 @@
     "@value" : "Sequential number to distinguish measurements with otherwise identical metadata."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1413,7 +1384,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#set",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#set",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1423,7 +1394,7 @@
     "@value" : "Set identifier within the campaign (e.g. MC1_01A). Each set corresponds to a specific location."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1436,7 +1407,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#subcarriers",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#subcarriers",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1446,7 +1417,7 @@
     "@value" : "Total number of OFDM subcarriers captured (64 for 20 MHz, 256 for 80 MHz in MC1)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1459,7 +1430,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#integer"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#traffic",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#traffic",
   "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "en",
@@ -1469,7 +1440,7 @@
     "@value" : "Tipo de tráfico de red presente durante la medición (e.g. FTP)."
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "en",
@@ -1482,7 +1453,7 @@
     "@id" : "http://www.w3.org/2001/XMLSchema#string"
   } ]
 }, {
-  "@id" : "https://ehu/wifi-csi/ontology#wifiStandard",
+  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#wifiStandard",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
   "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
     "@language" : "es",
@@ -1492,7 +1463,7 @@
     "@value" : "Relates a WiFi measurement to the WiFi standard used for the measurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiMeasurement"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#label" : [ {
     "@language" : "es",
@@ -1502,6 +1473,84 @@
     "@value" : "WiFi standard"
   } ],
   "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "https://ehu/wifi-csi/ontology#WifiStandard"
+    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard"
   } ]
+}, {
+  "@id" : "http://purl.org/dc/terms/abstract",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/bibliographicCitation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/created",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/identifier",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/isReferencedBy",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/language",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/publisher",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/source",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/doi",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/ontology/bibo/status",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://qudt.org/schema/qudt/Quantity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/2001/XMLSchema#date",
+  "@type" : [ "http://www.w3.org/2000/01/rdf-schema#Datatype" ]
+}, {
+  "@id" : "http://www.w3.org/2004/02/skos/core#notation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/Observation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/Result",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://www.w3.org/ns/sosa/hasResult",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+}, {
+  "@id" : "https://doi.org/10.5281/zenodo.21089086",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
 } ]
