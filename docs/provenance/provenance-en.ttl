@@ -2,7 +2,7 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix : <> .
-<http://34.51.146.173:8090/ontology/wifi_activity.ttl> a prov:Entity;
+<https://w3id.org/WiFi-CSI> a prov:Entity;
 	 dc:title "EHUNAM WiFi CSI Activity Ontology";
 	 prov:wasAttributedTo <https://github.com/Mikelontxu>;
 	 dc:creator <https://github.com/Mikelontxu>;
