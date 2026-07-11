@@ -121,6 +121,7 @@ services:
         image: ghcr.io/dgarijo/widoco:latest
         profiles:
             - widoco
+            - ../docs:/docs
         volumes:
             - ../ontology:/ontology
         command: >

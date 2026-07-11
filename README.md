@@ -48,7 +48,15 @@ This project transforms those files into RDF/OWL following FAIR principles.
 <p>/ontology:</p>  
 </td> 
 <td>  
-<p>This folder contains the EHUNAM WiFi CSI Activity Ontology (wifi_activity.ttl) and its documentation. This includes defining the classes, object properties, and data properties used to  describe each WiFi measurement (e.g. activity, environment, application, WiFi standard, CSI extractor, etc.).</p>  
+<p>This folder contains the EHUNAM WiFi CSI Activity Ontology (wifi_activity.ttl).This includes defining the classes, object properties, and data properties used to  describe each WiFi measurement (e.g. activity, environment, application, WiFi standard, CSI extractor, etc.).</p>  
+</td>  
+</tr> 
+<tr>  
+<td>  
+<p>/docs:</p>  
+</td> 
+<td>  
+<p>This folder contains the EHUNAM WiFi CSI Activity Ontology documentation. This includes differente formats for the ontology and a human readable documentation.</p>  
 </td>  
 </tr> 
 <tr>  
@@ -87,7 +95,7 @@ This project transforms those files into RDF/OWL following FAIR principles.
 ## User manual
 
 **Before Deployment:**
-- Change the ontology, shapes and fdp files to match the correct IP/URI.
+- Change the shapes and fdp files to match the correct IP/URI.
 
 1. Install all the requirements:
 ```bash

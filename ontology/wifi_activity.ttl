@@ -3,7 +3,7 @@
 #   
 # This file defines the ontology for describing WiFi activity measurements (CSI/RSSI) created in the EHUNAM project. The Turtle (TTL) format is used to represent the ontology in a readable and structured manner.
 # Este archivo define la ontología para describir las mediciones de actividad WiFi (CSI/RSSI) realizadas en el proyecto de EHUNAM. Se utiliza el formato Turtle (TTL) para representar la ontología de manera legible y estructurada.
-@prefix : <http://34.51.146.173:8090/ontology/wifi_activity.ttl#> .
+@prefix : <https://w3id.org/WiFi-CSI> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -21,9 +21,9 @@
 
 # Declaration of the ontology itself
 
-<http://34.51.146.173:8090/ontology/wifi_activity.ttl>
+<https://w3id.org/WiFi-CSI>
     a owl:Ontology ;
-    owl:versionIRI <http://34.51.146.173:8090/ontology/wifi_activity.ttl> ;
+    owl:versionIRI <https://w3id.org/WiFi-CSI> ;
     owl:versionInfo "1.0.0" ;
     dct:title "EHUNAM WiFi CSI Activity Ontology"@en ;
     dct:title "Ontología de actividad WiFi CSI de EHUNAM"@es ;
@@ -37,8 +37,8 @@
     bibo:doi "10.5281/zenodo.21089086" ;    
     owl:sameAs <https://doi.org/10.5281/zenodo.21089086> ;
     dct:created "2026-05-27"^^xsd:date ;
-    dct:modified "2026-07-10"^^xsd:date ;
-    dct:issued "2026-07-10"^^xsd:date ;
+    dct:modified "2026-07-11"^^xsd:date ;
+    dct:issued "2026-07-11"^^xsd:date ;
     dct:language "en" , "es" ;
     bibo:status "Published" ;
     dct:publisher <https://doi.org/10.6084/m9.figshare.28541225> ;
@@ -50,9 +50,9 @@
     rdfs:seeAlso <https://doi.org/10.1038/s41597-025-06238-4> ;
     # Repository of the Github project where the ontology is maintained
     rdfs:seeAlso <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
-    vann:preferredNamespaceUri "http://34.51.146.173:8090/ontology/wifi_activity.ttl#" ;
+    vann:preferredNamespaceUri "https://w3id.org/WiFi-CSI#" ;
     vann:preferredNamespacePrefix "wifi" ;
-    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at http://34.51.146.173:8090/ontology/wifi_activity.ttl. DOI: https://doi.org/10.5281/zenodo.21089086"@en .
+    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21089086"@en .
     #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # There are no prior versions yet, this is the first version of the ontology.
 
 # Principal classes of the ontology
