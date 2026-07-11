@@ -1,1481 +1,4 @@
 [ {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://purl.org/dc/terms/abstract" : [ {
-    "@language" : "en",
-    "@value" : "This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters."
-  } ],
-  "http://purl.org/dc/terms/bibliographicCitation" : [ {
-    "@language" : "en",
-    "@value" : "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at http://34.51.146.173:8090/ontology/wifi_activity.ttl. DOI: https://doi.org/10.5281/zenodo.21089086"
-  } ],
-  "http://purl.org/dc/terms/created" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-05-27"
-  } ],
-  "http://purl.org/dc/terms/creator" : [ {
-    "@id" : "https://github.com/Mikelontxu"
-  } ],
-  "http://purl.org/dc/terms/description" : [ {
-    "@language" : "en",
-    "@value" : "Ontology for describing WiFi CSI measurements of human and machine activity captured in different environments."
-  }, {
-    "@language" : "es",
-    "@value" : "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."
-  } ],
-  "http://purl.org/dc/terms/identifier" : [ {
-    "@value" : "https://doi.org/10.5281/zenodo.21089086"
-  } ],
-  "http://purl.org/dc/terms/isReferencedBy" : [ {
-    "@id" : "https://doi.org/10.1038/s41597-025-06238-4"
-  } ],
-  "http://purl.org/dc/terms/issued" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-07-01"
-  } ],
-  "http://purl.org/dc/terms/language" : [ {
-    "@value" : "en"
-  }, {
-    "@value" : "es"
-  } ],
-  "http://purl.org/dc/terms/license" : [ {
-    "@id" : "https://creativecommons.org/licenses/by/4.0/"
-  } ],
-  "http://purl.org/dc/terms/modified" : [ {
-    "@type" : "http://www.w3.org/2001/XMLSchema#date",
-    "@value" : "2026-07-01"
-  } ],
-  "http://purl.org/dc/terms/publisher" : [ {
-    "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
-  } ],
-  "http://purl.org/dc/terms/source" : [ {
-    "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
-  } ],
-  "http://purl.org/dc/terms/title" : [ {
-    "@language" : "en",
-    "@value" : "EHUNAM WiFi CSI Activity Ontology"
-  }, {
-    "@language" : "es",
-    "@value" : "Ontología de actividad WiFi CSI de EHUNAM"
-  } ],
-  "http://purl.org/ontology/bibo/doi" : [ {
-    "@value" : "10.5281/zenodo.21089086"
-  } ],
-  "http://purl.org/ontology/bibo/status" : [ {
-    "@value" : "Published"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
-    "@value" : "wifi"
-  } ],
-  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
-    "@value" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
-    "@id" : "https://doi.org/10.1038/s41597-025-06238-4"
-  }, {
-    "@id" : "https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data"
-  } ],
-  "http://www.w3.org/2002/07/owl#sameAs" : [ {
-    "@id" : "https://doi.org/10.5281/zenodo.21089086"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl"
-  } ],
-  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "1.0.0"
-  } ],
-  "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
-    "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Tipo de actividad realizada por una persona durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Type of activity performed by a person during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Actividad"
-  }, {
-    "@language" : "en",
-    "@value" : "Activity"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Tipo de aplicación o caso de uso de una medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Type of application or use case of a WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Aplicación"
-  }, {
-    "@language" : "en",
-    "@value" : "Application"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#AtherosCSIExtractor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "CSI extractor based on the Nexmon framework for Atheros WiFi chipsets"
-  }, {
-    "@language" : "es",
-    "@value" : "Extractor de CSI basado en el framework Nexmon para chipsets WiFi Atheros"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Atheros CSI Extractor"
-  }, {
-    "@language" : "es",
-    "@value" : "Extractor de CSI Atheros"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "ACT"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Bandwidth",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)"
-  }, {
-    "@language" : "en",
-    "@value" : "Bandwidth of the WiFi signal, expressed in MHz (20 MHz or 80 MHz)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Ancho de banda"
-  }, {
-    "@language" : "en",
-    "@value" : "Bandwidth"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://qudt.org/schema/qudt/Quantity"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#BasementRoom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada en un entorno de sótano"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken in a basement environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Basement Room"
-  }, {
-    "@language" : "es",
-    "@value" : "Sótano"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Herramienta o método utilizado para extraer los datos CSI de las señales WiFi crudas"
-  }, {
-    "@language" : "en",
-    "@value" : "Software tool or method used to extract CSI data from the raw WiFi signals"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "CSI Extractor"
-  }, {
-    "@language" : "es",
-    "@value" : "Extractor de CSI"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIResult",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Recurso que referencia al archivo .mat con datos CSI/RSSI/timestamps"
-  }, {
-    "@language" : "en",
-    "@value" : "Result of a WiFi measurement containing the CSI/RSSI data and timestamps"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "CSI Result"
-  }, {
-    "@language" : "es",
-    "@value" : "Resultado CSI"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/sosa/Result"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Classroom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada en un entorno de aula con pupitres y sillas"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken in a classroom environment with desks and chairs"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Aula"
-  }, {
-    "@language" : "en",
-    "@value" : "Classroom"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Duration",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Duración de la medición WiFi en segundos"
-  }, {
-    "@language" : "en",
-    "@value" : "Duration of the WiFi measurement in seconds"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Duración (segundos)"
-  }, {
-    "@language" : "en",
-    "@value" : "Duration (seconds)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://qudt.org/schema/qudt/Quantity"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Empty",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "No hay actividad de ninguna persona durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "No person activity is present during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Empty"
-  }, {
-    "@language" : "es",
-    "@value" : "Vacío"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "E"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#EmptyApplication",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "No hay una aplicación o caso de uso específico asociado con la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "No specific application or use case is associated with the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Aplicación vacía"
-  }, {
-    "@language" : "en",
-    "@value" : "Empty application"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "E"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Tipo de entorno físico donde se tomó la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Type of physical environment where the WiFi measurement was taken"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Entorno"
-  }, {
-    "@language" : "en",
-    "@value" : "Environment"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Falling",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "La persona está cayendo durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Person is falling during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Cayendo"
-  }, {
-    "@language" : "en",
-    "@value" : "Falling"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "F"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#FrequencyBand",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Banda de frecuencia de la señal WiFi, expresada en GHz (2.4 GHz o 5 GHz)"
-  }, {
-    "@language" : "en",
-    "@value" : "Frequency band of the WiFi signal, expressed in GHz (2.4 GHz or 5 GHz)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Banda de frecuencia"
-  }, {
-    "@language" : "en",
-    "@value" : "Frequency band"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://qudt.org/schema/qudt/Quantity"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#HAR",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Aplicación para reconocimiento de actividad humana usando mediciones WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Application for human activity recognition using WiFi measurements"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Human Activity Recognition"
-  }, {
-    "@language" : "es",
-    "@value" : "Reconocimiento de actividad humana"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "HAR"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11ac",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada utilizando el estándar IEEE 802.11ac"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken using the IEEE 802.11ac standard"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "IEEE 802.11ac"
-  }, {
-    "@language" : "es",
-    "@value" : "IEEE 802.11ac"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11n",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada utilizando el estándar IEEE 802.11n"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken using the IEEE 802.11n standard"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "IEEE 802.11n"
-  }, {
-    "@language" : "es",
-    "@value" : "IEEE 802.11n"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#IndustrialLaboratory",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada en un entorno de laboratorio industrial con máquinas y equipos"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken in an industrial laboratory environment with machines and equipment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Industrial Laboratory"
-  }, {
-    "@language" : "es",
-    "@value" : "Laboratorio industrial"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Jumping",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "La persona está saltando durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Person is jumping during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Jumping"
-  }, {
-    "@language" : "es",
-    "@value" : "Saltando"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "J"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Laboratory",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada en un entorno de laboratorio"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken in a laboratory environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Laboratorio"
-  }, {
-    "@language" : "en",
-    "@value" : "Laboratory"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MAR",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Aplicación para reconocimiento de actividad de máquinas usando mediciones WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Application for machine activity recognition using WiFi measurements"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Machine Activity Recognition"
-  }, {
-    "@language" : "es",
-    "@value" : "Reconocimiento de actividad de máquinas"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "MAR"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MR",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Aplicación para reconocimiento de máquinas usando mediciones WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Application for machine recognition using WiFi measurements"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Machine Recognition"
-  }, {
-    "@language" : "es",
-    "@value" : "Reconocimiento de máquinas"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "MR"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineOn",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "La máquina está encendida (pero no ejecutándose) y operativa durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "The machine is turned on (but not running) and operational during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Machine On (not running)"
-  }, {
-    "@language" : "es",
-    "@value" : "Máquina encendida (sin ejecutar)"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "O"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineRunning",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "La máquina está en ejecución durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "The machine is running during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Machine Running"
-  }, {
-    "@language" : "es",
-    "@value" : "Máquina en ejecución"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "R"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Estado operativo de una máquina durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Operational status of a machine during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Estado de la máquina"
-  }, {
-    "@language" : "en",
-    "@value" : "Machine Status"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MeetingRoom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada en un entorno de sala de reuniones con una mesa y sillas"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken in a meeting room environment with a table and chairs"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Meeting Room"
-  }, {
-    "@language" : "es",
-    "@value" : "Sala de reuniones"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#NexmonCSIExtractor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "CSI extractor based on the Nexmon framework for WiFi firmware modification"
-  }, {
-    "@language" : "es",
-    "@value" : "Extractor de CSI basado en el framework Nexmon para modificación de firmware WiFi"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Extractor de CSI Nexmon"
-  }, {
-    "@language" : "en",
-    "@value" : "Nexmon CSI Extractor"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "NCE"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office1",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada en un entorno de oficina con muebles y objetos"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken in an office environment with furniture and objects"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Office 1"
-  }, {
-    "@language" : "es",
-    "@value" : "Oficina 1"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office2",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada en un entorno de oficina con más personas y máquinas"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken in an office environment with more people and machines"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Office 2"
-  }, {
-    "@language" : "es",
-    "@value" : "Oficina 2"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#PC",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Aplicación para conteo de personas usando mediciones WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Application for people counting using WiFi measurements"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Conteo de personas"
-  }, {
-    "@language" : "en",
-    "@value" : "People Counting"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "PC"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#PCMAR",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Aplicación para conteo de personas y reconocimiento de actividad de máquinas usando mediciones WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Application for people counting and machine activity recognition using WiFi measurements"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Conteo de personas y reconocimiento de actividad de máquinas"
-  }, {
-    "@language" : "en",
-    "@value" : "People Counting and Machine Activity Recognition"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "PCMAR"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Person",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Identificador de una persona participante en una medición WiFi por medio de una letra minúscula (a-u)"
-  }, {
-    "@language" : "en",
-    "@value" : "Identifier for a person involved during a WiFi measurement by a lowercase letter (a-u)"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "Person"
-  }, {
-    "@language" : "es",
-    "@value" : "Persona"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingDownAndGettingUp",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "La persona alterna entre sentarse y levantarse durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Person alternates between sitting down and getting up during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Sentándose y levantándose"
-  }, {
-    "@language" : "en",
-    "@value" : "Sitting down and getting up"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "G"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingStill",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "La persona está sentada sin moverse durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Person is sitting still during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Sentado sin moverse"
-  }, {
-    "@language" : "en",
-    "@value" : "Sitting Still"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "T"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#StandingStill",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "La persona está parada sin moverse durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Person is standing still during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Parado sin moverse"
-  }, {
-    "@language" : "en",
-    "@value" : "Standing Still"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "S"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#StorageRoom",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi tomada en un entorno de trastero"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement taken in a storage room environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Sala de almacenamiento"
-  }, {
-    "@language" : "en",
-    "@value" : "Storage Room"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Walking",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
-  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "La persona está caminando durante la medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Person is walking during the WiFi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Caminando"
-  }, {
-    "@language" : "en",
-    "@value" : "Walking"
-  } ],
-  "http://www.w3.org/2004/02/skos/core#notation" : [ {
-    "@value" : "W"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Observación o medición basada en señales WiFi (CSI) en un entorno específico"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi measurement based on CSI data in a specific environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Medición WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "Wifi measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
-    "@id" : "http://www.w3.org/ns/sosa/Observation"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard",
-  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Estándar WiFi utilizado para la medición"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi standard used for the measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Estándar WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi Standard"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#activity",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con el tipo de actividad realizada por una persona durante la medición"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the type of activity performed by a person during the measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Actividad"
-  }, {
-    "@language" : "en",
-    "@value" : "Activity"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#application",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con la aplicación o caso de uso con el que está asociada"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the application or use case it is associated with"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Aplicación"
-  }, {
-    "@language" : "en",
-    "@value" : "Application"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#bandwidth",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con el ancho de banda de la señal WiFi utilizada para la medición"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the bandwidth of the WiFi signal used for the measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Ancho de banda"
-  }, {
-    "@language" : "en",
-    "@value" : "Bandwidth"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Bandwidth"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#campaign",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Identificador de la campaña de medición (e.g. MC1)."
-  }, {
-    "@language" : "en",
-    "@value" : "Measurement campaign identifier (e.g. MC1)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "campaign"
-  }, {
-    "@language" : "es",
-    "@value" : "campaña"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#channel",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Canal WiFi utilizado durante la medición (11, 13 or 40)."
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi channel used during the measurement (11, 13 or 40)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "canal"
-  }, {
-    "@language" : "en",
-    "@value" : "channel"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#csiExtractor",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con la herramienta o método extractor de CSI utilizado para obtener los datos CSI"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the CSI extractor tool or method used to obtain the CSI data"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "CSI extractor"
-  }, {
-    "@language" : "es",
-    "@value" : "Extractor de CSI"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#environment",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con el entorno físico donde se tomó"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the physical environment where it was taken"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Entorno"
-  }, {
-    "@language" : "en",
-    "@value" : "Environment"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#frequencyBand",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con la banda de frecuencia de la señal WiFi utilizada para la medición"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the frequency band of the WiFi signal used for the measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Banda de frecuencia"
-  }, {
-    "@language" : "en",
-    "@value" : "Frequency band"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#FrequencyBand"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#hasResult",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con su resultado que contiene los datos CSI y timestamps"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to its result containing the CSI data and timestamps"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "has result"
-  }, {
-    "@language" : "es",
-    "@value" : "tiene resultado"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIResult"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
-    "@id" : "http://www.w3.org/ns/sosa/hasResult"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#involvesPerson",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con la persona (la letra) involucrada en la medición"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the person (the letter) involved in the measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "involucra persona"
-  }, {
-    "@language" : "en",
-    "@value" : "involves person"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Person"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#machine",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Identificador de la máquina presente durante la medición (1–9)."
-  }, {
-    "@language" : "en",
-    "@value" : "Identifier of the machine present during the measurement (1–9)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "machine"
-  }, {
-    "@language" : "es",
-    "@value" : "máquina"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#machineStatus",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con el estado operativo de una máquina durante la medición"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the operational status of a machine during the measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Estado de la máquina"
-  }, {
-    "@language" : "en",
-    "@value" : "Machine status"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#measurementDuration",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con su duración en segundos"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to its duration in seconds"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Duración de la medición"
-  }, {
-    "@language" : "en",
-    "@value" : "Measurement duration"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#Duration"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nFiles",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Número total de archivos .mat en el conjunto al que pertenece esta medición."
-  }, {
-    "@language" : "en",
-    "@value" : "Total number of .mat files in the set this measurement belongs to."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "number of files"
-  }, {
-    "@language" : "es",
-    "@value" : "número de archivos"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nMachine",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Número total de máquinas involucradas en la medición."
-  }, {
-    "@language" : "en",
-    "@value" : "Total number of machines involved in the measurement."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "number of machines"
-  }, {
-    "@language" : "es",
-    "@value" : "número de máquinas"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nPeople",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Número total de personas presentes durante la medición."
-  }, {
-    "@language" : "en",
-    "@value" : "Total number of people present during the measurement."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "number of people"
-  }, {
-    "@language" : "es",
-    "@value" : "número de personas"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nReceivers",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Number of receiver devices used in the measurement (1–4)."
-  }, {
-    "@language" : "es",
-    "@value" : "Número de dispositivos receptores utilizados en la medición (1–4)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "number of receivers"
-  }, {
-    "@language" : "es",
-    "@value" : "número de receptores"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#nic",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Model of the network interface card of the CSI receiver."
-  }, {
-    "@language" : "es",
-    "@value" : "Modelo de la tarjeta de interfaz de red del receptor de CSI."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "NIC"
-  }, {
-    "@language" : "es",
-    "@value" : "NIC"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#occupiedSubcarriers",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Number of useful subcarriers (data + pilots) after excluding null subcarriers per IEEE 802.11n/ac."
-  }, {
-    "@language" : "es",
-    "@value" : "Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "occupied subcarriers"
-  }, {
-    "@language" : "es",
-    "@value" : "subportadoras ocupadas"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#receiver",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Identificador del dispositivo receptor que capturó la medición (1–4)."
-  }, {
-    "@language" : "en",
-    "@value" : "Identifier of the receiver device that captured the measurement (1–4)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "receiver"
-  }, {
-    "@language" : "es",
-    "@value" : "receptor"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#sequentialNumber",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Número secuencial para distinguir mediciones con metadatos idénticos."
-  }, {
-    "@language" : "en",
-    "@value" : "Sequential number to distinguish measurements with otherwise identical metadata."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "número secuencial"
-  }, {
-    "@language" : "en",
-    "@value" : "sequential number"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#set",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Identificador del conjunto dentro de la campaña (e.g. MC1_01A). Cada conjunto corresponde a una ubicación específica."
-  }, {
-    "@language" : "en",
-    "@value" : "Set identifier within the campaign (e.g. MC1_01A). Each set corresponds to a specific location."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "conjunto"
-  }, {
-    "@language" : "en",
-    "@value" : "set"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#subcarriers",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Número total de subportadoras OFDM capturadas (64 para 20 MHz, 256 para 80 MHz en MC1)."
-  }, {
-    "@language" : "en",
-    "@value" : "Total number of OFDM subcarriers captured (64 for 20 MHz, 256 for 80 MHz in MC1)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "subcarriers"
-  }, {
-    "@language" : "es",
-    "@value" : "subportadoras"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#traffic",
-  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "en",
-    "@value" : "Network traffic type present during the measurement (e.g. FTP)."
-  }, {
-    "@language" : "es",
-    "@value" : "Tipo de tráfico de red presente durante la medición (e.g. FTP)."
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "en",
-    "@value" : "traffic"
-  }, {
-    "@language" : "es",
-    "@value" : "tráfico"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://www.w3.org/2001/XMLSchema#string"
-  } ]
-}, {
-  "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#wifiStandard",
-  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
-  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
-    "@language" : "es",
-    "@value" : "Relaciona una medición WiFi con el estándar WiFi utilizado para la medición"
-  }, {
-    "@language" : "en",
-    "@value" : "Relates a WiFi measurement to the WiFi standard used for the measurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
-    "@language" : "es",
-    "@value" : "Estándar WiFi"
-  }, {
-    "@language" : "en",
-    "@value" : "WiFi standard"
-  } ],
-  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
-    "@id" : "http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard"
-  } ]
-}, {
   "@id" : "http://purl.org/dc/terms/abstract",
   "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
 }, {
@@ -1552,5 +75,1482 @@
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
   "@id" : "https://doi.org/10.5281/zenodo.21089086",
-  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ]
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/2002/07/owl#sameAs" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology", "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://purl.org/dc/terms/abstract" : [ {
+    "@language" : "en",
+    "@value" : "This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters."
+  } ],
+  "http://purl.org/dc/terms/bibliographicCitation" : [ {
+    "@language" : "en",
+    "@value" : "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21089086"
+  } ],
+  "http://purl.org/dc/terms/created" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-05-27"
+  } ],
+  "http://purl.org/dc/terms/creator" : [ {
+    "@id" : "https://github.com/Mikelontxu"
+  } ],
+  "http://purl.org/dc/terms/description" : [ {
+    "@language" : "en",
+    "@value" : "Ontology for describing WiFi CSI measurements of human and machine activity captured in different environments."
+  }, {
+    "@language" : "es",
+    "@value" : "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."
+  } ],
+  "http://purl.org/dc/terms/identifier" : [ {
+    "@value" : "https://doi.org/10.5281/zenodo.21089086"
+  } ],
+  "http://purl.org/dc/terms/isReferencedBy" : [ {
+    "@id" : "https://doi.org/10.1038/s41597-025-06238-4"
+  } ],
+  "http://purl.org/dc/terms/issued" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-07-11"
+  } ],
+  "http://purl.org/dc/terms/language" : [ {
+    "@value" : "en"
+  }, {
+    "@value" : "es"
+  } ],
+  "http://purl.org/dc/terms/license" : [ {
+    "@id" : "https://creativecommons.org/licenses/by/4.0/"
+  } ],
+  "http://purl.org/dc/terms/modified" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#date",
+    "@value" : "2026-07-11"
+  } ],
+  "http://purl.org/dc/terms/publisher" : [ {
+    "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
+  } ],
+  "http://purl.org/dc/terms/source" : [ {
+    "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
+  } ],
+  "http://purl.org/dc/terms/title" : [ {
+    "@language" : "en",
+    "@value" : "EHUNAM WiFi CSI Activity Ontology"
+  }, {
+    "@language" : "es",
+    "@value" : "Ontología de actividad WiFi CSI de EHUNAM"
+  } ],
+  "http://purl.org/ontology/bibo/doi" : [ {
+    "@value" : "10.5281/zenodo.21089086"
+  } ],
+  "http://purl.org/ontology/bibo/status" : [ {
+    "@value" : "Published"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespacePrefix" : [ {
+    "@value" : "wifi"
+  } ],
+  "http://purl.org/vocab/vann/preferredNamespaceUri" : [ {
+    "@value" : "https://w3id.org/WiFi-CSI#"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#seeAlso" : [ {
+    "@id" : "https://doi.org/10.1038/s41597-025-06238-4"
+  }, {
+    "@id" : "https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionIRI" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@value" : "1.0.0"
+  } ],
+  "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
+    "@id" : "https://doi.org/10.6084/m9.figshare.28541225"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Activity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Tipo de actividad realizada por una persona durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Type of activity performed by a person during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Actividad"
+  }, {
+    "@language" : "en",
+    "@value" : "Activity"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Application",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Tipo de aplicación o caso de uso de una medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Type of application or use case of a WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Aplicación"
+  }, {
+    "@language" : "en",
+    "@value" : "Application"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#AtherosCSIExtractor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#CSIExtractor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "CSI extractor based on the Nexmon framework for Atheros WiFi chipsets"
+  }, {
+    "@language" : "es",
+    "@value" : "Extractor de CSI basado en el framework Nexmon para chipsets WiFi Atheros"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Atheros CSI Extractor"
+  }, {
+    "@language" : "es",
+    "@value" : "Extractor de CSI Atheros"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "ACT"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Bandwidth",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)"
+  }, {
+    "@language" : "en",
+    "@value" : "Bandwidth of the WiFi signal, expressed in MHz (20 MHz or 80 MHz)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Ancho de banda"
+  }, {
+    "@language" : "en",
+    "@value" : "Bandwidth"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Quantity"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#BasementRoom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada en un entorno de sótano"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken in a basement environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Basement Room"
+  }, {
+    "@language" : "es",
+    "@value" : "Sótano"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#CSIExtractor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Herramienta o método utilizado para extraer los datos CSI de las señales WiFi crudas"
+  }, {
+    "@language" : "en",
+    "@value" : "Software tool or method used to extract CSI data from the raw WiFi signals"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "CSI Extractor"
+  }, {
+    "@language" : "es",
+    "@value" : "Extractor de CSI"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#CSIResult",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Recurso que referencia al archivo .mat con datos CSI/RSSI/timestamps"
+  }, {
+    "@language" : "en",
+    "@value" : "Result of a WiFi measurement containing the CSI/RSSI data and timestamps"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "CSI Result"
+  }, {
+    "@language" : "es",
+    "@value" : "Resultado CSI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Result"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Classroom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada en un entorno de aula con pupitres y sillas"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken in a classroom environment with desks and chairs"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Aula"
+  }, {
+    "@language" : "en",
+    "@value" : "Classroom"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Duration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Duración de la medición WiFi en segundos"
+  }, {
+    "@language" : "en",
+    "@value" : "Duration of the WiFi measurement in seconds"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Duración (segundos)"
+  }, {
+    "@language" : "en",
+    "@value" : "Duration (seconds)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Quantity"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Empty",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "No hay actividad de ninguna persona durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "No person activity is present during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Empty"
+  }, {
+    "@language" : "es",
+    "@value" : "Vacío"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "E"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#EmptyApplication",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Application"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "No hay una aplicación o caso de uso específico asociado con la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "No specific application or use case is associated with the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Aplicación vacía"
+  }, {
+    "@language" : "en",
+    "@value" : "Empty application"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "E"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Environment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Tipo de entorno físico donde se tomó la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Type of physical environment where the WiFi measurement was taken"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Entorno"
+  }, {
+    "@language" : "en",
+    "@value" : "Environment"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Falling",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "La persona está cayendo durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Person is falling during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Cayendo"
+  }, {
+    "@language" : "en",
+    "@value" : "Falling"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "F"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#FrequencyBand",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Banda de frecuencia de la señal WiFi, expresada en GHz (2.4 GHz o 5 GHz)"
+  }, {
+    "@language" : "en",
+    "@value" : "Frequency band of the WiFi signal, expressed in GHz (2.4 GHz or 5 GHz)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Banda de frecuencia"
+  }, {
+    "@language" : "en",
+    "@value" : "Frequency band"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://qudt.org/schema/qudt/Quantity"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#HAR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Application"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Aplicación para reconocimiento de actividad humana usando mediciones WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Application for human activity recognition using WiFi measurements"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Human Activity Recognition"
+  }, {
+    "@language" : "es",
+    "@value" : "Reconocimiento de actividad humana"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "HAR"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#IEEE_802_11ac",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiStandard"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada utilizando el estándar IEEE 802.11ac"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken using the IEEE 802.11ac standard"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "IEEE 802.11ac"
+  }, {
+    "@language" : "es",
+    "@value" : "IEEE 802.11ac"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#IEEE_802_11n",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiStandard"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada utilizando el estándar IEEE 802.11n"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken using the IEEE 802.11n standard"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "IEEE 802.11n"
+  }, {
+    "@language" : "es",
+    "@value" : "IEEE 802.11n"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#IndustrialLaboratory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada en un entorno de laboratorio industrial con máquinas y equipos"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken in an industrial laboratory environment with machines and equipment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Industrial Laboratory"
+  }, {
+    "@language" : "es",
+    "@value" : "Laboratorio industrial"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Jumping",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "La persona está saltando durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Person is jumping during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Jumping"
+  }, {
+    "@language" : "es",
+    "@value" : "Saltando"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "J"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Laboratory",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada en un entorno de laboratorio"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken in a laboratory environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Laboratorio"
+  }, {
+    "@language" : "en",
+    "@value" : "Laboratory"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#MAR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Application"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Aplicación para reconocimiento de actividad de máquinas usando mediciones WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Application for machine activity recognition using WiFi measurements"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Machine Activity Recognition"
+  }, {
+    "@language" : "es",
+    "@value" : "Reconocimiento de actividad de máquinas"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "MAR"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#MR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Application"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Aplicación para reconocimiento de máquinas usando mediciones WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Application for machine recognition using WiFi measurements"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Machine Recognition"
+  }, {
+    "@language" : "es",
+    "@value" : "Reconocimiento de máquinas"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "MR"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#MachineOn",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#MachineStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "La máquina está encendida (pero no ejecutándose) y operativa durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "The machine is turned on (but not running) and operational during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Machine On (not running)"
+  }, {
+    "@language" : "es",
+    "@value" : "Máquina encendida (sin ejecutar)"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "O"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#MachineRunning",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#MachineStatus"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "La máquina está en ejecución durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "The machine is running during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Machine Running"
+  }, {
+    "@language" : "es",
+    "@value" : "Máquina en ejecución"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "R"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#MachineStatus",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Estado operativo de una máquina durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Operational status of a machine during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Estado de la máquina"
+  }, {
+    "@language" : "en",
+    "@value" : "Machine Status"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#MeetingRoom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada en un entorno de sala de reuniones con una mesa y sillas"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken in a meeting room environment with a table and chairs"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Meeting Room"
+  }, {
+    "@language" : "es",
+    "@value" : "Sala de reuniones"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#NexmonCSIExtractor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#CSIExtractor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "CSI extractor based on the Nexmon framework for WiFi firmware modification"
+  }, {
+    "@language" : "es",
+    "@value" : "Extractor de CSI basado en el framework Nexmon para modificación de firmware WiFi"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Extractor de CSI Nexmon"
+  }, {
+    "@language" : "en",
+    "@value" : "Nexmon CSI Extractor"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "NCE"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Office1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada en un entorno de oficina con muebles y objetos"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken in an office environment with furniture and objects"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Office 1"
+  }, {
+    "@language" : "es",
+    "@value" : "Oficina 1"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Office2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada en un entorno de oficina con más personas y máquinas"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken in an office environment with more people and machines"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Office 2"
+  }, {
+    "@language" : "es",
+    "@value" : "Oficina 2"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#PC",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Application"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Aplicación para conteo de personas usando mediciones WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Application for people counting using WiFi measurements"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Conteo de personas"
+  }, {
+    "@language" : "en",
+    "@value" : "People Counting"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "PC"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#PCMAR",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Application"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Aplicación para conteo de personas y reconocimiento de actividad de máquinas usando mediciones WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Application for people counting and machine activity recognition using WiFi measurements"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Conteo de personas y reconocimiento de actividad de máquinas"
+  }, {
+    "@language" : "en",
+    "@value" : "People Counting and Machine Activity Recognition"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "PCMAR"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Person",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Identificador de una persona participante en una medición WiFi por medio de una letra minúscula (a-u)"
+  }, {
+    "@language" : "en",
+    "@value" : "Identifier for a person involved during a WiFi measurement by a lowercase letter (a-u)"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "Person"
+  }, {
+    "@language" : "es",
+    "@value" : "Persona"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#SittingDownAndGettingUp",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "La persona alterna entre sentarse y levantarse durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Person alternates between sitting down and getting up during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Sentándose y levantándose"
+  }, {
+    "@language" : "en",
+    "@value" : "Sitting down and getting up"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "G"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#SittingStill",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "La persona está sentada sin moverse durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Person is sitting still during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Sentado sin moverse"
+  }, {
+    "@language" : "en",
+    "@value" : "Sitting Still"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "T"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#StandingStill",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "La persona está parada sin moverse durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Person is standing still during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Parado sin moverse"
+  }, {
+    "@language" : "en",
+    "@value" : "Standing Still"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "S"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#StorageRoom",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi tomada en un entorno de trastero"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement taken in a storage room environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Sala de almacenamiento"
+  }, {
+    "@language" : "en",
+    "@value" : "Storage Room"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#Walking",
+  "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
+  "http://www.w3.org/1999/02/22-rdf-syntax-ns#type" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "La persona está caminando durante la medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Person is walking during the WiFi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Caminando"
+  }, {
+    "@language" : "en",
+    "@value" : "Walking"
+  } ],
+  "http://www.w3.org/2004/02/skos/core#notation" : [ {
+    "@value" : "W"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Observación o medición basada en señales WiFi (CSI) en un entorno específico"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi measurement based on CSI data in a specific environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Medición WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "Wifi measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/Observation"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#WifiStandard",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Estándar WiFi utilizado para la medición"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi standard used for the measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Estándar WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi Standard"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#activity",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con el tipo de actividad realizada por una persona durante la medición"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the type of activity performed by a person during the measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Actividad"
+  }, {
+    "@language" : "en",
+    "@value" : "Activity"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Activity"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#application",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con la aplicación o caso de uso con el que está asociada"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the application or use case it is associated with"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Aplicación"
+  }, {
+    "@language" : "en",
+    "@value" : "Application"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Application"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#bandwidth",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con el ancho de banda de la señal WiFi utilizada para la medición"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the bandwidth of the WiFi signal used for the measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Ancho de banda"
+  }, {
+    "@language" : "en",
+    "@value" : "Bandwidth"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Bandwidth"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#campaign",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Identificador de la campaña de medición (e.g. MC1)."
+  }, {
+    "@language" : "en",
+    "@value" : "Measurement campaign identifier (e.g. MC1)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "campaign"
+  }, {
+    "@language" : "es",
+    "@value" : "campaña"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#channel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Canal WiFi utilizado durante la medición (11, 13 or 40)."
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi channel used during the measurement (11, 13 or 40)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "canal"
+  }, {
+    "@language" : "en",
+    "@value" : "channel"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#csiExtractor",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con la herramienta o método extractor de CSI utilizado para obtener los datos CSI"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the CSI extractor tool or method used to obtain the CSI data"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "CSI extractor"
+  }, {
+    "@language" : "es",
+    "@value" : "Extractor de CSI"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#CSIExtractor"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#environment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con el entorno físico donde se tomó"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the physical environment where it was taken"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Entorno"
+  }, {
+    "@language" : "en",
+    "@value" : "Environment"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Environment"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#frequencyBand",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con la banda de frecuencia de la señal WiFi utilizada para la medición"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the frequency band of the WiFi signal used for the measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Banda de frecuencia"
+  }, {
+    "@language" : "en",
+    "@value" : "Frequency band"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#FrequencyBand"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#hasResult",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con su resultado que contiene los datos CSI y timestamps"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to its result containing the CSI data and timestamps"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "has result"
+  }, {
+    "@language" : "es",
+    "@value" : "tiene resultado"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#CSIResult"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#subPropertyOf" : [ {
+    "@id" : "http://www.w3.org/ns/sosa/hasResult"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#involvesPerson",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con la persona (la letra) involucrada en la medición"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the person (the letter) involved in the measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "involucra persona"
+  }, {
+    "@language" : "en",
+    "@value" : "involves person"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Person"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#machine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Identificador de la máquina presente durante la medición (1–9)."
+  }, {
+    "@language" : "en",
+    "@value" : "Identifier of the machine present during the measurement (1–9)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "machine"
+  }, {
+    "@language" : "es",
+    "@value" : "máquina"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#machineStatus",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con el estado operativo de una máquina durante la medición"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the operational status of a machine during the measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Estado de la máquina"
+  }, {
+    "@language" : "en",
+    "@value" : "Machine status"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#MachineStatus"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#measurementDuration",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con su duración en segundos"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to its duration in seconds"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Duración de la medición"
+  }, {
+    "@language" : "en",
+    "@value" : "Measurement duration"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#Duration"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#nFiles",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número total de archivos .mat en el conjunto al que pertenece esta medición."
+  }, {
+    "@language" : "en",
+    "@value" : "Total number of .mat files in the set this measurement belongs to."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "number of files"
+  }, {
+    "@language" : "es",
+    "@value" : "número de archivos"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#nMachine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número total de máquinas involucradas en la medición."
+  }, {
+    "@language" : "en",
+    "@value" : "Total number of machines involved in the measurement."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "number of machines"
+  }, {
+    "@language" : "es",
+    "@value" : "número de máquinas"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#nPeople",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número total de personas presentes durante la medición."
+  }, {
+    "@language" : "en",
+    "@value" : "Total number of people present during the measurement."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "number of people"
+  }, {
+    "@language" : "es",
+    "@value" : "número de personas"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#nReceivers",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Number of receiver devices used in the measurement (1–4)."
+  }, {
+    "@language" : "es",
+    "@value" : "Número de dispositivos receptores utilizados en la medición (1–4)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "number of receivers"
+  }, {
+    "@language" : "es",
+    "@value" : "número de receptores"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#nic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Model of the network interface card of the CSI receiver."
+  }, {
+    "@language" : "es",
+    "@value" : "Modelo de la tarjeta de interfaz de red del receptor de CSI."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "NIC"
+  }, {
+    "@language" : "es",
+    "@value" : "NIC"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#occupiedSubcarriers",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Number of useful subcarriers (data + pilots) after excluding null subcarriers per IEEE 802.11n/ac."
+  }, {
+    "@language" : "es",
+    "@value" : "Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "occupied subcarriers"
+  }, {
+    "@language" : "es",
+    "@value" : "subportadoras ocupadas"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#receiver",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Identificador del dispositivo receptor que capturó la medición (1–4)."
+  }, {
+    "@language" : "en",
+    "@value" : "Identifier of the receiver device that captured the measurement (1–4)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "receiver"
+  }, {
+    "@language" : "es",
+    "@value" : "receptor"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#sequentialNumber",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número secuencial para distinguir mediciones con metadatos idénticos."
+  }, {
+    "@language" : "en",
+    "@value" : "Sequential number to distinguish measurements with otherwise identical metadata."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "número secuencial"
+  }, {
+    "@language" : "en",
+    "@value" : "sequential number"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#set",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Identificador del conjunto dentro de la campaña (e.g. MC1_01A). Cada conjunto corresponde a una ubicación específica."
+  }, {
+    "@language" : "en",
+    "@value" : "Set identifier within the campaign (e.g. MC1_01A). Each set corresponds to a specific location."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "conjunto"
+  }, {
+    "@language" : "en",
+    "@value" : "set"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#subcarriers",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Número total de subportadoras OFDM capturadas (64 para 20 MHz, 256 para 80 MHz en MC1)."
+  }, {
+    "@language" : "en",
+    "@value" : "Total number of OFDM subcarriers captured (64 for 20 MHz, 256 for 80 MHz in MC1)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "subcarriers"
+  }, {
+    "@language" : "es",
+    "@value" : "subportadoras"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#integer"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#traffic",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "en",
+    "@value" : "Network traffic type present during the measurement (e.g. FTP)."
+  }, {
+    "@language" : "es",
+    "@value" : "Tipo de tráfico de red presente durante la medición (e.g. FTP)."
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "en",
+    "@value" : "traffic"
+  }, {
+    "@language" : "es",
+    "@value" : "tráfico"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ]
+}, {
+  "@id" : "https://w3id.org/WiFi-CSI#wifiStandard",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ],
+  "http://www.w3.org/2000/01/rdf-schema#comment" : [ {
+    "@language" : "es",
+    "@value" : "Relaciona una medición WiFi con el estándar WiFi utilizado para la medición"
+  }, {
+    "@language" : "en",
+    "@value" : "Relates a WiFi measurement to the WiFi standard used for the measurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#domain" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiMeasurement"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#label" : [ {
+    "@language" : "es",
+    "@value" : "Estándar WiFi"
+  }, {
+    "@language" : "en",
+    "@value" : "WiFi standard"
+  } ],
+  "http://www.w3.org/2000/01/rdf-schema#range" : [ {
+    "@id" : "https://w3id.org/WiFi-CSI#WifiStandard"
+  } ]
 } ]

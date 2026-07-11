@@ -17,7 +17,7 @@
 
 
 <!-- SCHEMA.ORG METADATA -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"http://34.51.146.173:8090/ontology/wifi_activity.ttl#","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://34.51.146.173:8090/ontology/wifi_activity.ttl#","name":"Ontología de actividad WiFi CSI de EHUNAM", "headline":"This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters.", "dateReleased":"2026-05-27", "dateModified":"2026-07-01", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"https://github.com/Mikelontxu","url":"https://github.com/Mikelontxu"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","url":"https://w3id.org/WiFi-CSI#","image":"http://vowl.visualdataweb.org/webvowl/#iri=https://w3id.org/WiFi-CSI#","name":"Ontología de actividad WiFi CSI de EHUNAM", "headline":"This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters.", "dateReleased":"2026-05-27", "dateModified":"2026-07-11", "version":"1.0.0", "license":"https://creativecommons.org/licenses/by/4.0/", "author":[{"@type":"Person","name":"https://github.com/Mikelontxu","url":"https://github.com/Mikelontxu"}]}</script>
 
 <script src="resources/jquery.js"></script> 
 <script src="resources/marked.min.js"></script> 
@@ -70,13 +70,13 @@ $(function(){
 
 
 <dl>
-<dt>Fecha de modificaci&oacute;n: 2026-07-01</dt>
+<dt>Fecha de modificaci&oacute;n: 2026-07-11</dt>
 <dt>Versi&oacute;n:</dt>
-<dd><a href="http://34.51.146.173:8090/ontology/wifi_activity.ttl">http://34.51.146.173:8090/ontology/wifi_activity.ttl</a></dd>
+<dd><a href="https://w3id.org/WiFi-CSI">https://w3id.org/WiFi-CSI</a></dd>
 <dt>Revisi&oacute;n n&uacute;mero:</dt>
 <dd>1.0.0</dd>
 <dt>Fecha de emisi&oacute;n</dt>
-<dd>2026-07-01</dd>
+<dd>2026-07-11</dd>
 <dt>Autores:</dt>
 <dd><a href="https://github.com/Mikelontxu">https://github.com/Mikelontxu</a></dd>
 
@@ -91,7 +91,7 @@ $(function(){
 <dt>Descargar serializaci&oacute;n:</dt><dd><span><a href="ontology.jsonld" target="_blank"><img src="https://img.shields.io/badge/Format-JSON_LD-blue.svg" alt="JSON-LD" /></a> </span><span><a href="ontology.owl" target="_blank"><img src="https://img.shields.io/badge/Format-RDF/XML-blue.svg" alt="RDF/XML" /></a> </span><span><a href="ontology.nt" target="_blank"><img src="https://img.shields.io/badge/Format-N_Triples-blue.svg" alt="N-Triples" /></a> </span><span><a href="ontology.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a> </span></dd><dt>Licencia:</dt><dd><a href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img src="https://img.shields.io/badge/License-https://creativecommons.org/licenses/by/4.0/-blue.svg" alt="https://creativecommons.org/licenses/by/4.0/" /></a>
 </dd><dt>Visualizaci&oacute;n:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
 <!-- <dt>Evaluation:</dt><dd><a href="OOPSevaluation/oopsEval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> --><dt>Citar como:</dt>
-<dd>EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at http://34.51.146.173:8090/ontology/wifi_activity.ttl. DOI: https://doi.org/10.5281/zenodo.21089086</dd>
+<dd>EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21089086</dd>
 <dt>DOI:</dt>
 <dd><a href="http://dx.doi.org/10.5281/zenodo.21089086"><img src ="https://img.shields.io/badge/DOI-10.5281/zenodo.21089086-blue.svg" alt="10.5281/zenodo.21089086" /></a></dd>
 </dl>
@@ -125,158 +125,121 @@ Al modelar estos elementos de forma formal, la ontología tiene como objetivo fa
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#Activity"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a>
+      <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a>
    </li>
    <li>
-      <a href="#Bandwidth"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Bandwidth">Ancho de banda</a>
+      <a href="#Bandwidth" title="https://w3id.org/WiFi-CSI#Bandwidth">Ancho de banda</a>
    </li>
    <li>
-      <a href="#Application"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a>
+      <a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a>
    </li>
    <li>
-      <a href="#FrequencyBand"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#FrequencyBand">Banda de frecuencia</a>
+      <a href="#FrequencyBand" title="https://w3id.org/WiFi-CSI#FrequencyBand">Banda de frecuencia</a>
    </li>
    <li>
-      <a href="#Duration"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Duration">Duración (segundos)</a>
+      <a href="#Duration" title="https://w3id.org/WiFi-CSI#Duration">Duración (segundos)</a>
    </li>
    <li>
-      <a href="#Environment"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a>
+      <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a>
    </li>
    <li>
-      <a href="#MachineStatus"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus">Estado de la máquina</a>
+      <a href="#MachineStatus" title="https://w3id.org/WiFi-CSI#MachineStatus">Estado de la máquina</a>
    </li>
    <li>
-      <a href="#WifiStandard"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard">Estándar WiFi</a>
+      <a href="#WifiStandard" title="https://w3id.org/WiFi-CSI#WifiStandard">Estándar WiFi</a>
    </li>
    <li>
-      <a href="#CSIExtractor"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor">Extractor de CSI</a>
+      <a href="#CSIExtractor" title="https://w3id.org/WiFi-CSI#CSIExtractor">Extractor de CSI</a>
    </li>
    <li>
-      <a href="#WifiMeasurement"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a>
+      <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a>
    </li>
    <li>
-      <a href="#Person"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Person">Persona</a>
+      <a href="#Person" title="https://w3id.org/WiFi-CSI#Person">Persona</a>
    </li>
    <li>
-      <a href="#CSIResult"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIResult">Resultado CSI</a>
+      <a href="#CSIResult" title="https://w3id.org/WiFi-CSI#CSIResult">Resultado CSI</a>
    </li>
 </ul><h4>Propiedades de objeto</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#activity"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#activity">Actividad</a>
+      <a href="#activity" title="https://w3id.org/WiFi-CSI#activity">Actividad</a>
    </li>
    <li>
-      <a href="#bandwidth"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#bandwidth">Ancho de banda</a>
+      <a href="#bandwidth" title="https://w3id.org/WiFi-CSI#bandwidth">Ancho de banda</a>
    </li>
    <li>
-      <a href="#application"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#application">Aplicación</a>
+      <a href="#application" title="https://w3id.org/WiFi-CSI#application">Aplicación</a>
    </li>
    <li>
-      <a href="#frequencyBand"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#frequencyBand">Banda de frecuencia</a>
+      <a href="#frequencyBand" title="https://w3id.org/WiFi-CSI#frequencyBand">Banda de frecuencia</a>
    </li>
    <li>
-      <a href="#measurementDuration"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#measurementDuration">Duración de la medición</a>
+      <a href="#measurementDuration" title="https://w3id.org/WiFi-CSI#measurementDuration">Duración de la medición</a>
    </li>
    <li>
-      <a href="#environment"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#environment">Entorno</a>
+      <a href="#environment" title="https://w3id.org/WiFi-CSI#environment">Entorno</a>
    </li>
    <li>
-      <a href="#machineStatus"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#machineStatus">Estado de la máquina</a>
+      <a href="#machineStatus" title="https://w3id.org/WiFi-CSI#machineStatus">Estado de la máquina</a>
    </li>
    <li>
-      <a href="#wifiStandard"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#wifiStandard">Estándar WiFi</a>
+      <a href="#wifiStandard" title="https://w3id.org/WiFi-CSI#wifiStandard">Estándar WiFi</a>
    </li>
    <li>
-      <a href="#csiExtractor"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#csiExtractor">Extractor de CSI</a>
+      <a href="#csiExtractor" title="https://w3id.org/WiFi-CSI#csiExtractor">Extractor de CSI</a>
    </li>
    <li>
-      <a href="#involvesPerson"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#involvesPerson">involucra persona</a>
+      <a href="#involvesPerson" title="https://w3id.org/WiFi-CSI#involvesPerson">involucra persona</a>
    </li>
    <li>
-      <a href="#hasResult"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#hasResult">tiene resultado</a>
+      <a href="#hasResult" title="https://w3id.org/WiFi-CSI#hasResult">tiene resultado</a>
    </li>
 </ul><h4>Propiedades de datos</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#campaign"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#campaign">campaña</a>
+      <a href="#campaign" title="https://w3id.org/WiFi-CSI#campaign">campaña</a>
    </li>
    <li>
-      <a href="#channel"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#channel">canal</a>
+      <a href="#channel" title="https://w3id.org/WiFi-CSI#channel">canal</a>
    </li>
    <li>
-      <a href="#set"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#set">conjunto</a>
+      <a href="#set" title="https://w3id.org/WiFi-CSI#set">conjunto</a>
    </li>
    <li>
-      <a href="#machine"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#machine">máquina</a>
+      <a href="#machine" title="https://w3id.org/WiFi-CSI#machine">máquina</a>
    </li>
    <li>
-      <a href="#nic"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nic">NIC</a>
+      <a href="#nic" title="https://w3id.org/WiFi-CSI#nic">NIC</a>
    </li>
    <li>
-      <a href="#nFiles"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nFiles">número de archivos</a>
+      <a href="#nFiles" title="https://w3id.org/WiFi-CSI#nFiles">número de archivos</a>
    </li>
    <li>
-      <a href="#nMachine"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nMachine">número de máquinas</a>
+      <a href="#nMachine" title="https://w3id.org/WiFi-CSI#nMachine">número de máquinas</a>
    </li>
    <li>
-      <a href="#nPeople"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nPeople">número de personas</a>
+      <a href="#nPeople" title="https://w3id.org/WiFi-CSI#nPeople">número de personas</a>
    </li>
    <li>
-      <a href="#nReceivers"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nReceivers">número de receptores</a>
+      <a href="#nReceivers" title="https://w3id.org/WiFi-CSI#nReceivers">número de receptores</a>
    </li>
    <li>
-      <a href="#sequentialNumber"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#sequentialNumber">número secuencial</a>
+      <a href="#sequentialNumber" title="https://w3id.org/WiFi-CSI#sequentialNumber">número secuencial</a>
    </li>
    <li>
-      <a href="#receiver"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#receiver">receptor</a>
+      <a href="#receiver" title="https://w3id.org/WiFi-CSI#receiver">receptor</a>
    </li>
    <li>
-      <a href="#subcarriers"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#subcarriers">subportadoras</a>
+      <a href="#subcarriers" title="https://w3id.org/WiFi-CSI#subcarriers">subportadoras</a>
    </li>
    <li>
-      <a href="#occupiedSubcarriers"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#occupiedSubcarriers">subportadoras ocupadas</a>
+      <a href="#occupiedSubcarriers" title="https://w3id.org/WiFi-CSI#occupiedSubcarriers">subportadoras ocupadas</a>
    </li>
    <li>
-      <a href="#traffic"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#traffic">tráfico</a>
+      <a href="#traffic" title="https://w3id.org/WiFi-CSI#traffic">tráfico</a>
    </li>
 </ul><h4>Propiedades usadas para anotaci&oacute;n</h4><ul xmlns:widoco="https://w3id.org/widoco/vocab#"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -386,117 +349,90 @@ Al modelar estos elementos de forma formal, la ontología tiene como objetivo fa
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     class="hlist">
    <li>
-      <a href="#EmptyApplication"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#EmptyApplication">Aplicación vacía</a>
+      <a href="#EmptyApplication" title="https://w3id.org/WiFi-CSI#EmptyApplication">Aplicación vacía</a>
    </li>
    <li>
-      <a href="#Classroom"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Classroom">Aula</a>
+      <a href="#Classroom" title="https://w3id.org/WiFi-CSI#Classroom">Aula</a>
    </li>
    <li>
-      <a href="#Walking"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Walking">Caminando</a>
+      <a href="#Walking" title="https://w3id.org/WiFi-CSI#Walking">Caminando</a>
    </li>
    <li>
-      <a href="#Falling"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Falling">Cayendo</a>
+      <a href="#Falling" title="https://w3id.org/WiFi-CSI#Falling">Cayendo</a>
    </li>
    <li>
-      <a href="#PC"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#PC">Conteo de personas</a>
+      <a href="#PC" title="https://w3id.org/WiFi-CSI#PC">Conteo de personas</a>
    </li>
    <li>
-      <a href="#PCMAR"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a>
+      <a href="#PCMAR" title="https://w3id.org/WiFi-CSI#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a>
    </li>
    <li>
-      <a href="#AtherosCSIExtractor"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#AtherosCSIExtractor">Extractor de CSI Atheros</a>
+      <a href="#AtherosCSIExtractor" title="https://w3id.org/WiFi-CSI#AtherosCSIExtractor">Extractor de CSI Atheros</a>
    </li>
    <li>
-      <a href="#NexmonCSIExtractor"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#NexmonCSIExtractor">Extractor de CSI Nexmon</a>
+      <a href="#NexmonCSIExtractor" title="https://w3id.org/WiFi-CSI#NexmonCSIExtractor">Extractor de CSI Nexmon</a>
    </li>
    <li>
-      <a href="#IEEE_802_11ac"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11ac">IEEE 802.11ac</a>
+      <a href="#IEEE_802_11ac" title="https://w3id.org/WiFi-CSI#IEEE_802_11ac">IEEE 802.11ac</a>
    </li>
    <li>
-      <a href="#IEEE_802_11n"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11n">IEEE 802.11n</a>
+      <a href="#IEEE_802_11n" title="https://w3id.org/WiFi-CSI#IEEE_802_11n">IEEE 802.11n</a>
    </li>
    <li>
-      <a href="#Laboratory"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Laboratory">Laboratorio</a>
+      <a href="#Laboratory" title="https://w3id.org/WiFi-CSI#Laboratory">Laboratorio</a>
    </li>
    <li>
-      <a href="#IndustrialLaboratory"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IndustrialLaboratory">Laboratorio industrial</a>
+      <a href="#IndustrialLaboratory" title="https://w3id.org/WiFi-CSI#IndustrialLaboratory">Laboratorio industrial</a>
    </li>
    <li>
-      <a href="#MachineRunning"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineRunning">Máquina en ejecución</a>
+      <a href="#MachineRunning" title="https://w3id.org/WiFi-CSI#MachineRunning">Máquina en ejecución</a>
    </li>
    <li>
-      <a href="#MachineOn"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineOn">Máquina encendida (sin ejecutar)</a>
+      <a href="#MachineOn" title="https://w3id.org/WiFi-CSI#MachineOn">Máquina encendida (sin ejecutar)</a>
    </li>
    <li>
-      <a href="#Office1"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office1">Oficina 1</a>
+      <a href="#Office1" title="https://w3id.org/WiFi-CSI#Office1">Oficina 1</a>
    </li>
    <li>
-      <a href="#Office2"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office2">Oficina 2</a>
+      <a href="#Office2" title="https://w3id.org/WiFi-CSI#Office2">Oficina 2</a>
    </li>
    <li>
-      <a href="#StandingStill"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#StandingStill">Parado sin moverse</a>
+      <a href="#StandingStill" title="https://w3id.org/WiFi-CSI#StandingStill">Parado sin moverse</a>
    </li>
    <li>
-      <a href="#MAR"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MAR">Reconocimiento de actividad de máquinas</a>
+      <a href="#MAR" title="https://w3id.org/WiFi-CSI#MAR">Reconocimiento de actividad de máquinas</a>
    </li>
    <li>
-      <a href="#HAR"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#HAR">Reconocimiento de actividad humana</a>
+      <a href="#HAR" title="https://w3id.org/WiFi-CSI#HAR">Reconocimiento de actividad humana</a>
    </li>
    <li>
-      <a href="#MR"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MR">Reconocimiento de máquinas</a>
+      <a href="#MR" title="https://w3id.org/WiFi-CSI#MR">Reconocimiento de máquinas</a>
    </li>
    <li>
-      <a href="#StorageRoom"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#StorageRoom">Sala de almacenamiento</a>
+      <a href="#StorageRoom" title="https://w3id.org/WiFi-CSI#StorageRoom">Sala de almacenamiento</a>
    </li>
    <li>
-      <a href="#MeetingRoom"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MeetingRoom">Sala de reuniones</a>
+      <a href="#MeetingRoom" title="https://w3id.org/WiFi-CSI#MeetingRoom">Sala de reuniones</a>
    </li>
    <li>
-      <a href="#Jumping"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Jumping">Saltando</a>
+      <a href="#Jumping" title="https://w3id.org/WiFi-CSI#Jumping">Saltando</a>
    </li>
    <li>
-      <a href="#SittingStill"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingStill">Sentado sin moverse</a>
+      <a href="#SittingStill" title="https://w3id.org/WiFi-CSI#SittingStill">Sentado sin moverse</a>
    </li>
    <li>
       <a href="#SittingDownAndGettingUp"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingDownAndGettingUp">Sentándose y levantándose</a>
+         title="https://w3id.org/WiFi-CSI#SittingDownAndGettingUp">Sentándose y levantándose</a>
    </li>
    <li>
-      <a href="#BasementRoom"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#BasementRoom">Sótano</a>
+      <a href="#BasementRoom" title="https://w3id.org/WiFi-CSI#BasementRoom">Sótano</a>
    </li>
    <li>
-      <a href="#Empty"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Empty">Vacío</a>
+      <a href="#Empty" title="https://w3id.org/WiFi-CSI#Empty">Vacío</a>
    </li>
    <li>
-      <a href="#http://34.51.146.173:8090/ontology/wifi_activity.ttl"
-         title="http://34.51.146.173:8090/ontology/wifi_activity.ttl">
-         <span>wifi activity.ttl</span>
+      <a href="#https://doi.org/10.5281/zenodo.21089086" title="https://doi.org/10.5281/zenodo.21089086">
+         <span>zenodo.21089086</span>
       </a>
    </li>
 </ul><iframe src="webvowl/index.html"></iframe> 
@@ -515,22 +451,22 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
 <div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="classes">
  <h3 id="classes-headline" class="list">Clases</h3>
  <ul class="hlist">
-  <li><a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a></li>
-  <li><a href="#Bandwidth" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Bandwidth">Ancho de banda</a></li>
-  <li><a href="#Application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a></li>
-  <li><a href="#FrequencyBand" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#FrequencyBand">Banda de frecuencia</a></li>
-  <li><a href="#Duration" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Duration">Duración (segundos)</a></li>
-  <li><a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a></li>
-  <li><a href="#MachineStatus" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus">Estado de la máquina</a></li>
-  <li><a href="#WifiStandard" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard">Estándar WiFi</a></li>
-  <li><a href="#CSIExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor">Extractor de CSI</a></li>
-  <li><a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a></li>
-  <li><a href="#Person" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Person">Persona</a></li>
-  <li><a href="#CSIResult" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIResult">Resultado CSI</a></li>
+  <li><a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a></li>
+  <li><a href="#Bandwidth" title="https://w3id.org/WiFi-CSI#Bandwidth">Ancho de banda</a></li>
+  <li><a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a></li>
+  <li><a href="#FrequencyBand" title="https://w3id.org/WiFi-CSI#FrequencyBand">Banda de frecuencia</a></li>
+  <li><a href="#Duration" title="https://w3id.org/WiFi-CSI#Duration">Duración (segundos)</a></li>
+  <li><a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a></li>
+  <li><a href="#MachineStatus" title="https://w3id.org/WiFi-CSI#MachineStatus">Estado de la máquina</a></li>
+  <li><a href="#WifiStandard" title="https://w3id.org/WiFi-CSI#WifiStandard">Estándar WiFi</a></li>
+  <li><a href="#CSIExtractor" title="https://w3id.org/WiFi-CSI#CSIExtractor">Extractor de CSI</a></li>
+  <li><a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a></li>
+  <li><a href="#Person" title="https://w3id.org/WiFi-CSI#Person">Persona</a></li>
+  <li><a href="#CSIResult" title="https://w3id.org/WiFi-CSI#CSIResult">Resultado CSI</a></li>
  </ul>
  <div class="entity" id="Activity">
   <h3>Actividad<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Activity</p>
   <div class="comment">
    <span class="markdown">Tipo de actividad realizada por una persona durante la medición WiFi</span>
   </div>
@@ -539,19 +475,19 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#activity">Actividad</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#activity" title="https://w3id.org/WiFi-CSI#activity">Actividad</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     miembros
    </dt>
    <dd>
-    <a href="#Walking" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Walking">Caminando</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Falling" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Falling">Cayendo</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#StandingStill" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#StandingStill">Parado sin moverse</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Jumping" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Jumping">Saltando</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#SittingStill" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingStill">Sentado sin moverse</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#SittingDownAndGettingUp" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingDownAndGettingUp">Sentándose y levantándose</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Empty" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Empty">Vacío</a> <sup class="type-ni" title="Individuo">ni</sup>
+    <a href="#Walking" title="https://w3id.org/WiFi-CSI#Walking">Caminando</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Falling" title="https://w3id.org/WiFi-CSI#Falling">Cayendo</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#StandingStill" title="https://w3id.org/WiFi-CSI#StandingStill">Parado sin moverse</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Jumping" title="https://w3id.org/WiFi-CSI#Jumping">Saltando</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#SittingStill" title="https://w3id.org/WiFi-CSI#SittingStill">Sentado sin moverse</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#SittingDownAndGettingUp" title="https://w3id.org/WiFi-CSI#SittingDownAndGettingUp">Sentándose y levantándose</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Empty" title="https://w3id.org/WiFi-CSI#Empty">Vacío</a> <sup class="type-ni" title="Individuo">ni</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Bandwidth">
   <h3>Ancho de banda<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Bandwidth</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Bandwidth</p>
   <div class="comment">
    <span class="markdown">Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)</span>
   </div>
@@ -566,13 +502,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#bandwidth" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#bandwidth">Ancho de banda</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#bandwidth" title="https://w3id.org/WiFi-CSI#bandwidth">Ancho de banda</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Application">
   <h3>Aplicación<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Application</p>
   <div class="comment">
    <span class="markdown">Tipo de aplicación o caso de uso de una medición WiFi</span>
   </div>
@@ -581,19 +517,19 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#application">Aplicación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#application" title="https://w3id.org/WiFi-CSI#application">Aplicación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     miembros
    </dt>
    <dd>
-    <a href="#EmptyApplication" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#EmptyApplication">Aplicación vacía</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#PC" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#PC">Conteo de personas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#PCMAR" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MAR" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MAR">Reconocimiento de actividad de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#HAR" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#HAR">Reconocimiento de actividad humana</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MR" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MR">Reconocimiento de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>
+    <a href="#EmptyApplication" title="https://w3id.org/WiFi-CSI#EmptyApplication">Aplicación vacía</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#PC" title="https://w3id.org/WiFi-CSI#PC">Conteo de personas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#PCMAR" title="https://w3id.org/WiFi-CSI#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MAR" title="https://w3id.org/WiFi-CSI#MAR">Reconocimiento de actividad de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#HAR" title="https://w3id.org/WiFi-CSI#HAR">Reconocimiento de actividad humana</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MR" title="https://w3id.org/WiFi-CSI#MR">Reconocimiento de máquinas</a> <sup class="type-ni" title="Individuo">ni</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="FrequencyBand">
   <h3>Banda de frecuencia<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#FrequencyBand</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#FrequencyBand</p>
   <div class="comment">
    <span class="markdown">Banda de frecuencia de la señal WiFi, expresada en GHz (2.4 GHz o 5 GHz)</span>
   </div>
@@ -608,13 +544,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#frequencyBand" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#frequencyBand">Banda de frecuencia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#frequencyBand" title="https://w3id.org/WiFi-CSI#frequencyBand">Banda de frecuencia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Duration">
   <h3>Duración (segundos)<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Duration</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Duration</p>
   <div class="comment">
    <span class="markdown">Duración de la medición WiFi en segundos</span>
   </div>
@@ -629,13 +565,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#measurementDuration" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#measurementDuration">Duración de la medición</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#measurementDuration" title="https://w3id.org/WiFi-CSI#measurementDuration">Duración de la medición</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Environment">
   <h3>Entorno<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Environment</p>
   <div class="comment">
    <span class="markdown">Tipo de entorno físico donde se tomó la medición WiFi</span>
   </div>
@@ -644,19 +580,19 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#environment">Entorno</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#environment" title="https://w3id.org/WiFi-CSI#environment">Entorno</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     miembros
    </dt>
    <dd>
-    <a href="#Classroom" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Classroom">Aula</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Laboratory" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Laboratory">Laboratorio</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#IndustrialLaboratory" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IndustrialLaboratory">Laboratorio industrial</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Office1" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office1">Oficina 1</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Office2" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office2">Oficina 2</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#StorageRoom" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#StorageRoom">Sala de almacenamiento</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MeetingRoom" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MeetingRoom">Sala de reuniones</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#BasementRoom" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#BasementRoom">Sótano</a> <sup class="type-ni" title="Individuo">ni</sup>
+    <a href="#Classroom" title="https://w3id.org/WiFi-CSI#Classroom">Aula</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Laboratory" title="https://w3id.org/WiFi-CSI#Laboratory">Laboratorio</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#IndustrialLaboratory" title="https://w3id.org/WiFi-CSI#IndustrialLaboratory">Laboratorio industrial</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Office1" title="https://w3id.org/WiFi-CSI#Office1">Oficina 1</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#Office2" title="https://w3id.org/WiFi-CSI#Office2">Oficina 2</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#StorageRoom" title="https://w3id.org/WiFi-CSI#StorageRoom">Sala de almacenamiento</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MeetingRoom" title="https://w3id.org/WiFi-CSI#MeetingRoom">Sala de reuniones</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#BasementRoom" title="https://w3id.org/WiFi-CSI#BasementRoom">Sótano</a> <sup class="type-ni" title="Individuo">ni</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="MachineStatus">
   <h3>Estado de la máquina<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#MachineStatus</p>
   <div class="comment">
    <span class="markdown">Estado operativo de una máquina durante la medición WiFi</span>
   </div>
@@ -665,19 +601,19 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#machineStatus" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#machineStatus">Estado de la máquina</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#machineStatus" title="https://w3id.org/WiFi-CSI#machineStatus">Estado de la máquina</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     miembros
    </dt>
    <dd>
-    <a href="#MachineRunning" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineRunning">Máquina en ejecución</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MachineOn" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineOn">Máquina encendida (sin ejecutar)</a> <sup class="type-ni" title="Individuo">ni</sup>
+    <a href="#MachineRunning" title="https://w3id.org/WiFi-CSI#MachineRunning">Máquina en ejecución</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#MachineOn" title="https://w3id.org/WiFi-CSI#MachineOn">Máquina encendida (sin ejecutar)</a> <sup class="type-ni" title="Individuo">ni</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="WifiStandard">
   <h3>Estándar WiFi<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#WifiStandard</p>
   <div class="comment">
    <span class="markdown">Estándar WiFi utilizado para la medición</span>
   </div>
@@ -686,19 +622,19 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#wifiStandard" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#wifiStandard">Estándar WiFi</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#wifiStandard" title="https://w3id.org/WiFi-CSI#wifiStandard">Estándar WiFi</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     miembros
    </dt>
    <dd>
-    <a href="#IEEE_802_11ac" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11ac">IEEE 802.11ac</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#IEEE_802_11n" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11n">IEEE 802.11n</a> <sup class="type-ni" title="Individuo">ni</sup>
+    <a href="#IEEE_802_11ac" title="https://w3id.org/WiFi-CSI#IEEE_802_11ac">IEEE 802.11ac</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#IEEE_802_11n" title="https://w3id.org/WiFi-CSI#IEEE_802_11n">IEEE 802.11n</a> <sup class="type-ni" title="Individuo">ni</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="CSIExtractor">
   <h3>Extractor de CSI<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#CSIExtractor</p>
   <div class="comment">
    <span class="markdown">Herramienta o método utilizado para extraer los datos CSI de las señales WiFi crudas</span>
   </div>
@@ -707,19 +643,19 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#csiExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#csiExtractor">Extractor de CSI</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#csiExtractor" title="https://w3id.org/WiFi-CSI#csiExtractor">Extractor de CSI</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
    <dt>
     miembros
    </dt>
    <dd>
-    <a href="#AtherosCSIExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#AtherosCSIExtractor">Extractor de CSI Atheros</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#NexmonCSIExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#NexmonCSIExtractor">Extractor de CSI Nexmon</a> <sup class="type-ni" title="Individuo">ni</sup>
+    <a href="#AtherosCSIExtractor" title="https://w3id.org/WiFi-CSI#AtherosCSIExtractor">Extractor de CSI Atheros</a> <sup class="type-ni" title="Individuo">ni</sup>, <a href="#NexmonCSIExtractor" title="https://w3id.org/WiFi-CSI#NexmonCSIExtractor">Extractor de CSI Nexmon</a> <sup class="type-ni" title="Individuo">ni</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="WifiMeasurement">
   <h3>Medición WiFi<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#WifiMeasurement</p>
   <div class="comment">
    <span class="markdown">Observación o medición basada en señales WiFi (CSI) en un entorno específico</span>
   </div>
@@ -734,13 +670,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en dominio de
    </dt>
    <dd>
-    <a href="#activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#activity">Actividad</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#bandwidth" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#bandwidth">Ancho de banda</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#application">Aplicación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#frequencyBand" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#frequencyBand">Banda de frecuencia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measurementDuration" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#measurementDuration">Duración de la medición</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#environment">Entorno</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#machineStatus" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#machineStatus">Estado de la máquina</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#wifiStandard" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#wifiStandard">Estándar WiFi</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#csiExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#csiExtractor">Extractor de CSI</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#nic" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nic">NIC</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#campaign" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#campaign">campaña</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#channel" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#channel">canal</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#set" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#set">conjunto</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#involvesPerson" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#involvesPerson">involucra persona</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#machine" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#machine">máquina</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nFiles" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nFiles">número de archivos</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nMachine" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nMachine">número de máquinas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nPeople" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nPeople">número de personas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nReceivers" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nReceivers">número de receptores</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#sequentialNumber" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#sequentialNumber">número secuencial</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#receiver" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#receiver">receptor</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#subcarriers" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#subcarriers">subportadoras</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#occupiedSubcarriers" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#occupiedSubcarriers">subportadoras ocupadas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasResult" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#hasResult">tiene resultado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#traffic" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#traffic">tráfico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>
+    <a href="#activity" title="https://w3id.org/WiFi-CSI#activity">Actividad</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#bandwidth" title="https://w3id.org/WiFi-CSI#bandwidth">Ancho de banda</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#application" title="https://w3id.org/WiFi-CSI#application">Aplicación</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#frequencyBand" title="https://w3id.org/WiFi-CSI#frequencyBand">Banda de frecuencia</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#measurementDuration" title="https://w3id.org/WiFi-CSI#measurementDuration">Duración de la medición</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#environment" title="https://w3id.org/WiFi-CSI#environment">Entorno</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#machineStatus" title="https://w3id.org/WiFi-CSI#machineStatus">Estado de la máquina</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#wifiStandard" title="https://w3id.org/WiFi-CSI#wifiStandard">Estándar WiFi</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#csiExtractor" title="https://w3id.org/WiFi-CSI#csiExtractor">Extractor de CSI</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#nic" title="https://w3id.org/WiFi-CSI#nic">NIC</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#campaign" title="https://w3id.org/WiFi-CSI#campaign">campaña</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#channel" title="https://w3id.org/WiFi-CSI#channel">canal</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#set" title="https://w3id.org/WiFi-CSI#set">conjunto</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#involvesPerson" title="https://w3id.org/WiFi-CSI#involvesPerson">involucra persona</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#machine" title="https://w3id.org/WiFi-CSI#machine">máquina</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nFiles" title="https://w3id.org/WiFi-CSI#nFiles">número de archivos</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nMachine" title="https://w3id.org/WiFi-CSI#nMachine">número de máquinas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nPeople" title="https://w3id.org/WiFi-CSI#nPeople">número de personas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#nReceivers" title="https://w3id.org/WiFi-CSI#nReceivers">número de receptores</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#sequentialNumber" title="https://w3id.org/WiFi-CSI#sequentialNumber">número secuencial</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#receiver" title="https://w3id.org/WiFi-CSI#receiver">receptor</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#subcarriers" title="https://w3id.org/WiFi-CSI#subcarriers">subportadoras</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#occupiedSubcarriers" title="https://w3id.org/WiFi-CSI#occupiedSubcarriers">subportadoras ocupadas</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>, <a href="#hasResult" title="https://w3id.org/WiFi-CSI#hasResult">tiene resultado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>, <a href="#traffic" title="https://w3id.org/WiFi-CSI#traffic">tráfico</a> <sup class="type-dp" title="Propiedad de datos">dp</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Person">
   <h3>Persona<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Person</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Person</p>
   <div class="comment">
    <span class="markdown">Identificador de una persona participante en una medición WiFi por medio de una letra minúscula (a-u)</span>
   </div>
@@ -749,13 +685,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#involvesPerson" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#involvesPerson">involucra persona</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#involvesPerson" title="https://w3id.org/WiFi-CSI#involvesPerson">involucra persona</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="CSIResult">
   <h3>Resultado CSI<sup class="type-c" title="clase">c</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#classes">Índice de clases</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIResult</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#CSIResult</p>
   <div class="comment">
    <span class="markdown">Recurso que referencia al archivo .mat con datos CSI/RSSI/timestamps</span>
   </div>
@@ -770,28 +706,28 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     en rango de
    </dt>
    <dd>
-    <a href="#hasResult" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#hasResult">tiene resultado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
+    <a href="#hasResult" title="https://w3id.org/WiFi-CSI#hasResult">tiene resultado</a> <sup class="type-op" title="Propiedad entre objetos">op</sup>
    </dd>
   </dl>
  </div>
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="objectproperties">
  <h2>Propiedades entre objetos</h2>
  <ul class="hlist">
-  <li><a href="#activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#activity">Actividad</a></li>
-  <li><a href="#bandwidth" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#bandwidth">Ancho de banda</a></li>
-  <li><a href="#application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#application">Aplicación</a></li>
-  <li><a href="#frequencyBand" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#frequencyBand">Banda de frecuencia</a></li>
-  <li><a href="#measurementDuration" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#measurementDuration">Duración de la medición</a></li>
-  <li><a href="#environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#environment">Entorno</a></li>
-  <li><a href="#machineStatus" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#machineStatus">Estado de la máquina</a></li>
-  <li><a href="#wifiStandard" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#wifiStandard">Estándar WiFi</a></li>
-  <li><a href="#csiExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#csiExtractor">Extractor de CSI</a></li>
-  <li><a href="#involvesPerson" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#involvesPerson">involucra persona</a></li>
-  <li><a href="#hasResult" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#hasResult">tiene resultado</a></li>
+  <li><a href="#activity" title="https://w3id.org/WiFi-CSI#activity">Actividad</a></li>
+  <li><a href="#bandwidth" title="https://w3id.org/WiFi-CSI#bandwidth">Ancho de banda</a></li>
+  <li><a href="#application" title="https://w3id.org/WiFi-CSI#application">Aplicación</a></li>
+  <li><a href="#frequencyBand" title="https://w3id.org/WiFi-CSI#frequencyBand">Banda de frecuencia</a></li>
+  <li><a href="#measurementDuration" title="https://w3id.org/WiFi-CSI#measurementDuration">Duración de la medición</a></li>
+  <li><a href="#environment" title="https://w3id.org/WiFi-CSI#environment">Entorno</a></li>
+  <li><a href="#machineStatus" title="https://w3id.org/WiFi-CSI#machineStatus">Estado de la máquina</a></li>
+  <li><a href="#wifiStandard" title="https://w3id.org/WiFi-CSI#wifiStandard">Estándar WiFi</a></li>
+  <li><a href="#csiExtractor" title="https://w3id.org/WiFi-CSI#csiExtractor">Extractor de CSI</a></li>
+  <li><a href="#involvesPerson" title="https://w3id.org/WiFi-CSI#involvesPerson">involucra persona</a></li>
+  <li><a href="#hasResult" title="https://w3id.org/WiFi-CSI#hasResult">tiene resultado</a></li>
  </ul>
  <div class="entity" id="activity">
   <h3>Actividad<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#activity</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#activity</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con el tipo de actividad realizada por una persona durante la medición</span>
   </div>
@@ -801,20 +737,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="bandwidth">
   <h3>Ancho de banda<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#bandwidth</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#bandwidth</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con el ancho de banda de la señal WiFi utilizada para la medición</span>
   </div>
@@ -824,20 +760,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#Bandwidth" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Bandwidth">Ancho de banda</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#Bandwidth" title="https://w3id.org/WiFi-CSI#Bandwidth">Ancho de banda</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="application">
   <h3>Aplicación<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#application</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#application</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con la aplicación o caso de uso con el que está asociada</span>
   </div>
@@ -847,20 +783,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#Application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="frequencyBand">
   <h3>Banda de frecuencia<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#frequencyBand</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#frequencyBand</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con la banda de frecuencia de la señal WiFi utilizada para la medición</span>
   </div>
@@ -870,20 +806,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#FrequencyBand" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#FrequencyBand">Banda de frecuencia</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#FrequencyBand" title="https://w3id.org/WiFi-CSI#FrequencyBand">Banda de frecuencia</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="measurementDuration">
   <h3>Duración de la medición<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#measurementDuration</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#measurementDuration</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con su duración en segundos</span>
   </div>
@@ -893,20 +829,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#Duration" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Duration">Duración (segundos)</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#Duration" title="https://w3id.org/WiFi-CSI#Duration">Duración (segundos)</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="environment">
   <h3>Entorno<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#environment</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#environment</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con el entorno físico donde se tomó</span>
   </div>
@@ -916,20 +852,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="machineStatus">
   <h3>Estado de la máquina<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#machineStatus</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#machineStatus</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con el estado operativo de una máquina durante la medición</span>
   </div>
@@ -939,20 +875,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#MachineStatus" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#MachineStatus" title="https://w3id.org/WiFi-CSI#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="wifiStandard">
   <h3>Estándar WiFi<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#wifiStandard</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#wifiStandard</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con el estándar WiFi utilizado para la medición</span>
   </div>
@@ -962,20 +898,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#WifiStandard" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiStandard" title="https://w3id.org/WiFi-CSI#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="csiExtractor">
   <h3>Extractor de CSI<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#csiExtractor</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#csiExtractor</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con la herramienta o método extractor de CSI utilizado para obtener los datos CSI</span>
   </div>
@@ -985,20 +921,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#CSIExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#CSIExtractor" title="https://w3id.org/WiFi-CSI#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="involvesPerson">
   <h3>involucra persona<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#involvesPerson</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#involvesPerson</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con la persona (la letra) involucrada en la medición</span>
   </div>
@@ -1008,20 +944,20 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#Person" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Person">Persona</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#Person" title="https://w3id.org/WiFi-CSI#Person">Persona</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
  </div>
  <div class="entity" id="hasResult">
   <h3>tiene resultado<sup class="type-op" title="Propiedad entre objetos">op</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#objectproperties">Índice de propiedades de objetos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#hasResult</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#hasResult</p>
   <div class="comment">
    <span class="markdown">Relaciona una medición WiFi con su resultado que contiene los datos CSI y timestamps</span>
   </div>
@@ -1037,13 +973,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
     </dt>
     <dd>
-     <a href="#CSIResult" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIResult">Resultado CSI</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#CSIResult" title="https://w3id.org/WiFi-CSI#CSIResult">Resultado CSI</a> <sup class="type-c" title="clase">c</sup>
     </dd>
    </dl>
   </div>
@@ -1051,24 +987,24 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="dataproperties">
  <h3 id="dataproperties-headline" class="list">Propiedades de datos</h3>
  <ul class="hlist">
-  <li><a href="#campaign" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#campaign">campaña</a></li>
-  <li><a href="#channel" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#channel">canal</a></li>
-  <li><a href="#set" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#set">conjunto</a></li>
-  <li><a href="#machine" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#machine">máquina</a></li>
-  <li><a href="#nic" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nic">NIC</a></li>
-  <li><a href="#nFiles" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nFiles">número de archivos</a></li>
-  <li><a href="#nMachine" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nMachine">número de máquinas</a></li>
-  <li><a href="#nPeople" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nPeople">número de personas</a></li>
-  <li><a href="#nReceivers" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#nReceivers">número de receptores</a></li>
-  <li><a href="#sequentialNumber" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#sequentialNumber">número secuencial</a></li>
-  <li><a href="#receiver" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#receiver">receptor</a></li>
-  <li><a href="#subcarriers" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#subcarriers">subportadoras</a></li>
-  <li><a href="#occupiedSubcarriers" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#occupiedSubcarriers">subportadoras ocupadas</a></li>
-  <li><a href="#traffic" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#traffic">tráfico</a></li>
+  <li><a href="#campaign" title="https://w3id.org/WiFi-CSI#campaign">campaña</a></li>
+  <li><a href="#channel" title="https://w3id.org/WiFi-CSI#channel">canal</a></li>
+  <li><a href="#set" title="https://w3id.org/WiFi-CSI#set">conjunto</a></li>
+  <li><a href="#machine" title="https://w3id.org/WiFi-CSI#machine">máquina</a></li>
+  <li><a href="#nic" title="https://w3id.org/WiFi-CSI#nic">NIC</a></li>
+  <li><a href="#nFiles" title="https://w3id.org/WiFi-CSI#nFiles">número de archivos</a></li>
+  <li><a href="#nMachine" title="https://w3id.org/WiFi-CSI#nMachine">número de máquinas</a></li>
+  <li><a href="#nPeople" title="https://w3id.org/WiFi-CSI#nPeople">número de personas</a></li>
+  <li><a href="#nReceivers" title="https://w3id.org/WiFi-CSI#nReceivers">número de receptores</a></li>
+  <li><a href="#sequentialNumber" title="https://w3id.org/WiFi-CSI#sequentialNumber">número secuencial</a></li>
+  <li><a href="#receiver" title="https://w3id.org/WiFi-CSI#receiver">receptor</a></li>
+  <li><a href="#subcarriers" title="https://w3id.org/WiFi-CSI#subcarriers">subportadoras</a></li>
+  <li><a href="#occupiedSubcarriers" title="https://w3id.org/WiFi-CSI#occupiedSubcarriers">subportadoras ocupadas</a></li>
+  <li><a href="#traffic" title="https://w3id.org/WiFi-CSI#traffic">tráfico</a></li>
  </ul>
  <div class="entity" id="campaign">
   <h3>campaña<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#campaign</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#campaign</p>
   <div class="comment">
    <span class="markdown">Identificador de la campaña de medición (e.g. MC1).</span>
   </div>
@@ -1078,7 +1014,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1091,7 +1027,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="channel">
   <h3>canal<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#channel</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#channel</p>
   <div class="comment">
    <span class="markdown">Canal WiFi utilizado durante la medición (11, 13 or 40).</span>
   </div>
@@ -1101,7 +1037,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1114,7 +1050,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="set">
   <h3>conjunto<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#set</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#set</p>
   <div class="comment">
    <span class="markdown">Identificador del conjunto dentro de la campaña (e.g. MC1_01A). Cada conjunto corresponde a una ubicación específica.</span>
   </div>
@@ -1124,7 +1060,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1137,7 +1073,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="machine">
   <h3>máquina<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#machine</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#machine</p>
   <div class="comment">
    <span class="markdown">Identificador de la máquina presente durante la medición (1–9).</span>
   </div>
@@ -1147,7 +1083,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1160,7 +1096,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="nic">
   <h3>NIC<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#nic</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#nic</p>
   <div class="comment">
    <span class="markdown">Modelo de la tarjeta de interfaz de red del receptor de CSI.</span>
   </div>
@@ -1170,7 +1106,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1183,7 +1119,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="nFiles">
   <h3>número de archivos<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#nFiles</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#nFiles</p>
   <div class="comment">
    <span class="markdown">Número total de archivos .mat en el conjunto al que pertenece esta medición.</span>
   </div>
@@ -1193,7 +1129,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1206,7 +1142,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="nMachine">
   <h3>número de máquinas<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#nMachine</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#nMachine</p>
   <div class="comment">
    <span class="markdown">Número total de máquinas involucradas en la medición.</span>
   </div>
@@ -1216,7 +1152,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1229,7 +1165,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="nPeople">
   <h3>número de personas<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#nPeople</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#nPeople</p>
   <div class="comment">
    <span class="markdown">Número total de personas presentes durante la medición.</span>
   </div>
@@ -1239,7 +1175,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1252,7 +1188,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="nReceivers">
   <h3>número de receptores<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#nReceivers</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#nReceivers</p>
   <div class="comment">
    <span class="markdown">Número de dispositivos receptores utilizados en la medición (1–4).</span>
   </div>
@@ -1262,7 +1198,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1275,7 +1211,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="sequentialNumber">
   <h3>número secuencial<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#sequentialNumber</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#sequentialNumber</p>
   <div class="comment">
    <span class="markdown">Número secuencial para distinguir mediciones con metadatos idénticos.</span>
   </div>
@@ -1285,7 +1221,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1298,7 +1234,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="receiver">
   <h3>receptor<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#receiver</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#receiver</p>
   <div class="comment">
    <span class="markdown">Identificador del dispositivo receptor que capturó la medición (1–4).</span>
   </div>
@@ -1308,7 +1244,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1321,7 +1257,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="subcarriers">
   <h3>subportadoras<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#subcarriers</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#subcarriers</p>
   <div class="comment">
    <span class="markdown">Número total de subportadoras OFDM capturadas (64 para 20 MHz, 256 para 80 MHz en MC1).</span>
   </div>
@@ -1331,7 +1267,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1344,7 +1280,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="occupiedSubcarriers">
   <h3>subportadoras ocupadas<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#occupiedSubcarriers</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#occupiedSubcarriers</p>
   <div class="comment">
    <span class="markdown">Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac.</span>
   </div>
@@ -1354,7 +1290,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1367,7 +1303,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="traffic">
   <h3>tráfico<sup class="type-dp" title="Propiedad de datos">dp</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#dataproperties">Índice de propiedades de datos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#traffic</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#traffic</p>
   <div class="comment">
    <span class="markdown">Tipo de tráfico de red presente durante la medición (e.g. FTP).</span>
   </div>
@@ -1377,7 +1313,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
      dominio
     </dt>
     <dd>
-     <a href="#WifiMeasurement" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
+     <a href="#WifiMeasurement" title="https://w3id.org/WiFi-CSI#WifiMeasurement">Medición WiFi</a> <sup class="type-c" title="clase">c</sup>
     </dd>
     <dt>
      rango
@@ -1495,38 +1431,38 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
 </div><div xmlns:widoco="https://w3id.org/widoco/vocab#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="namedindividuals">
  <h3 id="namedindividuals" class="list">Individuos</h3>
  <ul class="hlist">
-  <li><a href="#EmptyApplication" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#EmptyApplication">Aplicación vacía</a></li>
-  <li><a href="#Classroom" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Classroom">Aula</a></li>
-  <li><a href="#Walking" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Walking">Caminando</a></li>
-  <li><a href="#Falling" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Falling">Cayendo</a></li>
-  <li><a href="#PC" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#PC">Conteo de personas</a></li>
-  <li><a href="#PCMAR" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a></li>
-  <li><a href="#AtherosCSIExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#AtherosCSIExtractor">Extractor de CSI Atheros</a></li>
-  <li><a href="#NexmonCSIExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#NexmonCSIExtractor">Extractor de CSI Nexmon</a></li>
-  <li><a href="#IEEE_802_11ac" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11ac">IEEE 802.11ac</a></li>
-  <li><a href="#IEEE_802_11n" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11n">IEEE 802.11n</a></li>
-  <li><a href="#Laboratory" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Laboratory">Laboratorio</a></li>
-  <li><a href="#IndustrialLaboratory" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#IndustrialLaboratory">Laboratorio industrial</a></li>
-  <li><a href="#MachineRunning" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineRunning">Máquina en ejecución</a></li>
-  <li><a href="#MachineOn" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineOn">Máquina encendida (sin ejecutar)</a></li>
-  <li><a href="#Office1" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office1">Oficina 1</a></li>
-  <li><a href="#Office2" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office2">Oficina 2</a></li>
-  <li><a href="#StandingStill" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#StandingStill">Parado sin moverse</a></li>
-  <li><a href="#MAR" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MAR">Reconocimiento de actividad de máquinas</a></li>
-  <li><a href="#HAR" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#HAR">Reconocimiento de actividad humana</a></li>
-  <li><a href="#MR" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MR">Reconocimiento de máquinas</a></li>
-  <li><a href="#StorageRoom" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#StorageRoom">Sala de almacenamiento</a></li>
-  <li><a href="#MeetingRoom" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MeetingRoom">Sala de reuniones</a></li>
-  <li><a href="#Jumping" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Jumping">Saltando</a></li>
-  <li><a href="#SittingStill" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingStill">Sentado sin moverse</a></li>
-  <li><a href="#SittingDownAndGettingUp" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingDownAndGettingUp">Sentándose y levantándose</a></li>
-  <li><a href="#BasementRoom" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#BasementRoom">Sótano</a></li>
-  <li><a href="#Empty" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Empty">Vacío</a></li>
-  <li><a href="#http://34.51.146.173:8090/ontology/wifi_activity.ttl" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl"> <span>wifi activity.ttl</span> </a></li>
+  <li><a href="#EmptyApplication" title="https://w3id.org/WiFi-CSI#EmptyApplication">Aplicación vacía</a></li>
+  <li><a href="#Classroom" title="https://w3id.org/WiFi-CSI#Classroom">Aula</a></li>
+  <li><a href="#Walking" title="https://w3id.org/WiFi-CSI#Walking">Caminando</a></li>
+  <li><a href="#Falling" title="https://w3id.org/WiFi-CSI#Falling">Cayendo</a></li>
+  <li><a href="#PC" title="https://w3id.org/WiFi-CSI#PC">Conteo de personas</a></li>
+  <li><a href="#PCMAR" title="https://w3id.org/WiFi-CSI#PCMAR">Conteo de personas y reconocimiento de actividad de máquinas</a></li>
+  <li><a href="#AtherosCSIExtractor" title="https://w3id.org/WiFi-CSI#AtherosCSIExtractor">Extractor de CSI Atheros</a></li>
+  <li><a href="#NexmonCSIExtractor" title="https://w3id.org/WiFi-CSI#NexmonCSIExtractor">Extractor de CSI Nexmon</a></li>
+  <li><a href="#IEEE_802_11ac" title="https://w3id.org/WiFi-CSI#IEEE_802_11ac">IEEE 802.11ac</a></li>
+  <li><a href="#IEEE_802_11n" title="https://w3id.org/WiFi-CSI#IEEE_802_11n">IEEE 802.11n</a></li>
+  <li><a href="#Laboratory" title="https://w3id.org/WiFi-CSI#Laboratory">Laboratorio</a></li>
+  <li><a href="#IndustrialLaboratory" title="https://w3id.org/WiFi-CSI#IndustrialLaboratory">Laboratorio industrial</a></li>
+  <li><a href="#MachineRunning" title="https://w3id.org/WiFi-CSI#MachineRunning">Máquina en ejecución</a></li>
+  <li><a href="#MachineOn" title="https://w3id.org/WiFi-CSI#MachineOn">Máquina encendida (sin ejecutar)</a></li>
+  <li><a href="#Office1" title="https://w3id.org/WiFi-CSI#Office1">Oficina 1</a></li>
+  <li><a href="#Office2" title="https://w3id.org/WiFi-CSI#Office2">Oficina 2</a></li>
+  <li><a href="#StandingStill" title="https://w3id.org/WiFi-CSI#StandingStill">Parado sin moverse</a></li>
+  <li><a href="#MAR" title="https://w3id.org/WiFi-CSI#MAR">Reconocimiento de actividad de máquinas</a></li>
+  <li><a href="#HAR" title="https://w3id.org/WiFi-CSI#HAR">Reconocimiento de actividad humana</a></li>
+  <li><a href="#MR" title="https://w3id.org/WiFi-CSI#MR">Reconocimiento de máquinas</a></li>
+  <li><a href="#StorageRoom" title="https://w3id.org/WiFi-CSI#StorageRoom">Sala de almacenamiento</a></li>
+  <li><a href="#MeetingRoom" title="https://w3id.org/WiFi-CSI#MeetingRoom">Sala de reuniones</a></li>
+  <li><a href="#Jumping" title="https://w3id.org/WiFi-CSI#Jumping">Saltando</a></li>
+  <li><a href="#SittingStill" title="https://w3id.org/WiFi-CSI#SittingStill">Sentado sin moverse</a></li>
+  <li><a href="#SittingDownAndGettingUp" title="https://w3id.org/WiFi-CSI#SittingDownAndGettingUp">Sentándose y levantándose</a></li>
+  <li><a href="#BasementRoom" title="https://w3id.org/WiFi-CSI#BasementRoom">Sótano</a></li>
+  <li><a href="#Empty" title="https://w3id.org/WiFi-CSI#Empty">Vacío</a></li>
+  <li><a href="#https://doi.org/10.5281/zenodo.21089086" title="https://doi.org/10.5281/zenodo.21089086"> <span>zenodo.21089086</span> </a></li>
  </ul>
  <div class="entity" id="EmptyApplication">
   <h3>Aplicación vacía<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#EmptyApplication</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#EmptyApplication</p>
   <div class="comment">
    <span class="markdown">No hay una aplicación o caso de uso específico asociado con la medición WiFi</span>
   </div>
@@ -1535,7 +1471,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1547,7 +1483,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="Classroom">
   <h3>Aula<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Classroom</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Classroom</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada en un entorno de aula con pupitres y sillas</span>
   </div>
@@ -1556,13 +1492,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Walking">
   <h3>Caminando<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Walking</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Walking</p>
   <div class="comment">
    <span class="markdown">La persona está caminando durante la medición WiFi</span>
   </div>
@@ -1571,7 +1507,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1583,7 +1519,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="Falling">
   <h3>Cayendo<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Falling</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Falling</p>
   <div class="comment">
    <span class="markdown">La persona está cayendo durante la medición WiFi</span>
   </div>
@@ -1592,7 +1528,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1604,7 +1540,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="PC">
   <h3>Conteo de personas<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#PC</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#PC</p>
   <div class="comment">
    <span class="markdown">Aplicación para conteo de personas usando mediciones WiFi</span>
   </div>
@@ -1613,7 +1549,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1625,7 +1561,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="PCMAR">
   <h3>Conteo de personas y reconocimiento de actividad de máquinas<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#PCMAR</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#PCMAR</p>
   <div class="comment">
    <span class="markdown">Aplicación para conteo de personas y reconocimiento de actividad de máquinas usando mediciones WiFi</span>
   </div>
@@ -1634,7 +1570,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1646,7 +1582,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="AtherosCSIExtractor">
   <h3>Extractor de CSI Atheros<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#AtherosCSIExtractor</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#AtherosCSIExtractor</p>
   <div class="comment">
    <span class="markdown">Extractor de CSI basado en el framework Nexmon para chipsets WiFi Atheros</span>
   </div>
@@ -1655,7 +1591,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#CSIExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#CSIExtractor" title="https://w3id.org/WiFi-CSI#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1667,7 +1603,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="NexmonCSIExtractor">
   <h3>Extractor de CSI Nexmon<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#NexmonCSIExtractor</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#NexmonCSIExtractor</p>
   <div class="comment">
    <span class="markdown">Extractor de CSI basado en el framework Nexmon para modificación de firmware WiFi</span>
   </div>
@@ -1676,7 +1612,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#CSIExtractor" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#CSIExtractor" title="https://w3id.org/WiFi-CSI#CSIExtractor">Extractor de CSI</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1688,7 +1624,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="IEEE_802_11ac">
   <h3>IEEE 802.11ac<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11ac</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#IEEE_802_11ac</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada utilizando el estándar IEEE 802.11ac</span>
   </div>
@@ -1697,13 +1633,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#WifiStandard" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#WifiStandard" title="https://w3id.org/WiFi-CSI#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="IEEE_802_11n">
   <h3>IEEE 802.11n<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#IEEE_802_11n</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#IEEE_802_11n</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada utilizando el estándar IEEE 802.11n</span>
   </div>
@@ -1712,13 +1648,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#WifiStandard" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#WifiStandard" title="https://w3id.org/WiFi-CSI#WifiStandard">Estándar WiFi</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Laboratory">
   <h3>Laboratorio<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Laboratory</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Laboratory</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada en un entorno de laboratorio</span>
   </div>
@@ -1727,13 +1663,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="IndustrialLaboratory">
   <h3>Laboratorio industrial<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#IndustrialLaboratory</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#IndustrialLaboratory</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada en un entorno de laboratorio industrial con máquinas y equipos</span>
   </div>
@@ -1742,13 +1678,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="MachineRunning">
   <h3>Máquina en ejecución<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineRunning</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#MachineRunning</p>
   <div class="comment">
    <span class="markdown">La máquina está en ejecución durante la medición WiFi</span>
   </div>
@@ -1757,7 +1693,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#MachineStatus" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#MachineStatus" title="https://w3id.org/WiFi-CSI#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1769,7 +1705,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="MachineOn">
   <h3>Máquina encendida (sin ejecutar)<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineOn</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#MachineOn</p>
   <div class="comment">
    <span class="markdown">La máquina está encendida (pero no ejecutándose) y operativa durante la medición WiFi</span>
   </div>
@@ -1778,7 +1714,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#MachineStatus" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#MachineStatus" title="https://w3id.org/WiFi-CSI#MachineStatus">Estado de la máquina</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1790,7 +1726,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="Office1">
   <h3>Oficina 1<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office1</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Office1</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada en un entorno de oficina con muebles y objetos</span>
   </div>
@@ -1799,13 +1735,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Office2">
   <h3>Oficina 2<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Office2</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Office2</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada en un entorno de oficina con más personas y máquinas</span>
   </div>
@@ -1814,13 +1750,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="StandingStill">
   <h3>Parado sin moverse<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#StandingStill</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#StandingStill</p>
   <div class="comment">
    <span class="markdown">La persona está parada sin moverse durante la medición WiFi</span>
   </div>
@@ -1829,7 +1765,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1841,7 +1777,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="MAR">
   <h3>Reconocimiento de actividad de máquinas<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#MAR</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#MAR</p>
   <div class="comment">
    <span class="markdown">Aplicación para reconocimiento de actividad de máquinas usando mediciones WiFi</span>
   </div>
@@ -1850,7 +1786,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1862,7 +1798,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="HAR">
   <h3>Reconocimiento de actividad humana<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#HAR</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#HAR</p>
   <div class="comment">
    <span class="markdown">Aplicación para reconocimiento de actividad humana usando mediciones WiFi</span>
   </div>
@@ -1871,7 +1807,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1883,7 +1819,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="MR">
   <h3>Reconocimiento de máquinas<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#MR</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#MR</p>
   <div class="comment">
    <span class="markdown">Aplicación para reconocimiento de máquinas usando mediciones WiFi</span>
   </div>
@@ -1892,7 +1828,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Application" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Application" title="https://w3id.org/WiFi-CSI#Application">Aplicación</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1904,7 +1840,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="StorageRoom">
   <h3>Sala de almacenamiento<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#StorageRoom</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#StorageRoom</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada en un entorno de trastero</span>
   </div>
@@ -1913,13 +1849,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="MeetingRoom">
   <h3>Sala de reuniones<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#MeetingRoom</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#MeetingRoom</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada en un entorno de sala de reuniones con una mesa y sillas</span>
   </div>
@@ -1928,13 +1864,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Jumping">
   <h3>Saltando<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Jumping</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Jumping</p>
   <div class="comment">
    <span class="markdown">La persona está saltando durante la medición WiFi</span>
   </div>
@@ -1943,7 +1879,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1955,7 +1891,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="SittingStill">
   <h3>Sentado sin moverse<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingStill</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#SittingStill</p>
   <div class="comment">
    <span class="markdown">La persona está sentada sin moverse durante la medición WiFi</span>
   </div>
@@ -1964,7 +1900,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1976,7 +1912,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="SittingDownAndGettingUp">
   <h3>Sentándose y levantándose<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#SittingDownAndGettingUp</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#SittingDownAndGettingUp</p>
   <div class="comment">
    <span class="markdown">La persona alterna entre sentarse y levantarse durante la medición WiFi</span>
   </div>
@@ -1985,7 +1921,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -1997,7 +1933,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
  </div>
  <div class="entity" id="BasementRoom">
   <h3>Sótano<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#BasementRoom</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#BasementRoom</p>
   <div class="comment">
    <span class="markdown">Medición WiFi tomada en un entorno de sótano</span>
   </div>
@@ -2006,13 +1942,13 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Environment" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Environment" title="https://w3id.org/WiFi-CSI#Environment">Entorno</a> <sup class="type-c" title="clase">c</sup>
    </dd>
   </dl>
  </div>
  <div class="entity" id="Empty">
   <h3>Vacío<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl#Empty</p>
+  <p><strong>IRI:</strong> https://w3id.org/WiFi-CSI#Empty</p>
   <div class="comment">
    <span class="markdown">No hay actividad de ninguna persona durante la medición WiFi</span>
   </div>
@@ -2021,7 +1957,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
     pertenece a
    </dt>
    <dd>
-    <a href="#Activity" title="http://34.51.146.173:8090/ontology/wifi_activity.ttl#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
+    <a href="#Activity" title="https://w3id.org/WiFi-CSI#Activity">Actividad</a> <sup class="type-c" title="clase">c</sup>
    </dd>
    <dt>
     hechos
@@ -2031,21 +1967,21 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
    </dd>
   </dl>
  </div>
- <div class="entity" id="http://34.51.146.173:8090/ontology/wifi_activity.ttl">
-  <h3>wifi activity.ttl<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
-  <p><strong>IRI:</strong> http://34.51.146.173:8090/ontology/wifi_activity.ttl</p>
+ <div class="entity" id="https://doi.org/10.5281/zenodo.21089086">
+  <h3>zenodo.21089086<sup class="type-ni" title="Individuo">ni</sup> <span class="backlink"> Volver a <a href="#toc">índice</a> o <a href="#namedindividuals">Índice de individuos</a> </span></h3>
+  <p><strong>IRI:</strong> https://doi.org/10.5281/zenodo.21089086</p>
   <dl class="description">
    <dt>
     igual a
    </dt>
    <dd>
-    <a href="https://doi.org/10.5281/zenodo.21089086" target="_blank" title="https://doi.org/10.5281/zenodo.21089086">zenodo.21089086</a> <sup class="type-ni" title="Individuo">ni</sup>
+    <a href="#d4e3" title="https://w3id.org/WiFi-CSI">Wi Fi C S I</a> <sup class="type-ni" title="Individuo">ni</sup>
    </dd>
    <dt>
     hechos
    </dt>
    <dd>
-    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="propiedad externa">ep</sup> <a href="https://doi.org/10.5281/zenodo.21089086" target="_blank" title="https://doi.org/10.5281/zenodo.21089086">zenodo.21089086</a> <sup class="type-ni" title="Individuo">ni</sup>
+    <a href="http://www.w3.org/2002/07/owl#sameAs" target="_blank" title="http://www.w3.org/2002/07/owl#sameAs">same As</a> <sup class="type-ep" title="propiedad externa">ep</sup> <a href="#d4e3" title="https://w3id.org/WiFi-CSI">Wi Fi C S I</a> <sup class="type-ni" title="Individuo">ni</sup>
    </dd>
   </dl>
  </div>
@@ -2070,6 +2006,7 @@ Esta secci&oacute;n introduce m&aacute;s detalles sobre cada clase y propiedad d
 - EHUNAM Dataset. [https://doi.org/10.6084/m9.figshare.28541225](https://doi.org/10.6084/m9.figshare.28541225)
 - EHUNAM Scientific Paper. [https://doi.org/10.1038/s41597-025-06238-4](https://doi.org/10.1038/s41597-025-06238-4)
 </span>
+
 </div>
 <div id="acknowledgments">
 <h2 id="ack" class="list">Agradecimientos <span class="backlink"> volver a <a href="#toc">&iacute;ndice</a></span></h2>
