@@ -107,7 +107,7 @@ services:
             ports:
                 - 8090:80
             volumes:
-                - ../ontology:/usr/share/nginx/html/ontology:ro
+                - ../docs:/usr/share/nginx/html/docs:ro
                 - ../data:/usr/share/nginx/html/data:ro
                 - ./nginx-data.conf:/etc/nginx/nginx.conf:ro
 
