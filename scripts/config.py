@@ -16,11 +16,11 @@ NGINX_PORT   = os.environ.get("NGINX_PORT", "8090")
 # URLs/IRIs derived from the server host and ports, used in RDF generation and GraphDB upload.
 
 # The ontology and data are served by nginx at http://{SERVER_HOST}:{NGINX_PORT}/ontology/ and /data/ respectively.
-WIFI     = Namespace(f"http://{SERVER_HOST}:{NGINX_PORT}/ontology/wifi_activity.ttl#") #  /ontology/ folder served by nginx
+WIFI     = Namespace("https://w3id.org/WiFi-CSI#") #  Prefix for the ontology, used in RDF generation.
 MEAS = Namespace(f"http://{SERVER_HOST}:{NGINX_PORT}/data/")           # /data/ folder served by nginx
 DATASET  = Namespace(f"http://{SERVER_HOST}:{NGINX_PORT}/wifi-csi/dataset/")
 
 GRAPHDB_REPO  = f"http://{SERVER_HOST}:{GRAPHDB_PORT}/repositories/fdp"        # GraphDB repository URL, used for uploading RDF data. SPARQL endpoint.
-ONTOLOGY_URI  = URIRef(f"http://{SERVER_HOST}:{NGINX_PORT}/ontology/wifi_activity.ttl")
+ONTOLOGY_URI  = URIRef("https://w3id.org/WiFi-CSI")
 
 # WIFI y ONTOLOGY_URI are different, WIFI is a prefix of the ontology and ONTOLOGY_URI is used to identify the ontology document.
