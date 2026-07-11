@@ -77,15 +77,15 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 </tr>
 <tr>
 <td><p>Ontology docs (EN)</p></td>
-<td><p>http://34.51.146.173:8090/ontology/docs/index-en.html</p></td>
+<td><p>http://34.51.146.173:8090/docs/index-en.html</p></td>
 </tr>
 <tr>
 <td><p>Ontology docs (ES)</p></td>
-<td><p>http://34.51.146.173:8090/ontology/docs/index-es.html</p></td>
+<td><p>http://34.51.146.173:8090/docs/index-es.html</p></td>
 </tr>
 <tr>
 <td><p>Ontology files (Nginx)</p></td>
-<td><p>http://34.51.146.173:8090/ontology/</p></td>
+<td><p>http://34.51.146.173:8090/docs/</p></td>
 </tr>
 <tr>
 <td><p>Data files (Nginx)</p></td>
@@ -138,7 +138,7 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 </tr>
 <tr>
 <td><p>NGINX_PORT</p></td>
-<td><p>Public port for the nginx ontology/data server (optional, has a d  efault -> 8090)</p></td>
+<td><p>Public port for the nginx docs/data server (optional, has a d  efault -> 8090)</p></td>
 </tr>
 </tbody>
 </table>
@@ -150,7 +150,7 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 - Check if an `.env` file is present with the credentials for GraphDB, MongoDB and a FDP_JWT_SECRET_KEY.
 - This `.env` should also include the SERVER_HOST IP/URL or else it will use localhost.
 - Set the correct IP/URL of the host machine in both `.env` and `application.yml`.
-- As mentioned in the other README.md, **SHACL shapes and the ontology** need to be manually updated to match the same URIs too.
+- As mentioned in the other README.md, **SHACL shapes** need to be manually updated to match the same URIs too.
 
 ### 1. Build the docker images
 
