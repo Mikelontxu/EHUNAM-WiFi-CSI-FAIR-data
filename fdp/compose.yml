@@ -121,9 +121,9 @@ services:
         image: ghcr.io/dgarijo/widoco:latest
         profiles:
             - widoco
-            - ../docs:/docs
         volumes:
             - ../ontology:/ontology
+            - ../docs:/docs
         command: >
             -ontFile /ontology/wifi_activity.ttl
             -outFolder /docs
