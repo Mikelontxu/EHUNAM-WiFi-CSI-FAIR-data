@@ -3,7 +3,7 @@
 #   
 # This file defines the ontology for describing WiFi activity measurements (CSI/RSSI) created in the EHUNAM project. The Turtle (TTL) format is used to represent the ontology in a readable and structured manner.
 # Este archivo define la ontología para describir las mediciones de actividad WiFi (CSI/RSSI) realizadas en el proyecto de EHUNAM. Se utiliza el formato Turtle (TTL) para representar la ontología de manera legible y estructurada.
-@prefix : <https://w3id.org/WiFi-CSI> .
+@prefix : <https://w3id.org/WiFi-CSI#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .

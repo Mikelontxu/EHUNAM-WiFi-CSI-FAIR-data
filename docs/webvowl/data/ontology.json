@@ -2,7 +2,7 @@
   "_comment" : "Created with OWL2VOWL (version 0.3.5), http://vowl.visualdataweb.org",
   "header" : {
     "languages" : [ "en", "es", "undefined" ],
-    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://qudt.org/schema/qudt", "https://w3id.org", "http://www.w3.org/2000/01/rdf-schema", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/ns/sosa" ],
+    "baseIris" : [ "http://www.w3.org/1999/02/22-rdf-syntax-ns", "http://qudt.org/schema/qudt", "http://www.w3.org/2000/01/rdf-schema", "https://w3id.org/WiFi-CSI", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/ns/sosa" ],
     "title" : {
       "en" : "EHUNAM WiFi CSI Activity Ontology",
       "es" : "Ontología de actividad WiFi CSI de EHUNAM"
@@ -157,349 +157,154 @@
     "id" : "5",
     "type" : "owl:Class"
   }, {
+    "id" : "6",
+    "type" : "owl:Class"
+  }, {
     "id" : "7",
     "type" : "owl:Class"
   }, {
-    "id" : "11",
-    "type" : "owl:Class"
-  }, {
-    "id" : "4",
-    "type" : "owl:Class"
-  }, {
-    "id" : "16",
-    "type" : "owl:Class"
-  }, {
-    "id" : "17",
-    "type" : "owl:Class"
-  }, {
-    "id" : "27",
-    "type" : "owl:Class"
-  }, {
-    "id" : "1",
-    "type" : "owl:Class"
-  }, {
-    "id" : "42",
+    "id" : "28",
     "type" : "owl:Thing"
-  }, {
-    "id" : "23",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "46",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "47",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "19",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "44",
-    "type" : "owl:Class"
-  }, {
-    "id" : "9",
-    "type" : "owl:Class"
-  }, {
-    "id" : "21",
-    "type" : "rdfs:Datatype"
   }, {
     "id" : "29",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "25",
+    "id" : "30",
+    "type" : "owl:Class"
+  }, {
+    "id" : "34",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "15",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "38",
-    "type" : "owl:Class"
-  }, {
-    "id" : "51",
+    "id" : "37",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "31",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "52",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "50",
-    "type" : "rdfs:Datatype"
-  }, {
-    "id" : "36",
     "type" : "owl:Class"
   }, {
-    "id" : "13",
+    "id" : "21",
+    "type" : "owl:Class"
+  }, {
+    "id" : "1",
+    "type" : "owl:Class"
+  }, {
+    "id" : "11",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "40",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "19",
+    "type" : "owl:Class"
+  }, {
+    "id" : "41",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "42",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "43",
     "type" : "rdfs:Datatype"
   }, {
     "id" : "2",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "34",
+    "id" : "39",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "9",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "4",
     "type" : "owl:Class"
   }, {
-    "id" : "55",
+    "id" : "45",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "23",
+    "type" : "rdfs:Datatype"
+  }, {
+    "id" : "48",
     "type" : "owl:Class"
   }, {
-    "id" : "6",
+    "id" : "17",
+    "type" : "owl:Class"
+  }, {
+    "id" : "25",
+    "type" : "owl:Class"
+  }, {
+    "id" : "13",
+    "type" : "owl:Class"
+  }, {
+    "id" : "60",
+    "type" : "owl:Class"
+  }, {
+    "id" : "57",
     "type" : "owl:Class"
   } ],
   "classAttribute" : [ {
-    "iri" : "https://w3id.org/WiFi-CSIBandwidth",
-    "baseIri" : "https://w3id.org",
+    "iri" : "https://w3id.org/WiFi-CSI#WifiStandard",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "WiFi-CSIBandwidth",
-      "en" : "Bandwidth",
-      "es" : "Ancho de banda"
-    },
-    "comment" : {
-      "en" : "Bandwidth of the WiFi signal, expressed in MHz (20 MHz or 80 MHz)",
-      "es" : "Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)"
-    },
-    "attributes" : [ "external" ],
-    "id" : "5",
-    "superClasses" : [ "6" ]
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSICSIExtractor",
-    "baseIri" : "https://w3id.org",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "WiFi-CSICSIExtractor",
-      "en" : "CSI Extractor",
-      "es" : "Extractor de CSI"
+      "IRI-based" : "WifiStandard",
+      "en" : "WiFi Standard",
+      "es" : "Estándar WiFi"
     },
     "individuals" : [ {
-      "iri" : "https://w3id.org/WiFi-CSIAtherosCSIExtractor",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "ACT",
-          "type" : "label"
-        } ]
-      },
+      "iri" : "https://w3id.org/WiFi-CSI#IEEE_802_11n",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
       "comment" : {
-        "en" : "CSI extractor based on the Nexmon framework for Atheros WiFi chipsets",
-        "es" : "Extractor de CSI basado en el framework Nexmon para chipsets WiFi Atheros"
+        "en" : "WiFi measurement taken using the IEEE 802.11n standard",
+        "es" : "Medición WiFi tomada utilizando el estándar IEEE 802.11n"
       },
       "labels" : {
-        "IRI-based" : "WiFi-CSIAtherosCSIExtractor",
-        "en" : "Atheros CSI Extractor",
-        "es" : "Extractor de CSI Atheros"
+        "IRI-based" : "IEEE_802_11n",
+        "en" : "IEEE 802.11n",
+        "es" : "IEEE 802.11n"
       }
     }, {
-      "iri" : "https://w3id.org/WiFi-CSINexmonCSIExtractor",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "NCE",
-          "type" : "label"
-        } ]
-      },
+      "iri" : "https://w3id.org/WiFi-CSI#IEEE_802_11ac",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
       "comment" : {
-        "en" : "CSI extractor based on the Nexmon framework for WiFi firmware modification",
-        "es" : "Extractor de CSI basado en el framework Nexmon para modificación de firmware WiFi"
+        "en" : "WiFi measurement taken using the IEEE 802.11ac standard",
+        "es" : "Medición WiFi tomada utilizando el estándar IEEE 802.11ac"
       },
       "labels" : {
-        "IRI-based" : "WiFi-CSINexmonCSIExtractor",
-        "en" : "Nexmon CSI Extractor",
-        "es" : "Extractor de CSI Nexmon"
+        "IRI-based" : "IEEE_802_11ac",
+        "en" : "IEEE 802.11ac",
+        "es" : "IEEE 802.11ac"
       }
     } ],
     "comment" : {
-      "en" : "Software tool or method used to extract CSI data from the raw WiFi signals",
-      "es" : "Herramienta o método utilizado para extraer los datos CSI de las señales WiFi crudas"
+      "en" : "WiFi standard used for the measurement",
+      "es" : "Estándar WiFi utilizado para la medición"
     },
-    "attributes" : [ "external" ],
-    "id" : "7"
+    "id" : "5"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSIEnvironment",
-    "baseIri" : "https://w3id.org",
+    "iri" : "http://www.w3.org/ns/sosa/Observation",
+    "baseIri" : "http://www.w3.org/ns/sosa",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "WiFi-CSIEnvironment",
-      "en" : "Environment",
-      "es" : "Entorno"
+      "IRI-based" : "Observation"
     },
-    "individuals" : [ {
-      "iri" : "https://w3id.org/WiFi-CSIIndustrialLaboratory",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken in an industrial laboratory environment with machines and equipment",
-        "es" : "Medición WiFi tomada en un entorno de laboratorio industrial con máquinas y equipos"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIIndustrialLaboratory",
-        "en" : "Industrial Laboratory",
-        "es" : "Laboratorio industrial"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIBasementRoom",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken in a basement environment",
-        "es" : "Medición WiFi tomada en un entorno de sótano"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIBasementRoom",
-        "en" : "Basement Room",
-        "es" : "Sótano"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIOffice1",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken in an office environment with furniture and objects",
-        "es" : "Medición WiFi tomada en un entorno de oficina con muebles y objetos"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIOffice1",
-        "en" : "Office 1",
-        "es" : "Oficina 1"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSILaboratory",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken in a laboratory environment",
-        "es" : "Medición WiFi tomada en un entorno de laboratorio"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSILaboratory",
-        "en" : "Laboratory",
-        "es" : "Laboratorio"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIClassroom",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken in a classroom environment with desks and chairs",
-        "es" : "Medición WiFi tomada en un entorno de aula con pupitres y sillas"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIClassroom",
-        "en" : "Classroom",
-        "es" : "Aula"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIOffice2",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken in an office environment with more people and machines",
-        "es" : "Medición WiFi tomada en un entorno de oficina con más personas y máquinas"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIOffice2",
-        "en" : "Office 2",
-        "es" : "Oficina 2"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIMeetingRoom",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken in a meeting room environment with a table and chairs",
-        "es" : "Medición WiFi tomada en un entorno de sala de reuniones con una mesa y sillas"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIMeetingRoom",
-        "en" : "Meeting Room",
-        "es" : "Sala de reuniones"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIStorageRoom",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken in a storage room environment",
-        "es" : "Medición WiFi tomada en un entorno de trastero"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIStorageRoom",
-        "en" : "Storage Room",
-        "es" : "Sala de almacenamiento"
-      }
-    } ],
-    "comment" : {
-      "en" : "Type of physical environment where the WiFi measurement was taken",
-      "es" : "Tipo de entorno físico donde se tomó la medición WiFi"
-    },
+    "subClasses" : [ "1" ],
     "attributes" : [ "external" ],
-    "id" : "11"
+    "id" : "6"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSIApplication",
-    "baseIri" : "https://w3id.org",
+    "iri" : "https://w3id.org/WiFi-CSI#Application",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "WiFi-CSIApplication",
+      "IRI-based" : "Application",
       "en" : "Application",
       "es" : "Aplicación"
     },
     "individuals" : [ {
-      "iri" : "https://w3id.org/WiFi-CSIPC",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "PC",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Application for people counting using WiFi measurements",
-        "es" : "Aplicación para conteo de personas usando mediciones WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIPC",
-        "en" : "People Counting",
-        "es" : "Conteo de personas"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIHAR",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "HAR",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Application for human activity recognition using WiFi measurements",
-        "es" : "Aplicación para reconocimiento de actividad humana usando mediciones WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIHAR",
-        "en" : "Human Activity Recognition",
-        "es" : "Reconocimiento de actividad humana"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIPCMAR",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "PCMAR",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Application for people counting and machine activity recognition using WiFi measurements",
-        "es" : "Aplicación para conteo de personas y reconocimiento de actividad de máquinas usando mediciones WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIPCMAR",
-        "en" : "People Counting and Machine Activity Recognition",
-        "es" : "Conteo de personas y reconocimiento de actividad de máquinas"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIMAR",
-      "baseIri" : "https://w3id.org",
+      "iri" : "https://w3id.org/WiFi-CSI#MAR",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
       "annotations" : {
         "notation" : [ {
           "identifier" : "notation",
@@ -513,13 +318,33 @@
         "es" : "Aplicación para reconocimiento de actividad de máquinas usando mediciones WiFi"
       },
       "labels" : {
-        "IRI-based" : "WiFi-CSIMAR",
+        "IRI-based" : "MAR",
         "en" : "Machine Activity Recognition",
         "es" : "Reconocimiento de actividad de máquinas"
       }
     }, {
-      "iri" : "https://w3id.org/WiFi-CSIEmptyApplication",
-      "baseIri" : "https://w3id.org",
+      "iri" : "https://w3id.org/WiFi-CSI#HAR",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "HAR",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Application for human activity recognition using WiFi measurements",
+        "es" : "Aplicación para reconocimiento de actividad humana usando mediciones WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "HAR",
+        "en" : "Human Activity Recognition",
+        "es" : "Reconocimiento de actividad humana"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#EmptyApplication",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
       "annotations" : {
         "notation" : [ {
           "identifier" : "notation",
@@ -533,13 +358,53 @@
         "es" : "No hay una aplicación o caso de uso específico asociado con la medición WiFi"
       },
       "labels" : {
-        "IRI-based" : "WiFi-CSIEmptyApplication",
+        "IRI-based" : "EmptyApplication",
         "en" : "Empty application",
         "es" : "Aplicación vacía"
       }
     }, {
-      "iri" : "https://w3id.org/WiFi-CSIMR",
-      "baseIri" : "https://w3id.org",
+      "iri" : "https://w3id.org/WiFi-CSI#PCMAR",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "PCMAR",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Application for people counting and machine activity recognition using WiFi measurements",
+        "es" : "Aplicación para conteo de personas y reconocimiento de actividad de máquinas usando mediciones WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "PCMAR",
+        "en" : "People Counting and Machine Activity Recognition",
+        "es" : "Conteo de personas y reconocimiento de actividad de máquinas"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#PC",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "PC",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Application for people counting using WiFi measurements",
+        "es" : "Aplicación para conteo de personas usando mediciones WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "PC",
+        "en" : "People Counting",
+        "es" : "Conteo de personas"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#MR",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
       "annotations" : {
         "notation" : [ {
           "identifier" : "notation",
@@ -553,7 +418,7 @@
         "es" : "Aplicación para reconocimiento de máquinas usando mediciones WiFi"
       },
       "labels" : {
-        "IRI-based" : "WiFi-CSIMR",
+        "IRI-based" : "MR",
         "en" : "Machine Recognition",
         "es" : "Reconocimiento de máquinas"
       }
@@ -562,97 +427,54 @@
       "en" : "Type of application or use case of a WiFi measurement",
       "es" : "Tipo de aplicación o caso de uso de una medición WiFi"
     },
-    "attributes" : [ "external" ],
-    "id" : "4"
-  }, {
-    "iri" : "http://www.w3.org/ns/sosa/Observation",
-    "baseIri" : "http://www.w3.org/ns/sosa",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Observation"
-    },
-    "subClasses" : [ "1" ],
-    "attributes" : [ "external" ],
-    "id" : "16"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIPerson",
-    "baseIri" : "https://w3id.org",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "WiFi-CSIPerson",
-      "en" : "Person",
-      "es" : "Persona"
-    },
-    "comment" : {
-      "en" : "Identifier for a person involved during a WiFi measurement by a lowercase letter (a-u)",
-      "es" : "Identificador de una persona participante en una medición WiFi por medio de una letra minúscula (a-u)"
-    },
-    "attributes" : [ "external" ],
-    "id" : "17"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIFrequencyBand",
-    "baseIri" : "https://w3id.org",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "WiFi-CSIFrequencyBand",
-      "en" : "Frequency band",
-      "es" : "Banda de frecuencia"
-    },
-    "comment" : {
-      "en" : "Frequency band of the WiFi signal, expressed in GHz (2.4 GHz or 5 GHz)",
-      "es" : "Banda de frecuencia de la señal WiFi, expresada en GHz (2.4 GHz o 5 GHz)"
-    },
-    "attributes" : [ "external" ],
-    "id" : "27",
-    "superClasses" : [ "6" ]
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIWifiMeasurement",
-    "baseIri" : "https://w3id.org",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "WiFi-CSIWifiMeasurement",
-      "en" : "Wifi measurement",
-      "es" : "Medición WiFi"
-    },
-    "comment" : {
-      "en" : "WiFi measurement based on CSI data in a specific environment",
-      "es" : "Observación o medición basada en señales WiFi (CSI) en un entorno específico"
-    },
-    "attributes" : [ "external" ],
-    "id" : "1",
-    "superClasses" : [ "16" ]
+    "id" : "7"
   }, {
     "iri" : "http://www.w3.org/2002/07/owl#Thing",
     "baseIri" : "http://owl2vowl.de",
-    "id" : "42",
+    "id" : "28",
     "label" : {
       "undefined" : "Thing"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "23",
+    "id" : "29",
     "label" : {
       "IRI-based" : "string"
     }
   }, {
+    "iri" : "https://w3id.org/WiFi-CSI#CSIResult",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CSIResult",
+      "en" : "CSI Result",
+      "es" : "Resultado CSI"
+    },
+    "comment" : {
+      "en" : "Result of a WiFi measurement containing the CSI/RSSI data and timestamps",
+      "es" : "Recurso que referencia al archivo .mat con datos CSI/RSSI/timestamps"
+    },
+    "id" : "30",
+    "superClasses" : [ "31" ]
+  }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "46",
+    "id" : "34",
     "label" : {
       "IRI-based" : "integer"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "47",
+    "id" : "15",
     "label" : {
       "IRI-based" : "integer"
     }
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#string",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "19",
+    "id" : "37",
     "label" : {
       "IRI-based" : "string"
     }
@@ -663,41 +485,341 @@
     "label" : {
       "IRI-based" : "Result"
     },
-    "subClasses" : [ "38" ],
+    "subClasses" : [ "30" ],
     "attributes" : [ "external" ],
-    "id" : "44"
+    "id" : "31"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSIMachineStatus",
-    "baseIri" : "https://w3id.org",
+    "iri" : "https://w3id.org/WiFi-CSI#Bandwidth",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "WiFi-CSIMachineStatus",
-      "en" : "Machine Status",
-      "es" : "Estado de la máquina"
+      "IRI-based" : "Bandwidth",
+      "en" : "Bandwidth",
+      "es" : "Ancho de banda"
+    },
+    "comment" : {
+      "en" : "Bandwidth of the WiFi signal, expressed in MHz (20 MHz or 80 MHz)",
+      "es" : "Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)"
+    },
+    "id" : "21",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#WifiMeasurement",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "WifiMeasurement",
+      "en" : "Wifi measurement",
+      "es" : "Medición WiFi"
+    },
+    "comment" : {
+      "en" : "WiFi measurement based on CSI data in a specific environment",
+      "es" : "Observación o medición basada en señales WiFi (CSI) en un entorno específico"
+    },
+    "id" : "1",
+    "superClasses" : [ "6" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "11",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "40",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#CSIExtractor",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "CSIExtractor",
+      "en" : "CSI Extractor",
+      "es" : "Extractor de CSI"
     },
     "individuals" : [ {
-      "iri" : "https://w3id.org/WiFi-CSIMachineOn",
-      "baseIri" : "https://w3id.org",
+      "iri" : "https://w3id.org/WiFi-CSI#AtherosCSIExtractor",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
       "annotations" : {
         "notation" : [ {
           "identifier" : "notation",
           "language" : "undefined",
-          "value" : "O",
+          "value" : "ACT",
           "type" : "label"
         } ]
       },
       "comment" : {
-        "en" : "The machine is turned on (but not running) and operational during the WiFi measurement",
-        "es" : "La máquina está encendida (pero no ejecutándose) y operativa durante la medición WiFi"
+        "en" : "CSI extractor based on the Nexmon framework for Atheros WiFi chipsets",
+        "es" : "Extractor de CSI basado en el framework Nexmon para chipsets WiFi Atheros"
       },
       "labels" : {
-        "IRI-based" : "WiFi-CSIMachineOn",
-        "en" : "Machine On (not running)",
-        "es" : "Máquina encendida (sin ejecutar)"
+        "IRI-based" : "AtherosCSIExtractor",
+        "en" : "Atheros CSI Extractor",
+        "es" : "Extractor de CSI Atheros"
       }
     }, {
-      "iri" : "https://w3id.org/WiFi-CSIMachineRunning",
-      "baseIri" : "https://w3id.org",
+      "iri" : "https://w3id.org/WiFi-CSI#NexmonCSIExtractor",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "NCE",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "CSI extractor based on the Nexmon framework for WiFi firmware modification",
+        "es" : "Extractor de CSI basado en el framework Nexmon para modificación de firmware WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "NexmonCSIExtractor",
+        "en" : "Nexmon CSI Extractor",
+        "es" : "Extractor de CSI Nexmon"
+      }
+    } ],
+    "comment" : {
+      "en" : "Software tool or method used to extract CSI data from the raw WiFi signals",
+      "es" : "Herramienta o método utilizado para extraer los datos CSI de las señales WiFi crudas"
+    },
+    "id" : "19"
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "41",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "42",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "43",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "2",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "39",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "9",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#FrequencyBand",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "FrequencyBand",
+      "en" : "Frequency band",
+      "es" : "Banda de frecuencia"
+    },
+    "comment" : {
+      "en" : "Frequency band of the WiFi signal, expressed in GHz (2.4 GHz or 5 GHz)",
+      "es" : "Banda de frecuencia de la señal WiFi, expresada en GHz (2.4 GHz o 5 GHz)"
+    },
+    "id" : "4",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#string",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "45",
+    "label" : {
+      "IRI-based" : "string"
+    }
+  }, {
+    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
+    "baseIri" : "http://www.w3.org/2001/XMLSchema",
+    "id" : "23",
+    "label" : {
+      "IRI-based" : "integer"
+    }
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#Environment",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Environment",
+      "en" : "Environment",
+      "es" : "Entorno"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/WiFi-CSI#Office1",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in an office environment with furniture and objects",
+        "es" : "Medición WiFi tomada en un entorno de oficina con muebles y objetos"
+      },
+      "labels" : {
+        "IRI-based" : "Office1",
+        "en" : "Office 1",
+        "es" : "Oficina 1"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#Laboratory",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in a laboratory environment",
+        "es" : "Medición WiFi tomada en un entorno de laboratorio"
+      },
+      "labels" : {
+        "IRI-based" : "Laboratory",
+        "en" : "Laboratory",
+        "es" : "Laboratorio"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#Office2",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in an office environment with more people and machines",
+        "es" : "Medición WiFi tomada en un entorno de oficina con más personas y máquinas"
+      },
+      "labels" : {
+        "IRI-based" : "Office2",
+        "en" : "Office 2",
+        "es" : "Oficina 2"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#Classroom",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in a classroom environment with desks and chairs",
+        "es" : "Medición WiFi tomada en un entorno de aula con pupitres y sillas"
+      },
+      "labels" : {
+        "IRI-based" : "Classroom",
+        "en" : "Classroom",
+        "es" : "Aula"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#StorageRoom",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in a storage room environment",
+        "es" : "Medición WiFi tomada en un entorno de trastero"
+      },
+      "labels" : {
+        "IRI-based" : "StorageRoom",
+        "en" : "Storage Room",
+        "es" : "Sala de almacenamiento"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#IndustrialLaboratory",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in an industrial laboratory environment with machines and equipment",
+        "es" : "Medición WiFi tomada en un entorno de laboratorio industrial con máquinas y equipos"
+      },
+      "labels" : {
+        "IRI-based" : "IndustrialLaboratory",
+        "en" : "Industrial Laboratory",
+        "es" : "Laboratorio industrial"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#BasementRoom",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in a basement environment",
+        "es" : "Medición WiFi tomada en un entorno de sótano"
+      },
+      "labels" : {
+        "IRI-based" : "BasementRoom",
+        "en" : "Basement Room",
+        "es" : "Sótano"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#MeetingRoom",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in a meeting room environment with a table and chairs",
+        "es" : "Medición WiFi tomada en un entorno de sala de reuniones con una mesa y sillas"
+      },
+      "labels" : {
+        "IRI-based" : "MeetingRoom",
+        "en" : "Meeting Room",
+        "es" : "Sala de reuniones"
+      }
+    } ],
+    "comment" : {
+      "en" : "Type of physical environment where the WiFi measurement was taken",
+      "es" : "Tipo de entorno físico donde se tomó la medición WiFi"
+    },
+    "id" : "48"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#Person",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Person",
+      "en" : "Person",
+      "es" : "Persona"
+    },
+    "comment" : {
+      "en" : "Identifier for a person involved during a WiFi measurement by a lowercase letter (a-u)",
+      "es" : "Identificador de una persona participante en una medición WiFi por medio de una letra minúscula (a-u)"
+    },
+    "id" : "17"
+  }, {
+    "iri" : "http://qudt.org/schema/qudt/Quantity",
+    "baseIri" : "http://qudt.org/schema/qudt",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Quantity"
+    },
+    "subClasses" : [ "21", "4", "13" ],
+    "attributes" : [ "external" ],
+    "id" : "25"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#Duration",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "Duration",
+      "en" : "Duration (seconds)",
+      "es" : "Duración (segundos)"
+    },
+    "comment" : {
+      "en" : "Duration of the WiFi measurement in seconds",
+      "es" : "Duración de la medición WiFi en segundos"
+    },
+    "id" : "13",
+    "superClasses" : [ "25" ]
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#MachineStatus",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "instances" : 0,
+    "label" : {
+      "IRI-based" : "MachineStatus",
+      "en" : "Machine Status",
+      "es" : "Estado de la máquina"
+    },
+    "individuals" : [ {
+      "iri" : "https://w3id.org/WiFi-CSI#MachineRunning",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
       "annotations" : {
         "notation" : [ {
           "identifier" : "notation",
@@ -711,291 +833,48 @@
         "es" : "La máquina está en ejecución durante la medición WiFi"
       },
       "labels" : {
-        "IRI-based" : "WiFi-CSIMachineRunning",
+        "IRI-based" : "MachineRunning",
         "en" : "Machine Running",
         "es" : "Máquina en ejecución"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#MachineOn",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "O",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "The machine is turned on (but not running) and operational during the WiFi measurement",
+        "es" : "La máquina está encendida (pero no ejecutándose) y operativa durante la medición WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "MachineOn",
+        "en" : "Machine On (not running)",
+        "es" : "Máquina encendida (sin ejecutar)"
       }
     } ],
     "comment" : {
       "en" : "Operational status of a machine during the WiFi measurement",
       "es" : "Estado operativo de una máquina durante la medición WiFi"
     },
-    "attributes" : [ "external" ],
-    "id" : "9"
+    "id" : "60"
   }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "21",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "29",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "25",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "15",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSICSIResult",
-    "baseIri" : "https://w3id.org",
+    "iri" : "https://w3id.org/WiFi-CSI#Activity",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
     "instances" : 0,
     "label" : {
-      "IRI-based" : "WiFi-CSICSIResult",
-      "en" : "CSI Result",
-      "es" : "Resultado CSI"
-    },
-    "comment" : {
-      "en" : "Result of a WiFi measurement containing the CSI/RSSI data and timestamps",
-      "es" : "Recurso que referencia al archivo .mat con datos CSI/RSSI/timestamps"
-    },
-    "attributes" : [ "external" ],
-    "id" : "38",
-    "superClasses" : [ "44" ]
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "51",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "31",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "52",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "50",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIDuration",
-    "baseIri" : "https://w3id.org",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "WiFi-CSIDuration",
-      "en" : "Duration (seconds)",
-      "es" : "Duración (segundos)"
-    },
-    "comment" : {
-      "en" : "Duration of the WiFi measurement in seconds",
-      "es" : "Duración de la medición WiFi en segundos"
-    },
-    "attributes" : [ "external" ],
-    "id" : "36",
-    "superClasses" : [ "6" ]
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#string",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "13",
-    "label" : {
-      "IRI-based" : "string"
-    }
-  }, {
-    "iri" : "http://www.w3.org/2001/XMLSchema#integer",
-    "baseIri" : "http://www.w3.org/2001/XMLSchema",
-    "id" : "2",
-    "label" : {
-      "IRI-based" : "integer"
-    }
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIWifiStandard",
-    "baseIri" : "https://w3id.org",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "WiFi-CSIWifiStandard",
-      "en" : "WiFi Standard",
-      "es" : "Estándar WiFi"
-    },
-    "individuals" : [ {
-      "iri" : "https://w3id.org/WiFi-CSIIEEE_802_11ac",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken using the IEEE 802.11ac standard",
-        "es" : "Medición WiFi tomada utilizando el estándar IEEE 802.11ac"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIIEEE_802_11ac",
-        "en" : "IEEE 802.11ac",
-        "es" : "IEEE 802.11ac"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIIEEE_802_11n",
-      "baseIri" : "https://w3id.org",
-      "comment" : {
-        "en" : "WiFi measurement taken using the IEEE 802.11n standard",
-        "es" : "Medición WiFi tomada utilizando el estándar IEEE 802.11n"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIIEEE_802_11n",
-        "en" : "IEEE 802.11n",
-        "es" : "IEEE 802.11n"
-      }
-    } ],
-    "comment" : {
-      "en" : "WiFi standard used for the measurement",
-      "es" : "Estándar WiFi utilizado para la medición"
-    },
-    "attributes" : [ "external" ],
-    "id" : "34"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIActivity",
-    "baseIri" : "https://w3id.org",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "WiFi-CSIActivity",
+      "IRI-based" : "Activity",
       "en" : "Activity",
       "es" : "Actividad"
     },
     "individuals" : [ {
-      "iri" : "https://w3id.org/WiFi-CSIFalling",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "F",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Person is falling during the WiFi measurement",
-        "es" : "La persona está cayendo durante la medición WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIFalling",
-        "en" : "Falling",
-        "es" : "Cayendo"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIJumping",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "J",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Person is jumping during the WiFi measurement",
-        "es" : "La persona está saltando durante la medición WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIJumping",
-        "en" : "Jumping",
-        "es" : "Saltando"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIEmpty",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "E",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "No person activity is present during the WiFi measurement",
-        "es" : "No hay actividad de ninguna persona durante la medición WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIEmpty",
-        "en" : "Empty",
-        "es" : "Vacío"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSISittingStill",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "T",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Person is sitting still during the WiFi measurement",
-        "es" : "La persona está sentada sin moverse durante la medición WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSISittingStill",
-        "en" : "Sitting Still",
-        "es" : "Sentado sin moverse"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSISittingDownAndGettingUp",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "G",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Person alternates between sitting down and getting up during the WiFi measurement",
-        "es" : "La persona alterna entre sentarse y levantarse durante la medición WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSISittingDownAndGettingUp",
-        "en" : "Sitting down and getting up",
-        "es" : "Sentándose y levantándose"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIWalking",
-      "baseIri" : "https://w3id.org",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "W",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Person is walking during the WiFi measurement",
-        "es" : "La persona está caminando durante la medición WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "WiFi-CSIWalking",
-        "en" : "Walking",
-        "es" : "Caminando"
-      }
-    }, {
-      "iri" : "https://w3id.org/WiFi-CSIStandingStill",
-      "baseIri" : "https://w3id.org",
+      "iri" : "https://w3id.org/WiFi-CSI#StandingStill",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
       "annotations" : {
         "notation" : [ {
           "identifier" : "notation",
@@ -1009,27 +888,136 @@
         "es" : "La persona está parada sin moverse durante la medición WiFi"
       },
       "labels" : {
-        "IRI-based" : "WiFi-CSIStandingStill",
+        "IRI-based" : "StandingStill",
         "en" : "Standing Still",
         "es" : "Parado sin moverse"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#SittingDownAndGettingUp",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "G",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Person alternates between sitting down and getting up during the WiFi measurement",
+        "es" : "La persona alterna entre sentarse y levantarse durante la medición WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "SittingDownAndGettingUp",
+        "en" : "Sitting down and getting up",
+        "es" : "Sentándose y levantándose"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#SittingStill",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "T",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Person is sitting still during the WiFi measurement",
+        "es" : "La persona está sentada sin moverse durante la medición WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "SittingStill",
+        "en" : "Sitting Still",
+        "es" : "Sentado sin moverse"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#Empty",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "E",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "No person activity is present during the WiFi measurement",
+        "es" : "No hay actividad de ninguna persona durante la medición WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "Empty",
+        "en" : "Empty",
+        "es" : "Vacío"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#Jumping",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "J",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Person is jumping during the WiFi measurement",
+        "es" : "La persona está saltando durante la medición WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "Jumping",
+        "en" : "Jumping",
+        "es" : "Saltando"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#Walking",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "W",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Person is walking during the WiFi measurement",
+        "es" : "La persona está caminando durante la medición WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "Walking",
+        "en" : "Walking",
+        "es" : "Caminando"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#Falling",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "F",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Person is falling during the WiFi measurement",
+        "es" : "La persona está cayendo durante la medición WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "Falling",
+        "en" : "Falling",
+        "es" : "Cayendo"
       }
     } ],
     "comment" : {
       "en" : "Type of activity performed by a person during the WiFi measurement",
       "es" : "Tipo de actividad realizada por una persona durante la medición WiFi"
     },
-    "attributes" : [ "external" ],
-    "id" : "55"
-  }, {
-    "iri" : "http://qudt.org/schema/qudt/Quantity",
-    "baseIri" : "http://qudt.org/schema/qudt",
-    "instances" : 0,
-    "label" : {
-      "IRI-based" : "Quantity"
-    },
-    "subClasses" : [ "36", "5", "27" ],
-    "attributes" : [ "external" ],
-    "id" : "6"
+    "id" : "57"
   } ],
   "property" : [ {
     "id" : "0",
@@ -1039,69 +1027,72 @@
     "type" : "owl:objectProperty"
   }, {
     "id" : "8",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "10",
-    "type" : "owl:objectProperty"
+    "type" : "owl:datatypeProperty"
   }, {
     "id" : "12",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "14",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "16",
+    "type" : "owl:objectProperty"
+  }, {
     "id" : "18",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "20",
-    "type" : "owl:datatypeProperty"
+    "type" : "owl:objectProperty"
   }, {
     "id" : "22",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "24",
-    "type" : "owl:datatypeProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "26",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
-    "id" : "28",
-    "type" : "owl:datatypeProperty"
-  }, {
-    "id" : "30",
-    "type" : "owl:datatypeProperty"
+    "id" : "27",
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "32",
     "type" : "rdfs:SubClassOf"
   }, {
     "id" : "33",
-    "type" : "owl:objectProperty"
+    "type" : "rdfs:SubClassOf"
   }, {
     "id" : "35",
-    "type" : "rdfs:SubClassOf"
-  }, {
-    "id" : "37",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "40",
+    "id" : "36",
     "type" : "owl:objectProperty"
   }, {
-    "id" : "41",
-    "type" : "rdfs:SubClassOf"
+    "id" : "38",
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "43",
-    "type" : "rdfs:SubClassOf"
+    "id" : "44",
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "45",
-    "type" : "rdfs:SubClassOf"
+    "id" : "46",
+    "type" : "owl:datatypeProperty"
   }, {
-    "id" : "39",
-    "type" : "owl:objectProperty"
-  }, {
-    "id" : "48",
+    "id" : "47",
     "type" : "owl:objectProperty"
   }, {
     "id" : "49",
+    "type" : "owl:objectProperty"
+  }, {
+    "id" : "50",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "51",
+    "type" : "owl:datatypeProperty"
+  }, {
+    "id" : "52",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "53",
@@ -1110,219 +1101,24 @@
     "id" : "54",
     "type" : "owl:datatypeProperty"
   }, {
+    "id" : "55",
+    "type" : "owl:datatypeProperty"
+  }, {
     "id" : "56",
     "type" : "owl:objectProperty"
-  }, {
-    "id" : "57",
-    "type" : "owl:datatypeProperty"
   }, {
     "id" : "58",
     "type" : "owl:datatypeProperty"
   }, {
     "id" : "59",
     "type" : "owl:objectProperty"
-  }, {
-    "id" : "60",
-    "type" : "owl:datatypeProperty"
   } ],
   "propertyAttribute" : [ {
-    "iri" : "https://w3id.org/WiFi-CSIchannel",
-    "baseIri" : "https://w3id.org",
+    "iri" : "https://w3id.org/WiFi-CSI#nic",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
     "range" : "2",
     "label" : {
-      "IRI-based" : "WiFi-CSIchannel",
-      "en" : "channel",
-      "es" : "canal"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "WiFi channel used during the measurement (11, 13 or 40).",
-      "es" : "Canal WiFi utilizado durante la medición (11, 13 or 40)."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "0"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIapplication",
-    "baseIri" : "https://w3id.org",
-    "range" : "4",
-    "label" : {
-      "IRI-based" : "WiFi-CSIapplication",
-      "en" : "Application",
-      "es" : "Aplicación"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Relates a WiFi measurement to the application or use case it is associated with",
-      "es" : "Relaciona una medición WiFi con la aplicación o caso de uso con el que está asociada"
-    },
-    "attributes" : [ "object", "external" ],
-    "id" : "3"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSImachineStatus",
-    "baseIri" : "https://w3id.org",
-    "range" : "9",
-    "label" : {
-      "IRI-based" : "WiFi-CSImachineStatus",
-      "en" : "Machine status",
-      "es" : "Estado de la máquina"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Relates a WiFi measurement to the operational status of a machine during the measurement",
-      "es" : "Relaciona una medición WiFi con el estado operativo de una máquina durante la medición"
-    },
-    "attributes" : [ "object", "external" ],
-    "id" : "8"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIenvironment",
-    "baseIri" : "https://w3id.org",
-    "range" : "11",
-    "label" : {
-      "IRI-based" : "WiFi-CSIenvironment",
-      "en" : "Environment",
-      "es" : "Entorno"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Relates a WiFi measurement to the physical environment where it was taken",
-      "es" : "Relaciona una medición WiFi con el entorno físico donde se tomó"
-    },
-    "attributes" : [ "object", "external" ],
-    "id" : "10"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIcampaign",
-    "baseIri" : "https://w3id.org",
-    "range" : "13",
-    "label" : {
-      "IRI-based" : "WiFi-CSIcampaign",
-      "en" : "campaign",
-      "es" : "campaña"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Measurement campaign identifier (e.g. MC1).",
-      "es" : "Identificador de la campaña de medición (e.g. MC1)."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "12"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSInPeople",
-    "baseIri" : "https://w3id.org",
-    "range" : "15",
-    "label" : {
-      "IRI-based" : "WiFi-CSInPeople",
-      "en" : "number of people",
-      "es" : "número de personas"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Total number of people present during the measurement.",
-      "es" : "Número total de personas presentes durante la medición."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "14"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIset",
-    "baseIri" : "https://w3id.org",
-    "range" : "19",
-    "label" : {
-      "IRI-based" : "WiFi-CSIset",
-      "en" : "set",
-      "es" : "conjunto"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Set identifier within the campaign (e.g. MC1_01A). Each set corresponds to a specific location.",
-      "es" : "Identificador del conjunto dentro de la campaña (e.g. MC1_01A). Cada conjunto corresponde a una ubicación específica."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "18"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSImachine",
-    "baseIri" : "https://w3id.org",
-    "range" : "21",
-    "label" : {
-      "IRI-based" : "WiFi-CSImachine",
-      "en" : "machine",
-      "es" : "máquina"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Identifier of the machine present during the measurement (1–9).",
-      "es" : "Identificador de la máquina presente durante la medición (1–9)."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "20"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSItraffic",
-    "baseIri" : "https://w3id.org",
-    "range" : "23",
-    "label" : {
-      "IRI-based" : "WiFi-CSItraffic",
-      "en" : "traffic",
-      "es" : "tráfico"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Network traffic type present during the measurement (e.g. FTP).",
-      "es" : "Tipo de tráfico de red presente durante la medición (e.g. FTP)."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "22"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSInMachine",
-    "baseIri" : "https://w3id.org",
-    "range" : "25",
-    "label" : {
-      "IRI-based" : "WiFi-CSInMachine",
-      "en" : "number of machines",
-      "es" : "número de máquinas"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Total number of machines involved in the measurement.",
-      "es" : "Número total de máquinas involucradas en la medición."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "24"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIfrequencyBand",
-    "baseIri" : "https://w3id.org",
-    "range" : "27",
-    "label" : {
-      "IRI-based" : "WiFi-CSIfrequencyBand",
-      "en" : "Frequency band",
-      "es" : "Banda de frecuencia"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Relates a WiFi measurement to the frequency band of the WiFi signal used for the measurement",
-      "es" : "Relaciona una medición WiFi con la banda de frecuencia de la señal WiFi utilizada para la medición"
-    },
-    "attributes" : [ "object", "external" ],
-    "id" : "26"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSInFiles",
-    "baseIri" : "https://w3id.org",
-    "range" : "29",
-    "label" : {
-      "IRI-based" : "WiFi-CSInFiles",
-      "en" : "number of files",
-      "es" : "número de archivos"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Total number of .mat files in the set this measurement belongs to.",
-      "es" : "Número total de archivos .mat en el conjunto al que pertenece esta medición."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "28"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSInic",
-    "baseIri" : "https://w3id.org",
-    "range" : "31",
-    "label" : {
-      "IRI-based" : "WiFi-CSInic",
+      "IRI-based" : "nic",
       "en" : "NIC",
       "es" : "NIC"
     },
@@ -1331,115 +1127,30 @@
       "en" : "Model of the network interface card of the CSI receiver.",
       "es" : "Modelo de la tarjeta de interfaz de red del receptor de CSI."
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "30"
+    "attributes" : [ "datatype" ],
+    "id" : "0"
   }, {
-    "range" : "6",
-    "domain" : "5",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "32"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIwifiStandard",
-    "baseIri" : "https://w3id.org",
-    "range" : "34",
+    "iri" : "https://w3id.org/WiFi-CSI#frequencyBand",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "4",
     "label" : {
-      "IRI-based" : "WiFi-CSIwifiStandard",
-      "en" : "WiFi standard",
-      "es" : "Estándar WiFi"
+      "IRI-based" : "frequencyBand",
+      "en" : "Frequency band",
+      "es" : "Banda de frecuencia"
     },
     "domain" : "1",
     "comment" : {
-      "en" : "Relates a WiFi measurement to the WiFi standard used for the measurement",
-      "es" : "Relaciona una medición WiFi con el estándar WiFi utilizado para la medición"
+      "en" : "Relates a WiFi measurement to the frequency band of the WiFi signal used for the measurement",
+      "es" : "Relaciona una medición WiFi con la banda de frecuencia de la señal WiFi utilizada para la medición"
     },
-    "attributes" : [ "object", "external" ],
-    "id" : "33"
+    "attributes" : [ "object" ],
+    "id" : "3"
   }, {
-    "range" : "6",
-    "domain" : "36",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "35"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIhasResult",
-    "baseIri" : "https://w3id.org",
-    "range" : "38",
+    "iri" : "https://w3id.org/WiFi-CSI#receiver",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "9",
     "label" : {
-      "IRI-based" : "WiFi-CSIhasResult",
-      "en" : "has result",
-      "es" : "tiene resultado"
-    },
-    "superproperty" : [ "39" ],
-    "domain" : "1",
-    "comment" : {
-      "en" : "Relates a WiFi measurement to its result containing the CSI data and timestamps",
-      "es" : "Relaciona una medición WiFi con su resultado que contiene los datos CSI y timestamps"
-    },
-    "attributes" : [ "object", "external" ],
-    "id" : "37"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIbandwidth",
-    "baseIri" : "https://w3id.org",
-    "range" : "5",
-    "label" : {
-      "IRI-based" : "WiFi-CSIbandwidth",
-      "en" : "Bandwidth",
-      "es" : "Ancho de banda"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Relates a WiFi measurement to the bandwidth of the WiFi signal used for the measurement",
-      "es" : "Relaciona una medición WiFi con el ancho de banda de la señal WiFi utilizada para la medición"
-    },
-    "attributes" : [ "object", "external" ],
-    "id" : "40"
-  }, {
-    "range" : "6",
-    "domain" : "27",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "41"
-  }, {
-    "range" : "44",
-    "domain" : "38",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "43"
-  }, {
-    "range" : "16",
-    "domain" : "1",
-    "attributes" : [ "object", "anonymous" ],
-    "id" : "45"
-  }, {
-    "iri" : "http://www.w3.org/ns/sosa/hasResult",
-    "baseIri" : "http://www.w3.org/ns/sosa",
-    "range" : "42",
-    "label" : {
-      "IRI-based" : "hasResult"
-    },
-    "domain" : "42",
-    "subproperty" : [ "37" ],
-    "attributes" : [ "object", "external" ],
-    "id" : "39"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSImeasurementDuration",
-    "baseIri" : "https://w3id.org",
-    "range" : "36",
-    "label" : {
-      "IRI-based" : "WiFi-CSImeasurementDuration",
-      "en" : "Measurement duration",
-      "es" : "Duración de la medición"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Relates a WiFi measurement to its duration in seconds",
-      "es" : "Relaciona una medición WiFi con su duración en segundos"
-    },
-    "attributes" : [ "object", "external" ],
-    "id" : "48"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIreceiver",
-    "baseIri" : "https://w3id.org",
-    "range" : "50",
-    "label" : {
-      "IRI-based" : "WiFi-CSIreceiver",
+      "IRI-based" : "receiver",
       "en" : "receiver",
       "es" : "receptor"
     },
@@ -1448,30 +1159,46 @@
       "en" : "Identifier of the receiver device that captured the measurement (1–4).",
       "es" : "Identificador del dispositivo receptor que capturó la medición (1–4)."
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "49"
+    "attributes" : [ "datatype" ],
+    "id" : "8"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSIinvolvesPerson",
-    "baseIri" : "https://w3id.org",
-    "range" : "17",
+    "iri" : "https://w3id.org/WiFi-CSI#machine",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "11",
     "label" : {
-      "IRI-based" : "WiFi-CSIinvolvesPerson",
-      "en" : "involves person",
-      "es" : "involucra persona"
+      "IRI-based" : "machine",
+      "en" : "machine",
+      "es" : "máquina"
     },
     "domain" : "1",
     "comment" : {
-      "en" : "Relates a WiFi measurement to the person (the letter) involved in the measurement",
-      "es" : "Relaciona una medición WiFi con la persona (la letra) involucrada en la medición"
+      "en" : "Identifier of the machine present during the measurement (1–9).",
+      "es" : "Identificador de la máquina presente durante la medición (1–9)."
     },
-    "attributes" : [ "object", "external" ],
-    "id" : "53"
+    "attributes" : [ "datatype" ],
+    "id" : "10"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSIsubcarriers",
-    "baseIri" : "https://w3id.org",
-    "range" : "47",
+    "iri" : "https://w3id.org/WiFi-CSI#measurementDuration",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "13",
     "label" : {
-      "IRI-based" : "WiFi-CSIsubcarriers",
+      "IRI-based" : "measurementDuration",
+      "en" : "Measurement duration",
+      "es" : "Duración de la medición"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to its duration in seconds",
+      "es" : "Relaciona una medición WiFi con su duración en segundos"
+    },
+    "attributes" : [ "object" ],
+    "id" : "12"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#subcarriers",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "15",
+    "label" : {
+      "IRI-based" : "subcarriers",
       "en" : "subcarriers",
       "es" : "subportadoras"
     },
@@ -1480,62 +1207,30 @@
       "en" : "Total number of OFDM subcarriers captured (64 for 20 MHz, 256 for 80 MHz in MC1).",
       "es" : "Número total de subportadoras OFDM capturadas (64 para 20 MHz, 256 para 80 MHz en MC1)."
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "54"
+    "attributes" : [ "datatype" ],
+    "id" : "14"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSIactivity",
-    "baseIri" : "https://w3id.org",
-    "range" : "55",
+    "iri" : "https://w3id.org/WiFi-CSI#involvesPerson",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "17",
     "label" : {
-      "IRI-based" : "WiFi-CSIactivity",
-      "en" : "Activity",
-      "es" : "Actividad"
+      "IRI-based" : "involvesPerson",
+      "en" : "involves person",
+      "es" : "involucra persona"
     },
     "domain" : "1",
     "comment" : {
-      "en" : "Relates a WiFi measurement to the type of activity performed by a person during the measurement",
-      "es" : "Relaciona una medición WiFi con el tipo de actividad realizada por una persona durante la medición"
+      "en" : "Relates a WiFi measurement to the person (the letter) involved in the measurement",
+      "es" : "Relaciona una medición WiFi con la persona (la letra) involucrada en la medición"
     },
-    "attributes" : [ "object", "external" ],
-    "id" : "56"
+    "attributes" : [ "object" ],
+    "id" : "16"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSIoccupiedSubcarriers",
-    "baseIri" : "https://w3id.org",
-    "range" : "52",
+    "iri" : "https://w3id.org/WiFi-CSI#csiExtractor",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "19",
     "label" : {
-      "IRI-based" : "WiFi-CSIoccupiedSubcarriers",
-      "en" : "occupied subcarriers",
-      "es" : "subportadoras ocupadas"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Number of useful subcarriers (data + pilots) after excluding null subcarriers per IEEE 802.11n/ac.",
-      "es" : "Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "57"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIsequentialNumber",
-    "baseIri" : "https://w3id.org",
-    "range" : "46",
-    "label" : {
-      "IRI-based" : "WiFi-CSIsequentialNumber",
-      "en" : "sequential number",
-      "es" : "número secuencial"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Sequential number to distinguish measurements with otherwise identical metadata.",
-      "es" : "Número secuencial para distinguir mediciones con metadatos idénticos."
-    },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "58"
-  }, {
-    "iri" : "https://w3id.org/WiFi-CSIcsiExtractor",
-    "baseIri" : "https://w3id.org",
-    "range" : "7",
-    "label" : {
-      "IRI-based" : "WiFi-CSIcsiExtractor",
+      "IRI-based" : "csiExtractor",
       "en" : "CSI extractor",
       "es" : "Extractor de CSI"
     },
@@ -1544,14 +1239,195 @@
       "en" : "Relates a WiFi measurement to the CSI extractor tool or method used to obtain the CSI data",
       "es" : "Relaciona una medición WiFi con la herramienta o método extractor de CSI utilizado para obtener los datos CSI"
     },
-    "attributes" : [ "object", "external" ],
-    "id" : "59"
+    "attributes" : [ "object" ],
+    "id" : "18"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSInReceivers",
-    "baseIri" : "https://w3id.org",
-    "range" : "51",
+    "iri" : "https://w3id.org/WiFi-CSI#bandwidth",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "21",
     "label" : {
-      "IRI-based" : "WiFi-CSInReceivers",
+      "IRI-based" : "bandwidth",
+      "en" : "Bandwidth",
+      "es" : "Ancho de banda"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to the bandwidth of the WiFi signal used for the measurement",
+      "es" : "Relaciona una medición WiFi con el ancho de banda de la señal WiFi utilizada para la medición"
+    },
+    "attributes" : [ "object" ],
+    "id" : "20"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#channel",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "23",
+    "label" : {
+      "IRI-based" : "channel",
+      "en" : "channel",
+      "es" : "canal"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "WiFi channel used during the measurement (11, 13 or 40).",
+      "es" : "Canal WiFi utilizado durante la medición (11, 13 or 40)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "22"
+  }, {
+    "range" : "25",
+    "domain" : "4",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "24"
+  }, {
+    "range" : "25",
+    "domain" : "21",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "26"
+  }, {
+    "range" : "25",
+    "domain" : "13",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "27"
+  }, {
+    "range" : "31",
+    "domain" : "30",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "32"
+  }, {
+    "range" : "6",
+    "domain" : "1",
+    "attributes" : [ "object", "anonymous" ],
+    "id" : "33"
+  }, {
+    "iri" : "http://www.w3.org/ns/sosa/hasResult",
+    "baseIri" : "http://www.w3.org/ns/sosa",
+    "range" : "28",
+    "label" : {
+      "IRI-based" : "hasResult"
+    },
+    "domain" : "28",
+    "subproperty" : [ "36" ],
+    "attributes" : [ "external", "object" ],
+    "id" : "35"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#hasResult",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "30",
+    "label" : {
+      "IRI-based" : "hasResult",
+      "en" : "has result",
+      "es" : "tiene resultado"
+    },
+    "superproperty" : [ "35" ],
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to its result containing the CSI data and timestamps",
+      "es" : "Relaciona una medición WiFi con su resultado que contiene los datos CSI y timestamps"
+    },
+    "attributes" : [ "object" ],
+    "id" : "36"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#occupiedSubcarriers",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "39",
+    "label" : {
+      "IRI-based" : "occupiedSubcarriers",
+      "en" : "occupied subcarriers",
+      "es" : "subportadoras ocupadas"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Number of useful subcarriers (data + pilots) after excluding null subcarriers per IEEE 802.11n/ac.",
+      "es" : "Número de subportadoras útiles (datos + pilotos) después de excluir las subportadoras nulas según IEEE 802.11n/ac."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "38"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#nMachine",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "41",
+    "label" : {
+      "IRI-based" : "nMachine",
+      "en" : "number of machines",
+      "es" : "número de máquinas"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Total number of machines involved in the measurement.",
+      "es" : "Número total de máquinas involucradas en la medición."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "44"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#campaign",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "45",
+    "label" : {
+      "IRI-based" : "campaign",
+      "en" : "campaign",
+      "es" : "campaña"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Measurement campaign identifier (e.g. MC1).",
+      "es" : "Identificador de la campaña de medición (e.g. MC1)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "46"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#environment",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "48",
+    "label" : {
+      "IRI-based" : "environment",
+      "en" : "Environment",
+      "es" : "Entorno"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to the physical environment where it was taken",
+      "es" : "Relaciona una medición WiFi con el entorno físico donde se tomó"
+    },
+    "attributes" : [ "object" ],
+    "id" : "47"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#application",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "7",
+    "label" : {
+      "IRI-based" : "application",
+      "en" : "Application",
+      "es" : "Aplicación"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to the application or use case it is associated with",
+      "es" : "Relaciona una medición WiFi con la aplicación o caso de uso con el que está asociada"
+    },
+    "attributes" : [ "object" ],
+    "id" : "49"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#nFiles",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "40",
+    "label" : {
+      "IRI-based" : "nFiles",
+      "en" : "number of files",
+      "es" : "número de archivos"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Total number of .mat files in the set this measurement belongs to.",
+      "es" : "Número total de archivos .mat en el conjunto al que pertenece esta medición."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "50"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#nReceivers",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "43",
+    "label" : {
+      "IRI-based" : "nReceivers",
       "en" : "number of receivers",
       "es" : "número de receptores"
     },
@@ -1560,7 +1436,119 @@
       "en" : "Number of receiver devices used in the measurement (1–4).",
       "es" : "Número de dispositivos receptores utilizados en la medición (1–4)."
     },
-    "attributes" : [ "external", "datatype" ],
-    "id" : "60"
+    "attributes" : [ "datatype" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#sequentialNumber",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "34",
+    "label" : {
+      "IRI-based" : "sequentialNumber",
+      "en" : "sequential number",
+      "es" : "número secuencial"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Sequential number to distinguish measurements with otherwise identical metadata.",
+      "es" : "Número secuencial para distinguir mediciones con metadatos idénticos."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "52"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#wifiStandard",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "5",
+    "label" : {
+      "IRI-based" : "wifiStandard",
+      "en" : "WiFi standard",
+      "es" : "Estándar WiFi"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to the WiFi standard used for the measurement",
+      "es" : "Relaciona una medición WiFi con el estándar WiFi utilizado para la medición"
+    },
+    "attributes" : [ "object" ],
+    "id" : "53"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#set",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "37",
+    "label" : {
+      "IRI-based" : "set",
+      "en" : "set",
+      "es" : "conjunto"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Set identifier within the campaign (e.g. MC1_01A). Each set corresponds to a specific location.",
+      "es" : "Identificador del conjunto dentro de la campaña (e.g. MC1_01A). Cada conjunto corresponde a una ubicación específica."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "54"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#traffic",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "29",
+    "label" : {
+      "IRI-based" : "traffic",
+      "en" : "traffic",
+      "es" : "tráfico"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Network traffic type present during the measurement (e.g. FTP).",
+      "es" : "Tipo de tráfico de red presente durante la medición (e.g. FTP)."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "55"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#activity",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "57",
+    "label" : {
+      "IRI-based" : "activity",
+      "en" : "Activity",
+      "es" : "Actividad"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to the type of activity performed by a person during the measurement",
+      "es" : "Relaciona una medición WiFi con el tipo de actividad realizada por una persona durante la medición"
+    },
+    "attributes" : [ "object" ],
+    "id" : "56"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#nPeople",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "42",
+    "label" : {
+      "IRI-based" : "nPeople",
+      "en" : "number of people",
+      "es" : "número de personas"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Total number of people present during the measurement.",
+      "es" : "Número total de personas presentes durante la medición."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "58"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#machineStatus",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "60",
+    "label" : {
+      "IRI-based" : "machineStatus",
+      "en" : "Machine status",
+      "es" : "Estado de la máquina"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to the operational status of a machine during the measurement",
+      "es" : "Relaciona una medición WiFi con el estado operativo de una máquina durante la medición"
+    },
+    "attributes" : [ "object" ],
+    "id" : "59"
   } ]
 }
