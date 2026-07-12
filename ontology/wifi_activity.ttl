@@ -24,7 +24,7 @@
 <https://w3id.org/WiFi-CSI>
     a owl:Ontology ;
     owl:versionIRI <https://w3id.org/WiFi-CSI> ;
-    owl:versionInfo "1.0.0" ;
+    owl:versionInfo "1.0.1" ;
     dct:title "EHUNAM WiFi CSI Activity Ontology"@en ;
     dct:title "Ontología de actividad WiFi CSI de EHUNAM"@es ;
     dct:description "Ontology for describing WiFi CSI measurements of human and machine activity captured in different environments."@en ;
@@ -33,9 +33,9 @@
     dct:creator <https://github.com/Mikelontxu> ;
     dct:license <https://creativecommons.org/licenses/by/4.0/> ;
     # DOI of the ontology in Zenodo, where it is published and versioned
-    dct:identifier "https://doi.org/10.5281/zenodo.21089086" ;
-    bibo:doi "10.5281/zenodo.21089086" ;    
-    owl:sameAs <https://doi.org/10.5281/zenodo.21089086> ;
+    dct:identifier "https://doi.org/10.5281/zenodo.21316011" ;
+    bibo:doi "10.5281/zenodo.21316011" ;
+    owl:sameAs <https://doi.org/10.5281/zenodo.21316011> ;
     dct:created "2026-05-27"^^xsd:date ;
     dct:modified "2026-07-11"^^xsd:date ;
     dct:issued "2026-07-11"^^xsd:date ;
@@ -52,8 +52,8 @@
     rdfs:seeAlso <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
     vann:preferredNamespaceUri "https://w3id.org/WiFi-CSI#" ;
     vann:preferredNamespacePrefix "wifi" ;
-    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21089086"@en .
-    #owl:priorVersion <https://ehu/wifi-csi/ontology/X.X.X> ; # There are no prior versions yet, this is the first version of the ontology.
+    dct:bibliographicCitation "EHUNAM WiFi CSI Activity Ontology, version 1.0.1, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21316011"@en ;
+    owl:priorVersion <https://doi.org/10.5281/zenodo.21089086> .
 
 # Principal classes of the ontology
 

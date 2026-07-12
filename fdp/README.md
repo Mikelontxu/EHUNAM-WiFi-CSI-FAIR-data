@@ -39,7 +39,7 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 </tr>
 <tr>
 <td><p>nginx</p></td>
-<td><p>Static file server for ontology and data</p></td>
+<td><p>Static file server for ontology docs and data</p></td>
 <td><p>http://34.51.146.173:8090/</p></td>
 </tr>
 <tr>
@@ -148,7 +148,7 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 **Before deployment:** 
 - Ensure the required ports are open on the host (80, 7200, 8090, 1071, 8080).
 - Check if an `.env` file is present with the credentials for GraphDB, MongoDB and a FDP_JWT_SECRET_KEY.
-- This `.env` should also include the SERVER_HOST IP/URL or else it will use localhost.
+- This `.env` should also include the SERVER_HOST (IP/URL) or else it will use localhost.
 - Set the correct IP/URL of the host machine in both `.env` and `application.yml`.
 - As mentioned in the other README.md, **SHACL shapes** need to be manually updated to match the same URIs too.
 
