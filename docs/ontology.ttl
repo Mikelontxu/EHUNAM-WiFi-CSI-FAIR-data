@@ -9,12 +9,12 @@
 <https://w3id.org/WiFi-CSI> rdf:type owl:Ontology ;
                              owl:versionIRI <https://w3id.org/WiFi-CSI> ;
                              <http://purl.org/dc/terms/abstract> "This ontology provides a structured representation of WiFi Channel State Information (CSI) measurements, including details about the measurement environment, involved persons, activities performed, and technical parameters."@en ;
-                             <http://purl.org/dc/terms/bibliographicCitation> "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21089086"@en ;
+                             <http://purl.org/dc/terms/bibliographicCitation> "EHUNAM WiFi CSI Activity Ontology, version 1.0.1, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21316011"@en ;
                              <http://purl.org/dc/terms/created> "2026-05-27"^^xsd:date ;
                              <http://purl.org/dc/terms/creator> <https://github.com/Mikelontxu> ;
                              <http://purl.org/dc/terms/description> "Ontology for describing WiFi CSI measurements of human and machine activity captured in different environments."@en ,
                                                                     "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."@es ;
-                             <http://purl.org/dc/terms/identifier> "https://doi.org/10.5281/zenodo.21089086" ;
+                             <http://purl.org/dc/terms/identifier> "https://doi.org/10.5281/zenodo.21316011" ;
                              <http://purl.org/dc/terms/isReferencedBy> <https://doi.org/10.1038/s41597-025-06238-4> ;
                              <http://purl.org/dc/terms/issued> "2026-07-11"^^xsd:date ;
                              <http://purl.org/dc/terms/language> "en" ,
@@ -25,13 +25,14 @@
                              <http://purl.org/dc/terms/source> <https://doi.org/10.6084/m9.figshare.28541225> ;
                              <http://purl.org/dc/terms/title> "EHUNAM WiFi CSI Activity Ontology"@en ,
                                                               "Ontología de actividad WiFi CSI de EHUNAM"@es ;
-                             <http://purl.org/ontology/bibo/doi> "10.5281/zenodo.21089086" ;
+                             <http://purl.org/ontology/bibo/doi> "10.5281/zenodo.21316011" ;
                              <http://purl.org/ontology/bibo/status> "Published" ;
                              <http://purl.org/vocab/vann/preferredNamespacePrefix> "wifi" ;
                              <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/WiFi-CSI#" ;
                              rdfs:seeAlso <https://doi.org/10.1038/s41597-025-06238-4> ,
                                           <https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data> ;
-                             owl:versionInfo "1.0.0" ;
+                             owl:priorVersion <https://doi.org/10.5281/zenodo.21089086> ;
+                             owl:versionInfo "1.0.1" ;
                              <http://www.w3.org/ns/prov#wasDerivedFrom> <https://doi.org/10.6084/m9.figshare.28541225> .
 
 #################################################################
@@ -510,8 +511,8 @@ xsd:date rdf:type rdfs:Datatype .
 #    Individuals
 #################################################################
 
-###  https://doi.org/10.5281/zenodo.21089086
-<https://doi.org/10.5281/zenodo.21089086> rdf:type owl:NamedIndividual ;
+###  https://doi.org/10.5281/zenodo.21316011
+<https://doi.org/10.5281/zenodo.21316011> rdf:type owl:NamedIndividual ;
                                           owl:sameAs <https://w3id.org/WiFi-CSI> .
 
 

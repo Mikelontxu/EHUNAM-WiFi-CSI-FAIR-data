@@ -10,7 +10,7 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 
 # Change the following domain and prefix declarations to match your dataset's namespace and prefix.
-@prefix wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#> .
+@prefix wifi: <https://w3id.org/WiFi-CSI#> .
 @prefix : <http://34.51.146.173:8090/wifi-csi/shapes#> .
 
 
