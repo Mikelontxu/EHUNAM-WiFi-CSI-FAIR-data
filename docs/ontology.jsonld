@@ -74,7 +74,7 @@
   "@id" : "http://www.w3.org/ns/sosa/hasResult",
   "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
 }, {
-  "@id" : "https://doi.org/10.5281/zenodo.21089086",
+  "@id" : "https://doi.org/10.5281/zenodo.21316011",
   "@type" : [ "http://www.w3.org/2002/07/owl#NamedIndividual" ],
   "http://www.w3.org/2002/07/owl#sameAs" : [ {
     "@id" : "https://w3id.org/WiFi-CSI"
@@ -88,7 +88,7 @@
   } ],
   "http://purl.org/dc/terms/bibliographicCitation" : [ {
     "@language" : "en",
-    "@value" : "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21089086"
+    "@value" : "EHUNAM WiFi CSI Activity Ontology, version 1.0.1, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21316011"
   } ],
   "http://purl.org/dc/terms/created" : [ {
     "@type" : "http://www.w3.org/2001/XMLSchema#date",
@@ -105,7 +105,7 @@
     "@value" : "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."
   } ],
   "http://purl.org/dc/terms/identifier" : [ {
-    "@value" : "https://doi.org/10.5281/zenodo.21089086"
+    "@value" : "https://doi.org/10.5281/zenodo.21316011"
   } ],
   "http://purl.org/dc/terms/isReferencedBy" : [ {
     "@id" : "https://doi.org/10.1038/s41597-025-06238-4"
@@ -140,7 +140,7 @@
     "@value" : "Ontología de actividad WiFi CSI de EHUNAM"
   } ],
   "http://purl.org/ontology/bibo/doi" : [ {
-    "@value" : "10.5281/zenodo.21089086"
+    "@value" : "10.5281/zenodo.21316011"
   } ],
   "http://purl.org/ontology/bibo/status" : [ {
     "@value" : "Published"
@@ -156,11 +156,14 @@
   }, {
     "@id" : "https://github.com/mikelontxu/EHUNAM-WiFi-CSI-FAIR-data"
   } ],
+  "http://www.w3.org/2002/07/owl#priorVersion" : [ {
+    "@id" : "https://doi.org/10.5281/zenodo.21089086"
+  } ],
   "http://www.w3.org/2002/07/owl#versionIRI" : [ {
     "@id" : "https://w3id.org/WiFi-CSI"
   } ],
   "http://www.w3.org/2002/07/owl#versionInfo" : [ {
-    "@value" : "1.0.0"
+    "@value" : "1.0.1"
   } ],
   "http://www.w3.org/ns/prov#wasDerivedFrom" : [ {
     "@id" : "https://doi.org/10.6084/m9.figshare.28541225"

@@ -8,17 +8,23 @@
       "es" : "Ontología de actividad WiFi CSI de EHUNAM"
     },
     "iri" : "https://w3id.org/WiFi-CSI",
-    "version" : "1.0.0",
+    "version" : "1.0.1",
     "author" : [ "https://github.com/Mikelontxu" ],
     "description" : {
       "en" : "Ontology for describing WiFi CSI measurements of human and machine activity captured in different environments.",
       "es" : "Ontología para describir mediciones WiFi CSI de actividad humana y de máquinas capturadas en diferentes entornos."
     },
     "other" : {
+      "priorVersion" : [ {
+        "identifier" : "priorVersion",
+        "language" : "undefined",
+        "value" : "https://doi.org/10.5281/zenodo.21089086",
+        "type" : "iri"
+      } ],
       "identifier" : [ {
         "identifier" : "identifier",
         "language" : "undefined",
-        "value" : "https://doi.org/10.5281/zenodo.21089086",
+        "value" : "https://doi.org/10.5281/zenodo.21316011",
         "type" : "label"
       } ],
       "creator" : [ {
@@ -50,6 +56,12 @@
         "value" : "es",
         "type" : "label"
       } ],
+      "versionInfo" : [ {
+        "identifier" : "versionInfo",
+        "language" : "undefined",
+        "value" : "1.0.1",
+        "type" : "label"
+      } ],
       "abstract" : [ {
         "identifier" : "abstract",
         "language" : "en",
@@ -61,12 +73,6 @@
         "language" : "undefined",
         "value" : "https://doi.org/10.6084/m9.figshare.28541225",
         "type" : "iri"
-      } ],
-      "versionInfo" : [ {
-        "identifier" : "versionInfo",
-        "language" : "undefined",
-        "value" : "1.0.0",
-        "type" : "label"
       } ],
       "title" : [ {
         "identifier" : "title",
@@ -108,17 +114,17 @@
         "value" : "wifi",
         "type" : "label"
       } ],
-      "publisher" : [ {
-        "identifier" : "publisher",
-        "language" : "undefined",
-        "value" : "https://doi.org/10.6084/m9.figshare.28541225",
-        "type" : "iri"
-      } ],
       "modified" : [ {
         "identifier" : "modified",
         "language" : "undefined",
         "value" : "2026-07-11",
         "type" : "label"
+      } ],
+      "publisher" : [ {
+        "identifier" : "publisher",
+        "language" : "undefined",
+        "value" : "https://doi.org/10.6084/m9.figshare.28541225",
+        "type" : "iri"
       } ],
       "preferredNamespaceUri" : [ {
         "identifier" : "preferredNamespaceUri",
@@ -129,7 +135,7 @@
       "bibliographicCitation" : [ {
         "identifier" : "bibliographicCitation",
         "language" : "en",
-        "value" : "EHUNAM WiFi CSI Activity Ontology, version 1.0.0, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21089086",
+        "value" : "EHUNAM WiFi CSI Activity Ontology, version 1.0.1, available at https://w3id.org/WiFi-CSI. DOI: https://doi.org/10.5281/zenodo.21316011",
         "type" : "label"
       } ],
       "issued" : [ {
@@ -141,7 +147,7 @@
       "doi" : [ {
         "identifier" : "doi",
         "language" : "undefined",
-        "value" : "10.5281/zenodo.21089086",
+        "value" : "10.5281/zenodo.21316011",
         "type" : "label"
       } ],
       "status" : [ {
@@ -184,7 +190,7 @@
     "id" : "31",
     "type" : "owl:Class"
   }, {
-    "id" : "21",
+    "id" : "19",
     "type" : "owl:Class"
   }, {
     "id" : "1",
@@ -196,7 +202,7 @@
     "id" : "40",
     "type" : "rdfs:Datatype"
   }, {
-    "id" : "19",
+    "id" : "21",
     "type" : "owl:Class"
   }, {
     "id" : "41",
@@ -501,7 +507,7 @@
       "en" : "Bandwidth of the WiFi signal, expressed in MHz (20 MHz or 80 MHz)",
       "es" : "Ancho de banda de la señal WiFi, expresado en MHz (20 MHz o 80 MHz)"
     },
-    "id" : "21",
+    "id" : "19",
     "superClasses" : [ "25" ]
   }, {
     "iri" : "https://w3id.org/WiFi-CSI#WifiMeasurement",
@@ -586,7 +592,7 @@
       "en" : "Software tool or method used to extract CSI data from the raw WiFi signals",
       "es" : "Herramienta o método utilizado para extraer los datos CSI de las señales WiFi crudas"
     },
-    "id" : "19"
+    "id" : "21"
   }, {
     "iri" : "http://www.w3.org/2001/XMLSchema#integer",
     "baseIri" : "http://www.w3.org/2001/XMLSchema",
@@ -680,18 +686,6 @@
         "es" : "Oficina 1"
       }
     }, {
-      "iri" : "https://w3id.org/WiFi-CSI#Laboratory",
-      "baseIri" : "https://w3id.org/WiFi-CSI",
-      "comment" : {
-        "en" : "WiFi measurement taken in a laboratory environment",
-        "es" : "Medición WiFi tomada en un entorno de laboratorio"
-      },
-      "labels" : {
-        "IRI-based" : "Laboratory",
-        "en" : "Laboratory",
-        "es" : "Laboratorio"
-      }
-    }, {
       "iri" : "https://w3id.org/WiFi-CSI#Office2",
       "baseIri" : "https://w3id.org/WiFi-CSI",
       "comment" : {
@@ -702,6 +696,18 @@
         "IRI-based" : "Office2",
         "en" : "Office 2",
         "es" : "Oficina 2"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#Laboratory",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in a laboratory environment",
+        "es" : "Medición WiFi tomada en un entorno de laboratorio"
+      },
+      "labels" : {
+        "IRI-based" : "Laboratory",
+        "en" : "Laboratory",
+        "es" : "Laboratorio"
       }
     }, {
       "iri" : "https://w3id.org/WiFi-CSI#Classroom",
@@ -716,18 +722,6 @@
         "es" : "Aula"
       }
     }, {
-      "iri" : "https://w3id.org/WiFi-CSI#StorageRoom",
-      "baseIri" : "https://w3id.org/WiFi-CSI",
-      "comment" : {
-        "en" : "WiFi measurement taken in a storage room environment",
-        "es" : "Medición WiFi tomada en un entorno de trastero"
-      },
-      "labels" : {
-        "IRI-based" : "StorageRoom",
-        "en" : "Storage Room",
-        "es" : "Sala de almacenamiento"
-      }
-    }, {
       "iri" : "https://w3id.org/WiFi-CSI#IndustrialLaboratory",
       "baseIri" : "https://w3id.org/WiFi-CSI",
       "comment" : {
@@ -738,6 +732,18 @@
         "IRI-based" : "IndustrialLaboratory",
         "en" : "Industrial Laboratory",
         "es" : "Laboratorio industrial"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#StorageRoom",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "comment" : {
+        "en" : "WiFi measurement taken in a storage room environment",
+        "es" : "Medición WiFi tomada en un entorno de trastero"
+      },
+      "labels" : {
+        "IRI-based" : "StorageRoom",
+        "en" : "Storage Room",
+        "es" : "Sala de almacenamiento"
       }
     }, {
       "iri" : "https://w3id.org/WiFi-CSI#BasementRoom",
@@ -790,7 +796,7 @@
     "label" : {
       "IRI-based" : "Quantity"
     },
-    "subClasses" : [ "21", "4", "13" ],
+    "subClasses" : [ "19", "4", "13" ],
     "attributes" : [ "external" ],
     "id" : "25"
   }, {
@@ -893,26 +899,6 @@
         "es" : "Parado sin moverse"
       }
     }, {
-      "iri" : "https://w3id.org/WiFi-CSI#SittingDownAndGettingUp",
-      "baseIri" : "https://w3id.org/WiFi-CSI",
-      "annotations" : {
-        "notation" : [ {
-          "identifier" : "notation",
-          "language" : "undefined",
-          "value" : "G",
-          "type" : "label"
-        } ]
-      },
-      "comment" : {
-        "en" : "Person alternates between sitting down and getting up during the WiFi measurement",
-        "es" : "La persona alterna entre sentarse y levantarse durante la medición WiFi"
-      },
-      "labels" : {
-        "IRI-based" : "SittingDownAndGettingUp",
-        "en" : "Sitting down and getting up",
-        "es" : "Sentándose y levantándose"
-      }
-    }, {
       "iri" : "https://w3id.org/WiFi-CSI#SittingStill",
       "baseIri" : "https://w3id.org/WiFi-CSI",
       "annotations" : {
@@ -931,6 +917,26 @@
         "IRI-based" : "SittingStill",
         "en" : "Sitting Still",
         "es" : "Sentado sin moverse"
+      }
+    }, {
+      "iri" : "https://w3id.org/WiFi-CSI#SittingDownAndGettingUp",
+      "baseIri" : "https://w3id.org/WiFi-CSI",
+      "annotations" : {
+        "notation" : [ {
+          "identifier" : "notation",
+          "language" : "undefined",
+          "value" : "G",
+          "type" : "label"
+        } ]
+      },
+      "comment" : {
+        "en" : "Person alternates between sitting down and getting up during the WiFi measurement",
+        "es" : "La persona alterna entre sentarse y levantarse durante la medición WiFi"
+      },
+      "labels" : {
+        "IRI-based" : "SittingDownAndGettingUp",
+        "en" : "Sitting down and getting up",
+        "es" : "Sentándose y levantándose"
       }
     }, {
       "iri" : "https://w3id.org/WiFi-CSI#Empty",
@@ -1226,25 +1232,9 @@
     "attributes" : [ "object" ],
     "id" : "16"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSI#csiExtractor",
-    "baseIri" : "https://w3id.org/WiFi-CSI",
-    "range" : "19",
-    "label" : {
-      "IRI-based" : "csiExtractor",
-      "en" : "CSI extractor",
-      "es" : "Extractor de CSI"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Relates a WiFi measurement to the CSI extractor tool or method used to obtain the CSI data",
-      "es" : "Relaciona una medición WiFi con la herramienta o método extractor de CSI utilizado para obtener los datos CSI"
-    },
-    "attributes" : [ "object" ],
-    "id" : "18"
-  }, {
     "iri" : "https://w3id.org/WiFi-CSI#bandwidth",
     "baseIri" : "https://w3id.org/WiFi-CSI",
-    "range" : "21",
+    "range" : "19",
     "label" : {
       "IRI-based" : "bandwidth",
       "en" : "Bandwidth",
@@ -1254,6 +1244,22 @@
     "comment" : {
       "en" : "Relates a WiFi measurement to the bandwidth of the WiFi signal used for the measurement",
       "es" : "Relaciona una medición WiFi con el ancho de banda de la señal WiFi utilizada para la medición"
+    },
+    "attributes" : [ "object" ],
+    "id" : "18"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#csiExtractor",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "21",
+    "label" : {
+      "IRI-based" : "csiExtractor",
+      "en" : "CSI extractor",
+      "es" : "Extractor de CSI"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Relates a WiFi measurement to the CSI extractor tool or method used to obtain the CSI data",
+      "es" : "Relaciona una medición WiFi con la herramienta o método extractor de CSI utilizado para obtener los datos CSI"
     },
     "attributes" : [ "object" ],
     "id" : "20"
@@ -1276,27 +1282,27 @@
   }, {
     "range" : "25",
     "domain" : "4",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "24"
   }, {
     "range" : "25",
-    "domain" : "21",
-    "attributes" : [ "object", "anonymous" ],
+    "domain" : "19",
+    "attributes" : [ "anonymous", "object" ],
     "id" : "26"
   }, {
     "range" : "25",
     "domain" : "13",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "27"
   }, {
     "range" : "31",
     "domain" : "30",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "32"
   }, {
     "range" : "6",
     "domain" : "1",
-    "attributes" : [ "object", "anonymous" ],
+    "attributes" : [ "anonymous", "object" ],
     "id" : "33"
   }, {
     "iri" : "http://www.w3.org/ns/sosa/hasResult",
@@ -1423,22 +1429,6 @@
     "attributes" : [ "datatype" ],
     "id" : "50"
   }, {
-    "iri" : "https://w3id.org/WiFi-CSI#nReceivers",
-    "baseIri" : "https://w3id.org/WiFi-CSI",
-    "range" : "43",
-    "label" : {
-      "IRI-based" : "nReceivers",
-      "en" : "number of receivers",
-      "es" : "número de receptores"
-    },
-    "domain" : "1",
-    "comment" : {
-      "en" : "Number of receiver devices used in the measurement (1–4).",
-      "es" : "Número de dispositivos receptores utilizados en la medición (1–4)."
-    },
-    "attributes" : [ "datatype" ],
-    "id" : "51"
-  }, {
     "iri" : "https://w3id.org/WiFi-CSI#sequentialNumber",
     "baseIri" : "https://w3id.org/WiFi-CSI",
     "range" : "34",
@@ -1451,6 +1441,22 @@
     "comment" : {
       "en" : "Sequential number to distinguish measurements with otherwise identical metadata.",
       "es" : "Número secuencial para distinguir mediciones con metadatos idénticos."
+    },
+    "attributes" : [ "datatype" ],
+    "id" : "51"
+  }, {
+    "iri" : "https://w3id.org/WiFi-CSI#nReceivers",
+    "baseIri" : "https://w3id.org/WiFi-CSI",
+    "range" : "43",
+    "label" : {
+      "IRI-based" : "nReceivers",
+      "en" : "number of receivers",
+      "es" : "número de receptores"
+    },
+    "domain" : "1",
+    "comment" : {
+      "en" : "Number of receiver devices used in the measurement (1–4).",
+      "es" : "Número de dispositivos receptores utilizados en la medición (1–4)."
     },
     "attributes" : [ "datatype" ],
     "id" : "52"
