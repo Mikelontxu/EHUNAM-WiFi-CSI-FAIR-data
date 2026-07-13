@@ -8,7 +8,7 @@ Ontologías utilizadas:
     dct     → http://purl.org/dc/terms/
     prov    → http://www.w3.org/ns/prov#
     spdx    → http://spdx.org/rdf/terms#
-    wifi    → https://{SERVER_HOST}:{NGINX_PORT}/wifi_activity.ttl#
+    wifi    → https://w3id.org/WiFi-CSI#
 """
 
 import hashlib
@@ -409,7 +409,7 @@ def add_measurement_distributions(g: Graph, measurement_ids: list[str]):
         g.add((dist_uri, DCAT.downloadURL,   graph_url))
         g.add((dist_uri, DCAT.accessURL,     graph_url))
 
-        g.add((DATASET_URI, DCAT.distribution, dist_uri))
+        g.add((meas_uri, DCAT.distribution, dist_uri))
         g.add((DATASET_URI, DCT.hasPart,       meas_uri))
 
 def add_dataset_metadata(g: Graph):

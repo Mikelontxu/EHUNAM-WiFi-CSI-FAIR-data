@@ -14,7 +14,7 @@ SPARQL_ENDPOINT = "http://34.51.146.173:7200/repositories/fdp"
  
 QUERIES = {
     1: """
-        PREFIX wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#>
+        PREFIX wifi: <https://w3id.org/WiFi-CSI#>
         PREFIX sosa: <http://www.w3.org/ns/sosa/>
         PREFIX dcat: <http://www.w3.org/ns/dcat#>
         PREFIX qudt: <http://qudt.org/schema/qudt/>
@@ -36,7 +36,7 @@ QUERIES = {
         ORDER BY ?downloadURL
     """,
     2: """
-        PREFIX wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#>
+        PREFIX wifi: <https://w3id.org/WiFi-CSI#>
         PREFIX sosa: <http://www.w3.org/ns/sosa/>
         PREFIX dcat: <http://www.w3.org/ns/dcat#>
         PREFIX qudt: <http://qudt.org/schema/qudt/>
@@ -58,7 +58,7 @@ QUERIES = {
         ORDER BY ?downloadURL
     """,
     3: """
-        PREFIX wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#>
+        PREFIX wifi: <https://w3id.org/WiFi-CSI#>
         PREFIX sosa: <http://www.w3.org/ns/sosa/>
         PREFIX dcat: <http://www.w3.org/ns/dcat#>
         SELECT ?measurement ?receiver ?downloadURL
@@ -74,7 +74,7 @@ QUERIES = {
         ORDER BY ?receiver
     """,
     4: """
-        PREFIX wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#>
+        PREFIX wifi: <https://w3id.org/WiFi-CSI#>
         PREFIX sosa: <http://www.w3.org/ns/sosa/>
         PREFIX dcat: <http://www.w3.org/ns/dcat#>
         PREFIX qudt: <http://qudt.org/schema/qudt/>
@@ -96,7 +96,7 @@ QUERIES = {
         ORDER BY ?nPeople
     """,
     5: """
-        PREFIX wifi: <http://34.51.146.173:8090/ontology/wifi_activity.ttl#>
+        PREFIX wifi: <https://w3id.org/WiFi-CSI#>
         PREFIX sosa: <http://www.w3.org/ns/sosa/>
         PREFIX dcat: <http://www.w3.org/ns/dcat#>
         SELECT ?measurement ?downloadURL
