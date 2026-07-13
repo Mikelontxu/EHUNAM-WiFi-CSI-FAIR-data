@@ -143,6 +143,8 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 </tbody>
 </table>
 
+- To configure the `.env` easily, a `.env.example` is offered in the folder.
+
 ## Deployment
 
 **Before deployment:** 
@@ -150,7 +152,7 @@ This folder called fdp (FAIR Data Point) its used to import the docker that cont
 - Check if an `.env` file is present with the credentials for GraphDB, MongoDB and a FDP_JWT_SECRET_KEY.
 - This `.env` should also include the SERVER_HOST (IP/URL) or else it will use localhost.
 - Set the correct IP/URL of the host machine in both `.env` and `application.yml`.
-- As mentioned in the other README.md, **SHACL shapes** need to be manually updated to match the same URIs too.
+- As mentioned in the other README.md, **SHACL shapes** need to be manually updated to match the same URI too.
 
 ### 1. Build the docker images
 

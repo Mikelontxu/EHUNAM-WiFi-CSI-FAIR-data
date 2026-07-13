@@ -7,6 +7,8 @@ This project transforms those files into RDF/OWL following FAIR principles.
 
 **Project status**: this project is currently under development and being tested at **http://34.51.146.173**
 
+**Ontology w3id**: https://w3id.org/WiFi-CSI
+
 ## Content
 
 * [Structure](#structure)
@@ -48,7 +50,7 @@ This project transforms those files into RDF/OWL following FAIR principles.
 <p>/ontology:</p>  
 </td> 
 <td>  
-<p>This folder contains the EHUNAM WiFi CSI Activity Ontology (wifi_activity.ttl).This includes defining the classes, object properties, and data properties used to  describe each WiFi measurement (e.g. activity, environment, application, WiFi standard, CSI extractor, etc.).</p>  
+<p>This folder contains the EHUNAM WiFi CSI Activity Ontology (wifi_activity.ttl).This includes defining the classes, object properties, and data properties used to  describe each WiFi measurement (e.g. activity, environment, application, WiFi standard, CSI extractor, etc.). The ontology is offered in a more FAIR way using: https://w3id.org/WiFi-CSI </p>  
 </td>  
 </tr> 
 <tr>  
@@ -56,7 +58,7 @@ This project transforms those files into RDF/OWL following FAIR principles.
 <p>/docs:</p>  
 </td> 
 <td>  
-<p>This folder contains the EHUNAM WiFi CSI Activity Ontology documentation. This includes differente formats for the ontology and a human readable documentation.</p>  
+<p>This folder contains the EHUNAM WiFi CSI Activity Ontology documentation. This includes differente formats for the ontology and a human readable documentation. The ontology documentation is also offered in a more FAIR way using: https://w3id.org/WiFi-CSI</p>  
 </td>  
 </tr> 
 <tr>  
